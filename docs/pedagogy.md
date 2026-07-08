@@ -1,13 +1,105 @@
 # Pedagogy — Design Principles
 
 Grounding document for eTutor interaction design, system prompts, and content structure.
-References: Khan Academy Kids, Intelligent Tutoring Systems research, Bloom's taxonomy, Pimsleur method.
+References: peer-reviewed studies (verified 2026-07-08 via adversarial multi-agent research), Khan Academy Kids analysis, Bloom's taxonomy, Pimsleur method.
+
+**Research provenance:** Claims below marked (HIGH) or (MED) reflect adversarial verification confidence from 109-agent deep research run (25 claims verified, 17 confirmed, 8 refuted). Unverified assertions are marked (PRIOR) — held from earlier synthesis, not yet confirmed by primary sources.
 
 ---
 
-## What the Research Says Works
+## Verified Research Findings
 
-### Intelligent Tutoring Systems (ITS)
+### 1. Interleaved Practice vs Blocked Practice — HIGH confidence
+
+**Do this:** Mix topic types within a session. Never present 10 maths problems of the same type in a row.
+
+- Interleaved practice produced **72% vs 38% test scores** (d=1.05) in 7th-grade mathematics vs blocked practice — Rohrer, Dedrick & Burgess (2014), Journal of Educational Psychology, n=140
+- Benefit holds even for **superficially dissimilar problem types** — not just same-category interleaving
+- Generalises from procedural (maths) to **inductive/conceptual learning** (visual category recognition) — Kornell & Bjork (2008), Psychological Science
+- **Critical:** Learners (and teachers) **systematically misjudge massed practice as more effective** despite worse outcomes — "fluency illusion." ~72% of participants believed massing was better even when spacing outperformed for ~90% of them (Kornell & Bjork 2008). Children cannot self-select optimal schedules. **The AI must enforce interleaving — do not let children or parents override it.**
+
+**eTutor implementation:**
+- Automatically interleave vocabulary from different topics within a session
+- Revisit concepts from prior sessions within current session (not just at session boundaries)
+- Never present more than 2-3 consecutive questions on the same concept
+
+---
+
+### 2. Retrieval Practice vs Re-studying — HIGH confidence
+
+**Do this:** Ask children to recall information rather than re-presenting it to them.
+
+- Retrieval practice **reliably outperforms restudying** for word and concept learning in children ages 6-10 — Karpicke, Blunt & Smith (2016), Frontiers in Psychology, n=88, mean age 10
+- Benefits hold across **free recall AND recognition tests**, and across reading comprehension and processing speed quartiles
+- Extends to ages **6-7 with pictorial materials** — retrieval with feedback outperformed elaboration and repetitive learning at 5 min, 1 week, and 1 month delays (2019 study, n=104)
+- **Critical nuance:** Retrieval **without feedback** only produces advantage at 1-month delay, not at 5-min or 1-week intervals for ages 6-7 (MED confidence, single study). **Feedback is the active ingredient for near-term retention.** — confirmed 2-1 adversarial vote
+
+**eTutor implementation:**
+- Always follow a question with feedback — never leave a child uncertain whether they were right
+- Favour "what do you remember about X?" over "here's what X is"
+- Spaced repetition system must include retrieval attempts, not just re-presentation of content
+- Voice input naturally enforces retrieval — child must produce the answer, not recognise it
+
+---
+
+### 3. Metacognitive Development Trajectory — HIGH confidence
+
+**Critical age-gating finding. Design around this.**
+
+- **Ages 7-10:** Retrospective monitoring (knowing whether they got it right after the fact) improves over this window — Bayard, van Loon, Steiner & Roebers (2021), longitudinal N=305
+- **Prospective monitoring** (predicting before answering) does **not** improve meaningfully across ages 7-10
+- **Metacognitive control** (acting strategically on monitoring — e.g. deciding to restudy weak areas) does **not mature until ages 11-12** — 5th graders significantly outperformed 3rd graders on strategic control (2009 study, n=133, ages 9-12)
+- **Implication:** Children under 11 **cannot be expected to self-regulate** their learning choices. They need external structure to do what metacognitive control would otherwise provide.
+
+**eTutor implementation:**
+- For ages 6-10: **AI makes all pacing decisions.** Do not present children with "what do you want to study?" choices about spacing or difficulty. They will choose what feels comfortable, not what is optimal.
+- For ages 11-12: Begin introducing mild metacognitive scaffolding — "Do you think you'd remember that next week?" but still don't rely on them to self-schedule
+- The AI's interleaving and spaced repetition systems are compensating for the metacognitive control that children this age don't yet have
+
+---
+
+### 4. Dialogic Reading and Conversational Agents — MED confidence
+
+- Structured, contingent dialogue during storybook reading **significantly improves story comprehension** (β=0.51, p<.001), with engagement (narrative-relevant vocalizations) partially mediating this — Child Development ~2022, ages 3-6
+- A **chatbot-facilitated dialogic reading system** can initiate and sustain peer dialogue in elementary settings, producing four distinct interaction patterns — ETRD 2024, elementary
+- **Refuted:** The claim that a conversational agent replicates dialogic reading *to the same degree* as a human partner was refuted (0-3 adversarial vote). Chatbots produce some of the effect, not all of it.
+- Note: the comprehension study used ages 3-6; transfer to 6-12 is plausible but not confirmed in these sources
+
+**eTutor implementation:**
+- Reading comprehension questions during/after book sessions are evidence-backed
+- The AI should initiate structured questions mid-reading ("What do you think will happen next?") not just wait for the child to ask
+- Don't overclaim AI parity with human tutors — the device is better than nothing and better than passive reading, but human tutoring remains the ceiling
+
+---
+
+### 5. Cognitive Load and Working Memory — MED confidence
+
+- Pauses in instructional content benefit **low working memory capacity (WMC) children** but have **no effect on high-WMC children** — Pinelli & Cojean (2025), Education and Information Technologies
+- This is the **expertise/working-memory reversal effect** (Kalyuga et al. 2003, Sweller 2010): scaffolds that reduce processing demands benefit learners who need them, add nothing for learners managing load comfortably
+- **Implication:** Uniform pacing is wrong. The AI should adapt response complexity and pacing to the individual child's assessed load — not apply the same scaffold to everyone
+
+- Validated cognitive load instruments for **ages 7-12 are sparse** — both subjective ratings and behavioral measures correlate with induced load but not with each other, suggesting they capture different constructs — Altmeyer et al. (2023), British Journal of Educational Psychology, n=36 (pilot)
+
+**eTutor implementation:**
+- Monitor signs of cognitive overload: very short answers, long silences, off-topic questions, repeated "I don't know"
+- When load signals appear: shorten response length, simplify vocabulary, break into smaller steps
+- When child seems under-challenged: increase complexity, ask higher Bloom-level questions
+- One concept per screen — never present more than one new idea at a time on the e-ink display
+
+---
+
+### 6. Physical Breaks and Attention — MED confidence (bonus finding)
+
+- **Daily 10-minute physical activity breaks** over 2 weeks significantly improved attention in 4th-graders (ηp2=0.05 for attention-processing speed) — confirmed primary source
+- Active breaks increase physical activity and **do not reduce time-on-task** relative to control — time displacement concern is not supported
+
+**eTutor implementation:**
+- After ~15-20 minutes, suggest a physical break: "Time for a stretch! Come back when you're ready."
+- Frame it as part of the learning, not an interruption
+
+---
+
+### Intelligent Tutoring Systems (ITS) — PRIOR
 - Effect size **d=0.66** vs conventional classroom instruction (50 controlled studies, 2015 meta-analysis)
 - No statistically significant difference between well-designed ITS and expert human one-on-one tutors (VanLehn 2011)
 - Benefits largest for: special education, non-native English speakers, low-income students — equity upside is real
@@ -180,9 +272,25 @@ When a child asks about something genuinely outside the current learning plan:
 
 ---
 
+## Open Research Questions (Not Yet Verified)
+
+These questions were searched but produced no claims that survived adversarial verification. They remain open design decisions requiring judgment rather than evidence:
+
+| Question | Current eTutor assumption | Confidence |
+|---|---|---|
+| Optimal session length for ages 6-12 | 15-20 min suggested break | Educated guess |
+| TTS/read-aloud effect on phonics and comprehension | Read everything aloud | Plausible, unverified |
+| Screen time format effects (e-ink vs LCD) | E-ink is better for reading | Manufacturer claims, not RCT |
+| Interest-driven vs structured curriculum outcomes | Both — structured plan + interest-following | Unverified |
+| Socratic vs direct instruction for this age range | Socratic preferred | PRIOR, not confirmed in this search |
+| Conversational AI tutoring vs human for ages 6-12 | Better than nothing | Unverified for this age range |
+
+---
+
 ## Spaced Repetition
 
-Vocabulary and concepts should resurface at optimal intervals (Pimsleur GIR principle):
+Vocabulary and concepts should resurface at optimal intervals (Pimsleur GIR principle).
+**Note:** Spaced repetition schedules below are based on Pimsleur's published method and general spacing effect literature, not from verified primary sources in the age 6-12 range.
 
 | Gap since last seen | When to resurface |
 |---|---|
