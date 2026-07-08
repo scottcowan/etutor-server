@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eTutor</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #f5f0e8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #2c2c2c;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    p.subtitle {
+      color: #666;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .children {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 700px;
+    }
+    .child-card {
+      background: white;
+      border: 2px solid #d4c9b0;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.1s;
+      min-width: 180px;
+    }
+    .child-card:hover {
+      border-color: #7a9e7e;
+      transform: translateY(-2px);
+    }
+    .child-avatar {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+    }
+    .child-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2c2c2c;
+    }
+    .child-age {
+      color: #888;
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+    .child-interests {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #7a9e7e;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 eTutor</h1>
+  <p class="subtitle">Who's learning today?</p>
+  <div class="children">
+    {% for child in children %}
+    <a class="child-card" href="/child/{{ child.id }}">
+      <div class="child-avatar">{{ "🌱" if child.age < 8 else "🌿" }}</div>
+      <div class="child-name">{{ child.name }}</div>
+      <div class="child-age">Age {{ child.age }}</div>
+      <div class="child-interests">{{ child.interests[:2] | join(", ") }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</body>
+</html>

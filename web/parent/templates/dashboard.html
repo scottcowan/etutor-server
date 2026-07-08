@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eTutor — Parent Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: #f8f8f8; color: #2c2c2c; }
+    header {
+      background: white; border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem;
+    }
+    header h1 { font-size: 1.3rem; }
+    header a { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; margin-left: auto; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+    h2 { font-size: 1.1rem; color: #555; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .children { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .child-card {
+      background: white; border: 1px solid #e0e0e0; border-radius: 12px;
+      padding: 1.25rem 1.5rem; min-width: 200px; flex: 1;
+    }
+    .child-card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .child-card .meta { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .child-card .interests { font-size: 0.85rem; color: #7a9e7e; }
+    .session-list { display: flex; flex-direction: column; gap: 1rem; }
+    .session {
+      background: white; border: 1px solid #e0e0e0; border-radius: 12px;
+      overflow: hidden;
+    }
+    .session-header {
+      padding: 0.75rem 1.25rem; background: #f5f5f5;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .session-header .name { font-weight: 600; }
+    .session-header .time { font-size: 0.85rem; color: #888; }
+    .turn { padding: 0.75rem 1.25rem; border-bottom: 1px solid #f0f0f0; }
+    .turn:last-child { border-bottom: none; }
+    .turn .q { font-weight: 500; margin-bottom: 0.25rem; }
+    .turn .q::before { content: "Q: "; color: #888; }
+    .turn .a { color: #444; font-size: 0.95rem; }
+    .turn .a::before { content: "A: "; color: #7a9e7e; font-weight: 600; }
+    .empty { color: #aaa; font-style: italic; text-align: center; padding: 2rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📚 eTutor — Parent Dashboard</h1>
+  <a href="/child">Child view →</a>
+</header>
+<main>
+  <h2>Children</h2>
+  <div class="children">
+    {% for child in children %}
+    <div class="child-card">
+      <h3>{{ child.name }}</h3>
+      <div class="meta">Age {{ child.age }} · {{ child.reading_level }}</div>
+      <div class="interests">{{ child.interests | join(", ") }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>Recent Sessions</h2>
+  <div class="session-list">
+    {% set has_sessions = false %}
+    {% for child_id, turns in sessions.items() %}
+      {% if turns %}
+        {% set has_sessions = true %}
+        {% set child = children | selectattr('id', 'equalto', child_id) | first %}
+        <div class="session">
+          <div class="session-header">
+            <span class="name">{{ child.name if child else child_id }}</span>
+            <span class="time">{{ turns[-1].timestamp[:16].replace('T',' ') }} UTC · {{ turns | length }} turns</span>
+          </div>
+          {% for turn in turns[-10:] %}
+          <div class="turn">
+            <div class="q">{{ turn.question }}</div>
+            <div class="a">{{ turn.answer }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if not has_sessions %}
+    <div class="empty">No sessions yet. Start a conversation in the child view.</div>
+    {% endif %}
+  </div>
+</main>
+</body>
+</html>
