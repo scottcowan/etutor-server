@@ -1305,10 +1305,207 @@ _CONNECTIONS = [
 # Full curriculum registry
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Social Patterns — Recurring structures in human societies across time.
+# The goal: teach children to recognise a pattern when it appears in a new
+# context. A child who has studied scapegoating in 1930s Germany should
+# recognise the same structure when they see it elsewhere — in history,
+# in the news, in their own school. These topics are explicitly taught as
+# patterns, not just as historical events.
+# ---------------------------------------------------------------------------
+
+_SOCIAL_PATTERNS = [
+
+    # --- Power and Control ---
+    Topic("pattern_scapegoating", "Scapegoating — Blaming a Group When Things Go Wrong",
+          "Social Patterns", [2, 3], [6, 7, 8, 9], 4, 6,
+          ["ww2_global_conflict"],
+          ["scapegoating", "prejudice", "nazis", "witch trials", "blame",
+           "pattern", "critical thinking", "history", "social"]),
+    Topic("pattern_propaganda", "Propaganda — How Governments and Groups Control Information",
+          "Social Patterns", [2, 3], [6, 7, 8, 9], 4, 6,
+          ["ww1_causes_consequences"],
+          ["propaganda", "persuasion", "posters", "media", "control",
+           "pattern", "critical thinking", "history", "social"]),
+    Topic("pattern_authoritarian_rise", "How Authoritarians Come to Power — The Same Steps, Every Time",
+          "Social Patterns", [3], [8, 9], 4, 6,
+          ["history_of_democracy_britain", "ww2_global_conflict"],
+          ["authoritarianism", "fascism", "dictatorship", "pattern",
+           "critical thinking", "history", "democracy", "social"]),
+    Topic("pattern_revolution", "Revolution — Why They Happen and What Comes Next",
+          "Social Patterns", [3], [8, 9], 4, 6,
+          ["french_revolution_napoleon", "english_civil_war"],
+          ["revolution", "pattern", "france", "russia", "inequality",
+           "change", "history", "social", "critical thinking"]),
+    Topic("pattern_empire_collapse", "How Empires Fall — The Recurring Pattern of Overreach",
+          "Social Patterns", [3], [8, 9], 4, 5,
+          ["decolonisation", "romans_britain"],
+          ["empire", "collapse", "overreach", "pattern", "history",
+           "rome", "british empire", "social", "critical thinking"]),
+    Topic("pattern_moral_panic", "Moral Panics — When Society Decides Something Is a Threat",
+          "Social Patterns", [3], [8, 9], 4, 6,
+          ["media_literacy_ks3"],
+          ["moral panic", "media", "fear", "pattern", "critical thinking",
+           "social", "psychology", "witches", "video games"]),
+    Topic("pattern_ingroup_outgroup", "Us and Them — How Humans Form Groups and Exclude Others",
+          "Social Patterns", [2, 3], [7, 8, 9], 4, 5,
+          ["civil_rights_global"],
+          ["in-group", "out-group", "tribalism", "pattern", "psychology",
+           "prejudice", "social", "critical thinking"]),
+    Topic("pattern_protest_reform", "Protest and Reform — How Ordinary People Change Society",
+          "Social Patterns", [2, 3], [7, 8, 9], 4, 5,
+          ["abolition_movement", "civil_rights_global"],
+          ["protest", "reform", "suffrage", "civil rights", "pattern",
+           "change", "history", "social", "activism"]),
+    Topic("pattern_wealth_inequality", "Wealth and Inequality — Why the Gap Keeps Growing",
+          "Social Patterns", [3], [8, 9], 4, 6,
+          ["industrial_revolution", "empire_trade_economy"],
+          ["inequality", "wealth", "poverty", "pattern", "economics",
+           "history", "social", "critical thinking"]),
+    Topic("pattern_pandemic_response", "Pandemics and Society — How Outbreaks Change the World",
+          "Social Patterns", [2, 3], [7, 8, 9], 4, 5,
+          ["black_death", "human_body_ks2"],
+          ["pandemic", "disease", "pattern", "black death", "covid",
+           "history", "society", "science", "critical thinking"]),
+
+    # --- Economics and Markets ---
+    Topic("pattern_boom_bust", "Boom and Bust — Why Economies Keep Crashing",
+          "Social Patterns", [3], [8, 9], 4, 5,
+          ["industrial_revolution", "entrepreneurship"],
+          ["boom", "bust", "crash", "economics", "pattern",
+           "1929", "2008", "history", "social", "money"]),
+    Topic("pattern_tragedy_commons", "The Tragedy of the Commons — Why We Overuse Shared Resources",
+          "Social Patterns", [3], [8, 9], 4, 6,
+          ["ecosystems_ks3", "climate_change_ks3"],
+          ["tragedy of the commons", "economics", "environment", "pattern",
+           "fishing", "climate", "shared resources", "critical thinking"]),
+]
+
+
+# ---------------------------------------------------------------------------
+# Critical Thinking — How to Think, Not What to Think
+# Explicit teaching of reasoning skills, logical fallacies, evidence
+# evaluation, and how to be an informed person in a world designed to
+# manipulate. These are the meta-skills that protect everything else.
+# ---------------------------------------------------------------------------
+
+_CRITICAL_THINKING = [
+
+    # --- Logic and Reasoning ---
+    Topic("argument_structure", "What Makes a Good Argument — Claims, Evidence, and Reasoning",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["reading_comprehension_ks2"],
+          ["argument", "evidence", "reasoning", "critical thinking", "logic",
+           "debate", "persuasion"]),
+    Topic("logical_fallacies", "Logical Fallacies — The Most Common Tricks Bad Arguments Use",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["argument_structure"],
+          ["logical fallacies", "ad hominem", "straw man", "slippery slope",
+           "critical thinking", "logic", "rhetoric", "debate"]),
+    Topic("correlation_causation", "Correlation Is Not Causation — Why Numbers Lie",
+          "Critical Thinking", [2, 3], [7, 8, 9], 4, 5,
+          ["statistics_ks2"],
+          ["correlation", "causation", "statistics", "critical thinking",
+           "science", "data", "maths", "evidence"]),
+    Topic("statistical_thinking", "How to Read Statistics — Averages, Percentages, and Misleading Graphs",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["statistics_ks2"],
+          ["statistics", "averages", "graphs", "misleading", "data",
+           "critical thinking", "maths", "media"]),
+    Topic("confirmation_bias", "Confirmation Bias — Why We Believe What We Already Think",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["argument_structure"],
+          ["confirmation bias", "bias", "psychology", "critical thinking",
+           "belief", "evidence", "social media"]),
+    Topic("cognitive_biases", "Cognitive Biases — How Our Brains Trick Us",
+          "Critical Thinking", [3], [8, 9], 4, 5,
+          ["confirmation_bias"],
+          ["cognitive bias", "psychology", "anchoring", "heuristics",
+           "decision making", "critical thinking", "behaviour"]),
+
+    # --- Evidence and Information ---
+    Topic("primary_secondary_sources", "Primary and Secondary Sources — How We Know What We Know",
+          "Critical Thinking", [2], [5, 6, 7], 3, 4,
+          ["reading_comprehension_ks2"],
+          ["primary source", "secondary source", "evidence", "history",
+           "critical thinking", "research", "truth"]),
+    Topic("evaluating_sources", "How to Evaluate a Source — Who Made This and Why?",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["primary_secondary_sources", "media_literacy_ks3"],
+          ["sources", "credibility", "bias", "critical thinking", "media",
+           "internet", "research", "CRAAP test"]),
+    Topic("misinformation_disinformation", "Misinformation — How False Information Spreads and Why",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["evaluating_sources", "pattern_propaganda"],
+          ["misinformation", "fake news", "disinformation", "social media",
+           "critical thinking", "media", "internet", "manipulation"]),
+    Topic("how_to_fact_check", "How to Fact-Check — Tools and Techniques for Finding the Truth",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["evaluating_sources"],
+          ["fact checking", "snopes", "reverse image search", "critical thinking",
+           "media", "internet", "journalism", "truth"]),
+    Topic("scientific_method", "The Scientific Method — How We Find Out What's Actually True",
+          "Critical Thinking", [2], [5, 6, 7], 3, 5,
+          ["argument_structure"],
+          ["scientific method", "hypothesis", "experiment", "evidence",
+           "critical thinking", "science", "peer review", "falsifiability"]),
+    Topic("peer_review_consensus", "Peer Review and Scientific Consensus — Why Science Isn't Just Opinion",
+          "Critical Thinking", [3], [8, 9], 4, 5,
+          ["scientific_method"],
+          ["peer review", "consensus", "climate science", "vaccines",
+           "critical thinking", "science", "authority", "evidence"]),
+
+    # --- Media and Information Literacy ---
+    Topic("how_news_works", "How News Works — Editors, Owners, Deadlines, and Incentives",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["journalism_news"],
+          ["news", "media", "editors", "bias", "incentives", "critical thinking",
+           "journalism", "democracy", "how things work"]),
+    Topic("advertising_persuasion", "Advertising — How Companies Change What You Want",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["media_literacy_ks3"],
+          ["advertising", "persuasion", "manipulation", "psychology",
+           "critical thinking", "media", "consumption", "marketing"]),
+    Topic("social_media_algorithms", "Social Media Algorithms — Why You See What You See",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["how_internet_works_deep", "misinformation_disinformation"],
+          ["algorithms", "filter bubble", "social media", "manipulation",
+           "critical thinking", "internet", "wellbeing", "radicalisation"]),
+    Topic("echo_chambers", "Echo Chambers and Filter Bubbles — How the Internet Divides Us",
+          "Critical Thinking", [3], [8, 9], 4, 6,
+          ["social_media_algorithms", "confirmation_bias"],
+          ["echo chamber", "filter bubble", "radicalisation", "social media",
+           "critical thinking", "democracy", "polarisation"]),
+
+    # --- Ethics and Decision Making ---
+    Topic("ethics_dilemmas", "Ethical Dilemmas — How to Think Through Hard Choices",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 4, 6,
+          ["philosophy_for_children"],
+          ["ethics", "dilemmas", "trolley problem", "critical thinking",
+           "philosophy", "decision making", "values", "morality"]),
+    Topic("rights_responsibilities", "Rights and Responsibilities — Where Freedom Ends",
+          "Critical Thinking", [2, 3], [6, 7, 8, 9], 4, 5,
+          ["history_of_democracy_britain"],
+          ["rights", "responsibilities", "freedom", "law", "democracy",
+           "critical thinking", "ethics", "citizenship"]),
+    Topic("how_to_disagree", "How to Disagree Well — Steel-Manning and Charitable Interpretation",
+          "Critical Thinking", [3], [7, 8, 9], 4, 5,
+          ["logical_fallacies", "debate_public_speaking"],
+          ["disagreement", "steel man", "charity", "debate", "listening",
+           "critical thinking", "rhetoric", "respect"]),
+    Topic("how_to_change_your_mind", "How to Change Your Mind — Why Updating Beliefs Is a Strength",
+          "Critical Thinking", [3], [8, 9], 5, 6,
+          ["confirmation_bias", "how_to_disagree"],
+          ["belief change", "epistemics", "humility", "critical thinking",
+           "growth mindset", "evidence", "rationality"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
-    _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS
+    _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
+    _SOCIAL_PATTERNS + _CRITICAL_THINKING
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
