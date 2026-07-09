@@ -140,13 +140,49 @@ This is exactly how good Montessori works in practice: the "freedom" is real but
 
 ---
 
-## 8. Montessori Phonics — Consistent With Evidence (HIGH)
+## 8. Why Minimal Guidance Fails — The CLT Case Against Pure Discovery (HIGH)
+
+The most important theoretical challenge to Montessori "freedom" from the evidence base:
+
+**Kirschner, Sweller & Clark (2006)** — *Educational Psychologist* 41(2):75-86, DOI:10.1207/s15326985ep4102_1 — "Why Minimal Guidance During Instruction Does Not Work."
+
+Core argument: novice learners have severely limited working memory. Without explicit guidance, they waste cognitive resources on search and trial-and-error rather than on learning the content. Discovery learning, problem-based learning, and inquiry-based teaching all share this failure mode for novices. The evidence from cognitive load theory (Sweller) is that worked examples and explicit instruction are dramatically more efficient for novices than unguided discovery.
+
+**The expertise reversal effect** (Zambrano et al. 2019, DOI:10.1016/j.learninstruc.2019.05.011): What works for novices (explicit guidance) actively interferes with experts. As children become more proficient, they need less scaffolding. A well-designed tutor should fade guidance as mastery increases — not apply uniform scaffolding forever.
+
+**The reconciliation with Montessori:**
+- Montessori classrooms are NOT actually minimal guidance. The prepared environment *is* the guidance — materials are carefully designed to be self-correcting, sequenced, and scaffolded. The teacher observes and intervenes when a child is genuinely stuck.
+- Hmelo-Silver et al. (2007) rebuttal: scaffolded inquiry ≠ minimal guidance. The issue is *unscaffolded* discovery, not all child-led exploration.
+- **The SDT bridge (Ryan & Deci 1985):** Autonomy support (child perceives themselves as choosing) boosts intrinsic motivation even when the environment is carefully structured. The key is that the constraint is *invisible* — the child experiences freedom while the system enforces optimal sequencing.
+
+**etutor-server implication:** The algorithm enforcing spaced repetition and interleaving should be invisible to the child. They experience "I'm choosing to explore volcanoes today" — the system quietly ensures they also revisit last week's water cycle, that questions escalate in Bloom level, and that they can't skip prerequisites. This is the prepared environment implemented in software.
+
+---
+
+## 9. Montessori Phonics — Strong Mechanism Evidence, No Sandpaper-Letter RCT (HIGH/MED)
 
 Montessori's phonics approach: sandpaper letters (tactile + visual + auditory), moveable alphabet, phonetic approach to reading (sound out before whole-word), "explosion into reading" (sudden fluency emergence).
 
-**This is broadly consistent with the phonics evidence base.** The UK's systematic synthetic phonics programme (which the NC mandates) is the same core idea: decode letter-sound correspondences before whole-word recognition. The sandpaper letters add a tactile/motor encoding channel — consistent with embodied learning research (`docs/research.md` §7.3, de Nooijer et al. 2013).
+### Systematic synthetic phonics — robust evidence base (HIGH)
+- **NRP (2000):** Meta-analysis of 38 studies. Systematic phonics outperforms unsystematic or non-phonics instruction. Mean d=0.41 (Ehri et al. 2001, DOI:10.3102/00346543071003393). Significant benefits for low achievers and low-SES.
+- **Clackmannanshire study (Johnston & Watson 2005/2012):** Synthetic phonics group maintained significantly higher word reading and spelling through primary school, n=393. DOI:10.1007/s11145-011-9323-x
+- **EEF Toolkit:** +4 months' progress for ages 4–7. Low cost, extensive evidence.
 
-**etutor-server implication**: Voice-first interaction enforces the phonetic production that underpins Montessori's literacy approach. The child must say the word, not tap a button. This is already the design.
+### Haptic letter tracing — peer-reviewed mechanism for sandpaper letters (HIGH)
+No Montessori-branded RCT of sandpaper letters was found (PubMed returns zero hits for "sandpaper letters"). But the Gentaz/Longcamp lab has produced consistent peer-reviewed evidence validating the exact mechanism:
+
+- **Bara, Gentaz, Colé & Sprenger-Charolles (2004):** Kindergarteners with haptic letter exploration outperformed visual-only controls on pseudo-word decoding and phoneme-grapheme correspondence. DOI:10.1016/j.cogdev.2004.05.003
+- **Bara, Gentaz & Colé (2007):** Low-SES kindergarteners with visuo-haptic training outperformed visual-only on decoding. DOI:10.1348/026151007X186643
+- **Longcamp et al. (2005):** Preschoolers trained by handwriting recognised letters significantly better than typing-trained peers. PMID:15823243
+- **Longcamp et al. (2008):** fMRI — handwriting training produced stronger motor-region activation during subsequent visual letter recognition than typing training. PMID:18201124
+- **Ecalle et al. (2021):** RCT n=46; multisensory letter-sonification group showed superior reading and spelling gains. PMID:34311303
+
+**The mechanism is validated even though the specific Montessori material isn't tested.** Tactile + visual + auditory encoding of letters is more effective than visual alone, especially for at-risk and low-SES children. This is the strongest evidence for Montessori's most distinctive literacy tool.
+
+### Moveable alphabet and writing-before-reading
+No peer-reviewed empirical study isolating the moveable alphabet as a causal variable was found. The "explosion into reading" (sudden fluency emergence after pre-literacy work) remains Montessori's clinical observation, not yet an empirically tested phenomenon.
+
+**etutor-server implication:** The haptic channel isn't available on an e-ink screen. But voice-first interaction enforces the phonetic production that underpins Montessori's and synthetic phonics' shared approach — the child must say the word aloud, not tap a button. This is already the design. For a child learning letters, physical sandpaper letters alongside the device would be the Montessori complement — worth noting in parent guidance.
 
 ---
 
@@ -180,6 +216,24 @@ Montessori's phonics approach: sandpaper letters (tactile + visual + auditory), 
 | Reading: phonetic production first | Yes (voice-first) | Done |
 | Sensitive periods as heuristic | Not yet | Add to system prompt context: some concepts are easiest at certain ages |
 | Freedom within limits framing | Not yet | Frame child choices explicitly: pick the topic, trust the system with pacing |
+
+---
+
+## Additional Key Citations
+
+| Paper | Finding | DOI/PMID |
+|---|---|---|
+| VanLehn (2011) | Step-based ITS ≈ human tutoring (~0.76 SD vs no tutoring); revises Bloom's 2σ claim | DOI:10.1080/00461520.2011.611369 |
+| Ma et al. (2014) | ITS meta-analysis: g=0.42 vs teacher-led, g=0.57 vs non-ITS CBI | DOI:10.1037/a0037123 |
+| Kirschner, Sweller & Clark (2006) | Minimal guidance fails for novices — CLT basis | DOI:10.1207/s15326985ep4102_1 |
+| Deci & Ryan (1985) | SDT: autonomy/competence support → intrinsic motivation; extrinsic controls undermine | DOI:10.1007/978-1-4899-2271-7 |
+| Bara et al. (2004) | Haptic letter training → better phoneme-grapheme correspondence | DOI:10.1016/j.cogdev.2004.05.003 |
+| Longcamp et al. (2005) | Handwriting > typing for letter recognition in preschoolers | PMID:15823243 |
+| Ehri et al. (2001) | NRP phonics meta-analysis: d=0.41 systematic phonics | DOI:10.3102/00346543071003393 |
+| Rohrer et al. (2015) | Interleaved maths practice: grade 7 randomised, significantly higher delayed test | DOI:10.1037/edu0000001 |
+| Lillard & Else-Quest (2006) | Montessori lottery study: better literacy, maths, EF at ages 5 and 12 | DOI:10.1126/science.1132362 |
+| Courtier et al. (2021) | French RCT: reading d=0.68 for disadvantaged children | PMID:33932226 |
+| Lillard et al. (2025) | National RCT: >0.2 SD reading/EF at kindergarten exit | PMID:41115200 |
 
 ---
 
