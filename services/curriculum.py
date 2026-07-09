@@ -1501,11 +1501,171 @@ _CRITICAL_THINKING = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Social Intelligence — The skills that determine how well a person
+# moves through the world with other people. Not "soft skills" — these
+# are some of the hardest skills to learn and among the most consequential.
+# Explicitly taught rather than assumed to develop naturally.
+# Covers: reading people, communication, persuasion, leadership, empathy,
+# conflict, negotiation, relationships.
+# ---------------------------------------------------------------------------
+
+_SOCIAL_INTELLIGENCE = [
+
+    # --- Self-Awareness ---
+    Topic("understanding_emotions", "Understanding Your Emotions — What They Are and What They're For",
+          "Social Intelligence", [1, 2], [2, 3, 4, 5, 6], 2, 4,
+          ["health_wellbeing_ks1"],
+          ["emotions", "feelings", "self-awareness", "psychology",
+           "social skills", "wellbeing", "empathy"]),
+    Topic("emotional_regulation", "Managing Strong Emotions — What to Do When You're Overwhelmed",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7], 2, 4,
+          ["understanding_emotions"],
+          ["emotional regulation", "anger", "anxiety", "calm", "self-control",
+           "social skills", "wellbeing", "psychology"]),
+    Topic("self_awareness_strengths", "Knowing Yourself — Strengths, Weaknesses, and How You Come Across",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 4, 5,
+          ["understanding_emotions"],
+          ["self-awareness", "strengths", "feedback", "identity",
+           "social skills", "leadership", "growth"]),
+    Topic("growth_mindset", "Growth Mindset — The Belief That You Can Get Better at Things",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7], 2, 4,
+          [],
+          ["growth mindset", "effort", "resilience", "failure", "learning",
+           "psychology", "social skills", "wellbeing"]),
+
+    # --- Reading People ---
+    Topic("reading_body_language", "Body Language — What People Say Without Words",
+          "Social Intelligence", [2], [5, 6, 7, 8], 3, 4,
+          ["understanding_emotions"],
+          ["body language", "nonverbal", "communication", "reading people",
+           "social skills", "empathy", "psychology"]),
+    Topic("active_listening", "Active Listening — How to Really Hear What Someone Is Saying",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7, 8], 2, 4,
+          [],
+          ["listening", "communication", "empathy", "social skills",
+           "relationships", "understanding", "attention"]),
+    Topic("perspective_taking", "Perspective Taking — Seeing the World Through Someone Else's Eyes",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7], 3, 5,
+          ["active_listening"],
+          ["perspective", "empathy", "theory of mind", "social skills",
+           "understanding", "relationships", "psychology"]),
+    Topic("empathy_compassion", "Empathy and Compassion — The Difference, and Why Both Matter",
+          "Social Intelligence", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["perspective_taking"],
+          ["empathy", "compassion", "kindness", "social skills",
+           "relationships", "wellbeing", "ethics", "psychology"]),
+
+    # --- Communication ---
+    Topic("clear_communication", "Communicating Clearly — Saying What You Mean and Being Understood",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7], 2, 4,
+          ["active_listening"],
+          ["communication", "clarity", "language", "social skills",
+           "speaking", "listening", "relationships"]),
+    Topic("asking_good_questions", "Asking Good Questions — The Most Underrated Social Skill",
+          "Social Intelligence", [2], [4, 5, 6, 7, 8], 3, 5,
+          ["clear_communication"],
+          ["questions", "curiosity", "communication", "social skills",
+           "interviews", "relationships", "learning"]),
+    Topic("giving_receiving_feedback", "Giving and Receiving Feedback — Without Crushing or Being Crushed",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["clear_communication", "emotional_regulation"],
+          ["feedback", "criticism", "communication", "social skills",
+           "growth", "leadership", "relationships"]),
+    Topic("difficult_conversations", "Having Difficult Conversations — How to Talk About Hard Things",
+          "Social Intelligence", [3], [7, 8, 9], 4, 5,
+          ["emotional_regulation", "clear_communication"],
+          ["difficult conversations", "conflict", "communication",
+           "social skills", "relationships", "courage", "honesty"]),
+
+    # --- Persuasion and Influence ---
+    Topic("rhetoric_persuasion", "Rhetoric — The Art of Speaking Persuasively",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["argument_structure"],
+          ["rhetoric", "persuasion", "ethos", "pathos", "logos", "speaking",
+           "social skills", "debate", "influence", "aristotle"]),
+    Topic("negotiation_basics", "Negotiation — How to Get What You Want Without Losing the Relationship",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["clear_communication", "perspective_taking"],
+          ["negotiation", "compromise", "win-win", "conflict", "social skills",
+           "relationships", "business", "life skills"]),
+    Topic("debate_skills", "Debate — How to Argue a Position Well, Even One You Don't Hold",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 4, 6,
+          ["rhetoric_persuasion", "how_to_disagree"],
+          ["debate", "argument", "evidence", "social skills", "speaking",
+           "critical thinking", "confidence", "logic"]),
+    Topic("public_speaking_confidence", "Public Speaking — How to Speak to a Group Without Freezing",
+          "Social Intelligence", [2, 3], [5, 6, 7, 8, 9], 3, 4,
+          ["clear_communication"],
+          ["public speaking", "confidence", "speaking", "social skills",
+           "presentations", "performance", "anxiety"]),
+    Topic("storytelling_social", "Storytelling — How Stories Change Minds and Move People",
+          "Social Intelligence", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["creative_writing_ks2", "rhetoric_persuasion"],
+          ["storytelling", "narrative", "persuasion", "social skills",
+           "communication", "influence", "memory", "culture"]),
+
+    # --- Working With Others ---
+    Topic("teamwork_collaboration", "Teamwork — How Groups Work Well Together (and Why They Often Don't)",
+          "Social Intelligence", [1, 2], [3, 4, 5, 6, 7], 2, 4,
+          [],
+          ["teamwork", "collaboration", "groups", "social skills",
+           "leadership", "communication", "conflict", "sport"]),
+    Topic("managing_conflict", "Managing Conflict — Turning Arguments into Resolutions",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["emotional_regulation", "negotiation_basics"],
+          ["conflict", "resolution", "mediation", "social skills",
+           "relationships", "communication", "leadership"]),
+    Topic("leadership_basics", "Leadership — What It Is, What It Isn't, and How to Do It",
+          "Social Intelligence", [2, 3], [7, 8, 9], 4, 5,
+          ["self_awareness_strengths", "teamwork_collaboration"],
+          ["leadership", "responsibility", "motivation", "social skills",
+           "management", "teams", "influence", "service"]),
+    Topic("managing_up", "Managing Up — How to Work Well with People Who Have Power Over You",
+          "Social Intelligence", [3], [8, 9], 4, 5,
+          ["leadership_basics", "clear_communication"],
+          ["managing up", "workplace", "authority", "social skills",
+           "communication", "relationships", "professional"]),
+    Topic("building_trust", "Building Trust — Why It Matters and How You Earn It",
+          "Social Intelligence", [2, 3], [7, 8, 9], 3, 5,
+          ["empathy_compassion", "giving_receiving_feedback"],
+          ["trust", "reliability", "honesty", "social skills",
+           "relationships", "leadership", "character"]),
+    Topic("reading_rooms_social", "Reading the Room — How to Adapt to Different Social Contexts",
+          "Social Intelligence", [3], [8, 9], 4, 5,
+          ["reading_body_language", "self_awareness_strengths"],
+          ["social awareness", "context", "adapt", "social skills",
+           "professional", "relationships", "intelligence"]),
+
+    # --- Relationships ---
+    Topic("making_keeping_friends", "Making and Keeping Friends — What Friendship Actually Requires",
+          "Social Intelligence", [1, 2], [2, 3, 4, 5, 6], 2, 4,
+          ["understanding_emotions"],
+          ["friendship", "relationships", "social skills", "kindness",
+           "loyalty", "social", "wellbeing"]),
+    Topic("handling_rejection", "Handling Rejection — How to Deal with Disappointment and Move On",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["emotional_regulation", "growth_mindset"],
+          ["rejection", "resilience", "disappointment", "social skills",
+           "wellbeing", "psychology", "relationships"]),
+    Topic("peer_pressure", "Peer Pressure — How Groups Change Individual Behaviour",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["pattern_ingroup_outgroup", "emotional_regulation"],
+          ["peer pressure", "conformity", "identity", "social skills",
+           "psychology", "wellbeing", "social patterns", "resilience"]),
+    Topic("healthy_unhealthy_relationships", "Healthy and Unhealthy Relationships — Knowing the Difference",
+          "Social Intelligence", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["relationships_ks2", "empathy_compassion"],
+          ["relationships", "healthy", "red flags", "social skills",
+           "wellbeing", "safety", "boundaries", "trust"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
-    _SOCIAL_PATTERNS + _CRITICAL_THINKING
+    _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
