@@ -3961,6 +3961,172 @@ _WORLD_RELIGIONS = [
           ["Christianity", "Catholic", "Protestant", "Orthodox", "Anglican",
            "Baptist", "denominations", "history", "religion", "comparison"]),
 
+    # --- Church History as Political History ---
+    Topic("church_as_political_power", "The Church as a State — How the Papacy Became a Political Institution",
+          "Religion", [3], [7, 8, 9], 4, 6,
+          ["christianity_history", "norman_conquest"],
+          ["Catholic Church", "papacy", "pope", "papal states", "political power",
+           "Constantine", "Donation of Constantine", "Christendom", "history",
+           "religion", "politics"]),
+    # Constantine's conversion (312 AD) turned a persecuted sect into the
+    # Roman Empire's official religion. Within a century, emperors were
+    # calling church councils and exiling bishops. The Donation of Constantine
+    # (a forged document, exposed by Lorenzo Valla in 1440) was used to
+    # justify the Pope's claim to rule central Italy. By the 11th century,
+    # the Pope could crown and depose emperors. The Papal States were a
+    # physical territory the Pope ruled as a monarch until 1870.
+    # The key question: was this a corruption of Christianity, or an
+    # inevitable consequence of any institution acquiring wealth and influence?
+
+    Topic("indulgences_simony", "Indulgences, Simony, and the Church as a Business",
+          "Religion", [3], [8, 9], 4, 6,
+          ["church_as_political_power"],
+          ["indulgences", "simony", "Church corruption", "selling salvation",
+           "purgatory", "Johann Tetzel", "nepotism", "Reformation",
+           "religion", "history", "money", "corruption"]),
+    # An indulgence was a certificate reducing time in purgatory, sold for
+    # cash. Johann Tetzel's sales pitch: "As soon as the coin in the coffer
+    # rings, the soul from purgatory springs." This was one direct cause of
+    # Luther's 95 Theses. Simony: selling church offices (bishoprics, priest
+    # positions) to the highest bidder — named after Simon Magus who tried
+    # to buy the Holy Spirit in Acts 8. Nepotism: popes appointing relatives
+    # as cardinals (the word comes from Italian "nipote" — nephew, a
+    # euphemism for illegitimate sons). The Borgia popes as the extreme case.
+    # This is the Church as a feudal revenue system, not just a spiritual one.
+
+    Topic("crusades_as_geopolitics", "The Crusades — Holy War, Land Grab, and the Politics of Salvation",
+          "Religion", [3], [7, 8, 9], 4, 6,
+          ["church_as_political_power", "islamic_civilisation_golden_age",
+           "norman_conquest"],
+          ["Crusades", "Jerusalem", "holy war", "Pope Urban II", "Saladin",
+           "Richard I", "sacking of Constantinople", "geopolitics", "religion",
+           "history", "violence", "colonialism"]),
+    # Pope Urban II launched the First Crusade in 1095 offering full
+    # indulgence (cancellation of all sins) to those who fought. The actual
+    # motivations: land hunger among younger sons with no inheritance,
+    # Byzantine Emperor asking for help against the Seljuk Turks, papal
+    # desire to reunite Eastern and Western churches, and genuine religious
+    # fervour all at once. The Fourth Crusade (1204) never reached the Holy
+    # Land — Crusaders sacked Constantinople, a Christian city, instead.
+    # Saladin's recapture of Jerusalem (1187) was more merciful than the
+    # Christian capture (1099) in which chroniclers described the streets
+    # running with blood. What does this tell us about how religious
+    # motivation combines with other interests?
+
+    Topic("inquisition", "The Inquisition — Church Courts, Heresy, and the Machinery of Conformity",
+          "Religion", [3], [8, 9], 4, 6,
+          ["church_as_political_power", "pattern_authoritarian_rise"],
+          ["Inquisition", "heresy", "torture", "Spanish Inquisition", "Cathars",
+           "Albigensians", "witchcraft", "confession", "surveillance",
+           "religion", "history", "power", "conformity"]),
+    # The Inquisition was a formal legal process, not mob violence.
+    # The Medieval Inquisition (1184) targeted the Cathars in southern France —
+    # a Christian sect the Church declared heretical. The Spanish Inquisition
+    # (1478) was run by the Spanish Crown to enforce religious unity after
+    # the Reconquista (converting or expelling Jews and Muslims). Torture
+    # was permitted but regulated. Execution was carried out by civil
+    # authorities (the Church handed over the convicted — "relaxed to the
+    # secular arm" — a bureaucratic euphemism). The popular image (nobody
+    # expects it) exaggerates the terror; the scholarly debate is about
+    # whether it was more or less violent than secular justice of the time.
+    # The core question: what does it mean when an institution that claims
+    # spiritual authority uses physical coercion?
+
+    Topic("great_schism_east_west", "The Great Schism — When Christianity Split in Two (1054)",
+          "Religion", [3], [7, 8, 9], 3, 5,
+          ["christianity_history", "church_as_political_power"],
+          ["Great Schism", "East-West Schism", "Orthodox", "Catholic",
+           "Pope", "Patriarch", "filioque", "Constantinople", "Rome",
+           "religion", "history", "politics"]),
+    # The split of 1054 had been building for centuries: theological dispute
+    # (the filioque — whether the Holy Spirit proceeds "from the Father"
+    # or "from the Father and the Son"), political dispute (who has supreme
+    # authority — the Pope in Rome or the Patriarch in Constantinople?),
+    # cultural divide (Latin West vs Greek East), and the practical reality
+    # that Rome and Constantinople had been growing apart for 700 years.
+    # The mutual excommunications of 1054 were formally lifted in 1965.
+
+    Topic("avignon_papacy", "The Avignon Papacy — When France Controlled the Church",
+          "Religion", [3], [8, 9], 4, 5,
+          ["church_as_political_power", "hundred_years_war"],
+          ["Avignon", "Avignon papacy", "Babylonian captivity", "French papacy",
+           "papal court", "corruption", "Petrarch", "history", "religion",
+           "politics", "France"]),
+    # From 1309–1377, seven popes lived not in Rome but in Avignon, France,
+    # under effective French royal control. Petrarch called it the "Babylonian
+    # Captivity of the Church." When the papacy returned to Rome, there were
+    # briefly two — then three — simultaneous popes each excommunicating the
+    # others (the Western Schism, 1378–1417). The Council of Constance (1414)
+    # ended it by deposing all three and electing a new one. This episode
+    # permanently damaged the papacy's claim to spiritual independence from
+    # political power.
+
+    Topic("reformation_causes", "The Reformation — Why Luther's 95 Theses Changed the World",
+          "Religion", [2, 3], [7, 8, 9], 4, 6,
+          ["indulgences_simony", "printing_revolution"],
+          ["Reformation", "Luther", "95 Theses", "Calvin", "Henry VIII",
+           "Protestant", "printing press", "Bible in vernacular", "sola scriptura",
+           "religion", "history", "politics", "revolution"]),
+    # The Reformation only succeeded where previous reform movements (Wycliffe,
+    # Hus) failed because of one technology: the printing press. Luther's
+    # 95 Theses were printed and distributed across Germany within weeks.
+    # The Reformation was inseparable from political power: German princes
+    # who converted to Protestantism could seize Church lands. Henry VIII's
+    # "Reformation" in England was explicitly a political act (divorce) that
+    # created a national church under royal control. Calvin's Geneva was a
+    # theocracy. The Peace of Augsburg (1555): "cuius regio, eius religio"
+    # — whoever rules determines the religion of their territory.
+
+    Topic("counter_reformation", "The Counter-Reformation — How the Catholic Church Fought Back",
+          "Religion", [3], [8, 9], 4, 5,
+          ["reformation_causes"],
+          ["Counter-Reformation", "Council of Trent", "Jesuits", "Inquisition",
+           "Index Librorum Prohibitorum", "baroque art", "Catholic revival",
+           "religion", "history", "politics"]),
+    # The Council of Trent (1545–63) defined Catholic doctrine in response
+    # to Protestant challenges. The Jesuits (Society of Jesus, founded 1540)
+    # became the Church's intellectual and missionary vanguard — establishing
+    # universities across Europe and Asia. The Index Librorum Prohibitorum
+    # (list of banned books) ran until 1966. The Baroque art movement was
+    # partly a Counter-Reformation tool — overwhelming emotional experience
+    # to compete with Protestant austerity. The Thirty Years War (1618–48)
+    # was the military conclusion: eight million dead, ending with a compromise
+    # that permanently fractured Christendom.
+
+    Topic("religion_empire_missions", "Missions and Empire — How Christianity Spread Through Colonialism",
+          "Religion", [3], [8, 9], 4, 6,
+          ["reformation_causes", "british_empire_expansion",
+           "transatlantic_slave_trade"],
+          ["missions", "missionaries", "colonialism", "conversion", "forced conversion",
+           "cultural destruction", "indigenous", "religion", "empire", "history",
+           "ethics", "decolonisation"]),
+    # The Spanish Requirement (1513): conquistadors were legally required to
+    # read a document to indigenous people (often in Latin, through an interpreter
+    # they didn't understand) stating that the Pope had given Spain authority
+    # over their lands. If they didn't submit, war was justified. Missions in
+    # the Americas combined genuine belief, cultural imperialism, and political
+    # control. Residential schools in Canada and Australia (children removed
+    # from families to be "civilised") ran into the 20th century.
+    # The question isn't whether individual missionaries believed sincerely —
+    # many did. The question is what happens when sincere belief is backed
+    # by imperial power.
+
+    Topic("liberation_theology", "Liberation Theology — When the Church Sided with the Poor",
+          "Religion", [3], [9], 4, 6,
+          ["religion_empire_missions", "civil_rights_global"],
+          ["liberation theology", "Oscar Romero", "Latin America", "poverty",
+           "social justice", "Marxism", "Vatican", "religion", "politics",
+           "20th century", "history"]),
+    # Liberation theology (1960s-70s, Latin America): God has a "preferential
+    # option for the poor." The Church's mission is not otherworldly salvation
+    # but earthly justice. Archbishop Oscar Romero of El Salvador spoke against
+    # the US-backed military government and was assassinated at the altar in
+    # 1980. The Vatican under John Paul II actively suppressed liberation
+    # theology, seeing its Marxist analysis as incompatible with Christianity.
+    # A genuine theological and political argument, still ongoing.
+    # Pope Francis (elected 2013) is the first Latin American pope and has
+    # rehabilitated much of liberation theology's language.
+
     # --- Islam ---
     Topic("islam_origins", "Islam — Muhammad, the Quran, and the First Community",
           "Religion", [2], [5, 6, 7], 2, 4, [],
