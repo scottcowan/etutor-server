@@ -39,6 +39,71 @@ style translates well to Socratic tutoring.
 
 ---
 
+## Connections and How the World Works
+
+### Connections — James Burke (BBC Books / Little, Brown, 1978)
+*The foundational text for the Connections curriculum section.*
+
+Companion book to the BBC TV series (1978). Ten chains tracing unexpected links
+between historical events and modern technology. The series and book show children
+that history is not a sequence of isolated events — it is a web where pulling one
+thread moves things far away in time and place.
+
+**Chains most relevant to the curriculum:**
+
+| Episode | Chain | Curriculum connection |
+|---|---|---|
+| 1: The Trigger Effect | Depends on interconnected systems; one failure cascades | `connection_telegraph_internet` |
+| 2: Death in the Morning | Plough → heavy cavalry → stirrup → feudalism → universities | `connection_stirrup_feudalism`, `connection_plough_university` |
+| 3: Distant Voices | Telegraph → telephone → radio → radar → microwave oven | `connection_telegraph_internet` |
+| 4: Faith in Numbers | Abacus → accounting → double-entry bookkeeping → capitalism | `connection_clock_navigation_capitalism` |
+| 5: The Wheel of Fortune | Mechanical clock → navigation → longitude → empire | `connection_clock_navigation_capitalism` |
+| 6: Thunder in the Skies | Plough → cannon → ballistics → calculus → computers | `connection_cannon_calculus` |
+| 7: The Long Chain | Dye → synthetic chemistry → drugs → penicillin | `connection_dye_medicine` |
+| 8: Eat, Drink, and Be Merry | Glass → telescope → microscope → germ theory | `connection_glass_telescope_microscope` |
+| 9: Countdown | Printing press → Reformation → scientific revolution | `connection_printing_revolution` |
+| 10: Yesterday, Tomorrow, and You | All chains converge on the question of who controls systems | All connections topics |
+
+**Also in the series:**
+- *Connections 2* (1994) — ten more chains
+- *Connections 3* (1997) — ten more
+- *The Day the Universe Changed* (1985) — eight episodes on ideas that transformed how humans understand the world (evolution, germ theory, printing, industrial science, psychology, relativism)
+
+**Use for:** The `_CONNECTIONS` curriculum section — each episode is a 45-minute source
+of session narrative hooks. The tutor can open a Connections topic with a teaser:
+"In 1066, a horse's foot changed the whole of European history — want to know how?"
+
+**The Way Things Work — David Macaulay (Dorling Kindersley, 1988)**
+Illustrated reference for how machines, materials, and technology work. Covers
+levers, pulleys, engines, electricity, nuclear power, and digital technology.
+The standard reference for the `_HOW_THINGS_ARE_MADE` and `_MATERIALS` curriculum
+sections. Ages 8–14.
+Updated as *The New Way Things Work* (1998) to include digital technology.
+
+**The Disappearing Spoon — Sam Kean (Little, Brown, 2010)**
+A story for each element of the periodic table. Covers the discovery, properties,
+and human stories of every element — mercury poisoning, the nuclear arms race,
+the rare earth metals that power modern devices.
+*Why it works:* Each chapter is self-contained and 15–20 minutes. Connects
+`_MATERIALS` topics (aluminium, copper, rare earth, lithium) to history and human
+drama. Age 12+.
+
+**The Alchemy of Air — Thomas Haber (Crown, 2008)**
+The story of Fritz Haber and the Haber process — how nitrogen fixation fed billions
+but also enabled chemical warfare and the Holocaust. The most important story in
+`connection_nitrogen_war_food`.
+Age 13+.
+
+**Stuff Matters — Mark Miodownik (Viking, 2013)**
+A materials scientist explores ten everyday materials — steel, glass, paper,
+chocolate, foam, plastic, graphite, porcelain, concrete, fabric. Each chapter
+is a meditation on a material's history, properties, and meaning.
+*Why it works:* Short chapters, beautiful prose, and the material itself as the
+narrative anchor. Maps directly to the `_MATERIALS` curriculum section.
+Age 11+.
+
+---
+
 ## British Empire — Deep Reference
 
 ### Empire: How Britain Made the Modern World — Niall Ferguson (Allen Lane, 2003)

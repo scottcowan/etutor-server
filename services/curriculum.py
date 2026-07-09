@@ -1055,13 +1055,260 @@ _HOW_THINGS_ARE_MADE = [
 
 
 # ---------------------------------------------------------------------------
+# Materials — From Earth to Object to Waste
+# Each topic follows: what is this material → where does it come from →
+# how is it extracted/processed → what is it used for → what happens at end of life.
+# Grouped by material family. Connects science, geography, history, and environment.
+# ---------------------------------------------------------------------------
+
+_MATERIALS = [
+
+    # --- Metals ---
+    Topic("iron_and_steel", "Iron and Steel — From Ore to the Modern World",
+          "Materials", [2, 3], [5, 6, 7, 8], 3, 5,
+          ["particle_model"],
+          ["iron", "steel", "smelting", "ore", "industrial revolution", "materials",
+           "mining", "engineering", "how things work"]),
+    Topic("aluminium", "Aluminium — The Metal That Comes From Clay",
+          "Materials", [2, 3], [6, 7, 8], 3, 5,
+          ["particle_model", "how_electricity_generated"],
+          ["aluminium", "bauxite", "electrolysis", "smelting", "recycling",
+           "energy", "materials", "how things work"]),
+    Topic("copper", "Copper — The First Metal and How We Still Use It",
+          "Materials", [2, 3], [5, 6, 7], 3, 4,
+          ["particle_model"],
+          ["copper", "mining", "electricity", "wiring", "bronze age", "materials",
+           "history", "how things work"]),
+    Topic("gold_silver", "Gold and Silver — Why Rare Metals Matter",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["particle_model"],
+          ["gold", "silver", "mining", "trade", "jewellery", "history",
+           "empire", "materials", "how things work"]),
+    Topic("rare_earth_metals", "Rare Earth Metals — Inside Every Modern Device",
+          "Materials", [3], [8, 9], 4, 5,
+          ["how_phones_made"],
+          ["rare earth", "lithium", "cobalt", "mining", "environment",
+           "electronics", "trade", "globalisation", "how things work"]),
+    Topic("alloys", "Alloys — Why We Mix Metals",
+          "Materials", [3], [7, 8, 9], 3, 5,
+          ["iron_and_steel", "copper"],
+          ["alloys", "bronze", "brass", "stainless steel", "materials science",
+           "chemistry", "engineering", "how things work"]),
+
+    # --- Textiles and Natural Fibres ---
+    Topic("wool_production", "Wool — From Sheep to Yarn to Cloth",
+          "Materials", [1, 2], [3, 4, 5], 1, 3,
+          [],
+          ["wool", "sheep", "shearing", "spinning", "weaving", "textiles",
+           "farming", "materials", "how things work"]),
+    Topic("cotton_production", "Cotton — Field, Gin, Mill, and the World It Made",
+          "Materials", [2], [5, 6, 7], 3, 5,
+          ["transatlantic_slave_trade"],
+          ["cotton", "slavery", "industrial revolution", "textiles", "trade",
+           "empire", "materials", "history", "how things work"]),
+    Topic("silk_production", "Silk — The Secret of the Silkworm and the Silk Road",
+          "Materials", [2, 3], [5, 6, 7], 3, 4,
+          [],
+          ["silk", "silkworm", "china", "trade", "silk road", "textiles",
+           "history", "materials", "how things work"]),
+    Topic("linen_flax", "Linen — From Flax Plant to Fabric",
+          "Materials", [2], [5, 6], 2, 3,
+          ["plants_ks2"],
+          ["linen", "flax", "textiles", "plant fibres", "materials",
+           "farming", "how things work"]),
+    Topic("synthetic_fibres", "Synthetic Fibres — Nylon, Polyester, and Oil-Based Fabric",
+          "Materials", [2, 3], [6, 7, 8], 3, 5,
+          ["how_plastic_is_made", "cotton_production"],
+          ["nylon", "polyester", "synthetic", "plastic", "textiles", "environment",
+           "materials", "how things work"]),
+    Topic("leather_production", "Leather — From Animal Hide to Shoe and Belt",
+          "Materials", [2, 3], [5, 6, 7], 2, 4,
+          [],
+          ["leather", "tanning", "hide", "animals", "ethics", "materials",
+           "history", "how things work"]),
+    Topic("rubber_production", "Rubber — Natural and Synthetic, From Tree to Tyre",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["how_plastic_is_made"],
+          ["rubber", "latex", "vulcanisation", "tyres", "south america",
+           "empire", "materials", "history", "how things work"]),
+
+    # --- Stone, Clay, and Ceramics ---
+    Topic("stone_materials", "Stone — Granite, Limestone, Marble, and How We Shape It",
+          "Materials", [2], [4, 5, 6], 2, 4,
+          ["rocks_soils"],
+          ["stone", "granite", "limestone", "marble", "quarrying", "building",
+           "history", "materials", "how things work"]),
+    Topic("clay_ceramics", "Clay and Ceramics — From Mud to Pottery to Porcelain",
+          "Materials", [2], [4, 5, 6], 2, 4,
+          ["rocks_soils"],
+          ["clay", "pottery", "ceramics", "kiln", "china", "history",
+           "materials", "art", "how things work"]),
+    Topic("glass_production", "Glass — Sand, Heat, and the Art of Glassblowing",
+          "Materials", [2], [5, 6, 7], 2, 4,
+          ["properties_materials_ks2"],
+          ["glass", "sand", "silica", "glassblowing", "windows", "optics",
+           "materials", "history", "how things work"]),
+    Topic("cement_concrete", "Cement and Concrete — The Material That Built Civilisation",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["chemical_reactions"],
+          ["cement", "concrete", "limestone", "romans", "construction",
+           "materials", "engineering", "how things work"]),
+
+    # --- Wood and Plant Materials ---
+    Topic("timber_production", "Timber — From Forest to Plank to Building",
+          "Materials", [2], [4, 5, 6], 2, 3,
+          ["plants_ks2"],
+          ["timber", "wood", "forestry", "sawmill", "construction", "furniture",
+           "materials", "environment", "how things work"]),
+    Topic("paper_production", "Paper — Pulp, Pressing, and the Story of Writing",
+          "Materials", [2], [4, 5, 6], 2, 3,
+          ["timber_production"],
+          ["paper", "pulp", "wood", "recycling", "printing", "history",
+           "materials", "how things work"]),
+    Topic("bamboo_materials", "Bamboo — The World's Fastest-Growing Material",
+          "Materials", [2], [5, 6, 7], 2, 4,
+          ["plants_ks2"],
+          ["bamboo", "sustainable", "construction", "textiles", "asia",
+           "materials", "environment", "how things work"]),
+    Topic("cork_natural_materials", "Cork, Hemp, and Other Natural Materials",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["plants_ks2"],
+          ["cork", "hemp", "natural materials", "sustainable", "portugal",
+           "materials", "environment", "how things work"]),
+
+    # --- Plastics and Modern Materials ---
+    Topic("plastics_types", "Types of Plastic — PET, HDPE, PVC, and What They're For",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["how_plastic_is_made"],
+          ["plastic", "PET", "polymer", "recycling", "materials science",
+           "environment", "chemistry", "how things work"]),
+    Topic("composites", "Composite Materials — Carbon Fibre, Fibreglass, and Plywood",
+          "Materials", [3], [7, 8, 9], 3, 5,
+          ["alloys", "plastics_types"],
+          ["composite", "carbon fibre", "fibreglass", "aerospace", "engineering",
+           "materials science", "how things work"]),
+    Topic("smart_materials", "Smart Materials — Shape Memory, Self-Healing, and Piezoelectrics",
+          "Materials", [3], [8, 9], 4, 5,
+          ["composites"],
+          ["smart materials", "shape memory alloy", "piezoelectric", "future",
+           "materials science", "engineering", "how things work"]),
+
+    # --- Fuels and Energy Materials ---
+    Topic("coal_fossil_fuels", "Coal — How It Formed, How We Burned It, and What It Cost",
+          "Materials", [2, 3], [6, 7, 8], 3, 5,
+          ["cosmic_time_scale", "industrial_revolution"],
+          ["coal", "fossil fuels", "industrial revolution", "environment",
+           "climate change", "energy", "materials", "how things work"]),
+    Topic("oil_petroleum", "Oil and Petroleum — Fossil Fuel to Fuel, Plastic, and Medicine",
+          "Materials", [2, 3], [7, 8, 9], 3, 5,
+          ["coal_fossil_fuels"],
+          ["oil", "petroleum", "refining", "plastic", "petrol", "environment",
+           "trade", "geopolitics", "materials", "how things work"]),
+    Topic("lithium_batteries", "Lithium and Batteries — How We Store Energy",
+          "Materials", [3], [8, 9], 3, 5,
+          ["rare_earth_metals", "build_a_battery"],
+          ["lithium", "battery", "energy storage", "electric vehicles", "mining",
+           "environment", "materials", "how things work"]),
+
+    # --- Materials Science and Design ---
+    Topic("materials_properties", "Materials Properties — Hardness, Conductivity, and Strength",
+          "Materials", [2, 3], [6, 7, 8], 3, 4,
+          ["properties_materials_ks2"],
+          ["materials properties", "hardness", "conductivity", "strength",
+           "materials science", "engineering", "design", "how things work"]),
+    Topic("materials_and_design", "Choosing Materials — Why We Use What We Use",
+          "Materials", [3], [7, 8, 9], 4, 5,
+          ["materials_properties"],
+          ["materials", "design", "engineering", "sustainability", "choice",
+           "environment", "how things work"]),
+    Topic("materials_recycling_lifecycle", "The Life of a Material — Extraction to Landfill",
+          "Materials", [3], [7, 8, 9], 4, 6,
+          ["materials_and_design", "how_recycling_works"],
+          ["recycling", "lifecycle", "sustainability", "environment",
+           "materials", "ethics", "how things work"]),
+]
+
+
+# ---------------------------------------------------------------------------
+# Connections — James Burke style unexpected chains between ideas
+# How one discovery leads to another across centuries and disciplines.
+# These are cross-curricular topics that exist to show children that
+# knowledge is not siloed — everything connects to everything else.
+# Each topic traces one surprising chain: A → B → C → D → modern world.
+# ---------------------------------------------------------------------------
+
+_CONNECTIONS = [
+    Topic("connection_stirrup_feudalism", "The Stirrup and Feudalism — How a Horse Accessory Made Medieval Europe",
+          "Connections", [2, 3], [6, 7, 8], 4, 5,
+          ["norman_conquest"],
+          ["stirrup", "medieval", "feudalism", "cavalry", "connections", "history",
+           "james burke", "unexpected"]),
+    Topic("connection_plough_university", "The Heavy Plough to the University — How Farming Made Scholars",
+          "Connections", [2, 3], [6, 7, 8], 4, 5,
+          ["agricultural_revolution_story"],
+          ["plough", "medieval", "university", "surplus", "connections", "history",
+           "james burke", "unexpected"]),
+    Topic("connection_spice_trade_chemistry", "Spice Trade to Modern Chemistry — How Preserving Food Made Science",
+          "Connections", [2, 3], [6, 7, 8], 4, 5,
+          ["age_of_exploration", "chemical_reactions"],
+          ["spice trade", "chemistry", "distillation", "connections", "history",
+           "james burke", "unexpected", "trade"]),
+    Topic("connection_printing_revolution", "Gutenberg's Press and the Scientific Revolution — How Cheap Books Changed Everything",
+          "Connections", [2, 3], [6, 7, 8], 4, 5,
+          ["how_paper_is_made", "henry_viii_reformation"],
+          ["printing press", "gutenberg", "reformation", "scientific revolution",
+           "connections", "history", "james burke", "unexpected"]),
+    Topic("connection_clock_navigation_capitalism", "The Clock, Navigation, and Modern Capitalism",
+          "Connections", [3], [7, 8, 9], 4, 5,
+          ["age_of_exploration", "industrial_revolution"],
+          ["clock", "navigation", "longitude", "capitalism", "connections",
+           "history", "james burke", "unexpected", "trade"]),
+    Topic("connection_steam_computer", "Steam Engine to Computer — How Controlling Machines Led to Thinking Machines",
+          "Connections", [3], [7, 8, 9], 4, 5,
+          ["how_engines_work", "data_representation"],
+          ["steam engine", "babbage", "lovelace", "computer", "connections",
+           "history", "james burke", "unexpected", "industrial revolution"]),
+    Topic("connection_dye_medicine", "Purple Dye to Penicillin — How Colour Made Modern Medicine",
+          "Connections", [3], [7, 8, 9], 4, 5,
+          ["how_medicine_made", "chemical_reactions"],
+          ["dye", "chemistry", "penicillin", "medicine", "connections",
+           "history", "james burke", "unexpected"]),
+    Topic("connection_cannon_calculus", "The Cannon and Calculus — How Warfare Made Mathematics",
+          "Connections", [3], [8, 9], 4, 5,
+          ["algebra_ks3", "elizabethan_era"],
+          ["cannon", "ballistics", "calculus", "newton", "leibniz", "connections",
+           "maths", "history", "james burke", "unexpected"]),
+    Topic("connection_glass_telescope_microscope", "Glass, Telescopes, and Germs — How Windows Led to Germ Theory",
+          "Connections", [2, 3], [6, 7, 8], 4, 5,
+          ["glass_production", "light_shadows"],
+          ["glass", "telescope", "microscope", "germs", "leeuwenhoek",
+           "connections", "science", "history", "james burke", "unexpected"]),
+    Topic("connection_sugar_slavery_industry", "Sugar, Slavery, and the Industrial Revolution — The Dark Chain",
+          "Connections", [3], [7, 8, 9], 4, 6,
+          ["how_sugar_is_made", "transatlantic_slave_trade", "industrial_revolution"],
+          ["sugar", "slavery", "industrial revolution", "capitalism", "connections",
+           "history", "james burke", "unexpected", "empire"]),
+    Topic("connection_nitrogen_war_food", "Nitrogen, Explosives, and the Green Revolution — How Bombs Feed the World",
+          "Connections", [3], [8, 9], 4, 5,
+          ["chemical_reactions", "ww1_causes_consequences"],
+          ["nitrogen", "haber process", "explosives", "fertiliser", "food",
+           "connections", "chemistry", "history", "james burke", "unexpected"]),
+    Topic("connection_telegraph_internet", "The Telegraph to the Internet — One Wire, Many Messages",
+          "Connections", [3], [7, 8, 9], 4, 5,
+          ["how_electricity_generated", "how_internet_works_deep"],
+          ["telegraph", "morse code", "internet", "cables", "connections",
+           "history", "james burke", "unexpected", "computing"]),
+]
+
+
+# ---------------------------------------------------------------------------
 # Full curriculum registry
 # ---------------------------------------------------------------------------
 
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
-    _HOW_THINGS_ARE_MADE
+    _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
