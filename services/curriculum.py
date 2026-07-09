@@ -46,6 +46,20 @@ class Topic:
     # prerequisites are met. Set False for topics with hard developmental gates
     # (e.g. abstract algebra before concrete number sense is solid).
 
+    # Model progression — the "lies to children" principle.
+    # Many topics teach an intentionally simplified model that is useful and
+    # approximately true, but will be refined later. When a child has mastered
+    # the prerequisite topic deeply enough, the refined model unlocks.
+    #
+    # model_level: int — 1=introductory simplification, 2=refined model,
+    #                     3=full/graduate-level model. Default 1.
+    # supersedes: str — topic id of the simpler model this topic corrects.
+    #   When a child has mastered `supersedes` to bloom_target, the tutor
+    #   can introduce the refinement naturally: "Remember how we said X?
+    #   That's mostly true, but here's the fuller picture..."
+    model_level: int = 1
+    supersedes: Optional[str] = None
+
 
 # ---------------------------------------------------------------------------
 # English National Curriculum — Core Subjects
@@ -3688,6 +3702,463 @@ _SPORTS_MEDICINE = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Model Progressions — "Lies to Children" Unlocked by Mastery
+#
+# Each topic here is a Level 2 or 3 refinement of a simpler model taught
+# earlier. The simpler model is *correct enough* to be useful — it's not
+# wrong, it's incomplete. When a child has mastered the prerequisite deeply
+# (bloom_target reached), the tutor introduces the correction:
+# "Remember how we said X? That's a good model, and it works for most
+# purposes. Here's the fuller picture..."
+#
+# The supersedes field points to the topic being refined.
+# This list is not exhaustive — it seeds the pattern. Tutors should
+# spontaneously offer refinements when a child asks "but wait, why?"
+# after mastering a simplified model.
+# ---------------------------------------------------------------------------
+
+_MODEL_PROGRESSIONS = [
+
+    # --- Physics ---
+    Topic("atom_bohr_to_quantum", "From the Bohr Atom to Quantum Mechanics",
+          "Science", [3], [9], 4, 6,
+          ["particle_model", "periodic_table"],
+          ["quantum mechanics", "electron orbitals", "probability cloud",
+           "Schrödinger", "Bohr model", "atomic structure", "physics", "refined model"],
+          model_level=2, supersedes="particle_model",
+          accelerated_ok=False),
+    # The Bohr model (electrons orbit like planets) is useful but wrong.
+    # Electrons exist in probability clouds described by wave functions.
+    # You can't know both position and momentum (Heisenberg uncertainty).
+    # The periodic table's structure *requires* quantum mechanics to explain
+    # why elements in the same group have similar properties.
+
+    Topic("newtonian_to_relativity", "From Newton's Gravity to Einstein's Spacetime",
+          "Science", [3], [9], 5, 6,
+          ["forces_motion_ks3"],
+          ["general relativity", "spacetime", "curved spacetime", "GPS",
+           "gravity waves", "Newton", "Einstein", "physics", "refined model"],
+          model_level=2, supersedes="forces_motion_ks3",
+          accelerated_ok=False),
+    # Newtonian gravity works for everyday speeds and masses.
+    # At high velocities or near massive objects, spacetime curves — that
+    # IS gravity, not a force acting at a distance.
+    # GPS satellites require relativistic corrections to work.
+    # Gravitational waves: ripples in spacetime detected by LIGO in 2015.
+
+    Topic("light_wave_particle_duality", "Light Is Both a Wave and a Particle — Wave-Particle Duality",
+          "Science", [3], [9], 4, 6,
+          ["waves_ks3", "light_shadows"],
+          ["wave-particle duality", "photon", "double slit", "quantum",
+           "photoelectric effect", "Einstein", "physics", "refined model"],
+          model_level=2, supersedes="waves_ks3"),
+    # Light behaves as a wave (diffraction, interference) AND as a particle
+    # (photoelectric effect — Einstein's Nobel prize). The double-slit
+    # experiment: a single photon passes through both slits simultaneously
+    # and interferes with itself. Observation collapses the wave function.
+
+    Topic("classical_to_statistical_thermodynamics", "From Heat Transfer to Statistical Mechanics",
+          "Science", [3], [9], 5, 6,
+          ["heat_thermal_energy", "particle_model"],
+          ["thermodynamics", "entropy", "statistical mechanics", "Boltzmann",
+           "second law", "disorder", "physics", "refined model"],
+          model_level=2, supersedes="heat_thermal_energy"),
+    # Heat transfer rules (conduction, convection, radiation) are useful
+    # engineering approximations. The deeper picture: temperature IS the
+    # average kinetic energy of particles. Entropy is a statistical concept —
+    # disorder increases not because of a rule, but because there are far
+    # more disordered states than ordered ones.
+
+    # --- Chemistry ---
+    Topic("combustion_to_redox", "From Burning to Redox — Electron Transfer Is Everything",
+          "Science", [3], [8, 9], 4, 5,
+          ["oxidation_combustion", "chemical_reactions"],
+          ["redox", "oxidation", "reduction", "electron transfer", "electrochemistry",
+           "half equations", "chemistry", "refined model"],
+          model_level=2, supersedes="oxidation_combustion"),
+    # "Burning" is a useful first model. The deeper picture: oxidation is
+    # electron loss, reduction is electron gain (OIL RIG). Every combustion
+    # reaction is a redox reaction. This framework unifies combustion,
+    # corrosion, photosynthesis, cellular respiration, and batteries.
+
+    Topic("acid_base_to_proton_transfer", "From pH to Brønsted-Lowry Acid-Base Theory",
+          "Science", [3], [9], 4, 5,
+          ["acids_bases_ph"],
+          ["Brønsted-Lowry", "proton transfer", "conjugate acid", "conjugate base",
+           "buffer", "chemistry", "refined model"],
+          model_level=2, supersedes="acids_bases_ph"),
+    # pH and H⁺/OH⁻ ions is the Level 1 model. Brønsted-Lowry: an acid is
+    # a proton donor, a base is a proton acceptor. This explains why ammonia
+    # (no OH⁻) is a base, and why CO2 dissolved in water is acidic.
+    # Buffer chemistry: why blood maintains pH 7.4 despite metabolic acids.
+
+    # --- Biology ---
+    Topic("cells_to_molecular_biology", "From Cells to Molecular Biology — DNA, Proteins, and Gene Expression",
+          "Science", [3], [9], 4, 6,
+          ["cells_ks3", "genetics_ks3"],
+          ["molecular biology", "transcription", "translation", "mRNA",
+           "protein synthesis", "gene expression", "epigenetics", "refined model"],
+          model_level=2, supersedes="cells_ks3",
+          accelerated_ok=False),
+    # The cell as a bag of chemicals with a nucleus is Level 1.
+    # Level 2: DNA → RNA → protein (the central dogma). Transcription
+    # (DNA copied to mRNA in the nucleus) → translation (ribosomes read
+    # mRNA and build proteins). Gene expression is regulated — not all
+    # genes are active in all cells. Epigenetics: gene expression can be
+    # changed by environment without changing the DNA sequence.
+
+    Topic("evolution_to_evo_devo", "From Natural Selection to Evolutionary Developmental Biology",
+          "Science", [3], [9], 5, 6,
+          ["evolution_adaptation", "genetics_ks3"],
+          ["evo-devo", "Hox genes", "regulatory genes", "development",
+           "body plans", "Cambrian explosion", "evolution", "refined model"],
+          model_level=2, supersedes="evolution_adaptation"),
+    # Natural selection + variation + inheritance is the Level 1 model.
+    # Evo-devo explains how large morphological changes can arise quickly:
+    # Hox genes (master regulatory genes) control body plan. A single
+    # mutation in a Hox gene can add or remove a body segment. This explains
+    # the Cambrian explosion — not slow accumulation but rapid regulatory change.
+
+    Topic("food_chains_to_ecosystem_dynamics", "From Food Chains to Ecosystem Dynamics and Tipping Points",
+          "Science", [3], [8, 9], 4, 6,
+          ["food_webs_energy_flow", "ecosystems_ks3"],
+          ["ecosystem dynamics", "tipping points", "regime shifts", "resilience",
+           "keystone species", "alternative stable states", "ecology", "refined model"],
+          model_level=2, supersedes="food_webs_energy_flow"),
+    # Food chains and food webs are useful simplifications. The deeper model:
+    # ecosystems have non-linear dynamics. Small changes can push a system
+    # past a tipping point into a completely different stable state
+    # (regime shift). Kelp forest ↔ urchin barren. Coral reef ↔ algae mat.
+    # Hysteresis: it takes more effort to restore a system than it took to
+    # degrade it. This is the science behind why climate change is so dangerous.
+
+    # --- Maths ---
+    Topic("euclidean_to_non_euclidean", "Beyond Flat Space — Non-Euclidean Geometry",
+          "Maths", [3], [9], 4, 6,
+          ["geometry_ks2", "pythagoras_theorem"],
+          ["non-Euclidean geometry", "spherical geometry", "hyperbolic geometry",
+           "parallel postulate", "Riemann", "spacetime", "maths", "refined model"],
+          model_level=2, supersedes="geometry_ks2"),
+    # Euclidean geometry (flat plane) is the Level 1 model. On a sphere,
+    # the angles of a triangle add up to MORE than 180°. Parallel lines
+    # meet (all lines of longitude meet at the poles). Non-Euclidean geometry
+    # was thought to be pure abstraction until Einstein used it to describe
+    # spacetime. Navigation on Earth requires spherical geometry.
+
+    Topic("statistics_to_bayesian", "From Frequency Statistics to Bayesian Thinking",
+          "Maths", [3], [9], 5, 6,
+          ["statistics_ks2", "probability_ks3"],
+          ["Bayesian statistics", "prior", "posterior", "likelihood",
+           "Bayes theorem", "updating beliefs", "maths", "refined model"],
+          model_level=2, supersedes="probability_ks3"),
+    # Classical statistics: frequency of outcomes in repeated experiments.
+    # Bayesian: probability as degree of belief, updated by evidence.
+    # Bayes' theorem: how to rationally update your confidence in a hypothesis
+    # when you get new information. Direct connection to `how_to_change_your_mind`
+    # and to medical diagnosis (false positives, base rate neglect).
+
+    # --- History and Social Science ---
+    Topic("great_man_to_structural_history", "From Great Men to Structural Forces — How History Actually Works",
+          "History", [3], [8, 9], 5, 6,
+          ["story_of_science", "empire_legacy_today"],
+          ["historiography", "structural history", "contingency", "great man theory",
+           "Annales school", "long run", "history", "refined model"],
+          model_level=2, supersedes="history_significant_people"),
+    # The Level 1 model: great individuals (Napoleon, Churchill, Gandhi)
+    # make history. The Level 2 model: structural forces (climate, disease,
+    # geography, economics, technology) create the conditions; individuals
+    # act within them. Jared Diamond's Guns, Germs, and Steel argument.
+    # The Annales school: history should study long-term patterns, not events.
+    # Both models are useful; the tension between them is the discipline.
+
+    Topic("free_market_to_market_failure", "From the Free Market Model to Market Failure and Institutional Economics",
+          "Political Systems", [3], [9], 5, 6,
+          ["supply_demand_prices", "market_failure_externalities"],
+          ["market failure", "externalities", "public goods", "information asymmetry",
+           "institutional economics", "behavioural economics", "refined model"],
+          model_level=2, supersedes="supply_demand_prices"),
+    # Level 1: supply and demand, prices as signals, markets allocate efficiently.
+    # Level 2: markets fail systematically — externalities (pollution not priced),
+    # public goods (can't be sold), information asymmetry (seller knows more than buyer),
+    # behavioural biases (humans aren't rational). The policy debate isn't
+    # "markets vs government" but "which market failures are worst and what are
+    # the cheapest fixes?"
+
+    # --- Music ---
+    Topic("equal_temperament_to_just_intonation", "Why Pianos Are Slightly Out of Tune — Equal Temperament vs Just Intonation",
+          "Music", [3], [8, 9], 4, 6,
+          ["semitones_tones", "music_physics_sound"],
+          ["equal temperament", "just intonation", "Pythagorean tuning",
+           "overtone series", "wolf interval", "tuning", "music theory", "refined model"],
+          model_level=2, supersedes="semitones_tones"),
+    # The Level 1 model: an octave is divided into 12 equal semitones.
+    # The Level 2 model: this is a mathematical compromise. Pure intervals
+    # (5th = 3:2 frequency ratio) don't stack up perfectly to fill an octave.
+    # Equal temperament slightly detunes every interval so you can play in
+    # all keys on one instrument. Before 1700, instruments were tuned to
+    # different systems that sounded pure in some keys but terrible in others.
+    # Bach's Well-Tempered Clavier was written to demonstrate a new tuning
+    # system that worked in all keys.
+]
+
+
+# ---------------------------------------------------------------------------
+# World Religions and Belief Systems
+# Taught as history, culture, and comparative worldviews — not as doctrine.
+# The goal is cultural literacy and empathy: a child should understand what
+# adherents actually believe, why, and what it means to them — without being
+# told what to believe themselves.
+# Scope: the six major living traditions with global significance.
+# Not included: modern syncretic movements, new religious movements,
+# or traditions primarily significant as historical curiosities.
+# Approach: "Many people believe X. Here is why they find it meaningful.
+# Here is the history of how this tradition developed. Here is what it asks
+# of its followers. What questions does it raise for you?"
+# ---------------------------------------------------------------------------
+
+_WORLD_RELIGIONS = [
+
+    # --- Overview and Comparison ---
+    Topic("world_religions_overview", "The World's Major Religions — Who Believes What and Why",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["religion", "world religions", "Christianity", "Islam", "Hinduism",
+           "Buddhism", "Judaism", "Sikhism", "belief", "culture", "overview"]),
+    Topic("how_religions_spread", "How Religions Spread — Trade, Conquest, and Conversion",
+          "Religion", [2, 3], [6, 7, 8], 3, 5,
+          ["world_religions_overview", "age_of_exploration"],
+          ["religion", "spread", "trade", "missionary", "conversion", "history",
+           "Silk Road", "empire", "culture", "how things work"]),
+    Topic("religion_and_science", "Religion and Science — Conflict, Dialogue, and What the Question Actually Is",
+          "Religion", [3], [8, 9], 4, 6,
+          ["world_religions_overview", "scientific_method"],
+          ["religion", "science", "conflict thesis", "Galileo", "Darwin",
+           "evolution", "cosmology", "philosophy", "critical thinking"]),
+    Topic("comparative_ethics", "How Religions Think About Right and Wrong",
+          "Religion", [3], [7, 8, 9], 4, 5,
+          ["world_religions_overview", "ethics_dilemmas"],
+          ["religion", "ethics", "Golden Rule", "karma", "dharma", "sin",
+           "commandments", "compassion", "comparison", "moral philosophy"]),
+    Topic("religion_and_politics", "Religion and Political Power — Theocracy, Secularism, and the Separation of Church and State",
+          "Religion", [3], [8, 9], 4, 6,
+          ["world_religions_overview", "history_of_democracy_britain"],
+          ["religion", "politics", "theocracy", "secularism", "church and state",
+           "Reformation", "Iran", "Israel", "history", "political systems"]),
+
+    # --- Christianity ---
+    Topic("christianity_origins", "Christianity — The Life of Jesus, Paul, and the Early Church",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Christianity", "Jesus", "Paul", "early church", "Bible",
+           "gospels", "apostles", "history", "religion"]),
+    Topic("christianity_history", "Christian History — From Rome to the Reformation to Today",
+          "Religion", [2, 3], [6, 7, 8], 3, 5,
+          ["christianity_origins", "romans_britain"],
+          ["Christianity", "Roman Empire", "Catholic Church", "Reformation",
+           "Luther", "Protestant", "history", "religion", "politics"]),
+    Topic("christianity_denominations", "Christian Denominations — Catholic, Orthodox, Protestant, and the Differences",
+          "Religion", [3], [7, 8, 9], 3, 4,
+          ["christianity_history"],
+          ["Christianity", "Catholic", "Protestant", "Orthodox", "Anglican",
+           "Baptist", "denominations", "history", "religion", "comparison"]),
+
+    # --- Islam ---
+    Topic("islam_origins", "Islam — Muhammad, the Quran, and the First Community",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Islam", "Muhammad", "Quran", "Mecca", "Medina", "Arabia",
+           "five pillars", "religion", "history"]),
+    Topic("islam_history_civilisation", "Islamic Civilisation — The Golden Age of Science, Art, and Philosophy",
+          "Religion", [2, 3], [6, 7, 8], 3, 5,
+          ["islam_origins", "ancient_egypt"],
+          ["Islam", "Islamic civilisation", "Golden Age", "algebra", "astronomy",
+           "medicine", "Baghdad", "Cordoba", "history", "science", "religion"]),
+    Topic("islam_sunni_shia", "Sunni and Shia — The Split That Shaped Islam",
+          "Religion", [3], [7, 8, 9], 3, 5,
+          ["islam_origins"],
+          ["Islam", "Sunni", "Shia", "Ali", "succession", "split",
+           "history", "religion", "politics", "conflict"]),
+    Topic("islam_practice_today", "Islam Today — Salah, Ramadan, Hajj, and What It Means to Be Muslim",
+          "Religion", [2, 3], [6, 7, 8], 2, 4,
+          ["islam_origins"],
+          ["Islam", "five pillars", "Ramadan", "Hajj", "Salah", "Zakat",
+           "Shahadah", "practice", "religion", "culture", "daily life"]),
+
+    # --- Judaism ---
+    Topic("judaism_origins", "Judaism — Abraham, Moses, and the Covenant",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Judaism", "Abraham", "Moses", "covenant", "Torah", "Exodus",
+           "Sinai", "Israel", "religion", "history", "Bible"]),
+    Topic("judaism_diaspora_history", "Jewish History — Exile, Diaspora, and Survival",
+          "Religion", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["judaism_origins", "romans_britain"],
+          ["Judaism", "diaspora", "Babylon", "Rome", "persecution", "Holocaust",
+           "Israel", "Zionism", "history", "religion", "identity"]),
+    Topic("judaism_practice", "Jewish Practice — Shabbat, Torah, and the Jewish Year",
+          "Religion", [2, 3], [6, 7, 8], 2, 4,
+          ["judaism_origins"],
+          ["Judaism", "Shabbat", "Torah", "synagogue", "rabbi", "Passover",
+           "Yom Kippur", "bar mitzvah", "practice", "religion", "culture"]),
+    Topic("judaism_denominations", "Orthodox, Conservative, and Reform Judaism",
+          "Religion", [3], [8, 9], 3, 4,
+          ["judaism_practice"],
+          ["Judaism", "Orthodox", "Conservative", "Reform", "denominations",
+           "modernity", "religion", "identity", "culture"]),
+
+    # --- Hinduism ---
+    Topic("hinduism_overview", "Hinduism — The World's Oldest Living Religion",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Hinduism", "Brahman", "dharma", "karma", "moksha", "Vedas",
+           "India", "religion", "philosophy", "history"]),
+    Topic("hinduism_gods_stories", "Hindu Gods and Stories — Brahma, Vishnu, Shiva, and the Great Epics",
+          "Religion", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["hinduism_overview"],
+          ["Hinduism", "Brahma", "Vishnu", "Shiva", "Devi", "Ramayana",
+           "Mahabharata", "Krishna", "myths", "religion", "stories"]),
+    Topic("hinduism_philosophy", "Hindu Philosophy — The Upanishads, Atman, and Non-Duality",
+          "Religion", [3], [8, 9], 4, 6,
+          ["hinduism_overview"],
+          ["Hinduism", "Upanishads", "Atman", "Brahman", "Advaita",
+           "non-duality", "philosophy", "consciousness", "religion", "university level"]),
+    Topic("hinduism_practice", "Hindu Practice — Puja, Festivals, and the Caste System",
+          "Religion", [2, 3], [6, 7, 8], 2, 4,
+          ["hinduism_overview"],
+          ["Hinduism", "puja", "Diwali", "Holi", "caste", "varna",
+           "temple", "practice", "religion", "culture", "social"]),
+
+    # --- Buddhism ---
+    Topic("buddhism_origins", "Buddhism — Siddhartha Gautama, the Four Noble Truths, and the Eightfold Path",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Buddhism", "Buddha", "Siddhartha", "Four Noble Truths", "Eightfold Path",
+           "suffering", "nirvana", "India", "religion", "philosophy"]),
+    Topic("buddhism_traditions", "Buddhist Traditions — Theravada, Mahayana, and Zen",
+          "Religion", [3], [7, 8, 9], 3, 5,
+          ["buddhism_origins"],
+          ["Buddhism", "Theravada", "Mahayana", "Zen", "Tibetan Buddhism",
+           "bodhisattva", "meditation", "traditions", "religion"]),
+    Topic("buddhism_spread_asia", "How Buddhism Spread Across Asia",
+          "Religion", [2, 3], [6, 7, 8], 3, 4,
+          ["buddhism_origins", "how_religions_spread"],
+          ["Buddhism", "Asia", "China", "Japan", "Tibet", "Southeast Asia",
+           "spread", "history", "Silk Road", "religion", "culture"]),
+    Topic("buddhism_meditation_practice", "Buddhist Practice — Meditation, Mindfulness, and the Sangha",
+          "Religion", [2, 3], [6, 7, 8], 2, 4,
+          ["buddhism_origins"],
+          ["Buddhism", "meditation", "mindfulness", "sangha", "monastery",
+           "practice", "religion", "wellbeing", "psychology"]),
+
+    # --- Sikhism ---
+    Topic("sikhism_origins", "Sikhism — Guru Nanak, the Ten Gurus, and the Khalsa",
+          "Religion", [2], [5, 6, 7], 2, 4, [],
+          ["Sikhism", "Guru Nanak", "Ten Gurus", "Khalsa", "Punjab",
+           "Guru Granth Sahib", "religion", "history", "India"]),
+    Topic("sikhism_practice", "Sikh Practice — The Five Ks, the Gurdwara, and Seva",
+          "Religion", [2, 3], [6, 7, 8], 2, 4,
+          ["sikhism_origins"],
+          ["Sikhism", "Five Ks", "kara", "turban", "gurdwara", "langar",
+           "seva", "practice", "religion", "culture", "service"]),
+    Topic("sikhism_values", "Sikh Values — Equality, Service, and Standing Against Injustice",
+          "Religion", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["sikhism_origins"],
+          ["Sikhism", "equality", "seva", "justice", "Waheguru",
+           "saint-soldier", "values", "religion", "ethics", "social"]),
+
+    # --- Ancient and Extinct Religions ---
+    Topic("zoroastrianism", "Zoroastrianism — The Oldest Monotheism and Its Influence on Everything",
+          "Religion", [3], [7, 8, 9], 4, 6,
+          ["world_religions_overview", "ancient_egypt"],
+          ["Zoroastrianism", "Zoroaster", "Zarathustra", "Ahura Mazda", "Ahriman",
+           "Persia", "monotheism", "afterlife", "heaven", "hell", "angels",
+           "apocalypse", "religion", "history", "influence"]),
+    # Possibly the most influential religion you've never heard of.
+    # Founded by Zarathustra (Zoroaster) in ancient Persia (~1500-1000 BCE).
+    # First religion to teach: one supreme God, cosmic battle between good and evil,
+    # individual judgment after death, heaven and hell, a final apocalypse,
+    # angels, and a saviour figure. These ideas entered Judaism during the
+    # Babylonian exile, and from there into Christianity and Islam.
+    # Still practised by Parsis in India and Iran (~100,000 worldwide).
+
+    Topic("ancient_greek_religion", "Ancient Greek Religion — Gods, Myths, and the Sacred",
+          "Religion", [2], [5, 6, 7], 2, 4,
+          ["ancient_greece", "greek_mythology_olympians"],
+          ["Greek religion", "Olympian gods", "sacrifice", "oracle", "Delphi",
+           "mystery cults", "afterlife", "Hades", "ancient history", "religion"]),
+    # Greek religion wasn't just mythology — it was a living practice.
+    # Animal sacrifice, oracles (Delphi), temple rituals, mystery cults
+    # (Eleusinian Mysteries promised initiates a better afterlife).
+    # The Greeks had no word for "religion" — it was simply how life was lived.
+    # Connects Greek mythology to its actual religious function.
+
+    Topic("ancient_egyptian_religion", "Ancient Egyptian Religion — Ra, Osiris, and the Journey After Death",
+          "Religion", [2], [4, 5, 6], 2, 4,
+          ["ancient_egypt"],
+          ["Egyptian religion", "Ra", "Osiris", "Isis", "Horus", "Set",
+           "mummification", "Book of the Dead", "afterlife", "pharaoh",
+           "religion", "ancient history"]),
+    # 3,000 years of continuous religious tradition. The pharaoh as a god.
+    # The elaborate afterlife — mummification to preserve the body, the
+    # weighing of the heart against a feather (Ma'at), the Field of Reeds.
+    # How Egyptian religion influenced Greek mystery cults and early Christianity
+    # (Osiris's death and resurrection, the Madonna and child in Isis and Horus).
+
+    Topic("norse_religion", "Norse Religion — Odin, the Nine Worlds, and Ragnarök",
+          "Religion", [2], [5, 6, 7], 2, 4,
+          ["vikings_saxons", "norse_mythology"],
+          ["Norse religion", "Odin", "Thor", "Freya", "Yggdrasil", "Ragnarök",
+           "Valhalla", "Norns", "fate", "Viking", "religion", "history", "myths"]),
+    # Norse religion was a living belief system, not just entertaining stories.
+    # Odin sacrificed his eye for wisdom, hung on the World Tree for knowledge.
+    # Fate (the Norns) was central — even the gods would die at Ragnarök.
+    # The concept of an honourable death in battle to reach Valhalla shaped
+    # Viking culture. How it blended with Christianity in Scandinavia.
+
+    Topic("mesopotamian_religion", "Mesopotamian Religion — The Gods of Babylon and the World's First Stories",
+          "Religion", [2, 3], [6, 7, 8], 3, 5,
+          ["first_civilisations", "ancient_egypt"],
+          ["Mesopotamia", "Babylon", "Sumerian religion", "Gilgamesh", "Enkidu",
+           "flood myth", "Marduk", "ziggurat", "religion", "ancient history",
+           "myths", "connections"]),
+    # The Epic of Gilgamesh (2100 BCE) contains a flood story older than Genesis.
+    # Mesopotamian religion gave us the first written myths, the first concept
+    # of fate controlled by gods, and many narrative templates (the flood,
+    # the hero's journey) that recur across later religions.
+    # The seven-day week comes from Babylonian astrology.
+
+    Topic("roman_religion", "Roman Religion — From Jupiter to the Fall of the Gods",
+          "Religion", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["ancient_greece", "romans_britain"],
+          ["Roman religion", "Jupiter", "Mars", "Juno", "Roman gods", "emperor cult",
+           "Vestal Virgins", "augury", "syncretism", "Christianity",
+           "religion", "ancient history"]),
+    # Roman religion was pragmatic — adopt the gods of conquered peoples.
+    # The emperor cult (emperors as gods) created the political conflict
+    # with Christianity (Christians refused to sacrifice to the emperor).
+    # How Rome's religious tolerance eventually broke down and Christianity
+    # became the state religion — changing both Rome and Christianity forever.
+
+    Topic("indigenous_spiritual_traditions", "Indigenous Spiritual Traditions — Animism, Dreamtime, and Sacred Land",
+          "Religion", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["world_religions_overview"],
+          ["indigenous", "animism", "Dreamtime", "Aboriginal", "Native American",
+           "sacred", "land", "spirit", "oral tradition", "religion", "culture",
+           "colonialism", "decolonisation"]),
+    # Not a single religion but a cluster of worldviews sharing common features:
+    # everything is alive and has spirit (animism), humans are part of nature
+    # not above it, sacred knowledge is oral not written, place and land are
+    # central to identity and religion. Australian Aboriginal Dreamtime.
+    # How colonialism deliberately destroyed indigenous spiritual traditions
+    # as a tool of cultural erasure. Why this matters today.
+
+    Topic("religion_extinction_revival", "When Religions Die — and Sometimes Come Back",
+          "Religion", [3], [8, 9], 4, 5,
+          ["zoroastrianism", "norse_religion"],
+          ["religion", "extinction", "revival", "neo-paganism", "Ásatrú",
+           "Hellenism", "history", "culture", "identity", "modern"]),
+    # Why religions disappear (conquest, conversion, cultural assimilation).
+    # Modern revivals: Ásatrú (Norse religion practiced today), Hellenism
+    # (worship of Greek gods), neo-druidry. Are these authentic continuations
+    # or cultural constructions? What does it mean to revive a dead religion?
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -3695,8 +4166,10 @@ CURRICULUM: list[Topic] = (
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
     _EXPERIMENTS + _FILM +
-    _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE
+    _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
+    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS
 )
+
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
 
