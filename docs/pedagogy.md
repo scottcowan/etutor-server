@@ -7,6 +7,43 @@ References: peer-reviewed studies (verified 2026-07-08 via adversarial multi-age
 
 ---
 
+## Design Philosophy — No Ceiling
+
+**The curriculum has no upper limit. Depth is limited only by a child's curiosity
+and prerequisite mastery, not by age.**
+
+A child who wants to understand why their hamstring keeps tearing should be able
+to follow that question through anatomy → connective tissue histology → biomechanics
+→ training load management → rehabilitation science — the same content a first-year
+BSc Sports Science student studies — without hitting an artificial wall.
+
+**The stigma of higher education** is the idea that deep knowledge requires
+institutional permission. It doesn't. University curricula are organised for
+credential delivery, not for learning. The knowledge itself is not age-gated.
+
+**What this means in practice:**
+- Topics tagged `accelerated_ok=True` (the default) can be surfaced to any child
+  whose interests match and whose prerequisites are met — regardless of year group
+- `university level` tag marks topics drawn from undergraduate curricula; the tutor
+  treats these at the same Bloom level as any other topic for that child
+- The `exceed-level` feature in `services/curriculum.py:next_topics()` surfaces
+  topics up to 3 year groups ahead for children with strong interest matches
+- Topics tagged `accelerated_ok=False` are the exception — they have hard
+  developmental prerequisites (abstract algebra before concrete number sense,
+  sexuality topics before puberty) where rushing causes more harm than benefit
+
+**The practical ceiling** is the child's patience and the tutor's ability to
+calibrate language. A 10-year-old can understand the sliding filament theory
+of muscle contraction if the vocabulary is pitched right and the analogy is good.
+They cannot understand it if it is written for a 20-year-old.
+
+**Cross-curricular depth:** The deepest learning often happens when a child
+follows a thread across subject boundaries — sport → physics → chemistry →
+history → economics — without a teacher saying "that's a different lesson."
+etutor has no lesson boundaries.
+
+---
+
 ## Verified Research Findings
 
 ### 1. Interleaved Practice vs Blocked Practice — HIGH confidence

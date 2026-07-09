@@ -3514,6 +3514,180 @@ _SPORT = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Sports Medicine and Exercise Science — University-Level Topics
+# Made accessible from age 12+ for any child who wants to go deeper.
+# Design principle: no ceiling. A curious child should be able to follow
+# any interest as far as it goes — up to and including the content of a
+# first-year BSc Sports Science or Sports Medicine course — without
+# hitting an artificial age wall or being told "that's for university."
+# The stigma of higher education is the idea that deep knowledge
+# requires institutional permission. It doesn't. If you want to understand
+# why your hamstring keeps tearing, the anatomy, histology, biomechanics,
+# and rehabilitation science are all accessible through conversation.
+# ---------------------------------------------------------------------------
+
+_SPORTS_MEDICINE = [
+
+    # --- Anatomy and Musculoskeletal System ---
+    Topic("skeletal_system_sport", "The Skeletal System — Bones, Joints, and Movement",
+          "Sports Medicine", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["human_body_ks2"],
+          ["anatomy", "bones", "joints", "skeleton", "cartilage", "ligament",
+           "sport", "injury", "sports medicine", "university level"]),
+    Topic("muscular_system", "The Muscular System — Muscles, Fibres, and Contraction",
+          "Sports Medicine", [3], [7, 8, 9], 3, 5,
+          ["human_body_ks2", "cells_ks3"],
+          ["anatomy", "muscles", "muscle fibres", "slow twitch", "fast twitch",
+           "contraction", "sarcomere", "sport", "sports medicine", "university level"]),
+    Topic("muscle_fibre_types", "Muscle Fibre Types — Slow vs Fast Twitch and Training Adaptation",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["muscular_system", "training_principles"],
+          ["muscle fibres", "Type I", "Type II", "slow twitch", "fast twitch",
+           "endurance", "power", "training", "adaptation", "sports medicine"]),
+    Topic("connective_tissue", "Tendons, Ligaments, and Cartilage — The Connective Tissues",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["skeletal_system_sport", "muscular_system"],
+          ["tendons", "ligaments", "cartilage", "collagen", "connective tissue",
+           "injury", "ACL", "Achilles", "sports medicine", "anatomy"]),
+    Topic("joint_mechanics", "Joint Mechanics — Types of Joints and How They Move",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["skeletal_system_sport", "sports_biomechanics"],
+          ["joints", "ball and socket", "hinge", "pivot", "range of motion",
+           "synovial fluid", "biomechanics", "sport", "sports medicine", "anatomy"]),
+
+    # --- Physiology ---
+    Topic("cardiovascular_physiology", "The Heart and Exercise — Cardiac Output, VO2 max, and Adaptation",
+          "Sports Medicine", [3], [7, 8, 9], 3, 5,
+          ["human_body_ks2", "exercise_mental_health"],
+          ["cardiovascular", "heart rate", "stroke volume", "cardiac output",
+           "VO2 max", "aerobic", "adaptation", "sport", "sports medicine", "physiology"]),
+    Topic("respiratory_physiology", "The Lungs and Exercise — Oxygen Transport and the Ventilatory System",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["cardiovascular_physiology"],
+          ["lungs", "oxygen", "CO2", "breathing", "tidal volume",
+           "respiratory rate", "altitude", "sport", "sports medicine", "physiology"]),
+    Topic("energy_systems", "Energy Systems — ATP, Anaerobic, and Aerobic Pathways",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["cardiovascular_physiology", "nutrition_food_science"],
+          ["energy systems", "ATP", "creatine phosphate", "glycolysis",
+           "aerobic", "anaerobic", "lactate", "sport", "sports medicine", "physiology"]),
+    Topic("thermoregulation", "Thermoregulation — How the Body Controls Temperature During Exercise",
+          "Sports Medicine", [3], [8, 9], 3, 5,
+          ["human_body_ks2", "heat_thermal_energy"],
+          ["thermoregulation", "sweating", "heat stroke", "hypothermia",
+           "hydration", "core temperature", "sport", "sports medicine", "physiology"]),
+    Topic("hormones_exercise", "Hormones and Exercise — Cortisol, Testosterone, and Adrenaline",
+          "Sports Medicine", [3], [9], 4, 5,
+          ["nervous_system", "energy_systems"],
+          ["hormones", "cortisol", "adrenaline", "testosterone", "endorphins",
+           "stress response", "sport", "sports medicine", "physiology", "endocrinology"]),
+
+    # --- Injury — Mechanisms and Classification ---
+    Topic("injury_types", "Types of Sports Injury — Acute vs Chronic, Sprains vs Strains",
+          "Sports Medicine", [3], [7, 8, 9], 3, 4,
+          ["connective_tissue", "muscular_system"],
+          ["injury", "sprain", "strain", "fracture", "contusion", "acute",
+           "chronic", "overuse", "sport", "sports medicine", "first aid"]),
+    Topic("common_injuries_lower_limb", "Lower Limb Injuries — Knee, Ankle, and Hamstring",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["injury_types", "joint_mechanics"],
+          ["knee", "ACL", "MCL", "meniscus", "ankle sprain", "hamstring",
+           "shin splints", "Achilles tendinopathy", "sport", "sports medicine"]),
+    Topic("common_injuries_upper_limb", "Upper Limb and Back Injuries — Shoulder, Elbow, and Spine",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["injury_types", "joint_mechanics"],
+          ["shoulder", "rotator cuff", "SLAP tear", "tennis elbow",
+           "back pain", "disc herniation", "sport", "sports medicine", "anatomy"]),
+    Topic("concussion_head_injury", "Concussion — Brain Injury in Sport and Return-to-Play Protocols",
+          "Sports Medicine", [3], [8, 9], 4, 6,
+          ["nervous_system", "injury_types"],
+          ["concussion", "traumatic brain injury", "CTE", "return to play",
+           "sport", "safety", "sports medicine", "neuroscience", "ethics"]),
+    Topic("overtraining_syndrome", "Overtraining — When More Training Makes You Worse",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["training_principles", "recovery_sleep_sport"],
+          ["overtraining", "fatigue", "performance decline", "burnout",
+           "recovery", "sport", "sports medicine", "physiology"]),
+
+    # --- Treatment and Rehabilitation ---
+    Topic("rice_police_protocol", "PRICE/POLICE — First Response to Acute Injury",
+          "Sports Medicine", [2, 3], [6, 7, 8, 9], 2, 3,
+          ["injury_types", "first_aid_cpr_choking"],
+          ["PRICE", "POLICE", "ice", "compression", "elevation", "load",
+           "acute injury", "first aid", "sport", "sports medicine"]),
+    Topic("inflammation_healing", "Inflammation and Tissue Healing — The Four Stages",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["immune_system", "injury_types"],
+          ["inflammation", "healing", "tissue repair", "collagen remodelling",
+           "haematoma", "fibrosis", "sport", "sports medicine", "physiology"]),
+    Topic("rehabilitation_principles", "Rehabilitation — How Injured Athletes Get Back to Sport",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["inflammation_healing", "training_principles"],
+          ["rehabilitation", "physiotherapy", "progressive loading",
+           "return to sport", "function", "sport", "sports medicine", "recovery"]),
+    Topic("physiotherapy_massage", "Manual Therapy — Physiotherapy, Massage, and Soft Tissue Work",
+          "Sports Medicine", [3], [9], 4, 5,
+          ["rehabilitation_principles", "muscular_system"],
+          ["physiotherapy", "massage", "soft tissue", "mobilisation",
+           "manipulation", "trigger points", "sport", "sports medicine"]),
+    Topic("taping_bracing", "Taping and Bracing — Supporting Joints in Sport",
+          "Sports Medicine", [3], [8, 9], 3, 4,
+          ["injury_types", "joint_mechanics"],
+          ["taping", "strapping", "bracing", "kinesiology tape", "support",
+           "proprioception", "sport", "sports medicine", "prevention"]),
+
+    # --- Performance and Prevention ---
+    Topic("warm_up_cool_down", "Warm-Up and Cool-Down — The Physiology Behind the Ritual",
+          "Sports Medicine", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["muscular_system", "cardiovascular_physiology"],
+          ["warm up", "cool down", "flexibility", "injury prevention",
+           "performance", "sport", "sports medicine", "physiology"]),
+    Topic("flexibility_stretching", "Flexibility and Stretching — Static, Dynamic, and PNF",
+          "Sports Medicine", [3], [7, 8, 9], 3, 4,
+          ["muscular_system", "joint_mechanics"],
+          ["flexibility", "stretching", "static stretch", "dynamic stretch",
+           "PNF", "range of motion", "injury prevention", "sport", "sports medicine"]),
+    Topic("strength_conditioning", "Strength and Conditioning — Programming for Athletes",
+          "Sports Medicine", [3], [8, 9], 4, 6,
+          ["weight_training_basics", "training_principles", "energy_systems"],
+          ["strength and conditioning", "periodisation", "S&C", "programming",
+           "power", "speed", "agility", "sport", "sports medicine", "university level"]),
+    Topic("periodisation", "Periodisation — Planning a Season of Training",
+          "Sports Medicine", [3], [9], 4, 6,
+          ["strength_conditioning", "overtraining_syndrome"],
+          ["periodisation", "macrocycle", "mesocycle", "microcycle",
+           "peaking", "tapering", "sport", "sports medicine", "university level"]),
+    Topic("sports_nutrition_science", "Sports Nutrition Science — Macros, Timing, and the Evidence",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["sports_nutrition", "energy_systems"],
+          ["sports nutrition", "macronutrients", "carbohydrate loading",
+           "protein synthesis", "fuelling", "hydration", "sport", "university level"]),
+    Topic("doping_anti_doping", "Doping — Performance-Enhancing Drugs and Why They're Banned",
+          "Sports Medicine", [3], [8, 9], 4, 6,
+          ["hormones_exercise", "supplements_evidence"],
+          ["doping", "steroids", "EPO", "WADA", "USADA", "ethics", "sport",
+           "sports medicine", "fairness", "health", "critical thinking"]),
+
+    # --- Psychology and Mental Performance ---
+    Topic("goal_setting_sport", "Goal Setting in Sport — SMART Goals and Self-Determination",
+          "Sports Medicine", [3], [7, 8, 9], 3, 4,
+          ["sports_psychology", "self_awareness_strengths"],
+          ["goal setting", "SMART", "motivation", "self-determination",
+           "sport", "sports medicine", "psychology", "performance"]),
+    Topic("mental_imagery_sport", "Mental Imagery and Visualisation — Practising Without Moving",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["sports_psychology"],
+          ["mental imagery", "visualisation", "internal imagery", "external imagery",
+           "motor learning", "sport", "sports medicine", "psychology"]),
+    Topic("team_dynamics_sport", "Team Dynamics — Cohesion, Roles, and Group Performance",
+          "Sports Medicine", [3], [8, 9], 4, 5,
+          ["sports_psychology", "teamwork_collaboration"],
+          ["team dynamics", "cohesion", "social loafing", "group norms",
+           "leadership", "sport", "sports medicine", "psychology", "social"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -3521,7 +3695,7 @@ CURRICULUM: list[Topic] = (
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
     _EXPERIMENTS + _FILM +
-    _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT
+    _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
