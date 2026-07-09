@@ -2967,13 +2967,561 @@ _FILM = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Music Theory and Production — Deep Tracks
+# The extended music curriculum for children who want to go further.
+# Two parallel arcs that cross-reference each other:
+#   1. Music Theory — piano keyboard as the model, intervals, chords,
+#      harmony, voice leading, modes, composition
+#   2. Music Production — signal chain, effects, synthesis, sampling,
+#      mixing, mastering — how studio music is actually made
+# The piano is the best instrument for teaching theory because every note
+# is visible and laid out spatially. These topics are for voice+e-ink:
+# the tutor describes, the child reasons — no instrument needed to learn
+# the theory, though having a keyboard available enriches every session.
+# ---------------------------------------------------------------------------
+
+_MUSIC_DEEP = [
+
+    # ==========================================================================
+    # MUSIC THEORY — The Piano as Model
+    # ==========================================================================
+
+    Topic("piano_keyboard_layout", "The Piano Keyboard — The Map of All Western Music",
+          "Music", [2], [4, 5, 6], 1, 3, [],
+          ["piano", "keyboard", "notes", "octaves", "white keys", "black keys",
+           "music theory", "ABCDEFG", "visual"]),
+    # The keyboard as a spatial representation of pitch. White and black keys,
+    # naming notes A-G, the pattern that repeats every octave, middle C as anchor,
+    # why the black keys are where they are (the chromatic scale structure).
+    # No instrument needed — describe the layout verbally. "Count up from C..."
+
+    Topic("semitones_tones", "Semitones and Tones — The Building Blocks of Scales",
+          "Music", [2], [5, 6, 7], 2, 4, ["piano_keyboard_layout"],
+          ["music theory", "semitone", "tone", "half step", "whole step",
+           "intervals", "chromatic scale", "piano"]),
+    # A semitone is one key to the very next (white or black). A tone is two semitones.
+    # The chromatic scale is 12 semitones. This is the foundation for understanding
+    # why scales sound the way they do — they're patterns of tones and semitones.
+
+    Topic("major_scale_construction", "Building a Major Scale — The TTSTTTS Pattern",
+          "Music", [2], [5, 6, 7], 2, 4, ["semitones_tones"],
+          ["music theory", "major scale", "TTSTTTS", "C major", "key",
+           "scales", "piano", "pattern"]),
+    # Tone-Tone-Semitone-Tone-Tone-Tone-Semitone. Why C major uses only white keys.
+    # Build a G major scale — one black key needed. This is the moment students
+    # understand why key signatures exist. Perfect for voice: "Start on D, go up
+    # using TTSTTTS — what note do you land on?"
+
+    Topic("minor_scales", "Minor Scales — Natural, Harmonic, and Melodic",
+          "Music", [3], [6, 7, 8], 3, 4, ["major_scale_construction"],
+          ["music theory", "minor scale", "natural minor", "harmonic minor",
+           "melodic minor", "sad", "mood", "scales", "piano"]),
+    # Why minor sounds different (sad/tense) — the third is lowered by a semitone.
+    # Natural minor (Aeolian mode), harmonic minor (raised 7th for the leading tone),
+    # melodic minor (different ascending and descending). The tutor can demonstrate
+    # by humming or describing: "Imagine a scale that goes up but comes back differently."
+
+    Topic("intervals_ear_training", "Intervals — Naming the Distance Between Any Two Notes",
+          "Music", [2, 3], [5, 6, 7, 8], 3, 4, ["semitones_tones"],
+          ["music theory", "intervals", "unison", "third", "fifth", "octave",
+           "perfect", "major", "minor", "ear training", "recognition"]),
+    # Unison, minor 2nd, major 2nd, minor 3rd... through to the octave.
+    # The classic trick: each interval has a famous melody that starts with it.
+    # Major 2nd = first two notes of Happy Birthday. Perfect 5th = Star Wars theme.
+    # Minor 3rd = Smoke on the Water. Voice-teachable as recognition exercises.
+
+    Topic("triads_chord_construction", "Triads — Building Chords from Three Notes",
+          "Music", [2, 3], [5, 6, 7, 8], 3, 4, ["intervals_ear_training"],
+          ["music theory", "chords", "triads", "major chord", "minor chord",
+           "diminished", "augmented", "root", "third", "fifth", "piano"]),
+    # Root + major third + perfect fifth = major chord (happy).
+    # Root + minor third + perfect fifth = minor chord (sad).
+    # Root + minor third + diminished fifth = diminished chord (tense/unstable).
+    # Every chord in Western music is built from intervals stacked on a root.
+
+    Topic("chord_progressions", "Chord Progressions — The Patterns Behind Every Song",
+          "Music", [2, 3], [6, 7, 8, 9], 3, 5, ["triads_chord_construction"],
+          ["music theory", "chord progressions", "I IV V", "ii V I", "twelve bar blues",
+           "pop progression", "jazz", "harmony", "piano", "songwriting"]),
+    # I-IV-V: the foundation of blues, rock, and country.
+    # I-V-vi-IV: the four-chord pop progression (Pachelbel → Axis of Awesome).
+    # ii-V-I: the jazz turnaround.
+    # Twelve bar blues as a complete harmonic system.
+    # Voice exercise: "Name three famous songs that use I-V-vi-IV."
+
+    Topic("seventh_chords", "Seventh Chords — Adding the Fourth Note",
+          "Music", [3], [7, 8, 9], 3, 5, ["chord_progressions"],
+          ["music theory", "seventh chords", "dominant seventh", "major seventh",
+           "minor seventh", "jazz", "blues", "tension", "piano", "harmony"]),
+    # Dominant seventh (C7) = the chord that most wants to resolve — foundation of blues.
+    # Major seventh (Cmaj7) = jazzy, sophisticated, floaty.
+    # Minor seventh (Cm7) = mellow, soulful.
+    # Why sevenths create tension and how resolution works.
+
+    Topic("modes_introduction", "Modes — The Seven Flavours of the Major Scale",
+          "Music", [3], [8, 9], 4, 5, ["major_scale_construction"],
+          ["music theory", "modes", "Dorian", "Mixolydian", "Lydian", "Phrygian",
+           "modal", "jazz", "folk", "colour", "piano", "advanced"]),
+    # Starting a major scale on a different degree gives a mode with a distinct colour.
+    # Dorian (D to D on white keys) = minor but with a raised 6th — used in folk and jazz.
+    # Mixolydian (G to G) = major but with a flat 7th — used in rock and blues.
+    # Lydian (F to F) = dreamy, film music.
+    # Phrygian (E to E) = Spanish/flamenco sound.
+
+    Topic("counterpoint_voice_leading", "Counterpoint and Voice Leading — How Notes Move Together",
+          "Music", [3], [8, 9], 4, 6, ["chord_progressions", "intervals_ear_training"],
+          ["music theory", "counterpoint", "voice leading", "Bach", "polyphony",
+           "part writing", "dissonance", "resolution", "advanced", "composition"]),
+    # Why some note movements sound smooth and others jarring.
+    # The rules of classical counterpoint (parallel fifths are forbidden, why?).
+    # Bach's chorales as examples of perfect voice leading.
+    # How this connects to jazz chord voicings and smooth progressions.
+
+    Topic("rhythm_advanced", "Rhythm in Depth — Polyrhythm, Syncopation, and Odd Time Signatures",
+          "Music", [2, 3], [6, 7, 8, 9], 3, 5, ["music_rhythm_ks1"],
+          ["music theory", "rhythm", "polyrhythm", "syncopation", "3/4", "5/4", "7/8",
+           "odd time", "jazz", "African music", "groove", "advanced"]),
+    # Syncopation: the beat lands where you don't expect it — the engine of jazz and funk.
+    # Polyrhythm: two different rhythms simultaneously (3 against 2).
+    # Odd time signatures: Brubeck's Take Five (5/4), Pink Floyd's Money (7/4).
+    # Voice exercise: "Count 1-2-3-4-5 to yourself while I speak the rhythm..."
+
+    # ==========================================================================
+    # MUSIC PRODUCTION — The Studio as Instrument
+    # ==========================================================================
+
+    Topic("signal_chain", "The Signal Chain — From Instrument to Speaker",
+          "Music", [3], [7, 8, 9], 3, 4, ["music_physics_sound"],
+          ["music production", "signal chain", "instrument", "amplifier",
+           "speaker", "gain", "decibels", "audio", "electronics", "how things work"]),
+    # Every sound travels: instrument → pickup/microphone → preamp → amplifier → speaker.
+    # What gain is and why it matters.
+    # Decibels as a logarithmic scale (0dB, +3dB doubles perceived volume).
+    # Why the order of effects in the chain matters.
+
+    Topic("microphones_how_they_work", "Microphones — How Sound Becomes Electricity",
+          "Music", [3], [7, 8, 9], 3, 4, ["signal_chain", "sound_ks2"],
+          ["music production", "microphones", "condenser", "dynamic", "ribbon",
+           "polar patterns", "cardioid", "phantom power", "recording", "how things work"]),
+    # Dynamic (moving coil — robust, live), condenser (capacitor — sensitive, studio),
+    # ribbon (warm, vintage). Polar patterns: cardioid captures what's in front,
+    # omni captures everything, figure-8 captures front and back.
+    # Why you can't plug a condenser mic into a guitar amp.
+
+    Topic("effects_distortion_overdrive", "Distortion and Overdrive — Clipping, Harmonics, and Grit",
+          "Music", [3], [7, 8, 9], 3, 5,
+          ["signal_chain", "music_physics_sound"],
+          ["music production", "effects", "distortion", "overdrive", "fuzz",
+           "clipping", "harmonics", "guitar", "electric guitar", "pedals", "tone"]),
+    # What actually happens electrically when you overdrive a signal (clipping).
+    # How clipping generates harmonic overtones — why distortion sounds musical.
+    # The difference: overdrive (soft clipping, warm) → distortion (hard clipping, aggressive)
+    # → fuzz (extreme clipping, sustain, octave effects).
+    # History: the Kinks cutting their speaker cone, the Tone Bender, the Big Muff.
+
+    Topic("effects_time_based", "Reverb, Delay, and Chorus — Time-Based Effects",
+          "Music", [3], [7, 8, 9], 3, 5,
+          ["signal_chain", "sound_ks2"],
+          ["music production", "effects", "reverb", "delay", "chorus", "flanger",
+           "phaser", "time", "echo", "space", "pedals", "atmosphere"]),
+    # Reverb: simulates a space (room, hall, plate, spring). The physics — reflections.
+    # Delay: discrete echo. Slap-back (Rockabilly), dotted-eighth (The Edge, U2).
+    # Chorus: multiple slightly detuned and delayed copies = perceived fullness.
+    # Flanger: extreme chorus with feedback — the jet-plane sound.
+    # Phaser: all-pass filter swept in frequency — sweeping, psychedelic.
+
+    Topic("effects_dynamic_processing", "Compression and EQ — Shaping Dynamics and Tone",
+          "Music", [3], [8, 9], 4, 5,
+          ["signal_chain", "music_physics_sound"],
+          ["music production", "compression", "EQ", "equalisation", "threshold",
+           "ratio", "attack", "release", "frequency", "mixing", "mastering"]),
+    # EQ: boost or cut frequency bands. Low-pass, high-pass, shelf, parametric.
+    # Why vocals need high-pass filtering (removes room rumble).
+    # Compression: turns down the loudest parts, turns up the average level.
+    # Threshold, ratio, attack, release as parameters.
+    # Why over-compressed music sounds flat and exhausting (the loudness war).
+
+    Topic("synthesis_basics", "Synthesis — Making Sound from Electricity",
+          "Music", [3], [7, 8, 9], 3, 5,
+          ["signal_chain", "music_physics_sound"],
+          ["music production", "synthesis", "oscillator", "filter", "envelope",
+           "ADSR", "LFO", "subtractive synthesis", "Moog", "analogue", "synth"]),
+    # Subtractive synthesis: start with a harmonically rich waveform, filter out what
+    # you don't want. Oscillator (generates waveform) → Filter (shapes tone) →
+    # Amplifier (shapes volume) → controlled by envelope and LFO.
+    # ADSR: Attack, Decay, Sustain, Release — the shape of a sound over time.
+    # LFO: Low Frequency Oscillator — creates vibrato, tremolo, filter wobble.
+    # History: Moog synthesiser (1964), Minimoog, the ARP, Kraftwerk.
+
+    Topic("synthesis_modern", "Modern Synthesis — FM, Wavetable, and Granular",
+          "Music", [3], [9], 4, 5,
+          ["synthesis_basics"],
+          ["music production", "synthesis", "FM synthesis", "wavetable",
+           "granular", "Yamaha DX7", "Serum", "advanced", "digital synth"]),
+    # FM synthesis: two oscillators where one modulates the frequency of the other.
+    # Creates metallic, bell-like, electric piano sounds. The DX7 sound (1983).
+    # Wavetable: scanning through a table of waveforms in real time — modern digital sound.
+    # Granular: slicing audio into tiny grains and reassembling them — stretching, morphing.
+
+    Topic("sampling_basics", "Sampling — Using Recordings as Instruments",
+          "Music", [3], [7, 8, 9], 3, 5,
+          ["music_technology"],
+          ["music production", "sampling", "sampler", "loop", "chop", "hip hop",
+           "Akai MPC", "SP-404", "copyright", "creative", "how things work"]),
+    # What a sampler is — it records a sound and plays it back at different pitches.
+    # Crate digging: finding the break-beat. James Brown's "Funky Drummer."
+    # The Amen break — used in thousands of tracks.
+    # Chopping: slicing a sample into pieces and rearranging them.
+    # Copyright and sampling (the Biz Markie case, Bridgeport v. Dimension Films).
+    # Hardware samplers: Akai MPC, E-mu SP-1200, Roland SP-404.
+
+    Topic("sampling_advanced", "Advanced Sampling — Flip, Chop, and Replay",
+          "Music", [3], [9], 4, 6,
+          ["sampling_basics", "chord_progressions"],
+          ["music production", "sampling", "flip", "chop", "pitch shift",
+           "time stretch", "replay", "interpolation", "hip hop", "production"]),
+    # The flip: taking a sample and making it unrecognisable through transposition, chopping,
+    # filtering, and reversing.
+    # Replay: recreating a sample note-for-note on a keyboard to avoid copyright.
+    # Interpolation: quoting a melody without the original recording.
+    # Beatmaking workflow: MPC workflow, DAW workflow, hardware vs software.
+
+    Topic("mixing_basics", "Mixing — Balancing Sounds in 3D Space",
+          "Music", [3], [8, 9], 3, 5,
+          ["effects_dynamic_processing", "signal_chain"],
+          ["music production", "mixing", "panning", "levels", "frequency",
+           "stereo field", "EQ", "compression", "arrangement", "balance"]),
+    # The three dimensions of a mix: volume (up/down), pan (left/right),
+    # frequency (front/back — high frequencies feel closer).
+    # Why you EQ different instruments to occupy different frequency ranges.
+    # Why the kick and bass need to share the low end carefully.
+    # Listening on different systems: headphones vs speakers vs phone speaker.
+
+    Topic("mastering_concepts", "Mastering — The Final Step Before Release",
+          "Music", [3], [9], 4, 5,
+          ["mixing_basics", "effects_dynamic_processing"],
+          ["music production", "mastering", "loudness", "LUFS", "limiting",
+           "stereo width", "distribution", "Spotify", "streaming", "final"]),
+    # What mastering is (optimising a stereo mix for distribution).
+    # Loudness normalisation: why Spotify sets everything to -14 LUFS and what
+    # that did to the loudness war.
+    # The limiter: the final brick wall that stops clipping on playback.
+    # Stereo width and how to check mono compatibility.
+
+    Topic("daw_workflow", "DAW Workflow — How a Track Is Built in a Digital Audio Workstation",
+          "Music", [3], [7, 8, 9], 3, 4,
+          ["signal_chain", "sampling_basics"],
+          ["music production", "DAW", "Ableton", "Logic", "GarageBand", "FL Studio",
+           "workflow", "arrangement", "MIDI", "audio", "production"]),
+    # What a DAW does: records audio, plays MIDI, hosts plugins, arranges tracks.
+    # MIDI vs audio: MIDI is instructions (play note C4 at velocity 80 for 0.5s);
+    # audio is recorded sound.
+    # The arrangement view: intro, verse, chorus, bridge, outro.
+    # Budget options: GarageBand (free on Mac/iPad), LMMS (free, Windows/Linux).
+
+    Topic("music_production_genres", "Genre DNA — How Different Genres Use Production Differently",
+          "Music", [3], [8, 9], 4, 5,
+          ["daw_workflow", "music_twentieth_century"],
+          ["music production", "genres", "hip hop", "electronic", "rock", "jazz",
+           "trap", "house", "techno", "drum and bass", "production techniques"]),
+
+    # ==========================================================================
+    # INSTRUMENT FAMILIES — How They Work and Why They Sound Different
+    # ==========================================================================
+
+    Topic("strings_how_they_work", "Strings — Violin, Cello, Guitar, and How Vibrating Strings Make Sound",
+          "Music", [2], [4, 5, 6, 7], 2, 4,
+          ["music_physics_sound"],
+          ["music", "strings", "violin", "cello", "guitar", "vibration",
+           "harmonics", "overtones", "resonance", "orchestral", "how things work"]),
+    # A string vibrates — its fundamental frequency gives the pitch, but it also
+    # vibrates at 2×, 3×, 4× the frequency (harmonics). Different harmonics give
+    # each instrument its timbre. Why a violin and a guitar playing the same note
+    # sound different (the body shape, wood type, and bow vs pluck change which
+    # harmonics are amplified). The physics of the bow (stick-slip friction).
+    # The orchestra: violin family from highest to lowest (violin, viola, cello, bass).
+    # Guitar family: nylon-string (classical), steel-string (folk), electric (amplified).
+
+    Topic("strings_playing_techniques", "String Playing Techniques — Bowing, Plucking, and Extended Techniques",
+          "Music", [3], [6, 7, 8, 9], 3, 4,
+          ["strings_how_they_work"],
+          ["music", "strings", "arco", "pizzicato", "col legno", "sul ponticello",
+           "harmonics", "tremolo", "vibrato", "techniques", "orchestral", "notation"]),
+    # Arco (bowing) vs pizzicato (plucking). Col legno (hit with the bow stick — Holst).
+    # Natural and artificial harmonics — producing those ghostly high notes.
+    # Sul ponticello (near the bridge) for glassy, eerie tone.
+    # Tremolo: rapid back-and-forth bowing for tension.
+    # Vibrato: oscillating the finger to vary pitch slightly for warmth and expression.
+
+    Topic("woodwind_how_they_work", "Woodwind — Flute, Clarinet, Oboe, and Making Sound with Air",
+          "Music", [2], [4, 5, 6, 7], 2, 4,
+          ["music_physics_sound"],
+          ["music", "woodwind", "flute", "clarinet", "oboe", "saxophone", "recorder",
+           "air column", "reed", "embouchure", "harmonics", "how things work"]),
+    # Three mechanisms: edge tone (flute — air splits across an edge, creating turbulence),
+    # single reed (clarinet, saxophone — reed vibrates against the mouthpiece),
+    # double reed (oboe, bassoon — two reeds vibrate against each other).
+    # The air column inside the tube vibrates at different frequencies depending on
+    # which holes are covered. Opening a hole shortens the vibrating air column →
+    # raises the pitch. Why the clarinet overblows to a twelfth and the flute to an octave.
+    # The recorder as the most accessible starting point for understanding all of this.
+
+    Topic("woodwind_extended_techniques", "Woodwind Techniques — Multiphonics, Circular Breathing, and Tonguing",
+          "Music", [3], [7, 8, 9], 3, 5,
+          ["woodwind_how_they_work"],
+          ["music", "woodwind", "multiphonics", "circular breathing", "flutter tongue",
+           "extended techniques", "jazz", "contemporary", "advanced"]),
+    # Circular breathing: inhaling through the nose while exhaling through the mouth —
+    # allows continuous sound. Used by throat singers, didgeridoo players, jazz soloists.
+    # Multiphonics: producing two or more simultaneous pitches on a single reed instrument
+    # by fingering and embouchure manipulation — creates eerie, complex tones.
+    # Flutter tongue: rolling the tongue rapidly while playing — used in Stravinsky.
+    # Altissimo register on saxophone: playing above the normal range.
+
+    Topic("brass_how_they_work", "Brass — Trumpet, Trombone, Horn, and Standing Waves in Tubes",
+          "Music", [2], [5, 6, 7], 2, 4,
+          ["music_physics_sound"],
+          ["music", "brass", "trumpet", "trombone", "French horn", "tuba",
+           "valve", "slide", "harmonic series", "embouchure", "how things work"]),
+    # The player's lips vibrate, setting the air column in the tube vibrating.
+    # The harmonic series: a tube can only produce specific pitches naturally —
+    # the fundamental and its overtones. Early natural horns could only play these.
+    # Valves (trumpet, horn) add extra tubing to change the fundamental pitch.
+    # Slide (trombone) continuously varies the tube length.
+    # Why brass players warm up by buzzing their lips on the mouthpiece.
+    # The harmonic series as the origin of the chord — the first five harmonics
+    # naturally spell out a major chord.
+
+    Topic("percussion_how_it_works", "Percussion — Drums, Pitched and Unpitched, and Why Membranes Ring",
+          "Music", [2], [3, 4, 5, 6], 1, 4,
+          ["music_rhythm_ks1", "music_physics_sound"],
+          ["music", "percussion", "drums", "snare", "timpani", "xylophone",
+           "vibraphone", "membrane", "resonance", "kit", "tuning", "how things work"]),
+    # Two families: pitched (timpani, marimba, vibraphone, xylophone) and unpitched
+    # (snare, bass drum, cymbals).
+    # How a drum membrane vibrates in 2D — circular standing waves — and why
+    # you can tune a drum by tightening the skin.
+    # The drum kit as a single player's orchestration of the percussion section.
+    # Cymbal acoustics: why cymbals are inharmonic (their complex shape means
+    # the overtones don't follow a neat harmonic series — hence the "crash" rather
+    # than a clear pitch).
+    # Marimba vs xylophone: wood resonator length and bar thickness differences.
+
+    Topic("percussion_drumming_styles", "Drum Techniques — Rudiments, Grooves, and World Drumming",
+          "Music", [2, 3], [5, 6, 7, 8], 3, 4,
+          ["percussion_how_it_works", "rhythm_advanced"],
+          ["music", "drums", "rudiments", "paradiddle", "flam", "groove",
+           "jazz drumming", "rock drumming", "African drumming", "Brazilian",
+           "polyrhythm", "techniques"]),
+    # The 40 drum rudiments — foundational sticking patterns.
+    # The paradiddle (RLRR LRLL) and why it's used for fills and transitions.
+    # Rock vs jazz kick placement (four-on-the-floor vs more fluid jazz feel).
+    # African drumming as ensemble polyrhythm vs Western drumming as timekeeping.
+    # Brazilian rhythms: the samba pattern, baião, bossa nova.
+    # How trap-style hi-hat patterns evolved from jazz brushwork.
+
+    Topic("voice_as_instrument", "The Voice — How Humans Make Every Sound in Music",
+          "Music", [2], [4, 5, 6, 7], 2, 4,
+          ["music_physics_sound"],
+          ["music", "voice", "vocal cords", "resonance", "register", "chest voice",
+           "head voice", "falsetto", "vowels", "formants", "singing", "how things work"]),
+    # Vocal cords (folds) vibrate when air passes — the fundamental pitch.
+    # Resonating chambers (chest, throat, mouth, nasal) amplify different harmonics —
+    # why different vowel sounds have different timbres.
+    # Chest voice vs head voice vs falsetto — different vibratory modes.
+    # Why singers warm up (the voice is a muscle).
+    # Formants: the resonant peaks that let us distinguish vowel sounds even at the
+    # same pitch — the acoustic basis of language and singing.
+    # Throat singing (Tuvan): producing multiple simultaneous pitches by
+    # strongly amplifying a specific overtone through mouth-shaping.
+
+    Topic("orchestra_layout_instruments", "The Orchestra — Its Instruments, Layout, and Why It's Arranged That Way",
+          "Music", [2], [5, 6, 7], 2, 3,
+          ["strings_how_they_work", "woodwind_how_they_work", "brass_how_they_work",
+           "percussion_how_it_works"],
+          ["music", "orchestra", "layout", "sections", "conductor", "strings",
+           "woodwind", "brass", "percussion", "balance", "acoustics"]),
+    # Why strings sit at the front (they project forward best from that position).
+    # Why the conductor faces the orchestra (cuing entries).
+    # How the layout evolved over time (the classical orchestra is smaller than
+    # the Romantic orchestra).
+    # The balance problem: a single horn player can easily drown out twelve violinists
+    # at full volume — how orchestration manages this.
+]
+
+
+# ---------------------------------------------------------------------------
+# Performing Arts — Dance, Drama, and Movement
+# ---------------------------------------------------------------------------
+
+_PERFORMING_ARTS = [
+    Topic("dance_styles_history", "Dance Styles Through History — From Court Dance to Street",
+          "Performing Arts", [2, 3], [5, 6, 7, 8, 9], 2, 4, [],
+          ["dance", "ballet", "jazz dance", "hip hop dance", "contemporary",
+           "breakdancing", "history", "culture", "performing arts"]),
+    Topic("ballet_basics", "Ballet — Technique, Vocabulary, and Its Classical Tradition",
+          "Performing Arts", [2], [4, 5, 6, 7], 2, 3,
+          ["dance_styles_history"],
+          ["ballet", "classical dance", "positions", "vocabulary", "Swan Lake",
+           "Nutcracker", "Tchaikovsky", "performing arts"]),
+    Topic("contemporary_dance", "Contemporary Dance — Exploring Movement and Expression",
+          "Performing Arts", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["dance_styles_history"],
+          ["contemporary dance", "modern dance", "improvisation", "Martha Graham",
+           "expression", "choreography", "performing arts"]),
+    Topic("hip_hop_dance", "Hip Hop Dance — Breaking, Popping, Locking, and Freestyle",
+          "Performing Arts", [2, 3], [5, 6, 7, 8, 9], 2, 4,
+          ["dance_styles_history", "music_twentieth_century"],
+          ["hip hop", "breakdancing", "b-boy", "popping", "locking", "freestyle",
+           "culture", "performing arts", "street dance"]),
+    Topic("dance_choreography", "Choreography — How Dances Are Designed and Structured",
+          "Performing Arts", [3], [7, 8, 9], 4, 6,
+          ["dance_styles_history"],
+          ["choreography", "dance", "structure", "motif", "development",
+           "space", "time", "dynamics", "performing arts", "creative"]),
+    Topic("drama_improv", "Improvisation — Making Theatre Without a Script",
+          "Performing Arts", [2], [3, 4, 5, 6, 7], 2, 4, [],
+          ["drama", "improvisation", "yes and", "theatre games", "comedy",
+           "confidence", "performing arts", "social skills"]),
+    Topic("drama_characterisation", "Characterisation — How to Be Someone Else Believably",
+          "Performing Arts", [2, 3], [5, 6, 7, 8], 3, 5,
+          ["drama_improv"],
+          ["drama", "character", "Stanislavski", "method acting", "emotion memory",
+           "physicality", "voice", "performing arts"]),
+    Topic("theatre_history", "The Story of Theatre — From Ancient Greece to the West End",
+          "Performing Arts", [2, 3], [6, 7, 8], 3, 4, [],
+          ["theatre", "history", "Greek theatre", "Shakespeare", "commedia dell arte",
+           "Brecht", "musical theatre", "performing arts"]),
+    Topic("stagecraft", "Stagecraft — Sets, Lighting, Sound, and How Theatre Is Made",
+          "Performing Arts", [3], [7, 8, 9], 3, 4, ["theatre_history"],
+          ["stagecraft", "set design", "lighting", "sound design", "stage management",
+           "production", "performing arts", "how things work"]),
+    Topic("musical_theatre", "Musical Theatre — Song, Dance, and Story Combined",
+          "Performing Arts", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["theatre_history", "music_composition_songwriting"],
+          ["musical theatre", "Broadway", "West End", "Sondheim", "Rodgers Hammerstein",
+           "Hamilton", "story", "music", "performing arts"]),
+]
+
+
+# ---------------------------------------------------------------------------
+# Sport, Physical Training, and the Body
+# ---------------------------------------------------------------------------
+
+_SPORT = [
+
+    # --- Sport Theory and Tactics ---
+    Topic("sport_how_to_learn", "How to Learn a Sport — Deliberate Practice and Skill Acquisition",
+          "Sport", [2, 3], [5, 6, 7, 8, 9], 3, 4, ["growth_mindset"],
+          ["sport", "deliberate practice", "skill", "learning", "feedback",
+           "motor learning", "training", "improvement"]),
+    Topic("football_tactics_basics", "Football Tactics — Formations, Roles, and Pressing",
+          "Sport", [2, 3], [5, 6, 7, 8, 9], 2, 5,
+          ["teamwork_collaboration"],
+          ["football", "tactics", "4-4-2", "4-3-3", "pressing", "formation",
+           "position", "strategy", "coaching", "sport"]),
+    Topic("football_tactics_advanced", "Advanced Football Tactics — High Press, Gegenpressing, and Pep's Positional Play",
+          "Sport", [3], [8, 9], 4, 6,
+          ["football_tactics_basics"],
+          ["football", "tactics", "gegenpressing", "positional play", "Guardiola",
+           "Klopp", "tiki-taka", "transitions", "advanced", "coaching"]),
+    Topic("sport_rules_major", "Rules of the Game — Football, Cricket, Rugby, Tennis, and Athletics",
+          "Sport", [1, 2], [2, 3, 4, 5, 6, 7], 1, 3, [],
+          ["sport", "rules", "football", "cricket", "rugby", "tennis",
+           "athletics", "fair play", "offside", "LBW"]),
+    Topic("sport_coaching_principles", "Coaching — How to Help Others Improve",
+          "Sport", [3], [7, 8, 9], 4, 5,
+          ["sport_how_to_learn", "leadership_basics"],
+          ["coaching", "feedback", "sport", "motivation", "drills",
+           "session planning", "communication", "leadership"]),
+    Topic("sport_drills_design", "Designing Drills — How Coaches Build Skills Progressively",
+          "Sport", [3], [8, 9], 4, 5,
+          ["sport_coaching_principles"],
+          ["drills", "coaching", "progression", "sport", "skill building",
+           "overload", "practice", "design"]),
+    Topic("sports_psychology", "Sports Psychology — Mind, Performance, and Pressure",
+          "Sport", [3], [7, 8, 9], 4, 5,
+          ["growth_mindset", "emotional_regulation"],
+          ["sports psychology", "performance", "anxiety", "flow", "confidence",
+           "visualisation", "choking", "sport", "mental skills"]),
+    Topic("olympic_history", "The Olympics — History, Politics, and the Meaning of Competition",
+          "Sport", [2, 3], [5, 6, 7, 8], 2, 5,
+          ["ancient_greece"],
+          ["Olympics", "history", "politics", "sport", "Jesse Owens",
+           "Mexico 1968", "Munich 1972", "fair play", "doping"]),
+
+    # --- Martial Arts ---
+    Topic("martial_arts_overview", "Martial Arts — Origins, Philosophy, and the Major Traditions",
+          "Sport", [2, 3], [5, 6, 7, 8, 9], 2, 4, [],
+          ["martial arts", "judo", "karate", "kung fu", "Brazilian jiu-jitsu",
+           "boxing", "philosophy", "discipline", "self-defence", "history"]),
+    Topic("martial_arts_striking", "Striking Arts — Boxing, Muay Thai, Karate, and the Science of Impact",
+          "Sport", [3], [7, 8, 9], 3, 5,
+          ["martial_arts_overview", "forces_motion_ks3"],
+          ["boxing", "Muay Thai", "karate", "striking", "footwork", "distance",
+           "physics", "force", "sport", "self-defence"]),
+    Topic("martial_arts_grappling", "Grappling Arts — Judo, Wrestling, and Brazilian Jiu-Jitsu",
+          "Sport", [3], [7, 8, 9], 3, 5,
+          ["martial_arts_overview"],
+          ["judo", "wrestling", "Brazilian jiu-jitsu", "BJJ", "throws",
+           "ground fighting", "leverage", "sport", "self-defence", "physics"]),
+    Topic("self_defence_awareness", "Self-Defence — Awareness, De-escalation, and Knowing When to Leave",
+          "Sport", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["martial_arts_overview", "emotional_regulation"],
+          ["self-defence", "awareness", "de-escalation", "safety", "martial arts",
+           "boundaries", "sport", "real world", "confidence"]),
+
+    # --- Physical Training and Health ---
+    Topic("fitness_components", "Fitness Components — Strength, Endurance, Flexibility, and Speed",
+          "Sport", [2], [5, 6, 7], 2, 3, [],
+          ["fitness", "strength", "endurance", "flexibility", "speed",
+           "agility", "coordination", "health", "sport", "training"]),
+    Topic("training_principles", "Training Principles — Progressive Overload, Rest, and Adaptation",
+          "Sport", [3], [7, 8, 9], 3, 5,
+          ["fitness_components", "human_body_ks2"],
+          ["training", "progressive overload", "SAID principle", "supercompensation",
+           "rest", "recovery", "adaptation", "sport", "strength training"]),
+    Topic("weight_training_basics", "Weight Training — How Lifting Makes You Stronger",
+          "Sport", [3], [8, 9], 3, 5,
+          ["training_principles", "human_body_ks2"],
+          ["weight training", "strength", "hypertrophy", "reps", "sets",
+           "compound lifts", "squat", "deadlift", "bench press", "sport", "health"]),
+    Topic("yoga_movement", "Yoga — Breath, Movement, and the Mind-Body Connection",
+          "Sport", [2, 3], [6, 7, 8, 9], 2, 4, [],
+          ["yoga", "flexibility", "breath", "mindfulness", "movement",
+           "balance", "wellbeing", "sport", "health", "mental health"]),
+    Topic("sports_nutrition", "Sports Nutrition — What to Eat and When for Performance",
+          "Sport", [3], [7, 8, 9], 3, 5,
+          ["nutrition_food_science", "training_principles"],
+          ["nutrition", "sport", "carbohydrates", "protein", "fat", "hydration",
+           "timing", "energy", "performance", "health"]),
+    Topic("supplements_evidence", "Supplements — What the Evidence Actually Says",
+          "Sport", [3], [8, 9], 4, 5,
+          ["sports_nutrition", "peer_review_consensus"],
+          ["supplements", "protein powder", "creatine", "caffeine", "evidence",
+           "sport", "health", "critical thinking", "marketing", "placebo"]),
+    Topic("recovery_sleep_sport", "Recovery — Why Rest Is Part of Training",
+          "Sport", [3], [7, 8, 9], 3, 4,
+          ["training_principles", "sleep_and_the_brain"],
+          ["recovery", "sleep", "DOMS", "active recovery", "nutrition",
+           "sport", "training", "health", "adaptation"]),
+    Topic("sports_biomechanics", "Sports Biomechanics — The Physics of Movement",
+          "Sport", [3], [8, 9], 4, 5,
+          ["forces_motion_ks3", "fitness_components"],
+          ["biomechanics", "sport", "forces", "lever", "torque", "efficiency",
+           "technique", "physics", "injury prevention", "movement"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
-    _EXPERIMENTS + _FILM
+    _EXPERIMENTS + _FILM +
+    _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
