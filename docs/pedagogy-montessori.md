@@ -54,6 +54,10 @@ Montessori identified sensitive periods for: order, language, sensory refinement
 
 **The neuroscience validates the *concept* but not the specific age windows.** No peer-reviewed study directly tests Montessori's proposed sensitive period schedule (e.g. "sensitive period for order: ages 1–3") against developmental outcomes. The age windows appear to be Montessori's clinical observations, not empirically validated intervals.
 
+**Montessori's own theory for ages 6–12 — the "second plane":** Montessori identified ages 6–12 as a distinct developmental stage characterised by the emergence of reason, imagination, and moral sense — not sensory/language acquisition. Her curriculum for this stage ("cosmic curriculum") is thematic and narrative-driven: children are introduced to the big picture of the universe, the history of life, human history, and language — then zoom in. The approach is explicitly imaginative, not drill-based.
+
+**Implication for etutor:** The "cosmic curriculum" framing validates the narrative-first, big-picture approach already in the history and reading curriculum. Introduce topics with the sweep ("humans have been telling stories for 70,000 years") before the detail. This is also why the Bible and TSI are good curriculum anchors for this age — they provide exactly the large narrative frames Montessori considered developmentally appropriate for 6–12.
+
 **Critical gap for etutor's target age range:** The sensitive period literature is strongest for early childhood (0–5) and adolescence. Middle childhood (6–12) — precisely the etutor target — is the least characterised window. Sensitive periods for language and motor development are largely complete by age 6; adolescent brain reorganisation begins around 11–12. The 6–12 range is relatively plastic but without the sharp windows of early childhood. This argues against over-engineering around sensitive period timing for this age group.
 
 **What this means practically:**
@@ -75,6 +79,8 @@ This maps almost exactly onto the **retrieval practice sequence** supported by s
 - Period 1 = Encoding
 - Period 2 = Recognition (easier retrieval) — reduces cognitive load, confirms encoding
 - Period 3 = Free recall (harder retrieval) — the active ingredient for long-term retention
+
+**Dunlosky et al. (2013)** — *Psychological Science in the Public Interest* 14(1) — rated **retrieval practice and distributed practice as the only two HIGH-utility learning strategies** across 10 techniques studied. All others (highlighting, re-reading, concept mapping, summarisation) were rated LOW or MODERATE. This is the single most important paper for prioritising what etutor spends session time on.
 
 **Supporting evidence:**
 - Retrieval practice outperforms re-study for children ages 6–10 across reading comprehension, word learning, and concept learning (Karpicke, Blunt & Smith 2016; Moreira et al. 2019, PMID: 31530086; Ritchie et al. 2013, PMID: 24265738)
@@ -200,6 +206,8 @@ No peer-reviewed empirical study isolating the moveable alphabet as a causal var
 | Session length | Suggested 15-min break | Break suggested, never forced; respect flow states |
 | Child agency | Topic suggestions, child picks from them | Wider choice including exceed-level topics if interest is strong |
 | Mastery gate | BKT P(L) ≥ 0.90 before advancing | Similar — Montessori also doesn't advance until mastery shown |
+
+****The e-ink form factor as Montessori-aligned hardware:** The slow, calm, non-stimulating nature of an e-ink display is a feature for this approach, not a limitation. It forces deliberate interaction and prevents the dopamine-loop dynamics of tablet apps. A child cannot swipe frantically through content — they must wait, read, and respond. This naturally enforces the Montessori principle of focused, uninterrupted work. No other consumer educational device has this property.
 
 **The synthesis for etutor-server:** Keep the algorithmic backbone (spaced repetition, interleaving, Bloom progression) because children cannot self-schedule optimally. Add Montessori principles at the *interface* level: child chooses topic from a curated set, three-period lesson structure for new concepts, respect for flow states, exceed-level access for strong interests, and never forcing through a block — retreat to easier ground and return.
 
