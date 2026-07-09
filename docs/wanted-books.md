@@ -423,16 +423,87 @@ powers on conjuring tricks instead of doing something meaningful?"
 ### 17th Century
 
 **The King James Bible (1611)**
-Not for religious instruction — for language. The KJB is the single most
-influential text in the history of the English language. Hundreds of common
-phrases originate here: "a drop in the bucket", "the skin of my teeth", "the
-writing on the wall", "a land flowing with milk and honey".
-*Approach (ages 10+):* Treat specific passages as language history. The 23rd
-Psalm ("The Lord is my shepherd...") and the opening of Genesis are short,
-magnificent, and immediately recognisable.
-*Questions:* "Can you spot any phrases from this passage that people still use
-today?" / "Why do you think this translation became so famous?"
-*Curriculum:* `henry_viii_reformation`, `english_civil_war`
+Taught as literature, history, and cultural literacy — not religious instruction.
+The KJB is the single most influential text in the history of the English language
+and the foundational narrative of Western culture. A child who doesn't know its
+stories is missing the context for half of English literature, art, and idiom.
+
+**Approach — big picture first, then zoom in:**
+
+*Pass 1 — The overall narrative arc (ages 7–9):*
+Start with the shape of the whole thing: Creation → Fall → the Patriarchs →
+Egypt and the Exodus → the Kingdom of Israel → the Prophets → the Gospels →
+the early Church. A child doesn't need to have read it all — they need a mental
+map so that when they encounter a reference (David and Goliath, the Good Samaritan,
+the Tower of Babel) they know roughly where it lives.
+
+A simple retelling first: *The Lion Storyteller Bible* (Bob Hartman, Lion Hudson)
+for ages 5–8, or *The Complete Illustrated Children's Bible* (Harvest House) for
+ages 8–12. These give the narrative without the KJB's archaic register.
+
+*Pass 2 — The stories worth zooming in on (ages 8+):*
+Move to the KJB text for the most narratively rich passages. These are the ones
+that have generated the most art, literature, and idiom — worth knowing in the
+original language.
+
+**Old Testament — essential stories:**
+
+| Story | Reference | Why it matters |
+|---|---|---|
+| The Creation and the Fall | Genesis 1–3 | The origin of Western ideas about human nature, knowledge, sin |
+| Cain and Abel | Genesis 4 | The first murder; jealousy and consequences |
+| Noah and the Flood | Genesis 6–9 | Judgement, survival, covenant; echoes in every culture |
+| The Tower of Babel | Genesis 11 | Origin of languages; ambition and its limits |
+| Abraham and Isaac | Genesis 22 | Faith and sacrifice; one of the most debated stories in religion |
+| Joseph and his Brothers | Genesis 37–50 | A complete arc: betrayal, slavery, forgiveness, redemption |
+| Moses and the Exodus | Exodus 1–20 | Slavery, liberation, the law; foundational for Jewish, Christian, and Muslim traditions |
+| David and Goliath | 1 Samuel 17 | The underdog story that shaped Western culture |
+| David and Bathsheba | 2 Samuel 11–12 | Power, desire, and consequence — the darker side of the hero |
+| Solomon's Wisdom | 1 Kings 3 | The two mothers and the baby; justice and discernment |
+| Elijah and the Still Small Voice | 1 Kings 19 | Burnout, despair, and renewal — surprisingly modern |
+| Daniel in the Lions' Den | Daniel 6 | Integrity under tyranny |
+| Jonah and the Whale | Jonah 1–4 | Reluctant prophet; a short, funny, profound story |
+| Job | Job 1–3, 38–42 | The problem of suffering; the most philosophically serious book in the Bible |
+| The Psalms | Psalms 23, 51, 91, 139 | The emotional range of the language; grief, joy, guilt, wonder |
+| Ecclesiastes | Ecclesiastes 1, 3, 12 | "Vanity of vanities"; wisdom literature at its most haunting |
+
+**New Testament — essential stories:**
+
+| Story | Reference | Why it matters |
+|---|---|---|
+| The Nativity | Luke 2 | The most retold story in Western culture |
+| The Sermon on the Mount | Matthew 5–7 | The core ethical teaching; "blessed are the meek", "turn the other cheek" |
+| The Parables | Luke 15 (Prodigal Son), Luke 10 (Good Samaritan), Matthew 13 (Sower) | Three of the greatest short stories ever told |
+| Walking on Water | Matthew 14 | Doubt and faith; "O thou of little faith" |
+| The Feeding of the Five Thousand | John 6 | Abundance from scarcity |
+| The Triumphal Entry and the Temple | Mark 11 | Political confrontation; overturning the money-changers |
+| The Last Supper | Luke 22 | Betrayal, communion, farewell |
+| The Crucifixion | Mark 15 | Suffering and abandonment; "My God, my God, why hast thou forsaken me?" |
+| The Road to Emmaus | Luke 24 | Recognition and wonder after the resurrection |
+| The Letter to the Corinthians | 1 Corinthians 13 | "Though I speak with the tongues of men and of angels..." — the greatest definition of love in English |
+| Revelation | Revelation 1, 12, 21–22 | Apocalyptic vision; the language of Western ideas of end and renewal |
+
+*Questions at each story:*
+- "What does this story say about what people were afraid of?"
+- "Why do you think this story has been told for thousands of years?"
+- "Is the person in this story right or wrong? How do you know?"
+- "Can you think of a film or book that tells the same kind of story?"
+
+*Language harvest:* After reading any passage, ask the child to spot phrases still
+in everyday use. Almost every passage yields several. This builds both vocabulary
+and cultural literacy simultaneously.
+
+*Curriculum links:* `henry_viii_reformation` (Reformation was a fight over this
+text), `english_civil_war` (Cromwell's Puritans saturated in it), `transatlantic_slave_trade`
+(both used to justify and to oppose it), `abolition_movement` (Wilberforce and
+Equiano both drew heavily on it), `shakespeare_ks3` (Shakespeare quotes or
+alludes to the Bible on almost every page), `philosophy_for_children`
+
+*Note on religious sensitivity:* Treat the Bible the way you treat Homer or
+Ovid — as a foundational literary and cultural text, not as doctrine. The tutor
+does not advocate belief or disbelief. When a child asks "is it true?", the
+honest answer is: "Many people believe it is. The stories matter whether or not
+you do, because they shaped the world we live in."
 
 **John Milton — Paradise Lost (1667)**
 Satan falls from Heaven and corrupts Adam and Eve. The grandest poem in English.
