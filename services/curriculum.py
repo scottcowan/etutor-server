@@ -1661,11 +1661,282 @@ _SOCIAL_INTELLIGENCE = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Growing Up — The Inner Life
+# The emotional and psychological curriculum for children understanding
+# themselves and others. Covers the experience of growing up, how the
+# mind works, human diversity, and why people are the way they are.
+# Not therapy — just the knowledge that makes life less confusing.
+# Age-gated carefully: some topics only land when a child is actually
+# experiencing them.
+# ---------------------------------------------------------------------------
+
+_GROWING_UP = [
+
+    # --- The Emotional Landscape ---
+    Topic("emotions_map", "The Emotions Map — Naming Every Feeling You Have",
+          "Growing Up", [1, 2], [2, 3, 4, 5], 1, 3,
+          [],
+          ["emotions", "feelings", "vocabulary", "self-awareness",
+           "wellbeing", "growing up", "psychology"]),
+    Topic("why_we_feel", "Why We Feel — What Emotions Are Actually For",
+          "Growing Up", [2], [5, 6, 7], 3, 4,
+          ["emotions_map"],
+          ["emotions", "evolution", "psychology", "fear", "anger", "joy",
+           "wellbeing", "growing up", "science"]),
+    Topic("grief_and_loss", "Grief and Loss — How to Go Through It",
+          "Growing Up", [1, 2, 3], [3, 4, 5, 6, 7, 8, 9], 2, 4,
+          ["understanding_emotions"],
+          ["grief", "loss", "death", "change", "emotions", "wellbeing",
+           "growing up", "relationships", "resilience"]),
+    Topic("loneliness", "Loneliness — Why It Hurts and What Helps",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["understanding_emotions"],
+          ["loneliness", "connection", "wellbeing", "emotions",
+           "growing up", "psychology", "relationships"]),
+    Topic("jealousy_envy", "Jealousy and Envy — Understanding the Green-Eyed Monster",
+          "Growing Up", [2], [5, 6, 7, 8], 3, 4,
+          ["emotions_map"],
+          ["jealousy", "envy", "emotions", "relationships", "growing up",
+           "psychology", "wellbeing", "social"]),
+    Topic("shame_guilt", "Shame and Guilt — The Difference and Why It Matters",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["understanding_emotions"],
+          ["shame", "guilt", "emotions", "psychology", "wellbeing",
+           "growing up", "morality", "self-compassion"]),
+    Topic("anxiety_worry", "Anxiety and Worry — What It Is, Why It Happens, and What Helps",
+          "Growing Up", [2, 3], [5, 6, 7, 8, 9], 2, 4,
+          ["emotional_regulation"],
+          ["anxiety", "worry", "mental health", "wellbeing", "emotions",
+           "growing up", "psychology", "coping"]),
+    Topic("happiness_what_it_is", "What Is Happiness — And Why Chasing It Often Backfires",
+          "Growing Up", [3], [7, 8, 9], 4, 5,
+          ["why_we_feel"],
+          ["happiness", "wellbeing", "psychology", "meaning", "growing up",
+           "stoicism", "philosophy", "hedonic treadmill"]),
+    Topic("boredom_meaning", "Boredom — Why It Exists and What It's Trying to Tell You",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["emotions_map"],
+          ["boredom", "meaning", "purpose", "emotions", "growing up",
+           "creativity", "psychology", "attention"]),
+
+    # --- Growing Up and the Body ---
+    Topic("puberty_bodies_changing", "Puberty — What Happens and Why",
+          "Growing Up", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["human_body_ks2"],
+          ["puberty", "body", "growing up", "biology", "hormones",
+           "changes", "health", "wellbeing"],
+          accelerated_ok=False),  # age-gated: only relevant when approaching/in puberty
+    Topic("sleep_and_the_brain", "Sleep — Why You Need It and What Happens When You Don't Get It",
+          "Growing Up", [2, 3], [5, 6, 7, 8, 9], 2, 4,
+          ["human_body_ks2"],
+          ["sleep", "brain", "memory", "wellbeing", "health", "growing up",
+           "biology", "teenagers"]),
+    Topic("food_mood_brain", "Food and Your Brain — How What You Eat Affects How You Feel",
+          "Growing Up", [2], [5, 6, 7], 3, 4,
+          ["nutrition_food_science"],
+          ["food", "mood", "brain", "sugar", "gut", "wellbeing",
+           "biology", "growing up", "health"]),
+    Topic("exercise_mental_health", "Exercise and the Mind — Why Moving Makes You Feel Better",
+          "Growing Up", [2], [5, 6, 7], 2, 4,
+          [],
+          ["exercise", "mental health", "wellbeing", "biology",
+           "endorphins", "growing up", "sport", "health"]),
+    Topic("addiction_habits", "Habits and Addiction — How Behaviour Gets Locked In",
+          "Growing Up", [3], [7, 8, 9], 4, 5,
+          ["emotional_regulation"],
+          ["habits", "addiction", "dopamine", "psychology", "wellbeing",
+           "growing up", "screens", "substances", "neuroscience"]),
+
+    # --- Identity and Growing Up ---
+    Topic("identity_who_am_i", "Identity — Who Am I and How Do I Know?",
+          "Growing Up", [3], [7, 8, 9], 4, 6,
+          ["self_awareness_strengths"],
+          ["identity", "who am i", "growing up", "psychology", "culture",
+           "values", "philosophy", "self", "belonging"]),
+    Topic("values_what_matters", "Values — Figuring Out What Actually Matters to You",
+          "Growing Up", [2, 3], [7, 8, 9], 4, 5,
+          ["ethics_dilemmas"],
+          ["values", "morality", "identity", "growing up", "philosophy",
+           "choices", "meaning", "character"]),
+    Topic("gender_identity", "Gender — What It Is, How It Works, and Why It's Complicated",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["puberty_bodies_changing"],
+          ["gender", "identity", "biology", "culture", "growing up",
+           "equality", "diversity", "wellbeing"]),
+    Topic("sexuality_relationships", "Attraction and Relationships — How They Work and Why They're Different for Everyone",
+          "Growing Up", [3], [8, 9], 3, 5,
+          ["healthy_unhealthy_relationships", "gender_identity"],
+          ["attraction", "relationships", "sexuality", "growing up", "love",
+           "identity", "diversity", "wellbeing"],
+          accelerated_ok=False),
+    Topic("family_structures", "Families — All the Different Shapes a Family Can Take",
+          "Growing Up", [1, 2], [2, 3, 4, 5, 6], 1, 3,
+          [],
+          ["family", "diversity", "relationships", "growing up",
+           "belonging", "culture", "social", "wellbeing"]),
+    Topic("culture_and_identity", "Culture and Where You Come From — How Background Shapes Who You Are",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["identity_who_am_i"],
+          ["culture", "identity", "heritage", "diversity", "belonging",
+           "growing up", "history", "values"]),
+
+    # --- Understanding Other People ---
+    Topic("personality_types", "Personality — Why People Are So Different from Each Other",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["perspective_taking"],
+          ["personality", "introvert", "extrovert", "psychology",
+           "growing up", "types", "diversity", "relationships"]),
+    Topic("neurodiversity_explainer", "Neurodiversity — Different Kinds of Minds",
+          "Growing Up", [2], [5, 6, 7, 8], 3, 4,
+          ["perspective_taking"],
+          ["neurodiversity", "autism", "ADHD", "dyslexia", "minds",
+           "diversity", "growing up", "empathy", "inclusion"]),
+    Topic("mental_health_basics", "Mental Health — What It Is, Why It Matters, How to Talk About It",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["anxiety_worry", "grief_and_loss"],
+          ["mental health", "wellbeing", "stigma", "depression", "anxiety",
+           "growing up", "help", "psychology"]),
+    Topic("where_beliefs_come_from", "Where Our Beliefs Come From — Family, Culture, and Experience",
+          "Growing Up", [3], [8, 9], 4, 5,
+          ["culture_and_identity", "confirmation_bias"],
+          ["beliefs", "psychology", "culture", "family", "growing up",
+           "critical thinking", "identity", "religion"]),
+    Topic("power_of_narrative", "The Stories We Tell About Ourselves",
+          "Growing Up", [3], [8, 9], 4, 6,
+          ["identity_who_am_i", "storytelling_social"],
+          ["narrative", "self-story", "identity", "psychology", "growing up",
+           "meaning", "change", "resilience"]),
+
+    # --- The Practical Stuff Nobody Teaches ---
+    Topic("how_to_ask_for_help", "How to Ask for Help — Why It's Hard and How to Do It",
+          "Growing Up", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["difficult_conversations"],
+          ["help", "vulnerability", "growing up", "wellbeing",
+           "social skills", "resilience", "communication"]),
+    Topic("failure_and_resilience", "Failing and Getting Back Up — What Resilience Actually Is",
+          "Growing Up", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["growth_mindset", "emotional_regulation"],
+          ["failure", "resilience", "growing up", "wellbeing",
+           "psychology", "effort", "setbacks", "character"]),
+    Topic("making_decisions", "How to Make Decisions — When You Don't Know What to Do",
+          "Growing Up", [2, 3], [7, 8, 9], 4, 5,
+          ["values_what_matters", "cognitive_biases"],
+          ["decisions", "choice", "growing up", "psychology", "values",
+           "uncertainty", "life skills", "thinking"]),
+    Topic("future_and_uncertainty", "Living With Uncertainty — Nobody Knows What's Going to Happen",
+          "Growing Up", [3], [8, 9], 4, 5,
+          ["anxiety_worry", "making_decisions"],
+          ["uncertainty", "future", "anxiety", "growing up", "philosophy",
+           "wellbeing", "stoicism", "acceptance"]),
+]
+
+
+# ---------------------------------------------------------------------------
+# Vocabulary and Language — Words as Power
+# Explicit vocabulary teaching beyond the NC word lists. Etymology,
+# word roots, the history of English, registers, precision, and the
+# pleasure of finding the right word. Vocabulary is the single strongest
+# predictor of reading comprehension — and it compounds. Children with
+# large vocabularies read more; reading builds vocabulary; the gap grows.
+# ---------------------------------------------------------------------------
+
+_VOCABULARY = [
+
+    # --- The Architecture of Words ---
+    Topic("vocab_roots_latin_greek", "Word Roots — Latin and Greek Building Blocks",
+          "Vocabulary", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["spelling_ks2"],
+          ["word roots", "latin", "greek", "etymology", "vocabulary",
+           "prefixes", "suffixes", "language", "English"]),
+    Topic("vocab_prefixes_suffixes", "Prefixes and Suffixes — How Words Are Built",
+          "Vocabulary", [2], [4, 5, 6, 7], 2, 4,
+          ["spelling_ks2"],
+          ["prefixes", "suffixes", "word building", "vocabulary",
+           "spelling", "language", "English"]),
+    Topic("vocab_etymology", "Etymology — Where Words Come From",
+          "Vocabulary", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["vocab_roots_latin_greek"],
+          ["etymology", "word history", "language", "vocabulary",
+           "Latin", "French", "Old English", "interesting words"]),
+    Topic("vocab_word_families", "Word Families — How One Root Spawns Many Words",
+          "Vocabulary", [2], [5, 6, 7], 3, 4,
+          ["vocab_roots_latin_greek"],
+          ["word families", "vocabulary", "roots", "spelling",
+           "language", "patterns", "English"]),
+    Topic("vocab_synonyms_precision", "Synonyms and Precision — Why 'Said' is Never Enough",
+          "Vocabulary", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["vocabulary_ks2"],
+          ["synonyms", "precision", "vocabulary", "writing",
+           "word choice", "language", "English", "nuance"]),
+    Topic("vocab_connotation_denotation", "Connotation and Denotation — What Words Mean vs What They Suggest",
+          "Vocabulary", [3], [7, 8, 9], 4, 5,
+          ["vocab_synonyms_precision"],
+          ["connotation", "denotation", "vocabulary", "language",
+           "meaning", "rhetoric", "literary analysis", "nuance"]),
+    Topic("vocab_register_formality", "Register — How We Change Language for Different Audiences",
+          "Vocabulary", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["grammar_punctuation_ks2"],
+          ["register", "formal", "informal", "audience", "vocabulary",
+           "language", "communication", "writing"]),
+
+    # --- The History of English ---
+    Topic("history_of_english_ks2", "Where English Comes From — Anglo-Saxon, Norman French, and Latin",
+          "Vocabulary", [2, 3], [6, 7, 8], 3, 4,
+          ["vikings_saxons", "norman_conquest"],
+          ["history of English", "Anglo-Saxon", "Norman French", "Latin",
+           "language", "vocabulary", "etymology", "history"]),
+    Topic("history_of_english_ks3", "How English Conquered the World — and What It Borrowed Back",
+          "Vocabulary", [3], [8, 9], 4, 5,
+          ["history_of_english_ks2", "british_empire_expansion"],
+          ["history of English", "empire", "loan words", "global English",
+           "language", "vocabulary", "history", "culture"]),
+    Topic("dialects_accents", "Dialects and Accents — Why English Varies Across the World",
+          "Vocabulary", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["history_of_english_ks2"],
+          ["dialects", "accents", "variation", "language", "vocabulary",
+           "culture", "identity", "English", "linguistics"]),
+    Topic("slang_and_language_change", "Slang and How Language Changes — Why Dictionaries Are Always Behind",
+          "Vocabulary", [3], [7, 8, 9], 3, 5,
+          ["history_of_english_ks2"],
+          ["slang", "language change", "vocabulary", "linguistics",
+           "culture", "youth", "English", "dictionaries"]),
+
+    # --- Specific Vocabulary Domains ---
+    Topic("vocab_science_latin_greek", "Science Vocabulary — Why Scientists Use Latin and Greek",
+          "Vocabulary", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["vocab_roots_latin_greek"],
+          ["science vocabulary", "Latin", "Greek", "naming", "taxonomy",
+           "vocabulary", "biology", "chemistry", "language"]),
+    Topic("vocab_emotions_granular", "Granular Emotion Vocabulary — From Happy to Sanguine to Ebullient",
+          "Vocabulary", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["emotions_map", "vocab_synonyms_precision"],
+          ["emotions vocabulary", "feelings", "precision", "vocabulary",
+           "wellbeing", "language", "nuance", "self-awareness"]),
+    Topic("vocab_describing_people", "Words for People — Character, Personality, and Appearance",
+          "Vocabulary", [2], [5, 6, 7], 3, 4,
+          ["vocab_synonyms_precision"],
+          ["describing people", "character", "vocabulary", "writing",
+           "adjectives", "language", "social", "English"]),
+    Topic("vocab_argument_discourse", "Vocabulary for Arguments — The Words That Carry Ideas",
+          "Vocabulary", [3], [7, 8, 9], 4, 5,
+          ["argument_structure", "vocab_connotation_denotation"],
+          ["argument vocabulary", "discourse markers", "rhetoric",
+           "academic language", "vocabulary", "writing", "debate"]),
+    Topic("vocab_power_of_words", "The Power of Words — How Language Shapes Thought",
+          "Vocabulary", [3], [8, 9], 5, 6,
+          ["vocab_connotation_denotation", "pattern_propaganda"],
+          ["power of words", "Sapir-Whorf", "framing", "language",
+           "vocabulary", "critical thinking", "philosophy", "thought"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
-    _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE
+    _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
+    _GROWING_UP + _VOCABULARY
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
