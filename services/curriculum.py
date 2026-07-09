@@ -474,6 +474,91 @@ _PSHE = [
 
 
 # ---------------------------------------------------------------------------
+# Grand Narratives — Montessori "Cosmic Curriculum" style big-picture arcs
+# These are the overarching stories that give all other topics their context.
+# Introduced at the cosmic level first, then zoomed into for detail.
+# Not part of the NC core but deeply enriching and developmentally appropriate
+# for ages 6-12 (Montessori's "second plane" — reason, imagination, big questions).
+# ---------------------------------------------------------------------------
+
+_GRAND_NARRATIVES = [
+    # --- Story of the Universe ---
+    Topic("universe_origin", "The Big Bang — How the Universe Began",
+          "Grand Narrative", [1, 2], [2, 3, 4], 2, 4, [],
+          ["universe", "big bang", "space", "origins", "science", "cosmology"]),
+    Topic("stars_and_elements", "How Stars Were Born and Made the Elements",
+          "Grand Narrative", [2], [4, 5, 6], 3, 4, ["universe_origin"],
+          ["stars", "elements", "space", "nuclear fusion", "chemistry", "science"]),
+    Topic("solar_system_formation", "How Our Solar System Formed",
+          "Grand Narrative", [2], [4, 5], 2, 3, ["stars_and_elements"],
+          ["solar system", "planets", "space", "origins", "earth science"]),
+    Topic("earth_formation", "How the Earth Formed and Changed",
+          "Grand Narrative", [2], [4, 5, 6], 3, 4, ["solar_system_formation"],
+          ["earth", "geology", "volcanoes", "plate tectonics", "origins"]),
+    Topic("cosmic_time_scale", "Deep Time — Understanding Billions of Years",
+          "Grand Narrative", [2, 3], [5, 6, 7], 3, 5, ["universe_origin", "earth_formation"],
+          ["time", "deep time", "geology", "evolution", "universe", "scale"]),
+
+    # --- Story of Life on Earth ---
+    Topic("origin_of_life", "How Life Began — From Chemicals to the First Cell",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["earth_formation"],
+          ["life", "origins", "cells", "chemistry", "biology", "evolution"]),
+    Topic("age_of_single_cells", "Billions of Years of Single-Celled Life",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["origin_of_life"],
+          ["bacteria", "evolution", "oxygen", "life", "biology", "deep time"]),
+    Topic("cambrian_explosion", "The Cambrian Explosion — Life Gets Complex",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["age_of_single_cells"],
+          ["cambrian", "fossils", "evolution", "animals", "oceans", "biology"]),
+    Topic("age_of_fish", "The Age of Fish — Life Conquers the Seas",
+          "Grand Narrative", [2], [5, 6], 2, 3, ["cambrian_explosion"],
+          ["fish", "oceans", "evolution", "fossils", "prehistoric life"]),
+    Topic("life_onto_land", "Life Comes Ashore — From Sea to Land",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["age_of_fish"],
+          ["amphibians", "evolution", "land", "plants", "prehistoric life"]),
+    Topic("age_of_dinosaurs", "The Age of Dinosaurs — Rise and Fall",
+          "Grand Narrative", [1, 2], [2, 3, 4, 5, 6], 2, 4, ["life_onto_land"],
+          ["dinosaurs", "prehistoric life", "extinction", "fossils", "evolution",
+           "cretaceous", "jurassic"]),
+    Topic("age_of_mammals", "The Rise of Mammals After the Extinction",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["age_of_dinosaurs"],
+          ["mammals", "extinction", "evolution", "prehistoric life", "ice age"]),
+    Topic("human_evolution", "The Story of Human Evolution",
+          "Grand Narrative", [2, 3], [6, 7, 8], 3, 5,
+          ["age_of_mammals"],
+          ["human evolution", "prehistoric humans", "africa", "homo sapiens",
+           "tools", "fire", "language"]),
+
+    # --- Story of Human Civilisation ---
+    Topic("human_migration_out_of_africa", "Humans Spread Across the Earth",
+          "Grand Narrative", [2, 3], [5, 6, 7], 3, 4, ["human_evolution"],
+          ["migration", "prehistoric humans", "africa", "ice age", "exploration",
+           "australians", "americas"]),
+    Topic("agricultural_revolution_story", "The Agricultural Revolution — From Hunter to Farmer",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["human_migration_out_of_africa"],
+          ["farming", "neolithic", "revolution", "civilisation", "food", "trade"]),
+    Topic("first_civilisations", "The First Cities and Writing",
+          "Grand Narrative", [2], [5, 6], 3, 4, ["agricultural_revolution_story"],
+          ["mesopotamia", "sumer", "writing", "cities", "trade", "civilisation",
+           "egypt", "indus valley"]),
+    Topic("story_of_trade_and_empire", "How Trade and Empire Shaped the World",
+          "Grand Narrative", [2, 3], [6, 7, 8, 9], 4, 5,
+          ["first_civilisations"],
+          ["trade", "empire", "silk road", "colonialism", "globalisation",
+           "power", "history"]),
+    Topic("story_of_science", "The Story of Science — How Humans Learned to Understand the World",
+          "Grand Narrative", [2, 3], [6, 7, 8, 9], 4, 5,
+          ["first_civilisations"],
+          ["science", "history of science", "newton", "galileo", "darwin",
+           "einstein", "discovery"]),
+    Topic("story_of_language", "The Story of Language — How Humans Learned to Communicate",
+          "Grand Narrative", [2, 3], [5, 6, 7], 3, 5,
+          ["human_evolution"],
+          ["language", "writing", "communication", "linguistics", "stories",
+           "babel", "culture"]),
+]
+
+
+# ---------------------------------------------------------------------------
 # Vocational and Interest-Led Topics (beyond core NC)
 # ---------------------------------------------------------------------------
 
@@ -594,7 +679,7 @@ _VOCATIONAL = [
 
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
-    _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL
+    _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
