@@ -2820,6 +2820,18 @@ _EXPERIMENTS = [
           ["physics", "experiment", "projectile", "trebuchet", "motion",
            "forces", "maths", "measurement", "hands-on", "science"]),
 
+    # --- Film science experiments ---
+    Topic("exp_pinhole_camera", "Build a Pinhole Camera — How Film and Photography Work",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["light_shadows"],
+          ["physics", "experiment", "pinhole camera", "optics", "light",
+           "photography", "film", "build it", "hands-on", "science"]),
+    Topic("exp_persistence_of_vision", "Persistence of Vision — Why Movies Move",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["light_shadows"],
+          ["physics", "experiment", "persistence of vision", "animation",
+           "thaumatrope", "zoetrope", "film", "brain", "hands-on", "science"]),
+
     # --- New experiments from audit ---
     Topic("exp_candle_combustion", "Candle Science — The Fire Triangle and Combustion Products",
           "Experiment", [2], [5, 6, 7, 8], 2, 4,
@@ -2849,13 +2861,119 @@ _EXPERIMENTS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Film — The Art and Technology of Moving Pictures
+# How movies are made, how VFX evolved era by era, the grammar of cinema,
+# and the stories behind the tricks. Connects art, physics, computing,
+# history, and social patterns. The James Burke approach applied to film:
+# every technique has an origin story that is more interesting than the trick.
+# ---------------------------------------------------------------------------
+
+_FILM = [
+    # --- Origins and Silent Era ---
+    Topic("film_origins", "How Cinema Was Invented — Persistence of Vision to the Lumière Brothers",
+          "Film", [2], [5, 6, 7], 2, 4, ["light_shadows"],
+          ["film", "cinema history", "Lumière", "Edison", "persistence of vision",
+           "zoetrope", "photography", "how things work"]),
+    Topic("film_silent_era", "Silent Films — Acting Without Words and the Grammar of Editing",
+          "Film", [2, 3], [6, 7, 8], 3, 4, ["film_origins"],
+          ["film", "silent film", "Chaplin", "Buster Keaton", "editing",
+           "cinema history", "storytelling", "visual language"]),
+    Topic("film_sound_arrives", "When Sound Arrived — The Jazz Singer and the End of the Silent Era",
+          "Film", [3], [7, 8], 3, 4, ["film_silent_era"],
+          ["film", "sound", "talkies", "The Jazz Singer", "cinema history",
+           "technology", "how things work", "music"]),
+
+    # --- The Grammar of Cinema ---
+    Topic("film_grammar", "The Grammar of Film — Shots, Cuts, and How Cinema Tells Stories",
+          "Film", [2, 3], [6, 7, 8, 9], 3, 5, ["film_origins"],
+          ["film", "cinematography", "shots", "editing", "close-up", "montage",
+           "storytelling", "visual language", "Eisenstein"]),
+    Topic("film_directors_auteurs", "Directors as Authors — Hitchcock, Kubrick, and the Auteur Theory",
+          "Film", [3], [8, 9], 4, 5, ["film_grammar"],
+          ["film", "directors", "auteur", "Hitchcock", "Kubrick", "Spielberg",
+           "cinema history", "storytelling", "art"]),
+    Topic("film_genres_conventions", "Film Genres — Conventions, Expectations, and Subversions",
+          "Film", [2, 3], [6, 7, 8, 9], 3, 5, ["film_grammar"],
+          ["film", "genres", "western", "horror", "science fiction", "noir",
+           "conventions", "storytelling", "critical thinking"]),
+    Topic("film_music_scores", "Film Music — How Scores Manipulate Emotion",
+          "Film", [2, 3], [6, 7, 8], 3, 4, ["film_grammar", "music_society_culture"],
+          ["film music", "score", "Jaws", "Star Wars", "leitmotif",
+           "emotion", "manipulation", "John Williams", "music"]),
+
+    # --- VFX Through the Eras ---
+    Topic("vfx_practical_effects", "Practical Effects — How Films Faked It Before Computers",
+          "Film", [2, 3], [6, 7, 8], 3, 5, ["film_origins"],
+          ["VFX", "practical effects", "miniatures", "matte painting", "stop motion",
+           "King Kong", "2001", "Star Wars", "how things work", "film"]),
+    Topic("vfx_optical_tricks", "Optical Tricks — Double Exposure, Rear Projection, and Glass Mattes",
+          "Film", [3], [7, 8, 9], 3, 5, ["vfx_practical_effects", "light_shadows"],
+          ["VFX", "optical effects", "rear projection", "matte painting",
+           "double exposure", "light", "optics", "film", "how things work"]),
+    Topic("vfx_stop_motion", "Stop Motion Animation — Ray Harryhausen and the Frame-by-Frame Art",
+          "Film", [2, 3], [5, 6, 7, 8], 2, 4, ["film_origins"],
+          ["VFX", "stop motion", "Harryhausen", "animation", "puppets",
+           "Clash of the Titans", "Wallace and Gromit", "film", "art", "patience"]),
+    Topic("vfx_first_cgi", "The Birth of CGI — Tron, The Abyss, and Terminator 2",
+          "Film", [3], [7, 8, 9], 3, 5,
+          ["vfx_practical_effects", "programming_scratch_ks2"],
+          ["VFX", "CGI", "computer graphics", "Tron", "Terminator 2",
+           "ILM", "computing", "film", "how things work"]),
+    Topic("vfx_jurassic_park_revolution", "Jurassic Park — The Revolution That Changed Everything (1993)",
+          "Film", [3], [7, 8, 9], 3, 5, ["vfx_first_cgi"],
+          ["VFX", "Jurassic Park", "CGI", "ILM", "dinosaurs", "revolution",
+           "computing", "film", "how things work", "science"]),
+    Topic("vfx_motion_capture", "Motion Capture — Turning Actors Into Digital Characters",
+          "Film", [3], [7, 8, 9], 3, 5, ["vfx_jurassic_park_revolution"],
+          ["VFX", "motion capture", "Gollum", "Avatar", "performance capture",
+           "computing", "film", "how things work", "acting"]),
+    Topic("vfx_modern_pipeline", "Modern VFX — How Blockbusters Are Made Today",
+          "Film", [3], [8, 9], 4, 5, ["vfx_motion_capture"],
+          ["VFX", "modern VFX", "compositing", "previz", "green screen",
+           "rendering", "computing", "film", "pipeline", "how things work"]),
+    Topic("vfx_deepfakes_ai", "Deepfakes and AI — When You Can't Trust What You See",
+          "Film", [3], [8, 9], 4, 6,
+          ["vfx_modern_pipeline", "artificial_intelligence_basics"],
+          ["VFX", "deepfakes", "AI", "synthetic media", "trust", "media literacy",
+           "manipulation", "film", "critical thinking", "ethics"]),
+
+    # --- Film and Society ---
+    Topic("film_propaganda_history", "Film as Propaganda — Triumph of the Will to Today",
+          "Film", [3], [8, 9], 4, 6,
+          ["film_grammar", "pattern_propaganda"],
+          ["film", "propaganda", "Riefenstahl", "Triumph of the Will",
+           "Soviet cinema", "manipulation", "history", "critical thinking"]),
+    Topic("film_censorship_ratings", "Censorship and Ratings — Who Decides What We Can Watch",
+          "Film", [3], [8, 9], 4, 5,
+          ["censorship_history", "film_grammar"],
+          ["film", "censorship", "ratings", "Hays Code", "BBFC", "classification",
+           "history", "political systems", "media", "critical thinking"]),
+    Topic("film_representation", "Representation in Film — Who Gets to Tell the Story",
+          "Film", [3], [8, 9], 4, 6,
+          ["film_directors_auteurs", "civil_rights_global"],
+          ["film", "representation", "diversity", "Bechdel test", "Hollywood",
+           "identity", "critical thinking", "media", "social patterns"]),
+    Topic("film_documentary", "Documentary Film — Fact, Point of View, and the Ethics of Truth",
+          "Film", [3], [8, 9], 4, 5,
+          ["film_grammar", "evaluating_sources"],
+          ["documentary", "film", "truth", "bias", "ethics", "journalism",
+           "critical thinking", "media literacy", "storytelling"]),
+    Topic("film_how_to_watch", "How to Watch a Film — Active Viewing and Film Analysis",
+          "Film", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["film_grammar", "art_appreciation_visual_literacy"],
+          ["film", "analysis", "active viewing", "visual literacy",
+           "critical thinking", "storytelling", "art", "media"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
-    _EXPERIMENTS
+    _EXPERIMENTS + _FILM
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
