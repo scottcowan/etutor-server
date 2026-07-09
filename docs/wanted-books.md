@@ -669,6 +669,64 @@ reading. "What does it feel like?" before "What does it mean?"
 
 ---
 
+## Art, Visual Language, and Comics
+
+### Understanding Comics — Scott McCloud (Kitchen Sink Press, 1993)
+*The most important book for teaching visual literacy.*
+
+McCloud explains how comics work as a visual language — not just as entertainment
+but as a system for communicating ideas through pictures. Written entirely as a comic
+itself, it demonstrates its own arguments.
+
+**The key ideas, each teachable:**
+
+| Concept | What it teaches | Curriculum connection |
+|---|---|---|
+| **The Vocabulary of Icons** | A smiley face carries more universal meaning than a photograph — the simpler the image, the more you project yourself onto it | `art_appreciation_visual_literacy` — why abstraction works |
+| **The Picture Plane** | A spectrum from pure representation (a photograph) to pure language (the letter A) with every artwork somewhere on it | `art_composition_perspective`, `art_colour_theory_ks2` |
+| **Closure** | The reader's brain fills in what happens between panels — we are active meaning-makers, not passive receivers | `reading_comprehension_ks2` — inference and deduction |
+| **Time and Motion in Space** | How a static image implies movement; how panel layout controls pacing | `art_history_ancient_renaissance` — medieval manuscripts, Egyptian frieze |
+| **Blood in the Gutter** | Violence in comics is completed in the reader's imagination — the reader is complicit | `media_literacy_ks3`, `advertising_persuasion` — how media implicates the audience |
+| **The Six Transitions** | Different ways one panel can follow another — moment-to-moment, action-to-action, subject-to-subject, scene-to-scene, aspect-to-aspect, non-sequitur | Story structure and narrative pacing |
+| **Colour Symbolism** | How colour carries emotional meaning across cultures | `art_colour_theory_ks2` — warm/cool, psychological associations |
+| **Word-Image Relationships** | Seven ways words and images can relate — each creating different meaning | Reading comprehension, media literacy |
+
+**Why it works on an e-ink device:** The book is page-by-page and entirely textual
+in argument, with illustrations. Passages read aloud beautifully — McCloud's prose
+style is clear and enthusiastic. The Socratic questions write themselves:
+
+- "Why do you think a simple cartoon face feels more like YOU than a photograph?"
+- "McCloud says you are the killer in a violent comic — what do you think he means?"
+- "Look at a road sign and a traffic light — where do they sit on the picture plane?"
+
+**Age suitability:** The ideas are accessible from age 9. The full book reads at
+age 12+. Selected concepts work well from Year 4 upwards.
+
+**Use for:**
+- Opening `art_appreciation_visual_literacy` — McCloud's picture plane is the best
+  single framework for talking about abstraction and realism
+- `media_literacy_ks3` — blood in the gutter / audience complicity
+- `advertising_persuasion` — iconic vs realistic representation in ads
+- `art_colour_theory_ks2` — colour symbolism chapter
+
+**Also in the series:**
+- *Reinventing Comics* (2000) — the future of comics as a medium; digital storytelling
+- *Making Comics* (2006) — practical guide to creating visual narratives
+
+**Related:**
+- *Comics and Sequential Art* — Will Eisner (1985): the other founding text; more
+  technical, less philosophical; good for older learners interested in making comics
+- *The Complete Maus* — Art Spiegelman: the highest literary achievement in comics;
+  Holocaust history told through animal metaphor. Uses McCloud's vocabulary throughout.
+  Age 12+. Maps to `ww2_global_conflict` and `transatlantic_slave_trade` legacy.
+- *Persepolis* — Marjane Satrapi: Iranian revolution through a child's eyes. Age 12+.
+  Maps to `authoritarianism_types`, `censorship_history`.
+- *Fun Home* — Alison Bechdel: memoir in comics form. Age 14+. Maps to
+  `sexuality_relationships`, `identity_who_am_i`, `shakespeare_ks3` (Bechdel was
+  obsessed with Ulysses).
+
+---
+
 ## Science Reference
 
 ### The Way Things Work — David Macaulay (Dorling Kindersley)

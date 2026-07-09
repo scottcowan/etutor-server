@@ -2819,6 +2819,33 @@ _EXPERIMENTS = [
           ["build_a_trebuchet", "forces_motion_ks3"],
           ["physics", "experiment", "projectile", "trebuchet", "motion",
            "forces", "maths", "measurement", "hands-on", "science"]),
+
+    # --- New experiments from audit ---
+    Topic("exp_candle_combustion", "Candle Science — The Fire Triangle and Combustion Products",
+          "Experiment", [2], [5, 6, 7, 8], 2, 4,
+          ["oxidation_combustion"],
+          ["chemistry", "experiment", "combustion", "fire triangle", "candle",
+           "CO2", "water", "carbon cycle", "hands-on", "science", "safety"]),
+    Topic("exp_lemon_battery", "Lemon Battery — Making Electricity from Fruit",
+          "Experiment", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["build_a_battery", "chemical_reactions"],
+          ["chemistry", "experiment", "battery", "lemon", "zinc", "copper",
+           "redox", "electrochemistry", "electricity", "Volta", "hands-on", "science"]),
+    Topic("exp_magnetic_field_mapping", "Magnetic Field Mapping — Seeing Invisible Forces",
+          "Experiment", [2], [4, 5, 6, 7], 2, 4,
+          ["forces_magnets"],
+          ["physics", "experiment", "magnets", "field lines", "compass",
+           "poles", "Earth's field", "magnetism", "hands-on", "science"]),
+    Topic("exp_bernoulli_flight", "Bernoulli and Flight — Why Wings Lift",
+          "Experiment", [2], [5, 6, 7, 8], 2, 4,
+          ["forces_magnets", "air_resistance"],
+          ["physics", "experiment", "Bernoulli", "flight", "lift", "aerofoil",
+           "air pressure", "Wright Brothers", "hands-on", "science"]),
+    Topic("exp_bread_baking_science", "Bread Baking Science — Gluten, Yeast, and the Maillard Reaction",
+          "Experiment", [2], [5, 6, 7, 8], 2, 5,
+          ["baking_bread_pastry", "exp_fermentation_yeast"],
+          ["biology", "chemistry", "experiment", "bread", "gluten", "yeast",
+           "Maillard reaction", "oven spring", "hands-on", "science", "food"]),
 ]
 
 
