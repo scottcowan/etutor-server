@@ -2222,12 +2222,252 @@ _POLITICAL_SYSTEMS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Science Experiments — Hands-On Science at Home or School
+# Each topic is a doable experiment with household or easily sourced
+# materials. Structure per topic: the question to investigate → what you
+# need → what to do → what to observe → what it shows → what to wonder next.
+# The tutor walks the child through the experiment conversationally, asks
+# predictive questions before ("what do you think will happen?"), and
+# Socratic questions after ("why do you think that happened?").
+# Grouped by discipline: Chemistry, Biology, Physics.
+# ---------------------------------------------------------------------------
+
+_EXPERIMENTS = [
+
+    # ==========================================================================
+    # CHEMISTRY EXPERIMENTS
+    # ==========================================================================
+
+    # --- Acids, Bases, and Indicators ---
+    Topic("exp_red_cabbage_indicator", "Red Cabbage pH Indicator — Make Your Own Acid-Base Test",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["properties_materials_ks2"],
+          ["chemistry", "experiment", "acids", "bases", "pH", "indicator",
+           "red cabbage", "household", "hands-on", "science"]),
+    Topic("exp_volcano_baking_soda", "Baking Soda Volcano — Acid-Base Reaction",
+          "Experiment", [1, 2], [2, 3, 4], 1, 3,
+          [],
+          ["chemistry", "experiment", "acids", "bases", "reaction",
+           "baking soda", "vinegar", "household", "hands-on", "science"]),
+    Topic("exp_elephant_toothpaste", "Elephant Toothpaste — Catalytic Decomposition",
+          "Experiment", [2, 3], [6, 7, 8], 3, 5,
+          ["chemical_reactions"],
+          ["chemistry", "experiment", "catalyst", "hydrogen peroxide",
+           "decomposition", "exothermic", "hands-on", "science"]),
+    Topic("exp_crystal_growing", "Growing Crystals — Supersaturation and Crystallisation",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["particle_model"],
+          ["chemistry", "experiment", "crystals", "salt", "sugar", "alum",
+           "crystallisation", "supersaturation", "hands-on", "science"]),
+    Topic("exp_chromatography", "Chromatography — Separating Colours in Ink",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["properties_materials_ks2"],
+          ["chemistry", "experiment", "chromatography", "separation",
+           "ink", "paper", "household", "hands-on", "science"]),
+    Topic("exp_slime", "Making Slime — Polymer Chemistry",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["properties_materials_ks2"],
+          ["chemistry", "experiment", "slime", "polymer", "PVA", "borax",
+           "non-Newtonian", "hands-on", "science", "materials"]),
+    Topic("exp_electroplating", "Electroplating — Depositing Metal Using Electricity",
+          "Experiment", [3], [7, 8, 9], 3, 5,
+          ["build_a_battery", "copper"],
+          ["chemistry", "experiment", "electroplating", "electrolysis",
+           "copper", "electrochemistry", "hands-on", "science", "metals"]),
+    Topic("exp_soap_making", "Making Soap — Saponification",
+          "Experiment", [3], [7, 8, 9], 3, 5,
+          ["chemical_reactions", "cooking_nutrition"],
+          ["chemistry", "experiment", "soap", "saponification", "alkali",
+           "fat", "hands-on", "science", "household"]),
+    Topic("exp_invisible_ink", "Invisible Ink — Chemistry of Oxidation and Heat",
+          "Experiment", [2], [4, 5, 6], 2, 3,
+          ["chemical_reactions"],
+          ["chemistry", "experiment", "invisible ink", "oxidation", "lemon",
+           "household", "hands-on", "science", "spy"]),
+    Topic("exp_density_tower", "Density Tower — Liquids That Won't Mix",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["particle_model"],
+          ["chemistry", "experiment", "density", "liquids", "honey",
+           "oil", "water", "household", "hands-on", "science", "physics"]),
+    Topic("exp_milk_plastic", "Milk Plastic — Making Casein Plastic",
+          "Experiment", [2, 3], [6, 7, 8], 3, 5,
+          ["how_plastic_is_made", "chemical_reactions"],
+          ["chemistry", "experiment", "plastic", "casein", "milk",
+           "polymer", "hands-on", "science", "materials"]),
+    Topic("exp_fermentation_yeast", "Yeast Fermentation — Feeding Yeast and Catching CO2",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["baking_bread_pastry"],
+          ["chemistry", "experiment", "fermentation", "yeast", "CO2",
+           "biology", "bread", "hands-on", "science", "food"]),
+
+    # ==========================================================================
+    # BIOLOGY EXPERIMENTS
+    # ==========================================================================
+
+    # --- Plants and Growth ---
+    Topic("exp_seed_germination", "Germination Experiment — What Do Seeds Need to Sprout?",
+          "Experiment", [1, 2], [2, 3, 4], 1, 3,
+          ["seeds_germination"],
+          ["biology", "experiment", "seeds", "germination", "conditions",
+           "light", "water", "temperature", "hands-on", "science", "plants"]),
+    Topic("exp_photosynthesis_oxygen", "Photosynthesis — Watching Plants Produce Oxygen",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["plants_ks2"],
+          ["biology", "experiment", "photosynthesis", "oxygen", "pondweed",
+           "light", "bubbles", "hands-on", "science", "plants"]),
+    Topic("exp_osmosis_potato", "Osmosis — Why Potatoes Shrink in Salt Water",
+          "Experiment", [2, 3], [6, 7, 8], 3, 5,
+          ["cells_ks3"],
+          ["biology", "experiment", "osmosis", "potato", "salt", "water",
+           "cells", "membrane", "hands-on", "science"]),
+    Topic("exp_dissection_flower", "Dissecting a Flower — Parts and Their Functions",
+          "Experiment", [2], [4, 5, 6], 2, 3,
+          ["plants_ks2"],
+          ["biology", "experiment", "flower", "dissection", "stamen",
+           "pistil", "petals", "pollination", "hands-on", "science"]),
+    Topic("exp_yeast_bread_rise", "Bread Rising — Yeast, CO2, and Gluten",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["baking_bread_pastry", "exp_fermentation_yeast"],
+          ["biology", "experiment", "yeast", "bread", "CO2", "gluten",
+           "rising", "hands-on", "science", "food", "chemistry"]),
+    Topic("exp_microscope_pond_water", "Pond Water Under a Microscope — A World in a Drop",
+          "Experiment", [2, 3], [5, 6, 7], 2, 4,
+          ["cells_ks3", "age_of_single_cells"],
+          ["biology", "experiment", "microscope", "pond water", "protozoa",
+           "microorganisms", "cells", "hands-on", "science"]),
+    Topic("exp_mould_growth", "Growing Mould — What Conditions Does Mould Prefer?",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["cells_ks3"],
+          ["biology", "experiment", "mould", "fungus", "conditions",
+           "bread", "growth", "hands-on", "science", "decay"]),
+    Topic("exp_dna_extraction", "Extracting DNA — From Strawberry to Visible Thread",
+          "Experiment", [2, 3], [7, 8, 9], 3, 5,
+          ["genetics_ks3"],
+          ["biology", "experiment", "DNA", "extraction", "strawberry",
+           "genetics", "hands-on", "science", "cells"]),
+    Topic("exp_enzyme_activity", "Enzymes — Testing How Temperature Affects Reaction Speed",
+          "Experiment", [3], [8, 9], 4, 5,
+          ["chemical_reactions", "human_body_ks2"],
+          ["biology", "experiment", "enzymes", "temperature", "liver",
+           "hydrogen peroxide", "catalase", "hands-on", "science"]),
+    Topic("exp_food_testing", "Food Testing — Detecting Starch, Glucose, and Protein",
+          "Experiment", [2, 3], [6, 7, 8], 3, 4,
+          ["nutrition_food_science", "chemical_reactions"],
+          ["biology", "experiment", "food testing", "iodine", "Benedict's",
+           "Biuret", "nutrients", "hands-on", "science", "food"]),
+    Topic("exp_reaction_time", "Reaction Time — Testing Your Nervous System",
+          "Experiment", [2], [5, 6, 7], 2, 3,
+          ["human_body_ks2"],
+          ["biology", "experiment", "reaction time", "nervous system",
+           "ruler drop", "brain", "hands-on", "science", "body"]),
+    Topic("exp_heart_rate_exercise", "Heart Rate and Exercise — Your Cardiovascular System",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["human_body_ks2"],
+          ["biology", "experiment", "heart rate", "exercise", "pulse",
+           "cardiovascular", "recovery", "hands-on", "science", "body"]),
+
+    # ==========================================================================
+    # PHYSICS EXPERIMENTS
+    # ==========================================================================
+
+    # --- Forces and Motion ---
+    Topic("exp_pendulum", "The Pendulum — Does Weight Affect Swing Time?",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["forces_magnets"],
+          ["physics", "experiment", "pendulum", "gravity", "period",
+           "forces", "timing", "hands-on", "science", "maths"]),
+    Topic("exp_egg_drop", "The Egg Drop — Protecting an Egg from a Height",
+          "Experiment", [2, 3], [5, 6, 7], 3, 5,
+          ["forces_motion_ks3"],
+          ["physics", "experiment", "egg drop", "forces", "impact",
+           "design", "engineering", "hands-on", "science", "challenge"]),
+    Topic("exp_paper_bridges", "Paper Bridge — How Much Weight Can Paper Hold?",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["forces_magnets"],
+          ["physics", "experiment", "bridge", "forces", "structure",
+           "compression", "tension", "design", "hands-on", "science"]),
+    Topic("exp_air_resistance", "Air Resistance — Parachutes and Falling",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["forces_magnets"],
+          ["physics", "experiment", "air resistance", "parachute",
+           "falling", "forces", "drag", "hands-on", "science"]),
+    Topic("exp_centre_of_gravity", "Centre of Gravity — Balancing Impossibly",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["forces_magnets"],
+          ["physics", "experiment", "centre of gravity", "balance",
+           "stability", "forks", "household", "hands-on", "science"]),
+
+    # --- Electricity and Magnetism ---
+    Topic("exp_static_electricity", "Static Electricity — Bending Water with a Comb",
+          "Experiment", [2], [4, 5, 6], 2, 3,
+          ["electricity_ks2"],
+          ["physics", "experiment", "static electricity", "charges",
+           "comb", "water", "attraction", "household", "hands-on", "science"]),
+    Topic("exp_electromagnet", "Build an Electromagnet — Coils, Current, and Iron",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["build_an_electric_motor", "forces_magnets"],
+          ["physics", "experiment", "electromagnet", "coil", "iron",
+           "current", "magnetism", "hands-on", "science", "build it"]),
+    Topic("exp_circuit_challenge", "Circuit Challenge — Build a Working Alarm or Light",
+          "Experiment", [2], [4, 5, 6], 2, 3,
+          ["electronics_circuits_basics"],
+          ["physics", "experiment", "circuit", "electricity", "LED",
+           "buzzer", "build it", "hands-on", "science", "practical"]),
+
+    # --- Light and Sound ---
+    Topic("exp_light_spectrum_prism", "Light Through a Prism — Splitting White Light",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["light_shadows", "waves_ks3"],
+          ["physics", "experiment", "light", "prism", "spectrum", "rainbow",
+           "refraction", "colour", "hands-on", "science"]),
+    Topic("exp_shadows_sundial", "Shadows and a Sundial — Tracking the Sun",
+          "Experiment", [1, 2], [2, 3, 4], 1, 3,
+          ["light_shadows", "seasons_weather"],
+          ["physics", "experiment", "shadows", "sundial", "sun",
+           "time", "light", "outdoor", "hands-on", "science"]),
+    Topic("exp_sound_vibrations", "Seeing Sound — Vibrations and Standing Waves",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["sound_ks2"],
+          ["physics", "experiment", "sound", "vibrations", "salt",
+           "speaker", "Chladni", "waves", "hands-on", "science"]),
+    Topic("exp_echo_speed_sound", "Measuring the Speed of Sound — Echoes and Timing",
+          "Experiment", [3], [7, 8, 9], 3, 5,
+          ["waves_ks3"],
+          ["physics", "experiment", "sound", "speed", "echo", "timing",
+           "distance", "maths", "hands-on", "science"]),
+
+    # --- Heat and Energy ---
+    Topic("exp_insulation_contest", "Insulation Contest — Which Material Keeps Ice Longest?",
+          "Experiment", [2], [4, 5, 6], 2, 4,
+          ["materials_properties"],
+          ["physics", "experiment", "insulation", "heat", "temperature",
+           "materials", "energy", "household", "hands-on", "science"]),
+    Topic("exp_convection_currents", "Convection Currents — Watching Heat Move Through Water",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["particle_model"],
+          ["physics", "experiment", "convection", "heat", "temperature",
+           "water", "dye", "currents", "hands-on", "science"]),
+    Topic("exp_solar_oven", "Build a Solar Oven — Concentrating Sunlight",
+          "Experiment", [2, 3], [6, 7, 8], 3, 5,
+          ["how_solar_panels_work", "how_electricity_generated"],
+          ["physics", "experiment", "solar", "energy", "oven", "reflection",
+           "build it", "hands-on", "science", "environment"]),
+    Topic("exp_trebuchet_physics", "Trebuchet Physics — Measuring Projectile Motion",
+          "Experiment", [3], [7, 8, 9], 3, 5,
+          ["build_a_trebuchet", "forces_motion_ks3"],
+          ["physics", "experiment", "projectile", "trebuchet", "motion",
+           "forces", "maths", "measurement", "hands-on", "science"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
-    _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS
+    _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
+    _EXPERIMENTS
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
