@@ -1931,12 +1931,143 @@ _VOCABULARY = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Manipulation and Influence — How Power Shapes What You Believe
+# The applied curriculum for understanding institutional deception, influence
+# operations, manufactured consent, and the techniques used to make people
+# believe things that serve someone else's interests.
+# This is not conspiracy theory — it is documented history and technique.
+# Sources: declassified documents, court records, academic research.
+# Every topic here has an evidence base; it is taught as history and
+# critical analysis, not as paranoia.
+# ---------------------------------------------------------------------------
+
+_MANIPULATION = [
+
+    # --- Corporate Deception — The Tobacco Playbook ---
+    Topic("tobacco_industry_lies", "Big Tobacco — How an Industry Lied for Fifty Years and Got Away With It",
+          "Manipulation", [3], [8, 9], 4, 6,
+          ["scientific_method", "peer_review_consensus"],
+          ["tobacco", "big tobacco", "corporate deception", "manufactured doubt",
+           "lobbying", "manipulation", "health", "history", "critical thinking"]),
+    Topic("manufactured_doubt", "Manufactured Doubt — How Industries Buy Time by Faking Uncertainty",
+          "Manipulation", [3], [8, 9], 4, 6,
+          ["tobacco_industry_lies", "peer_review_consensus"],
+          ["manufactured doubt", "tobacco", "climate denial", "asbestos",
+           "think tanks", "manipulation", "corporate", "science", "critical thinking"]),
+    Topic("merchants_of_doubt", "The Same Playbook — From Tobacco to Climate to Opioids",
+          "Manipulation", [3], [9], 5, 6,
+          ["manufactured_doubt"],
+          ["merchants of doubt", "tobacco", "climate", "opioids", "corporate",
+           "playbook", "manipulation", "history", "critical thinking"]),
+    Topic("food_industry_manipulation", "Big Food — How the Food Industry Shaped What We Eat and Think",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["nutrition_food_science", "advertising_persuasion"],
+          ["food industry", "sugar", "fat", "lobbying", "nutrition science",
+           "manipulation", "health", "corporate", "critical thinking"]),
+    Topic("pharmaceutical_marketing", "How Pharmaceutical Companies Market Diseases",
+          "Manipulation", [3], [9], 4, 5,
+          ["how_medicine_made", "advertising_persuasion"],
+          ["pharmaceutical", "marketing", "disease", "opioids", "FDA",
+           "manipulation", "health", "corporate", "critical thinking"]),
+
+    # --- Government and State Influence Operations ---
+    Topic("propaganda_techniques", "Propaganda Techniques — The Specific Methods, Named",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["pattern_propaganda", "rhetorical_devices"],
+          ["propaganda", "techniques", "bandwagon", "glittering generality",
+           "transfer", "plain folks", "fear appeal", "manipulation",
+           "critical thinking", "history"]),
+    Topic("psyops_history", "Psychological Operations — How Governments Manipulate Populations",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["propaganda_techniques", "ww2_global_conflict"],
+          ["psyops", "psychological operations", "CIA", "MKULTRA", "cold war",
+           "manipulation", "history", "government", "critical thinking"]),
+    Topic("cia_covert_history", "Covert Operations — What Governments Do in Secret (and How We Know)",
+          "Manipulation", [3], [9], 4, 6,
+          ["cold_war_context", "psyops_history"],
+          ["CIA", "covert", "declassified", "Iran", "Chile", "Guatemala",
+           "history", "government", "manipulation", "critical thinking"]),
+    Topic("censorship_history", "Censorship — What Governments Have Suppressed and Why",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["history_of_democracy_britain", "pattern_propaganda"],
+          ["censorship", "banned books", "press freedom", "history",
+           "government", "manipulation", "democracy", "critical thinking"]),
+    Topic("political_spin", "Political Spin — How Politicians Frame Reality",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["propaganda_techniques", "how_news_works"],
+          ["spin", "framing", "politics", "PR", "language", "manipulation",
+           "media", "critical thinking", "democracy"]),
+
+    # --- Media and Attention ---
+    Topic("attention_economy", "The Attention Economy — You Are the Product",
+          "Manipulation", [3], [7, 8, 9], 4, 5,
+          ["social_media_algorithms", "advertising_persuasion"],
+          ["attention economy", "social media", "advertising", "product",
+           "manipulation", "psychology", "technology", "critical thinking"]),
+    Topic("media_ownership", "Who Owns the Media — And Why It Matters",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["how_news_works", "pattern_wealth_inequality"],
+          ["media ownership", "Murdoch", "newspapers", "bias", "power",
+           "manipulation", "democracy", "critical thinking", "press"]),
+    Topic("astroturfing_fake_grassroots", "Astroturfing — Fake Grassroots Movements",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["misinformation_disinformation", "manufactured_doubt"],
+          ["astroturfing", "fake grassroots", "lobbying", "corporate",
+           "manipulation", "critical thinking", "social media", "PR"]),
+    Topic("dark_patterns_ux", "Dark Patterns — How Apps and Websites Are Designed to Trick You",
+          "Manipulation", [3], [7, 8, 9], 3, 5,
+          ["attention_economy", "advertising_persuasion"],
+          ["dark patterns", "UX", "design", "apps", "manipulation",
+           "technology", "critical thinking", "subscriptions", "tricks"]),
+
+    # --- Psychological Techniques ---
+    Topic("nudge_theory", "Nudge Theory — How Environments Shape Choices Without You Noticing",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["cognitive_biases", "advertising_persuasion"],
+          ["nudge", "choice architecture", "Thaler", "Sunstein", "defaults",
+           "psychology", "manipulation", "policy", "critical thinking"]),
+    Topic("social_proof_manipulation", "Social Proof and Authority — How We're Manipulated by 'Everyone Else'",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["cognitive_biases", "pattern_ingroup_outgroup"],
+          ["social proof", "authority", "Cialdini", "persuasion",
+           "manipulation", "psychology", "conformity", "critical thinking"]),
+    Topic("cult_techniques", "Cult Techniques — How Groups Capture and Control Members",
+          "Manipulation", [3], [9], 4, 6,
+          ["pattern_authoritarian_rise", "social_proof_manipulation"],
+          ["cults", "thought reform", "love bombing", "isolation",
+           "manipulation", "psychology", "critical thinking", "coercion"]),
+    Topic("radicalization_pipeline", "Radicalisation — How People Are Drawn to Extreme Ideas",
+          "Manipulation", [3], [9], 4, 6,
+          ["echo_chambers", "cult_techniques"],
+          ["radicalisation", "extremism", "pipeline", "online", "manipulation",
+           "critical thinking", "psychology", "social media", "prevention"]),
+
+    # --- Being Inoculated ---
+    Topic("inoculation_theory", "Inoculation — How Forewarning Protects Against Manipulation",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["misinformation_disinformation", "propaganda_techniques"],
+          ["inoculation", "prebunking", "manipulation", "critical thinking",
+           "psychology", "research", "media literacy", "protection"]),
+    Topic("recognising_manipulation", "How to Spot When You're Being Manipulated",
+          "Manipulation", [3], [7, 8, 9], 4, 5,
+          ["propaganda_techniques", "advertising_persuasion"],
+          ["manipulation", "recognition", "critical thinking", "media literacy",
+           "protection", "psychology", "awareness", "independence"]),
+    Topic("information_hygiene", "Information Hygiene — How to Build a Healthy Information Diet",
+          "Manipulation", [3], [8, 9], 4, 5,
+          ["recognising_manipulation", "how_to_fact_check"],
+          ["information hygiene", "news", "sources", "diet", "manipulation",
+           "critical thinking", "media literacy", "independence"]),
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
     _HOW_THINGS_ARE_MADE + _MATERIALS + _CONNECTIONS +
     _SOCIAL_PATTERNS + _CRITICAL_THINKING + _SOCIAL_INTELLIGENCE +
-    _GROWING_UP + _VOCABULARY
+    _GROWING_UP + _VOCABULARY + _MANIPULATION
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
