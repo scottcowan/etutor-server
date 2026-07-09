@@ -2301,6 +2301,34 @@ _EXPERIMENTS = [
           ["chemistry", "experiment", "fermentation", "yeast", "CO2",
            "biology", "bread", "hands-on", "science", "food"]),
 
+    # --- Applied Chemistry: Water and Pools ---
+    Topic("exp_pool_chemistry", "Pool Chemistry — Testing and Balancing Water",
+          "Experiment", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["exp_red_cabbage_indicator", "chemical_reactions"],
+          ["chemistry", "experiment", "pool", "water chemistry", "pH",
+           "chlorine", "alkalinity", "test kit", "applied chemistry",
+           "hands-on", "science", "real world"]),
+    Topic("exp_water_hardness", "Water Hardness — Why Soap Doesn't Lather the Same Everywhere",
+          "Experiment", [2, 3], [6, 7, 8], 3, 4,
+          ["particle_model", "exp_red_cabbage_indicator"],
+          ["chemistry", "experiment", "water hardness", "calcium", "magnesium",
+           "soap", "limescale", "ions", "hands-on", "science"]),
+    Topic("exp_drinking_water_testing", "Testing Drinking Water — What's Actually in Your Tap Water",
+          "Experiment", [2, 3], [6, 7, 8], 3, 5,
+          ["how_water_reaches_home", "exp_pool_chemistry"],
+          ["chemistry", "experiment", "drinking water", "testing", "chlorine",
+           "pH", "nitrates", "tap water", "hands-on", "science", "real world"]),
+    Topic("exp_water_filtration_build", "Building a Water Filter — From Muddy to Clear",
+          "Experiment", [2], [5, 6, 7], 2, 4,
+          ["how_water_reaches_home"],
+          ["chemistry", "experiment", "water filter", "filtration", "sand",
+           "gravel", "charcoal", "build it", "hands-on", "science", "practical"]),
+    Topic("exp_electrolysis_water", "Electrolysis of Water — Splitting H2O into Hydrogen and Oxygen",
+          "Experiment", [3], [7, 8, 9], 3, 5,
+          ["build_a_battery", "chemical_reactions"],
+          ["chemistry", "experiment", "electrolysis", "water", "hydrogen",
+           "oxygen", "fuel cell", "electricity", "hands-on", "science"]),
+
     # ==========================================================================
     # BIOLOGY EXPERIMENTS
     # ==========================================================================
