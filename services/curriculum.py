@@ -839,12 +839,229 @@ _VOCATIONAL = [
 
 
 # ---------------------------------------------------------------------------
+# How Things Are Made — Manufacturing, Materials, and Industrial Processes
+# The journey from raw material to finished object. Connects science,
+# history, economics, and the made world. Every topic follows the pattern:
+# what is the thing → where does the raw material come from → how is it made
+# → what happens to it afterwards. Inspired by "The Way Things Work" (Macaulay)
+# and the tradition of industrial curiosity.
+# ---------------------------------------------------------------------------
+
+_HOW_THINGS_ARE_MADE = [
+
+    # --- Food and Farming ---
+    Topic("how_bread_is_made", "How Bread Is Made — From Wheat Field to Loaf",
+          "How Things Are Made", [1, 2], [2, 3, 4, 5], 2, 4,
+          ["seeds_germination"],
+          ["bread", "wheat", "farming", "factory", "food", "yeast", "chemistry",
+           "how things work"]),
+    Topic("how_chocolate_is_made", "How Chocolate Is Made — Cacao to Bar",
+          "How Things Are Made", [2], [3, 4, 5, 6], 2, 4,
+          [],
+          ["chocolate", "cacao", "trade", "africa", "food", "factory", "history",
+           "how things work"]),
+    Topic("how_milk_dairy_made", "How Dairy Works — From Cow to Cheese, Butter, and Yoghurt",
+          "How Things Are Made", [1, 2], [2, 3, 4, 5], 1, 3,
+          [],
+          ["dairy", "milk", "cheese", "farming", "food", "biology", "how things work"]),
+    Topic("how_sugar_is_made", "How Sugar Is Made — Cane, Beet, and Refining",
+          "How Things Are Made", [2], [4, 5, 6], 3, 4,
+          ["transatlantic_slave_trade"],
+          ["sugar", "cane", "refining", "trade", "history", "empire", "food",
+           "how things work"]),
+    Topic("how_beer_wine_made", "How Fermented Drinks Are Made — Brewing and Fermentation",
+          "How Things Are Made", [3], [7, 8, 9], 3, 4,
+          ["fermentation_preservation"],
+          ["brewing", "fermentation", "chemistry", "biology", "history", "food",
+           "how things work"]),
+
+    # --- Materials and Textiles ---
+    Topic("how_cotton_is_made", "How Cotton Becomes Cloth — Field to Fabric",
+          "How Things Are Made", [2], [4, 5, 6], 2, 4,
+          ["transatlantic_slave_trade"],
+          ["cotton", "textiles", "farming", "weaving", "industrial revolution",
+           "trade", "history", "how things work"]),
+    Topic("how_wool_is_made", "How Wool Is Made — Sheep to Jumper",
+          "How Things Are Made", [1, 2], [3, 4, 5], 1, 3,
+          [],
+          ["wool", "sheep", "knitting", "weaving", "textiles", "farming",
+           "how things work"]),
+    Topic("how_paper_is_made", "How Paper Is Made — Pulp, Pressing, and Drying",
+          "How Things Are Made", [1, 2], [3, 4, 5], 2, 3,
+          ["plants_ks2"],
+          ["paper", "wood", "pulp", "trees", "recycling", "factory",
+           "how things work"]),
+    Topic("how_glass_is_made", "How Glass Is Made — Sand, Heat, and Shaping",
+          "How Things Are Made", [2], [4, 5, 6], 2, 4,
+          ["properties_materials_ks2"],
+          ["glass", "sand", "heat", "manufacturing", "materials", "chemistry",
+           "how things work"]),
+    Topic("how_plastic_is_made", "How Plastic Is Made — Oil, Polymers, and the Problem of Waste",
+          "How Things Are Made", [2], [5, 6, 7], 3, 5,
+          ["properties_materials_ks2"],
+          ["plastic", "oil", "polymers", "chemistry", "environment", "recycling",
+           "pollution", "how things work"]),
+    Topic("how_concrete_steel_made", "How Concrete and Steel Are Made — Building the Modern World",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 4,
+          ["particle_model"],
+          ["concrete", "steel", "iron", "construction", "engineering", "materials",
+           "industrial revolution", "how things work"]),
+
+    # --- Machines and Technology ---
+    Topic("how_engines_work", "How Engines Work — Steam, Internal Combustion, and Jets",
+          "How Things Are Made", [2, 3], [5, 6, 7, 8], 3, 5,
+          ["forces_motion_ks3"],
+          ["engines", "steam", "combustion", "jets", "physics", "industrial revolution",
+           "transport", "how things work"]),
+    Topic("how_electricity_generated", "How Electricity Is Generated — Power Stations and the Grid",
+          "How Things Are Made", [2, 3], [5, 6, 7, 8], 3, 5,
+          ["electricity_ks2"],
+          ["electricity", "power stations", "coal", "wind", "solar", "nuclear",
+           "energy", "environment", "how things work"]),
+    Topic("how_computers_made", "How Computers Are Made — Silicon, Chips, and Factories",
+          "How Things Are Made", [3], [7, 8, 9], 4, 5,
+          ["data_representation"],
+          ["computers", "silicon", "chips", "semiconductors", "manufacturing",
+           "mining", "environment", "how things work"]),
+    Topic("how_phones_made", "How Smartphones Are Made — Rare Metals and Global Supply Chains",
+          "How Things Are Made", [3], [8, 9], 4, 5,
+          ["how_computers_made"],
+          ["smartphones", "rare earth", "mining", "supply chain", "globalisation",
+           "environment", "trade", "how things work"]),
+    Topic("how_cars_made", "How Cars Are Made — Design, Assembly, and the Factory Line",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 4,
+          ["how_engines_work"],
+          ["cars", "factory", "assembly", "design", "steel", "engineering",
+           "industrial revolution", "how things work"]),
+    Topic("how_medicine_made", "How Medicine Is Made — From Plant to Pill",
+          "How Things Are Made", [2, 3], [6, 7, 8, 9], 4, 5,
+          ["chemical_reactions"],
+          ["medicine", "drugs", "chemistry", "biology", "pharmaceutical",
+           "plants", "testing", "how things work"]),
+
+    # --- Building and Infrastructure ---
+    Topic("how_buildings_made", "How Buildings Are Made — Foundations to Roof",
+          "How Things Are Made", [2], [4, 5, 6], 2, 4,
+          ["how_concrete_steel_made"],
+          ["buildings", "construction", "architecture", "engineering", "design",
+           "materials", "how things work"]),
+    Topic("how_bridges_made", "How Bridges Are Built — Forces, Materials, and Span",
+          "How Things Are Made", [2, 3], [5, 6, 7], 3, 5,
+          ["forces_magnets"],
+          ["bridges", "engineering", "forces", "design", "materials", "maths",
+           "how things work"]),
+    Topic("how_roads_railways_made", "How Roads and Railways Are Built",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 4,
+          ["romans_britain"],
+          ["roads", "railways", "engineering", "industrial revolution", "history",
+           "transport", "how things work"]),
+    Topic("how_water_reaches_home", "How Water Reaches Your Tap — Reservoirs to Pipes",
+          "How Things Are Made", [2], [4, 5, 6], 2, 4,
+          ["rivers_mountains"],
+          ["water", "pipes", "reservoirs", "filtration", "engineering",
+           "environment", "how things work"]),
+
+    # --- Energy and the Environment ---
+    Topic("how_wind_turbines_work", "How Wind Turbines Work — Catching Wind and Making Power",
+          "How Things Are Made", [2], [5, 6, 7], 2, 4,
+          ["electricity_ks2", "forces_magnets"],
+          ["wind", "turbines", "renewable energy", "electricity", "environment",
+           "engineering", "how things work"]),
+    Topic("how_solar_panels_work", "How Solar Panels Work — Light into Electricity",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 5,
+          ["electricity_ks2", "waves_ks3"],
+          ["solar", "photovoltaic", "energy", "electricity", "environment",
+           "physics", "how things work"]),
+    Topic("how_recycling_works", "How Recycling Works — Sorting, Melting, and Making Again",
+          "How Things Are Made", [2], [4, 5, 6], 2, 4,
+          ["how_plastic_is_made"],
+          ["recycling", "environment", "materials", "plastic", "paper", "glass",
+           "sustainability", "how things work"]),
+    Topic("how_internet_works_deep", "How the Internet Actually Works — Cables, Servers, and Data",
+          "How Things Are Made", [3], [7, 8, 9], 3, 5,
+          ["networks_internet_ks2"],
+          ["internet", "cables", "servers", "data", "computing", "infrastructure",
+           "how things work"]),
+
+    # --- Food Systems and Global Chains ---
+    Topic("where_food_comes_from", "Where Our Food Comes From — Tracing a Meal Around the World",
+          "How Things Are Made", [2], [4, 5, 6], 3, 5,
+          [],
+          ["food", "farming", "globalisation", "trade", "environment",
+           "geography", "supply chain", "how things work"]),
+    Topic("how_supermarket_works", "How a Supermarket Works — Supply Chains and Cold Storage",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 4,
+          ["where_food_comes_from"],
+          ["supermarket", "supply chain", "logistics", "trade", "food",
+           "business", "how things work"]),
+
+    # --- Build It Yourself — Understanding by Making ---
+    # These topics go beyond "how it works" to "now build one".
+    # Each pairs the theory with an achievable hands-on project.
+    Topic("build_a_radio", "Build a Crystal Radio — How Radio Waves Become Sound",
+          "How Things Are Made", [3], [7, 8, 9], 3, 5,
+          ["waves_ks3", "electronics_components"],
+          ["radio", "crystal radio", "electronics", "waves", "physics", "making",
+           "hands-on", "build it", "how things work"]),
+    Topic("build_an_electric_motor", "Build an Electric Motor — Magnets, Coils, and Rotation",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 5,
+          ["electricity_ks2", "forces_magnets"],
+          ["motor", "electromagnetism", "coil", "magnet", "physics", "making",
+           "hands-on", "build it", "how things work", "engineering"]),
+    Topic("build_a_generator", "Build a Generator — Turning Motion into Electricity",
+          "How Things Are Made", [3], [7, 8, 9], 4, 5,
+          ["build_an_electric_motor", "how_electricity_generated"],
+          ["generator", "electromagnetism", "energy", "physics", "making",
+           "hands-on", "build it", "how things work", "engineering"]),
+    Topic("build_a_battery", "Build a Battery — How Chemical Energy Becomes Electricity",
+          "How Things Are Made", [2, 3], [6, 7, 8], 3, 5,
+          ["chemical_reactions", "electricity_ks2"],
+          ["battery", "electrochemistry", "zinc", "copper", "lemon battery",
+           "chemistry", "making", "hands-on", "build it", "how things work"]),
+    Topic("build_a_speaker", "Build a Speaker — How Electricity Becomes Sound",
+          "How Things Are Made", [3], [7, 8, 9], 3, 5,
+          ["sound_ks2", "build_an_electric_motor"],
+          ["speaker", "electromagnet", "sound", "vibration", "physics", "making",
+           "hands-on", "build it", "how things work"]),
+    Topic("build_a_periscope", "Build a Periscope — How Mirrors Bend Light",
+          "How Things Are Made", [2], [5, 6, 7], 2, 4,
+          ["light_shadows"],
+          ["periscope", "mirrors", "light", "reflection", "optics", "making",
+           "hands-on", "build it", "how things work", "physics"]),
+    Topic("build_a_water_filter", "Build a Water Filter — How Filtration and Purification Work",
+          "How Things Are Made", [2], [5, 6, 7], 2, 4,
+          ["how_water_reaches_home"],
+          ["water filter", "filtration", "purification", "sand", "charcoal",
+           "science", "making", "hands-on", "build it", "how things work"]),
+    Topic("build_a_trebuchet", "Build a Trebuchet — Medieval Siege Engines and Physics",
+          "How Things Are Made", [2, 3], [5, 6, 7, 8], 3, 5,
+          ["forces_magnets", "norman_conquest"],
+          ["trebuchet", "catapult", "medieval", "forces", "physics", "making",
+           "hands-on", "build it", "engineering", "history"]),
+    Topic("nuclear_reactor_how_it_works", "How a Nuclear Reactor Works — Fission, Fuel, and Safety",
+          "How Things Are Made", [3], [8, 9], 4, 5,
+          ["particle_model", "how_electricity_generated"],
+          ["nuclear", "reactor", "fission", "uranium", "energy", "physics",
+           "safety", "environment", "how things work"]),
+    # Note: no "build a nuclear reactor" project for obvious reasons —
+    # but the physics and history (Manhattan Project, Chernobyl, climate debate)
+    # is some of the most interesting and morally complex material in the curriculum.
+    Topic("nuclear_history_debate", "Nuclear Power — History, Accidents, and the Climate Debate",
+          "How Things Are Made", [3], [8, 9], 4, 6,
+          ["nuclear_reactor_how_it_works", "climate_change_ks3"],
+          ["nuclear", "chernobyl", "fukushima", "climate", "energy", "debate",
+           "evaluate", "morality", "history", "how things work"]),
+]
+
+
+# ---------------------------------------------------------------------------
 # Full curriculum registry
 # ---------------------------------------------------------------------------
 
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
-    _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES
+    _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
+    _HOW_THINGS_ARE_MADE
 )
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
