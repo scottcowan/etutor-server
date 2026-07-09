@@ -4839,7 +4839,350 @@ CURRICULUM: list[Topic] = (
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
     _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE
+    # _OPTICS_LIGHT added below
 )
+
+# ---------------------------------------------------------------------------
+# Optics, Light, and the Moon — From Lenses to the Cosmos
+# Covers: the physics of light, refraction and speed, lenses and optics,
+# telescopes and microscopes as instruments, the Moon in depth, and the
+# history of how optics changed science.
+# ---------------------------------------------------------------------------
+
+_OPTICS_LIGHT = [
+
+    # ==========================================================================
+    # LIGHT AND SPEED
+    # ==========================================================================
+
+    Topic("speed_of_light", "The Speed of Light — 299,792,458 m/s and What That Means",
+          "Optics", [2, 3], [6, 7, 8, 9], 3, 6,
+          ["light_shadows", "waves_ks3"],
+          ["speed of light", "c", "vacuum", "finite speed", "light year",
+           "Rømer", "Michelson", "relativity", "optics", "physics"]),
+    # Light travels at 299,792,458 m/s in vacuum — and this is the cosmic
+    # speed limit. Rømer measured it in 1676 by timing Jupiter's moon eclipses
+    # appearing early/late depending on Earth's orbital position.
+    # Michelson's spinning mirror experiment (1879) gave 299,910 km/s.
+    # A light-year: the distance light travels in a year — 9.46 trillion km.
+    # The Sun is 8 light-minutes away. Proxima Centauri is 4.24 light-years.
+    # The implication: when you look at stars, you're looking back in time.
+
+    Topic("light_speed_in_media", "Light Slows Down — Speed of Light Through Different Materials",
+          "Optics", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["speed_of_light", "particle_model"],
+          ["refractive index", "speed of light in medium", "glass", "water",
+           "diamond", "Cherenkov radiation", "slower than light", "optics", "physics"]),
+    # Light travels at c only in vacuum. In water it's 75% of c. In glass ~67%.
+    # In diamond ~41%. The refractive index n = c/v is how much slower.
+    # Cherenkov radiation: when a particle travels through a medium faster than
+    # light travels through that medium (not faster than c in vacuum — that's
+    # impossible), it creates a blue glow — the optical equivalent of a sonic boom.
+    # Nuclear reactors glow blue in their cooling pools for this reason.
+    # Why light slows: photons are absorbed and re-emitted by electrons in the
+    # material — the effective speed drops. Individual photons still travel at c
+    # between interactions. The "light is slow" story is an emergent phenomenon.
+
+    Topic("refraction", "Refraction — Why a Pencil Looks Bent in Water",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["light_speed_in_media"],
+          ["refraction", "Snell's law", "angle of incidence", "angle of refraction",
+           "total internal reflection", "fibre optics", "optics", "physics"]),
+    # When light crosses from one medium to another it changes speed — and
+    # direction if it hits at an angle. Snell's law: n₁sin(θ₁) = n₂sin(θ₂).
+    # Total internal reflection: when the angle is large enough, light can't
+    # escape the denser medium — the basis of fibre optic cables.
+    # Why a swimming pool looks shallower than it is (refraction at the surface
+    # distorts the apparent position of the bottom).
+    # Why a diamond sparkles (very high refractive index + many cut faces
+    # producing total internal reflection and dispersion).
+
+    Topic("dispersion_rainbows", "Dispersion — Why Prisms and Rainbows Split White Light",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["refraction"],
+          ["dispersion", "rainbow", "prism", "refractive index frequency dependence",
+           "chromatic aberration", "spectrum", "Newton", "optics", "physics"]),
+    # Refractive index varies with wavelength — violet refracts more than red.
+    # Newton proved sunlight contains all colours (contrary to then-current belief
+    # that the prism added colour). The rainbow: rain droplets act as prisms.
+    # Why you see a double rainbow (two internal reflections) and why the colours
+    # are reversed in the second. Chromatic aberration: the bane of early telescope
+    # lenses — different colours focus at slightly different distances.
+
+    Topic("reflection_mirrors", "Reflection and Mirrors — Flat, Concave, and Convex",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["light_shadows"],
+          ["reflection", "law of reflection", "mirror", "concave", "convex",
+           "focal point", "image formation", "ray diagram", "optics", "physics"]),
+    # Angle of incidence = angle of reflection. Flat mirror: virtual image
+    # the same size, same distance behind the mirror. Concave (converging):
+    # focuses parallel rays to a focal point — used in reflecting telescopes,
+    # satellite dishes, torch reflectors. Convex (diverging): wider field of
+    # view, objects appear smaller — car wing mirrors ("objects in mirror are
+    # closer than they appear").
+
+    # ==========================================================================
+    # LENSES AND OPTICAL INSTRUMENTS
+    # ==========================================================================
+
+    Topic("lenses_how_they_work", "Lenses — Converging, Diverging, and Focal Length",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["refraction"],
+          ["lenses", "converging lens", "diverging lens", "focal length",
+           "focal point", "ray diagrams", "real image", "virtual image",
+           "optics", "physics"]),
+    # Converging (convex): thicker in the middle, bends parallel rays to a focal point.
+    # Diverging (concave): thinner in the middle, spreads rays — appears to diverge
+    # from a virtual focal point.
+    # Focal length determines magnification and field of view.
+    # Real image: can be projected on a screen (film in a camera).
+    # Virtual image: can't be projected, only seen through the lens (magnifying glass).
+
+    Topic("eye_vision_correction", "The Eye as an Optical Instrument — Vision, Accommodation, and Glasses",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["lenses_how_they_work", "human_body_ks2"],
+          ["eye", "cornea", "lens", "retina", "accommodation", "short-sight",
+           "long-sight", "glasses", "contact lenses", "LASIK", "optics", "biology"]),
+    # The eye: cornea + lens converge light onto the retina (the sensor).
+    # Accommodation: the ciliary muscles change the lens curvature to focus
+    # near or far objects. Myopia (short-sight): eyeball too long, image forms
+    # in front of retina — corrected by diverging lens. Hyperopia (long-sight):
+    # eyeball too short — corrected by converging lens. Presbyopia: lens
+    # stiffens with age, losing accommodation — why reading glasses appear at 40+.
+
+    Topic("camera_optics", "How a Camera Works — Aperture, Shutter Speed, and Sensors",
+          "Optics", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["lenses_how_they_work"],
+          ["camera", "aperture", "f-number", "depth of field", "shutter speed",
+           "ISO", "sensor", "exposure triangle", "film", "digital", "optics"]),
+    # Aperture (f-number): how wide the lens opening is. Wider = more light,
+    # shallower depth of field (background blur = "bokeh").
+    # Shutter speed: how long the sensor is exposed. Slow shutter = motion blur
+    # or light trails. Fast shutter = freeze action.
+    # ISO: sensor sensitivity. Higher = more grain/noise.
+    # The exposure triangle: aperture × shutter speed × ISO = correct exposure.
+    # Why a smaller f-number means a wider aperture (counterintuitive: f/2 > f/16).
+
+    Topic("microscope_how_it_works", "The Microscope — Compound, Electron, and the World Below Visible Light",
+          "Optics", [2, 3], [5, 6, 7, 8, 9], 3, 5,
+          ["lenses_how_they_work"],
+          ["microscope", "compound microscope", "objective lens", "eyepiece",
+           "magnification", "resolution", "electron microscope", "SEM", "TEM",
+           "nanoscale", "optics", "science", "history"]),
+    # Compound microscope: two converging lenses — objective (high magnification,
+    # close to specimen), eyepiece (magnifies the real image formed by the objective).
+    # Total magnification = objective × eyepiece. 40× objective + 10× eyepiece = 400×.
+    # Resolution limit: you can't resolve features smaller than ~half the wavelength
+    # of light used (~200nm). Bacteria (~1μm) visible; viruses (~100nm) not.
+    # Electron microscope: uses electrons (much shorter wavelength) — resolves to 0.1nm.
+    # SEM (scanning): 3D surface images. TEM (transmission): internal structure.
+    # Why we can "see" atoms with electron microscopes but not light microscopes.
+
+    Topic("leeuwenhoek_microscope_history", "Leeuwenhoek — The First Person to See Microorganisms",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["microscope_how_it_works", "connection_glass_telescope_microscope"],
+          ["Leeuwenhoek", "microscope history", "animalcules", "bacteria",
+           "single lens", "discovery", "17th century", "optics", "science", "history"]),
+    # Antonie van Leeuwenhoek (1670s) ground his own lenses to 270×
+    # magnification — far beyond any instrument of the time. He saw
+    # bacteria in pond water, dental scrapings, and blood. Called them
+    # "animalcules" — little animals. Reported to the Royal Society in
+    # letters that were received with deep scepticism until others confirmed.
+    # He never published his lens-grinding method — the secret died with him.
+    # The connection to the Connections curriculum: same glassmaking tradition
+    # that made windows made telescope lenses that made microscope lenses.
+
+    # ==========================================================================
+    # TELESCOPES
+    # ==========================================================================
+
+    Topic("telescope_refracting", "Refracting Telescopes — How Galileo Changed the Universe",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["lenses_how_they_work", "dispersion_rainbows"],
+          ["refracting telescope", "Galileo", "objective lens", "eyepiece",
+           "chromatic aberration", "moons of Jupiter", "Galilean moons",
+           "optics", "astronomy", "history", "science"]),
+    # Galileo didn't invent the telescope but was the first to point it at
+    # the sky systematically (1609). Moons of Jupiter (Io, Europa, Ganymede,
+    # Callisto) proved not everything orbited Earth. Phases of Venus proved
+    # Venus orbited the Sun. Mountains on the Moon proved it was a world,
+    # not a perfect crystalline sphere. The Church's problem: these weren't
+    # theological claims, they were observable facts.
+    # Chromatic aberration: the fundamental problem of refracting telescopes —
+    # solved only by making the objective lens very long (17th-century telescopes
+    # were 30-45 metres long) or by the achromatic doublet (two lens types combined).
+
+    Topic("telescope_reflecting", "Reflecting Telescopes — Newton's Mirror and Modern Giants",
+          "Optics", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["reflection_mirrors", "telescope_refracting"],
+          ["reflecting telescope", "Newton", "parabolic mirror", "Cassegrain",
+           "Hubble", "VLT", "ELT", "segmented mirror", "optics", "astronomy"]),
+    # Newton (1668): replace the objective lens with a parabolic mirror.
+    # Mirrors don't have chromatic aberration. A mirror telescope 30cm across
+    # outperforms a lens telescope of the same size.
+    # Cassegrain design: secondary mirror sends light back through a hole in
+    # the primary — compact, most modern telescopes use this.
+    # Hubble Space Telescope: 2.4m mirror, above the atmosphere.
+    # Very Large Telescope (VLT) in Chile: four 8.2m mirrors working together.
+    # Extremely Large Telescope (ELT, under construction): 39.3m primary mirror
+    # made of 798 hexagonal segments.
+
+    Topic("telescope_radio_other", "Beyond Visible Light — Radio, X-Ray, Infrared, and Gamma Telescopes",
+          "Optics", [3], [7, 8, 9], 3, 5,
+          ["telescope_reflecting", "waves_ks3"],
+          ["radio telescope", "Arecibo", "VLBI", "X-ray telescope", "Chandra",
+           "infrared", "JWST", "gamma ray", "Fermi", "multiwavelength astronomy",
+           "electromagnetic spectrum", "optics", "astronomy"]),
+    # The universe emits at all wavelengths — visible light is a narrow slice.
+    # Radio: cold gas, pulsars, quasars, the CMB. Arecibo (now collapsed),
+    # VLA. VLBI (Very Long Baseline Interferometry): multiple radio telescopes
+    # on different continents synthesise a telescope the diameter of the Earth.
+    # The Event Horizon Telescope (black hole images) used VLBI.
+    # X-ray (must be above atmosphere): Chandra — hot gas, black hole accretion.
+    # Infrared: cold objects, dust-penetrating — JWST's advantage over Hubble.
+    # Gamma-ray: Fermi — most energetic events, gamma-ray bursts.
+
+    Topic("jwst_what_it_sees", "The James Webb Space Telescope — Seeing the First Stars",
+          "Optics", [3], [8, 9], 4, 5,
+          ["telescope_reflecting", "telescope_radio_other", "universe_origin"],
+          ["JWST", "infrared", "L2", "gold mirrors", "first stars",
+           "galaxy formation", "exoplanet atmospheres", "redshift",
+           "optics", "astronomy", "modern"]),
+    # JWST launched December 2021, reached L2 January 2022.
+    # 6.5m gold-plated beryllium segmented primary mirror (vs Hubble's 2.4m silver).
+    # Why infrared: early galaxies are so far away their light is redshifted
+    # out of the visible into the infrared. JWST can see them; Hubble cannot.
+    # First images (July 2022): galaxies from 13 billion years ago.
+    # Exoplanet atmospheres: JWST detects which molecules absorb starlight
+    # during a planet's transit — the first step to detecting biosignatures.
+    # The sunshield: tennis-court-sized, five layers, keeps the telescope
+    # at -233°C so its own heat doesn't swamp the infrared signal.
+
+    Topic("adaptive_optics", "Adaptive Optics — Unblurring the Atmosphere in Real Time",
+          "Optics", [3], [8, 9], 4, 5,
+          ["telescope_reflecting"],
+          ["adaptive optics", "atmospheric turbulence", "seeing", "deformable mirror",
+           "laser guide star", "Shack-Hartmann sensor", "optics", "astronomy",
+           "how things work"]),
+    # The atmosphere causes stars to twinkle — but for astronomy, twinkling is blur.
+    # Adaptive optics fires a laser to create an artificial "guide star" at
+    # 90km altitude. A wavefront sensor measures how the atmosphere distorts
+    # the laser's return. A deformable mirror (thousands of tiny actuators)
+    # corrects the distortion 1,000 times per second.
+    # Result: ground-based telescopes matching Hubble's resolution in visible light.
+
+    # ==========================================================================
+    # THE MOON IN DEPTH
+    # ==========================================================================
+
+    Topic("moon_origin", "How the Moon Formed — The Giant Impact Hypothesis",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["earth_formation", "earth_space_ks2"],
+          ["Moon", "giant impact", "Theia", "formation", "tidal locking",
+           "lunar composition", "Earth-Moon system", "astronomy", "origin"]),
+    # The leading model: ~4.5 billion years ago, a Mars-sized body (Theia)
+    # hit the young Earth. The debris ejected into orbit coalesced into the Moon.
+    # Evidence: the Moon and Earth have virtually identical oxygen isotope ratios —
+    # they formed from the same material. The Moon has almost no iron core
+    # (it went back into Earth) and no volatile elements (evaporated in the impact).
+    # Why the Moon is tidally locked (same face always toward Earth): tidal friction
+    # slowed the Moon's rotation over hundreds of millions of years until the rotation
+    # period matched the orbital period.
+
+    Topic("moon_geology", "The Moon's Geology — Maria, Highlands, Craters, and Lava Tubes",
+          "Optics", [2], [5, 6, 7], 2, 4,
+          ["moon_origin"],
+          ["Moon", "maria", "highlands", "craters", "basalt", "anorthosite",
+           "lava tubes", "late heavy bombardment", "regolith", "geology",
+           "astronomy"]),
+    # The dark areas (maria = seas) are ancient lava plains of basalt — the Moon
+    # was geologically active for ~1 billion years after formation.
+    # The bright highlands are older, heavily cratered anorthosite — the original
+    # crust. The Late Heavy Bombardment (~3.9 billion years ago): a period of
+    # intense impacts that scarred both the Moon and Earth.
+    # Lava tubes: collapsed lava channels — potentially 100m wide, useful as
+    # radiation-shielded habitats for future lunar bases.
+    # Regolith (lunar soil): fine abrasive dust, 1-30cm deep. Sticks to everything
+    # due to static charge; one of the hardest engineering problems for lunar bases.
+
+    Topic("moon_phases_tides", "Moon Phases and Tides — The Orbital Mechanics You Can See",
+          "Optics", [1, 2], [3, 4, 5, 6], 1, 3,
+          ["earth_space_ks2"],
+          ["Moon phases", "new moon", "full moon", "waxing", "waning",
+           "tides", "spring tide", "neap tide", "tidal bulge", "lunar calendar",
+           "astronomy"]),
+    # Moon phases: as the Moon orbits Earth, we see different amounts of the
+    # sunlit hemisphere. The Moon is not a light source — it reflects sunlight.
+    # Tides: the Moon's gravity pulls the near side of the ocean more than the
+    # far side. Two tidal bulges (near and far). As Earth rotates, most coastal
+    # locations experience two high tides per day.
+    # Spring tides (Sun, Moon, Earth aligned): highest tides.
+    # Neap tides (right angle): lowest range. Tidal friction is gradually
+    # slowing Earth's rotation — days were ~21 hours long 620 million years ago.
+
+    Topic("moon_far_side", "The Far Side of the Moon — What We Couldn't See for 4 Billion Years",
+          "Optics", [2, 3], [5, 6, 7, 8], 3, 4,
+          ["moon_geology", "moon_phases_tides"],
+          ["far side", "Moon", "tidal locking", "South Pole-Aitken Basin",
+           "Chang'e 4", "China", "highlands", "thin crust", "astronomy"]),
+    # The far side is not the "dark side" — it receives as much sunlight
+    # as the near side. It's the side we can't see from Earth due to tidal locking.
+    # First photographed by Soviet Luna 3 (1959). First landed on by China's
+    # Chang'e 4 (2019) — the first soft landing on the far side in history.
+    # What's different: the far side has almost no maria (thin crust, lava couldn't
+    # break through as easily), and contains the South Pole-Aitken Basin —
+    # one of the largest impact craters in the solar system.
+
+    Topic("moon_water_ice", "Water on the Moon — The Ice at the Poles",
+          "Optics", [3], [7, 8, 9], 3, 5,
+          ["moon_geology", "moon_programme_modern"],
+          ["Moon", "water ice", "permanently shadowed craters", "LCROSS",
+           "lunar south pole", "Artemis", "rocket fuel", "resources",
+           "astronomy", "future"]),
+    # Permanently shadowed craters near the poles never see sunlight —
+    # temperatures can be -230°C, cold enough to trap water ice for billions of years.
+    # LCROSS (2009) deliberately crashed a rocket stage into a crater, analysed
+    # the plume: confirmed water ice.
+    # Why it matters: split water into H₂ + O₂ and you have rocket propellant
+    # and breathing air — the resource that makes a lunar base viable.
+    # Estimated 600 million tonnes of ice. China and the US are both targeting
+    # the lunar south pole for future bases — for the ice.
+
+    Topic("solar_eclipses", "Solar Eclipses — The Cosmic Coincidence",
+          "Optics", [2], [4, 5, 6, 7], 2, 4,
+          ["moon_phases_tides", "earth_space_ks2"],
+          ["solar eclipse", "total eclipse", "corona", "umbra", "penumbra",
+           "saros cycle", "coincidence", "angular size", "Moon Sun size",
+           "astronomy"]),
+    # The Moon is 400× smaller than the Sun but 400× closer — so they appear
+    # the same angular size. This is a coincidence; no other known planet-moon
+    # system produces perfect total solar eclipses.
+    # During totality: the corona (Sun's outer atmosphere) becomes visible —
+    # usually lost in the Sun's glare. Helium was discovered in the solar
+    # spectrum during the 1868 eclipse before it was found on Earth.
+    # The Saros cycle: eclipses repeat almost exactly every 6,585.3 days (18 years)
+    # because the Moon's orbital resonances nearly align.
+    # Why total solar eclipses are temporary in Earth's history: the Moon is
+    # slowly receding (~3.8cm/year) — eventually it will be too far to cover
+    # the Sun completely.
+
+    Topic("moon_in_culture", "The Moon in Human Culture — Calendars, Mythology, and the Pull on the Mind",
+          "Optics", [2], [4, 5, 6, 7], 2, 4,
+          ["moon_phases_tides"],
+          ["Moon", "lunar calendar", "Islam", "Judaism", "mythology", "lunacy",
+           "werewolves", "full moon", "tidal lock", "culture", "astronomy"]),
+    # Every ancient civilisation counted time by the Moon before the Sun.
+    # The Islamic calendar is purely lunar — Ramadan moves through the seasons.
+    # The Jewish calendar is lunisolar — months are lunar but intercalary months
+    # keep it aligned with the solar year.
+    # "Lunacy" (from Luna): the historical belief that the full moon caused madness —
+    # studied and debunked. The human body is mostly water; if the Moon affects
+    # the oceans, why not us? Because the tidal force on a body of water in a
+    # glass of water is larger than the Moon's tidal force on your body.
+]
+
+# Patch the curriculum to include _OPTICS_LIGHT
+CURRICULUM = CURRICULUM + _OPTICS_LIGHT
 
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
