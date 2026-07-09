@@ -54,6 +54,8 @@ Montessori identified sensitive periods for: order, language, sensory refinement
 
 **The neuroscience validates the *concept* but not the specific age windows.** No peer-reviewed study directly tests Montessori's proposed sensitive period schedule (e.g. "sensitive period for order: ages 1–3") against developmental outcomes. The age windows appear to be Montessori's clinical observations, not empirically validated intervals.
 
+**Critical gap for etutor's target age range:** The sensitive period literature is strongest for early childhood (0–5) and adolescence. Middle childhood (6–12) — precisely the etutor target — is the least characterised window. Sensitive periods for language and motor development are largely complete by age 6; adolescent brain reorganisation begins around 11–12. The 6–12 range is relatively plastic but without the sharp windows of early childhood. This argues against over-engineering around sensitive period timing for this age group.
+
 **What this means practically:**
 - Use sensitive periods as a *heuristic*, not a hard gate
 - The windows are real — there are better and worse times to introduce certain content
