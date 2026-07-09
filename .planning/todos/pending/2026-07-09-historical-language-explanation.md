@@ -47,6 +47,39 @@ Categories of problem language in the reading list:
 - Older books assume male default, passive female characters. Worth noting when
   a child notices the pattern rather than steering around it.
 
+## Approach — Modernise First, Introduce Original Later
+
+The reading strategy is **two-pass, age-gated**:
+
+**Pass 1 (younger readers, first encounter):** Serve a lightly modernised version
+of the passage. Swap the problematic word silently or replace with a brief inline
+gloss. Goal: protect reading flow and comprehension. A 7-year-old meeting "gay"
+for the first time doesn't need a linguistics lesson — they need the story to keep
+moving. The tutor reads passages in modern English by default for ages 6–9.
+
+**Pass 2 (older readers or return visits):** Introduce the original language as
+a deliberate teaching moment. "Actually, Kenneth Grahame wrote 'gay' here —
+what do you think he meant by it in 1908?" This becomes a lesson in how language
+changes, what words reveal about their era, and how to read critically. For ages
+10+, or when a child has already read the book once in modernised form.
+
+This mirrors how good teachers handle Shakespeare — they let students encounter
+a modern version first so they grasp the story, then return to the original text
+with that scaffold in place.
+
+**The two failure modes to avoid:**
+- Modernising silently forever → child never learns to navigate historical text
+- Presenting the original word cold to a young reader → disrupts comprehension,
+  may upset or confuse, requires explanation that derails the story
+
+**Implementation signal:**
+- `child.age` and `session_count` on this book determine which pass to serve
+- A flag on the book record: `serve_modernised_until_age: 10` (default)
+- After that age, or after the child has read the book once: serve original with
+  annotation support enabled
+
+---
+
 ## Solution
 
 **Per-book context notes in the curriculum/books metadata:**
