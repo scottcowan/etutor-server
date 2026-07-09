@@ -4325,6 +4325,511 @@ _WORLD_RELIGIONS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Aerospace, Space, and the Rocket Age
+# From the physics of flight to orbital mechanics to the Cold War race.
+# Covers: how things fly, how rockets work, how you get to space,
+# the military-industrial origins of the space programme, the Soviet
+# parallel story, specific missions and vessels, modern era.
+# Deliberately broad — connects physics, history, engineering, and
+# geopolitics through one of the 20th century's defining threads.
+# ---------------------------------------------------------------------------
+
+_AEROSPACE = [
+
+    # ==========================================================================
+    # FLIGHT — THE PHYSICS
+    # ==========================================================================
+
+    Topic("how_wings_work", "How Wings Work — Lift, Drag, and the Aerofoil",
+          "Aerospace", [2], [5, 6, 7], 2, 4,
+          ["forces_magnets", "exp_bernoulli_flight"],
+          ["flight", "wings", "lift", "drag", "aerofoil", "Bernoulli",
+           "angle of attack", "physics", "aerospace"]),
+    # The standard "Bernoulli" explanation (air over the top travels further
+    # therefore faster therefore lower pressure) is a simplification —
+    # it can't fully explain aerobatic flight upside down. The complete
+    # explanation combines Bernoulli with Newtonian reaction: the wing
+    # deflects air downward, reaction force pushes wing up.
+    # Angle of attack: tilt the wing more and you get more lift — until
+    # the stall point where flow separates and lift collapses suddenly.
+
+    Topic("wing_types", "Wing Types — Delta, Swept, Variable Geometry, and Flying Wings",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["how_wings_work"],
+          ["wings", "delta wing", "swept wing", "variable geometry", "flying wing",
+           "Concorde", "F-111", "B-2", "aircraft design", "aerospace", "tradeoffs"]),
+    # Straight wings: maximum lift at low speed (good for light planes).
+    # Swept wings: delay transonic shock waves — every modern jet airliner.
+    # Delta wings: strong at supersonic speeds, poor takeoff/landing efficiency
+    # — Concorde, Eurofighter, Space Shuttle.
+    # Variable geometry (swing-wing): F-111, Tornado — sweep back for speed,
+    # extend for landing. Complex and heavy; mostly abandoned.
+    # Flying wings: no tail, maximum aerodynamic efficiency — B-2 Spirit.
+    # The tradeoff is always the same: high-speed efficiency vs low-speed control.
+
+    Topic("supersonic_transonic", "Going Through the Sound Barrier — Transonic, Supersonic, and Shock Waves",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["how_wings_work", "waves_ks3"],
+          ["supersonic", "transonic", "sound barrier", "shock wave", "Mach number",
+           "Chuck Yeager", "X-1", "sonic boom", "wave drag", "aerospace"]),
+    # At Mach ~0.8 (transonic) shock waves form on the wing surface — wave drag
+    # increases dramatically. The "sound barrier" was a real engineering problem,
+    # not just a speed limit. Chuck Yeager, Bell X-1 (1947) — rocket-powered,
+    # dropped from a B-29. Why supersonic flight requires thin, swept, or delta wings.
+    # Sonic boom: not just at the moment of breaking — a continuous cone of
+    # compressed air follows the aircraft; you hear it as it passes overhead.
+
+    Topic("concorde", "Concorde — The Supersonic Airliner and Why It Died",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["supersonic_transonic", "wing_types"],
+          ["Concorde", "supersonic", "British Airways", "Air France", "Mach 2",
+           "ogival delta", "afterburner", "sonic boom ban", "economics", "aerospace"]),
+    # Concorde flew at Mach 2.04 — London to New York in 3.5 hours.
+    # The engineering: ogival delta wing, drooping nose for takeoff visibility,
+    # four Olympus 593 engines with reheat (afterburner), kinetic heating
+    # (the nose reached 127°C — the fuselage expanded 25cm in flight).
+    # Why it ended: not the 2000 crash primarily — the economics were always
+    # marginal, fuel crisis, supersonic boom ban over land severely limiting
+    # routes. The broader lesson: supersonic passenger flight has been tried
+    # and found economically difficult every time.
+
+    Topic("hypersonic", "Hypersonic — Mach 5+ and the Return to Atmosphere",
+          "Aerospace", [3], [8, 9], 4, 5,
+          ["supersonic_transonic"],
+          ["hypersonic", "Mach 5", "scramjet", "X-43", "plasma", "heat shield",
+           "HGV", "hypersonic glide vehicle", "military", "space re-entry",
+           "aerospace"]),
+    # Above Mach 5 the air in front of the vehicle can't get out of the way —
+    # it's compressed and heated to plasma temperatures.
+    # Scramjet (supersonic combustion ramjet): unlike a ramjet, fuel burns in
+    # supersonic airflow. The X-43A reached Mach 9.6 (2004). Challenge: you
+    # need to reach Mach 4+ before a scramjet works — a rocket gets you there.
+    # Military hypersonic glide vehicles (HGVs): launched by missile, glide
+    # unpredictably at Mach 20+ — hard to intercept because trajectory changes.
+    # The geopolitics: Russia (Avangard), China (DF-17), US all developing these.
+
+    Topic("ramjet_pulsejet", "Ramjets and Pulsejets — Air-Breathing Engines That Have No Moving Parts",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["how_engines_work"],
+          ["ramjet", "pulsejet", "V-1", "jet engine", "combustion",
+           "air-breathing", "SR-71", "aerospace", "how things work"]),
+    # A ramjet is simply a tube: ram air in at the front, add fuel, ignite,
+    # exhaust at the back. No compressor, no turbine — no moving parts.
+    # Only works above ~300mph (you need the ram air pressure).
+    # The V-1 flying bomb used a pulsejet — an interrupted combustion cycle
+    # producing the characteristic buzz. Children in London learned the
+    # silence meant the engine had cut out. SR-71 Blackbird used ramjet mode
+    # above Mach 3 — the J58 engines were turbojets that transitioned to
+    # ramjet operation at high speed.
+
+    Topic("drones_uav", "Drones and UAVs — From V-1 to Predator to Delivery",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["ramjet_pulsejet", "robotics_building"],
+          ["drones", "UAV", "unmanned", "V-1", "Predator", "Reaper",
+           "DJI", "autonomy", "military", "delivery", "surveillance",
+           "aerospace", "ethics"]),
+    # The V-1 was the first mass-produced UAV. Modern military drones
+    # (Predator, Reaper) are flown by operators in Nevada attacking targets
+    # in Afghanistan — the physical and psychological distance changes how
+    # war is conducted. Commercial drones (DJI) now outsell military drones
+    # by units. The geofencing question: who owns the airspace over your house?
+    # Autonomous lethal drones (LAWS) — the ethics of removing a human from
+    # the kill decision chain.
+
+    # ==========================================================================
+    # ROCKETS — THE PHYSICS AND HISTORY
+    # ==========================================================================
+
+    Topic("how_rockets_work", "How Rockets Work — Newton's Third Law in a Tube",
+          "Aerospace", [2], [5, 6, 7], 2, 4,
+          ["forces_motion_ks3"],
+          ["rockets", "thrust", "Newton's third law", "propellant", "exhaust",
+           "specific impulse", "rocket equation", "Tsiolkovsky", "aerospace",
+           "physics"]),
+    # A rocket carries both fuel AND oxidiser — it works in vacuum where
+    # there's no air. Thrust = mass flow rate × exhaust velocity.
+    # The Tsiolkovsky rocket equation: Δv = ve × ln(m0/mf).
+    # The tyranny of the rocket equation: most of a rocket's mass is propellant.
+    # To go twice as fast you need much more than twice the fuel.
+    # Specific impulse: the efficiency measure of rocket engines.
+
+    Topic("rocket_engine_types", "Rocket Engine Types — Solid, Liquid, and Hybrid",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["how_rockets_work", "chemical_reactions"],
+          ["rocket engines", "solid rocket", "liquid fuel", "cryogenic",
+           "LOX", "kerosene", "hydrogen", "throttle", "restart", "SRB",
+           "Merlin", "Raptor", "aerospace"]),
+    # Solid: simple, storable, can't be throttled or shut down (SRBs on Shuttle).
+    # Liquid: complex plumbing, cryogenic storage, but throttleable and restartable.
+    # Kerosene+LOX (RP-1): SpaceX Merlin, Saturn V first stage — high thrust, dense.
+    # Hydrogen+LOX: Space Shuttle main engines, SLS — highest Isp, but hydrogen
+    # is tricky (boils, embrittles metals, very light so tanks are huge).
+    # Methane+LOX: SpaceX Raptor — easier to handle than hydrogen, can be made
+    # on Mars (Sabatier process from CO2+H2O). The next generation.
+    # Nuclear thermal: uranium heats hydrogen propellant — 2× Isp of chemical,
+    # never flown in crewed vehicles but actively being developed.
+
+    Topic("multistage_rockets", "Staging — Why Rockets Drop Their Tanks",
+          "Aerospace", [2, 3], [6, 7, 8], 3, 4,
+          ["how_rockets_work"],
+          ["staging", "multistage", "gravity loss", "delta-v", "mass fraction",
+           "Saturn V", "Falcon 9", "staging ring", "aerospace"]),
+    # Once propellant is burned, the empty tank is dead weight. Drop it.
+    # Each stage is optimised for its regime: high-thrust lower stage,
+    # efficient upper stage in vacuum. The Saturn V had three stages.
+    # Staging explained why the Apollo mission looked so different at
+    # launch vs landing: 3,000 tonnes off the pad, 6 tonnes on the Moon.
+
+    # ==========================================================================
+    # GETTING TO SPACE — THE ORBITAL MECHANICS
+    # ==========================================================================
+
+    Topic("atmosphere_layers", "The Atmosphere — From Ground to Space",
+          "Aerospace", [2], [5, 6, 7], 2, 3,
+          ["weather_climate", "earth_space_ks2"],
+          ["atmosphere", "troposphere", "stratosphere", "mesosphere",
+           "thermosphere", "Kármán line", "100km", "weather balloon",
+           "orbital altitude", "space", "aerospace"]),
+    # Troposphere (0–12km): weather happens here.
+    # Stratosphere (12–50km): Concorde flew here; ozone layer.
+    # Mesosphere (50–80km): where meteors burn up.
+    # Thermosphere (80–700km): ISS orbits here (~400km). Temperature rises
+    # to 2000°C but so few molecules there's almost no heat transfer —
+    # you'd freeze, not burn.
+    # Kármán line (100km): the conventional boundary of space.
+    # Weather balloons reach ~35km (stratosphere) — much lower than "space."
+
+    Topic("orbital_mechanics_basics", "How to Get to Space — Orbit Is Falling Sideways Fast Enough",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["atmosphere_layers", "how_rockets_work", "pressure_buoyancy"],
+          ["orbit", "orbital velocity", "7.8 km/s", "falling", "circular orbit",
+           "ISS", "altitude vs speed", "gravity", "centripetal", "aerospace"]),
+    # The key insight: orbit isn't about height, it's about speed.
+    # At 7.8 km/s horizontal velocity, the Earth curves away beneath you
+    # as fast as you fall — you're in perpetual free fall around the planet.
+    # Why you need to go sideways, not just up.
+    # Weather balloon vs orbital rocket: the balloon goes high but slowly —
+    # it falls straight back down. The rocket goes fast enough to miss the Earth.
+
+    Topic("apogee_perigee_inclination", "Orbital Elements — Apogee, Perigee, Inclination, and Orbital Planes",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["orbital_mechanics_basics"],
+          ["orbit", "apogee", "perigee", "inclination", "orbital plane",
+           "eccentricity", "elliptical orbit", "Kepler", "aerospace"]),
+    # Apogee: highest point of an orbit. Perigee: lowest.
+    # Circular orbit: apogee = perigee. Elliptical: they differ.
+    # Inclination: the angle of the orbital plane to the equator.
+    # ISS: 51.6° inclination (allows both US and Russian launch sites to reach it).
+    # Polar orbit: 90° — passes over every point on Earth, used for spy/weather satellites.
+    # Sun-synchronous: slightly retrograde, always crosses the equator at the same
+    # local solar time — ideal for optical imaging satellites.
+
+    Topic("geostationary_lagrange", "Geostationary Orbit, Lagrange Points, and Where to Park a Satellite",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["apogee_perigee_inclination"],
+          ["geostationary", "GEO", "Clarke orbit", "Lagrange points", "L1", "L2",
+           "L4", "L5", "JWST", "SOHO", "communications satellites", "aerospace"]),
+    # Geostationary orbit: 35,786km altitude, orbital period exactly 24 hours —
+    # satellite appears stationary over one point on Earth. Arthur C. Clarke
+    # proposed this in 1945 ("Clarke orbit"). All TV broadcast satellites are here.
+    # Limitation: only above the equator; polar regions have poor coverage; high
+    # latency (~240ms round trip) too slow for live gaming.
+    # Lagrange points: where gravitational forces of two bodies balance.
+    # L1 (Earth-Sun): SOHO solar observatory — always faces the Sun.
+    # L2 (Earth-Sun, opposite side): JWST — cold, stable, Earth always blocks the Sun.
+    # L4 and L5: 60° ahead and behind Earth in its orbit — stable parking spots;
+    # the Trojan asteroids cluster here.
+
+    Topic("delta_v_manoeuvres", "Delta-V — The Currency of Space Travel",
+          "Aerospace", [3], [8, 9], 4, 6,
+          ["orbital_mechanics_basics", "how_rockets_work"],
+          ["delta-v", "Hohmann transfer", "orbital manoeuvre", "burn",
+           "space travel budget", "Mars", "gravity assist", "slingshot",
+           "aerospace", "maths"]),
+    # Every orbital manoeuvre costs delta-v — change in velocity.
+    # Hohmann transfer: the most efficient way to move between two circular orbits —
+    # two burns, one to raise the orbit, one to circularise at the new altitude.
+    # Gravity assists (slingshot): steal velocity from a planet.
+    # Voyager's grand tour: used Jupiter, Saturn, Uranus, Neptune gravity assists —
+    # couldn't have been done any other way given 1970s rocket capability.
+    # Going to Mars: ~3.6 km/s from LEO. Going to the Moon: ~3.1 km/s.
+    # The counterintuitive result: it costs more delta-v to land on the Sun
+    # than to escape the solar system entirely.
+
+    Topic("reentry_heat_shields", "Re-Entry — Why Coming Back is Harder Than Going Up",
+          "Aerospace", [3], [7, 8, 9], 3, 5,
+          ["orbital_mechanics_basics", "heat_thermal_energy"],
+          ["re-entry", "heat shield", "ablative", "plasma", "blackout",
+           "Columbia", "angle of attack", "skip re-entry", "aerospace"]),
+    # At orbital velocity (7.8 km/s) kinetic energy must be converted to heat.
+    # You can't just rocket-brake — not enough propellant. Use the atmosphere.
+    # The heat shield doesn't conduct heat away — it ablates (burns off slowly),
+    # carrying heat with it. Columbia (2003): damaged leading edge tiles let
+    # plasma enter the wing structure. The entry corridor: too steep and the
+    # g-forces crush you; too shallow and you skip off the atmosphere like a
+    # stone off water.
+
+    # ==========================================================================
+    # THE COLD WAR SPACE RACE
+    # ==========================================================================
+
+    Topic("ww2_rocket_programme", "V-2 and the German Rocket Programme — How the Space Age Began",
+          "Aerospace", [3], [7, 8, 9], 4, 6,
+          ["how_rockets_work", "ww2_global_conflict"],
+          ["V-2", "Peenemünde", "Wernher von Braun", "forced labour", "Mittelwerk",
+           "Operation Paperclip", "ICBM", "Cold War", "aerospace", "history",
+           "ethics"]),
+    # The V-2 was the first object to reach space (100km+) in 1944.
+    # Built at Mittelwerk using concentration camp slave labour — more people
+    # died building the V-2 than were killed by it. Wernher von Braun and
+    # the German rocket engineers were brought to the US in Operation Paperclip;
+    # the Soviets captured different engineers and hardware. Both sides built
+    # their ICBM and space programmes on Nazi rocket technology.
+    # The ethical question: do the ends (Moon landings) justify the origins?
+
+    Topic("cold_war_icbm_programme", "ICBMs — Ballistic Missiles and the Logic of Nuclear Deterrence",
+          "Aerospace", [3], [8, 9], 4, 6,
+          ["ww2_rocket_programme", "cold_war_context"],
+          ["ICBM", "ballistic missile", "nuclear deterrence", "MAD", "Minuteman",
+           "Trident", "silos", "launch-on-warning", "Cold War", "aerospace",
+           "geopolitics", "ethics"]),
+    # The first ICBMs were simply modified V-2 descendants. By the 1960s
+    # the US and USSR each had thousands of nuclear-tipped missiles.
+    # MAD (Mutually Assured Destruction): deterrence works because no one
+    # can win. Launch-on-warning: missiles detected by radar trigger automatic
+    # launch — the system can misidentify a flock of geese (Stanislav Petrov, 1983).
+    # The space race was inseparable from the missile race: the same rocket
+    # that launched Sputnik could deliver a nuclear warhead to any city on Earth.
+
+    Topic("space_race_origins", "Sputnik to Apollo — How the Cold War Created the Space Age",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["cold_war_icbm_programme"],
+          ["Sputnik", "Gagarin", "Apollo", "space race", "Kennedy", "Eisenhower",
+           "NASA", "Korolev", "Cold War", "aerospace", "history"]),
+    # Sputnik (1957) was a propaganda shock to the US — the Soviets could
+    # reach space, which meant they could reach New York. NASA was created
+    # in 1958 as the civilian answer to Sputnik. Kennedy's 1961 speech was
+    # explicitly geopolitical — the Moon as a demonstration of American
+    # technological superiority in a war fought with rockets not bullets.
+    # The secret on the Soviet side: Sergei Korolev, the "Chief Designer"
+    # whose name was classified. He died in 1966 — the Soviet programme
+    # never recovered its momentum without him.
+
+    Topic("soviet_space_programme", "The Soviet Space Programme — Firsts, Failures, and the Parallel Story",
+          "Aerospace", [3], [7, 8, 9], 4, 5,
+          ["space_race_origins"],
+          ["Soviet Union", "Korolev", "Gagarin", "Vostok", "Luna", "Venera",
+           "Soyuz", "N1", "space station", "Cold War", "aerospace", "history"]),
+    # First satellite (Sputnik), first animal (Laika), first human (Gagarin),
+    # first woman (Tereshkova), first spacewalk (Leonov), first Moon probe,
+    # first soft landing on the Moon, first pictures from Venus surface.
+    # The N1 Moon rocket: four consecutive launch failures destroyed the
+    # launchpad each time. The Soviet lunar programme was officially denied
+    # to exist until the 1990s.
+    # Venera probes: the Soviets succeeded where the Americans didn't —
+    # landing and surviving on Venus's crushing, 460°C, sulphuric acid atmosphere.
+    # Venera 13 (1982) sent back colour photographs before dying after 127 minutes.
+
+    Topic("star_wars_programme", "Star Wars — Reagan's Strategic Defence Initiative",
+          "Aerospace", [3], [8, 9], 4, 6,
+          ["cold_war_icbm_programme"],
+          ["SDI", "Star Wars", "Reagan", "missile defence", "lasers",
+           "X-ray laser", "nuclear pumped", "arms race", "Cold War",
+           "aerospace", "geopolitics"]),
+    # SDI (1983): a proposed system to intercept Soviet missiles with
+    # ground- and space-based lasers and particle beams.
+    # The physics: hitting a missile with a laser during its ~30-minute flight
+    # trajectory is extraordinarily difficult. Most physicists said it was
+    # impossible with 1980s technology. The nuclear-pumped X-ray laser
+    # (detonate a nuclear bomb, use the X-ray pulse to pump a laser) worked
+    # in tests but could only be used once.
+    # Strategic effect regardless of feasibility: forced the Soviets to spend
+    # heavily on countermeasures — some analysts argue this accelerated Soviet
+    # economic collapse.
+
+    # ==========================================================================
+    # SPACE STATIONS AND HABITATION
+    # ==========================================================================
+
+    Topic("space_stations_history", "Space Stations — Salyut to Mir to the ISS",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["orbital_mechanics_basics"],
+          ["space station", "Salyut", "Skylab", "Mir", "ISS", "habitation",
+           "microgravity", "long duration", "aerospace", "history"]),
+    # Salyut 1 (1971) — Soviet, 3-person crew, 23 days. Three cosmonauts
+    # died on re-entry when a valve failed and the cabin decompressed.
+    # Skylab (1973) — US station built from Saturn V hardware; partly
+    # destroyed by meteorite strike during assembly; repaired in orbit.
+    # Mir (1986–2001) — continuous human presence in space, 15 years.
+    # ISS (1998–present) — 16 nations, 73m length, continuously crewed
+    # since November 2000. The largest structure ever assembled in space.
+
+    Topic("life_in_space", "Living in Space — Microgravity, Bone Loss, and the Human Body",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["space_stations_history", "human_body_ks2"],
+          ["microgravity", "bone density", "muscle atrophy", "radiation",
+           "psychological isolation", "space medicine", "long duration",
+           "Mars mission", "aerospace", "biology"]),
+    # In microgravity: fluid shifts to the head (puffy face), bones lose
+    # density (1% per month), muscles atrophy, spine elongates (astronauts
+    # are 2–5cm taller in space). Return to Earth is difficult after 6+ months.
+    # Radiation: above the Van Allen belts, cosmic rays and solar particle
+    # events are lethal without shielding. A Mars mission (2+ years) requires
+    # solving radiation exposure.
+
+    Topic("spacelab_experiments", "Spacelab and Space-Based Science — What Microgravity Research Gives Us",
+          "Aerospace", [2, 3], [6, 7, 8], 3, 4,
+          ["space_stations_history"],
+          ["Spacelab", "science", "microgravity", "crystal growth",
+           "protein folding", "materials", "combustion", "ISS research",
+           "aerospace", "how things work"]),
+    # Spacelab: ESA-built module flown in the Shuttle payload bay 1983–1998.
+    # Microgravity research: protein crystals grow larger and more perfect
+    # without gravity (pharmaceutical applications). Combustion without convection
+    # produces spherical flames — reveals chemistry hidden on Earth.
+    # Fluid dynamics without buoyancy. Long-duration human physiology.
+
+    # ==========================================================================
+    # SATELLITES AND APPLICATIONS
+    # ==========================================================================
+
+    Topic("satellites_types_uses", "Satellites — What They Do and Why We Can't Live Without Them",
+          "Aerospace", [2], [5, 6, 7], 2, 4,
+          ["geostationary_lagrange"],
+          ["satellites", "GPS", "weather", "communications", "spy satellite",
+           "Earth observation", "Starlink", "megaconstellation", "aerospace",
+           "how things work"]),
+    # GPS: 24+ satellites in medium Earth orbit (20,200km) — your phone
+    # calculates position by measuring signal time from at least 4 satellites.
+    # Accuracy requires relativistic corrections (both special and general
+    # relativity — without them, GPS drifts 10km per day).
+    # Weather satellites: geostationary for continuous imagery, polar for
+    # global coverage. Without them, weather forecasting collapses.
+    # Starlink and megaconstellations: thousands of LEO satellites providing
+    # global internet — and cluttering the night sky for astronomers.
+
+    Topic("space_debris_kessler", "Space Debris and Kessler Syndrome — Threatening Our Orbital Environment",
+          "Aerospace", [3], [7, 8, 9], 4, 5,
+          ["satellites_types_uses", "orbital_mechanics_basics"],
+          ["space debris", "Kessler syndrome", "LEO", "collision cascade",
+           "ASAT", "deorbit", "sustainability", "aerospace", "environment"]),
+    # 27,000+ tracked debris objects above 10cm. A bolt at orbital velocity
+    # hits with the energy of a hand grenade. Kessler syndrome: a cascade
+    # of collisions makes low Earth orbit unusable.
+    # ASAT (anti-satellite) weapons tests create debris fields — the 2007
+    # Chinese ASAT test created 3,000+ tracked fragments.
+    # The tragedy of the commons in space: no one owns the orbital environment
+    # but everyone uses it.
+
+    # ==========================================================================
+    # MODERN ERA AND THE FUTURE
+    # ==========================================================================
+
+    Topic("space_shuttle_programme", "The Space Shuttle — A Reusable Spacecraft and Its Compromises",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["multistage_rockets", "space_stations_history"],
+          ["Space Shuttle", "reusable", "Columbia", "Challenger", "SRB",
+           "SSME", "orbiter", "heat shield", "NASA", "aerospace", "history"]),
+    # The Shuttle was the first partly reusable spacecraft — but reuse turned
+    # out to be expensive. The orbiter required 11 months of maintenance between
+    # flights. The heat shield tiles had to be inspected individually.
+    # Challenger (1986): O-ring seals on the SRBs failed in cold weather.
+    # Engineers at Thiokol recommended a launch delay; NASA management overruled.
+    # Columbia (2003): foam strike on the leading edge during launch; NASA
+    # management decided not to investigate further. Both disasters had warning
+    # signs that were dismissed — a study in organisational failure.
+
+    Topic("commercial_space_era", "The Commercial Space Era — SpaceX, Reusability, and New Players",
+          "Aerospace", [3], [8, 9], 4, 5,
+          ["multistage_rockets", "space_shuttle_programme"],
+          ["SpaceX", "Falcon 9", "Starship", "reusability", "booster landing",
+           "Blue Origin", "commercial", "cost reduction", "aerospace", "modern"]),
+    # Falcon 9: first orbital rocket to land its booster vertically and refly it.
+    # The economics: a new Falcon 9 costs ~$60M; a reflown booster costs ~$6M.
+    # Reusability fundamentally changes the cost per kg to orbit.
+    # Starship: fully reusable, aimed at cost of $10/kg to orbit (Shuttle was ~$60,000/kg).
+    # The geopolitics: SpaceX now provides more lift capacity than all other
+    # launch providers combined. NASA depends on a private company for ISS access.
+
+    Topic("space_elevator", "Space Elevators — The Carbon Nanotube Dream",
+          "Aerospace", [3], [8, 9], 4, 5,
+          ["geostationary_lagrange", "how_rockets_work"],
+          ["space elevator", "carbon nanotube", "tether", "geostationary",
+           "climber", "cost per kg", "materials", "future", "aerospace"]),
+    # A cable anchored at the equator, extending to geostationary altitude
+    # (35,786km) and beyond — counterweight holds it taut by centrifugal force.
+    # A "climber" (elevator car) powered by ground-based laser climbs to orbit —
+    # no rocket required. Cost per kg: potentially $10–100 vs $2,000+ by rocket.
+    # The problem: tensile strength required exceeds any known material by a
+    # large margin. Carbon nanotubes in theory have the right properties —
+    # but only at nanoscale; no one can make macroscopic nanotube cable.
+    # Lunar elevator is more feasible (weaker gravity, L1 as anchor point).
+
+    Topic("moon_programme_modern", "Back to the Moon — Artemis, China's Programme, and Why Now",
+          "Aerospace", [3], [8, 9], 3, 5,
+          ["space_race_origins", "commercial_space_era"],
+          ["Moon", "Artemis", "Lunar Gateway", "China", "CNSA", "helium-3",
+           "lunar resources", "geopolitics", "aerospace", "modern"]),
+    # Why return to the Moon in 2026? Not just exploration:
+    # Helium-3: rare on Earth, abundant in Moon's regolith — potential fusion fuel.
+    # Water ice at the poles: rocket fuel (split into H2+O) and drinking water.
+    # Staging point for Mars: lower gravity well, already in space.
+    # Geopolitics: China's CNSA has a credible Moon programme; the US and China
+    # are both establishing frameworks for claiming lunar resources.
+    # The Outer Space Treaty (1967) says no nation can own the Moon —
+    # but says nothing about resources extracted from it.
+
+    Topic("mars_mission_challenges", "Going to Mars — Why It's So Much Harder Than the Moon",
+          "Aerospace", [3], [8, 9], 4, 6,
+          ["moon_programme_modern", "life_in_space", "delta_v_manoeuvres"],
+          ["Mars", "transit time", "radiation", "landing", "EDL", "ISRU",
+           "psychology", "isolation", "return trip", "Starship", "aerospace"]),
+    # Distance: Moon is 3 days; Mars is 7–9 months minimum, launch windows
+    # every 26 months, total mission 2–3 years.
+    # Entry, Descent, and Landing (EDL): Mars has 1% of Earth's atmosphere —
+    # enough to heat a spacecraft but not enough to brake it. The "seven minutes
+    # of terror." Curiosity used a sky crane; humans need something far larger.
+    # In-Situ Resource Utilisation (ISRU): make fuel and oxygen from CO2 and ice.
+    # The psychological challenge: longer than any mission in history, no abort option.
+    # Radiation: 300-600 mSv on a round trip (vs 50 mSv per year on ISS).
+    # The deepest challenge: no one has died beyond low Earth orbit since 1972.
+
+    Topic("probes_and_robotic_exploration", "Robotic Probes — Our Eyes in the Solar System",
+          "Aerospace", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["delta_v_manoeuvres", "satellites_types_uses"],
+          ["probes", "Voyager", "Pioneer", "Cassini", "New Horizons",
+           "Curiosity", "Perseverance", "Venera", "Deep Space Network",
+           "Pluto", "outer planets", "aerospace", "science"]),
+    # Voyager 1 (launched 1977): now 24 billion km away — still operating.
+    # Passed into interstellar space in 2012 (confirmed 2013). Powered by
+    # plutonium RTGs that will go cold in the 2030s.
+    # Cassini: 13 years at Saturn, discovered Enceladus has a subsurface
+    # ocean venting into space. Deliberately crashed into Saturn (2017) to
+    # avoid contaminating Enceladus.
+    # Venera 13 (1982): landed on Venus, survived 127 minutes, sent colour photos.
+    # New Horizons: first close flyby of Pluto (2015) — revealed heart-shaped
+    # nitrogen ice plain, mountains of water ice 3km high.
+
+    Topic("search_for_life_astrobiology", "Astrobiology — The Science of Looking for Life Elsewhere",
+          "Aerospace", [3], [7, 8, 9], 4, 6,
+          ["probes_and_robotic_exploration", "origin_of_life"],
+          ["astrobiology", "habitable zone", "Europa", "Enceladus", "Titan",
+           "biosignatures", "exoplanet atmospheres", "JWST", "SETI",
+           "Drake equation", "Fermi paradox", "aerospace", "science"]),
+    # Where to look: not just planets in the habitable zone.
+    # Europa (Jupiter's moon): liquid ocean under ice shell, tidal heating —
+    # possibly warmer than the habitable zone concept suggests.
+    # Enceladus (Saturn's moon): water vapour venting from subsurface ocean,
+    # organic compounds detected. Cassini flew through the plumes.
+    # Titan (Saturn's moon): thick nitrogen atmosphere, liquid methane lakes
+    # — could life exist using methane as solvent instead of water?
+    # JWST: detecting atmospheric biosignatures on exoplanets — oxygen,
+    # methane, water. The first hints of possible biological activity were
+    # announced in 2025 for a super-Earth 124 light-years away.
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -4333,7 +4838,7 @@ CURRICULUM: list[Topic] = (
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
-    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS
+    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE
 )
 
 
