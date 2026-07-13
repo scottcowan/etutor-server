@@ -1264,7 +1264,7 @@ _HOW_THINGS_ARE_MADE = [
           "How Things Are Made", [2, 3], [5, 6, 7, 8], 3, 5,
           ["electricity_ks2"],
           ["electricity", "power stations", "coal", "wind", "solar", "nuclear",
-           "energy", "environment", "how things work"]),
+           "geothermal", "Iceland", "energy", "environment", "how things work"]),
     Topic("how_computers_made", "How Computers Are Made — Silicon, Chips, and Factories",
           "How Things Are Made", [3], [7, 8, 9], 4, 5,
           ["data_representation"],
@@ -1720,7 +1720,7 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [3], [8, 9], 4, 5,
           ["industrial_revolution", "entrepreneurship"],
           ["boom", "bust", "crash", "economics", "pattern",
-           "1929", "2008", "history", "social", "money"]),
+           "1929", "2008", "Iceland", "banking crisis", "history", "social", "money"]),
     Topic("pattern_tragedy_commons", "The Tragedy of the Commons — Why We Overuse Shared Resources",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["ecosystems_ks3", "climate_change_ks3"],
@@ -2538,7 +2538,7 @@ _POLITICAL_SYSTEMS = [
           "Political Systems", [3], [9], 4, 5,
           ["how_taxes_work", "pattern_boom_bust"],
           ["central bank", "Bank of England", "interest rates", "inflation",
-           "how it works", "money", "economics", "CGP Grey", "political systems"]),
+           "Iceland", "capital controls", "how it works", "money", "economics", "CGP Grey", "political systems"]),
     Topic("what_is_the_civil_service", "What Is the Civil Service — The Permanent Government",
           "Political Systems", [3], [8, 9], 4, 5,
           ["how_british_parliament_works"],
@@ -5778,7 +5778,7 @@ _WORLD_ECONOMIES = [
     Topic("nordic_model", "The Nordic Model — High Tax, High Trust, and Why It Works",
           "World Economies", [3], [7, 8, 9], 4, 5,
           ["economic_systems_overview", "welfare_state"],
-          ["Nordic model", "Sweden", "Norway", "Denmark", "Finland",
+          ["Nordic model", "Sweden", "Norway", "Denmark", "Finland", "Iceland",
            "high tax", "universal services", "social trust", "unions",
            "Gini coefficient", "happiness index", "economics", "comparison"]),
     # Sweden, Denmark, Norway, and Finland consistently top rankings for
@@ -6025,6 +6025,217 @@ _WORLD_ECONOMIES = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# University Pathway Topics
+# Concepts from major undergraduate degrees made accessible before 18.
+# Each topic: teaches a real university-level concept at age-appropriate depth,
+# tags with the degree(s) it feeds, has prerequisites from existing curriculum.
+# Degrees covered: PPE, Law, Medicine, Engineering, Computer Science,
+# Psychology, Sociology, Environmental Science, Architecture.
+# ---------------------------------------------------------------------------
+
+_UNIVERSITY_PATHWAYS = [
+
+    # ===== PPE =====
+    Topic("formal_logic_intro", "Formal Logic — Validity, Soundness, and Truth Tables",
+          "PPE", [3], [8, 9], 4, 6,
+          ["argument_structure", "mathematical_reasoning"],
+          ["logic", "formal logic", "validity", "soundness", "truth table",
+           "modus ponens", "reductio", "PPE", "philosophy", "university"]),
+    Topic("epistemology_intro", "Epistemology — What Is Knowledge and How Do We Have Any?",
+          "PPE", [3], [8, 9], 4, 6,
+          ["scientific_method", "how_to_change_your_mind"],
+          ["epistemology", "knowledge", "JTB", "Gettier", "scepticism",
+           "Descartes", "Hume", "empiricism", "rationalism", "PPE", "philosophy", "university"]),
+    Topic("ethics_frameworks", "Ethical Frameworks — Utilitarianism, Kant, and Virtue Ethics",
+          "PPE", [3], [8, 9], 4, 6,
+          ["ethics_dilemmas", "comparative_ethics"],
+          ["ethics", "utilitarianism", "Kant", "deontology", "virtue ethics",
+           "Bentham", "Mill", "Aristotle", "categorical imperative",
+           "PPE", "philosophy", "university", "moral philosophy"]),
+    Topic("rawls_justice", "Rawls and Justice — The Veil of Ignorance",
+          "PPE", [3], [8, 9], 5, 6,
+          ["ethics_frameworks", "supply_demand_prices"],
+          ["Rawls", "justice", "veil of ignorance", "difference principle",
+           "liberal egalitarianism", "PPE", "philosophy", "political philosophy", "university"]),
+    Topic("game_theory_intro", "Game Theory — Rational Choices When Others Are Choosing Too",
+          "PPE", [3], [8, 9], 4, 6,
+          ["combinatorics", "supply_demand_prices"],
+          ["game theory", "prisoner's dilemma", "Nash equilibrium",
+           "dominant strategy", "zero-sum", "PPE", "economics", "philosophy", "university"]),
+    Topic("market_failure_deep", "Market Failure — Externalities, Public Goods, and Information Asymmetry",
+          "PPE", [3], [8, 9], 4, 6,
+          ["supply_demand_prices", "pattern_tragedy_commons"],
+          ["market failure", "externalities", "public goods", "information asymmetry",
+           "moral hazard", "adverse selection", "Coase theorem",
+           "PPE", "economics", "university"]),
+    Topic("comparative_political_thought", "The Big Political Thinkers — Hobbes to Rawls",
+          "PPE", [3], [8, 9], 4, 6,
+          ["history_of_democracy_britain", "ethics_frameworks"],
+          ["political philosophy", "Hobbes", "Locke", "Rousseau",
+           "Mill", "Marx", "Rawls", "social contract", "liberty",
+           "PPE", "philosophy", "politics", "university"]),
+
+    # ===== LAW =====
+    Topic("jurisprudence_what_is_law", "What Is Law? — Natural Law, Positivism, and Hard Cases",
+          "Law", [3], [8, 9], 4, 6,
+          ["how_laws_made_britain", "ethics_frameworks"],
+          ["jurisprudence", "natural law", "legal positivism", "Hart",
+           "Dworkin", "rule of law", "law", "philosophy of law", "university"]),
+    Topic("contract_law_basics", "How Contract Law Works — Offer, Acceptance, and Consideration",
+          "Law", [3], [8, 9], 3, 5,
+          ["what_is_a_contract", "formal_logic_intro"],
+          ["contract", "offer", "acceptance", "consideration",
+           "breach", "remedies", "law", "university", "life skills"]),
+    Topic("tort_law", "Tort Law — Negligence, Duty of Care, and the Neighbour Principle",
+          "Law", [3], [8, 9], 4, 5,
+          ["jurisprudence_what_is_law"],
+          ["tort", "negligence", "duty of care", "Donoghue v Stevenson",
+           "reasonable person", "causation", "damages", "law", "university"]),
+    Topic("criminal_law_elements", "Criminal Law — Actus Reus, Mens Rea, and Burden of Proof",
+          "Law", [3], [8, 9], 4, 5,
+          ["criminal_law_basics", "formal_logic_intro"],
+          ["criminal law", "actus reus", "mens rea", "intention", "recklessness",
+           "strict liability", "burden of proof", "law", "university"]),
+    Topic("constitutional_law", "Constitutional Law — Parliamentary Sovereignty and Judicial Review",
+          "Law", [3], [8, 9], 4, 6,
+          ["separation_of_powers", "history_of_democracy_britain"],
+          ["constitutional law", "parliamentary sovereignty", "rule of law",
+           "ECHR", "judicial review", "law", "university", "political systems"]),
+
+    # ===== MEDICINE =====
+    Topic("homeostasis", "Homeostasis — How the Body Maintains Stable Conditions",
+          "Medicine", [3], [7, 8, 9], 3, 5,
+          ["human_body_ks2", "nervous_system"],
+          ["homeostasis", "feedback loops", "negative feedback", "blood glucose",
+           "thermoregulation", "medicine", "biology", "university"]),
+    Topic("pharmacology_intro", "Pharmacology — How Drugs Work on the Body",
+          "Medicine", [3], [8, 9], 4, 5,
+          ["how_medicine_made", "nervous_system"],
+          ["pharmacology", "receptor", "agonist", "antagonist", "dose-response",
+           "half-life", "blood-brain barrier", "medicine", "biology", "university"]),
+    Topic("clinical_reasoning", "Clinical Reasoning — How Doctors Think Through a Diagnosis",
+          "Medicine", [3], [8, 9], 4, 5,
+          ["homeostasis", "scientific_method"],
+          ["clinical reasoning", "differential diagnosis", "Bayesian reasoning",
+           "sensitivity", "specificity", "medicine", "university", "critical thinking"]),
+
+    # ===== ENGINEERING =====
+    Topic("systems_thinking", "Systems Thinking — Emergence, Feedback Loops, and Unintended Consequences",
+          "Engineering", [3], [8, 9], 4, 6,
+          ["engineering_design_process", "food_webs_energy_flow"],
+          ["systems thinking", "feedback loops", "emergence", "resilience",
+           "unintended consequences", "complexity", "engineering", "university"]),
+    Topic("materials_selection_engineering", "Materials Selection — How Engineers Choose What to Build With",
+          "Engineering", [3], [8, 9], 4, 5,
+          ["materials_properties", "engineering_design_process"],
+          ["materials selection", "Ashby chart", "Young's modulus", "yield strength",
+           "trade-offs", "engineering", "university"]),
+    Topic("thermodynamics_engineering", "Thermodynamics — Energy, Entropy, and Why You Can't Win",
+          "Engineering", [3], [8, 9], 4, 6,
+          ["heat_thermal_energy", "how_engines_work"],
+          ["thermodynamics", "first law", "second law", "entropy", "efficiency",
+           "Carnot", "engineering", "physics", "university"]),
+
+    # ===== COMPUTER SCIENCE =====
+    Topic("computational_complexity", "Computational Complexity — P vs NP and What Computers Can't Solve",
+          "Computer Science", [3], [9], 4, 6,
+          ["algorithms_complexity", "mathematical_reasoning"],
+          ["computational complexity", "P vs NP", "NP-complete", "halting problem",
+           "Turing", "computer science", "university", "maths"]),
+    Topic("machine_learning_fundamentals", "How Machine Learning Actually Works",
+          "Computer Science", [3], [8, 9], 4, 5,
+          ["artificial_intelligence_basics", "statistics_ks2"],
+          ["machine learning", "training", "loss function", "gradient descent",
+           "overfitting", "neural networks", "computer science", "university", "AI"]),
+    Topic("information_theory", "Information Theory — Shannon, Bits, and the Limits of Communication",
+          "Computer Science", [3], [9], 4, 6,
+          ["compression_encoding", "mathematical_beauty"],
+          ["information theory", "Shannon", "entropy", "bits", "channel capacity",
+           "compression", "computer science", "maths", "university"]),
+
+    # ===== PSYCHOLOGY =====
+    Topic("developmental_psychology_stages", "Developmental Psychology — Piaget, Vygotsky, and How Children Think",
+          "Psychology", [3], [8, 9], 4, 5,
+          ["perspective_taking", "growing_up"],
+          ["developmental psychology", "Piaget", "conservation", "theory of mind",
+           "zone of proximal development", "Vygotsky", "psychology", "university"]),
+    Topic("social_psychology_foundations", "Social Psychology — Why Context Determines Behaviour",
+          "Psychology", [3], [8, 9], 4, 6,
+          ["milgram_asch_obedience", "pattern_ingroup_outgroup"],
+          ["social psychology", "fundamental attribution error", "bystander effect",
+           "social identity theory", "Tajfel", "situationism",
+           "psychology", "university"]),
+    Topic("cognitive_psychology", "Cognitive Psychology — Memory, Attention, and Dual Process Theory",
+          "Psychology", [3], [8, 9], 4, 5,
+          ["memory_how_it_works", "cognitive_biases"],
+          ["cognitive psychology", "working memory", "long-term memory",
+           "schemas", "dual process", "System 1 System 2", "Kahneman",
+           "psychology", "university"]),
+
+    # ===== SOCIOLOGY =====
+    Topic("sociological_imagination", "The Sociological Imagination — Personal Problems as Social Issues",
+          "Sociology", [3], [8, 9], 4, 6,
+          ["cultural_capital_explained", "british_class_system"],
+          ["sociology", "C. Wright Mills", "sociological imagination",
+           "social structure", "agency", "university", "critical thinking"]),
+    Topic("stratification_and_mobility", "Social Stratification — Class, Race, Gender, and Intersectionality",
+          "Sociology", [3], [8, 9], 4, 6,
+          ["british_class_system", "civil_rights_global"],
+          ["stratification", "class", "race", "gender", "intersectionality",
+           "Crenshaw", "meritocracy", "social mobility",
+           "sociology", "university", "critical thinking"]),
+
+    # ===== ENVIRONMENTAL SCIENCE =====
+    Topic("planetary_boundaries", "Planetary Boundaries — Nine Limits for a Safe Operating Space",
+          "Environmental Science", [3], [8, 9], 4, 6,
+          ["climate_change_ks3", "carbon_cycle"],
+          ["planetary boundaries", "Rockström", "tipping points",
+           "biodiversity loss", "ocean acidification",
+           "environmental science", "university"]),
+    Topic("ecological_economics", "Ecological Economics — When GDP Is the Wrong Measure",
+          "Environmental Science", [3], [9], 4, 6,
+          ["planetary_boundaries", "how_to_read_an_economy"],
+          ["ecological economics", "Doughnut Economics", "Kate Raworth",
+           "natural capital", "ecosystem services", "degrowth",
+           "university", "economics", "environment"]),
+
+    # ===== ARCHITECTURE =====
+    Topic("architectural_theory", "Architectural Theory — Form, Function, Firmitas, and Meaning",
+          "Architecture", [3], [8, 9], 4, 5,
+          ["architecture_what_architects_do", "art_history_ancient_renaissance"],
+          ["architectural theory", "Vitruvius", "Modernism", "Brutalism",
+           "critical regionalism", "phenomenology",
+           "architecture", "university"]),
+    Topic("urban_design_cities", "Urban Design — Jane Jacobs, Le Corbusier, and What Makes Cities Work",
+          "Architecture", [3], [8, 9], 4, 5,
+          ["architectural_theory", "urbanisation"],
+          ["urban design", "Jane Jacobs", "Le Corbusier", "mixed use",
+           "street life", "public space", "15-minute city",
+           "architecture", "university", "geography"]),
+
+    # ===== LINGUISTICS (bonus) =====
+    Topic("linguistics_intro", "Linguistics — How Language Is Structured and Why It Matters",
+          "Linguistics", [3], [8, 9], 4, 5,
+          ["story_of_language", "vocab_roots_latin_greek"],
+          ["linguistics", "phonology", "morphology", "syntax", "semantics",
+           "pragmatics", "Chomsky", "Saussure", "universal grammar",
+           "university", "language"]),
+    # Linguistics studies language as a system. The levels:
+    # Phonology: sound patterns. Morphology: word structure (un-break-able).
+    # Syntax: sentence structure (why "dog bites man" differs from "man bites dog").
+    # Semantics: meaning. Pragmatics: meaning in context (why "can you pass the salt?"
+    # means "please pass the salt").
+    # Chomsky's universal grammar: all human languages share deep structural features —
+    # evidence for an innate language acquisition device in the brain.
+    # Saussure: language is a system of differences. Words don't have meaning in
+    # themselves — only in relation to other words. "Chair" means what it means
+    # partly because it's not "table," not "sofa," not "stool."
+    # Why it matters: linguistics underpins AI language models, translation,
+    # speech therapy, education, and our understanding of human cognition.
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -6034,7 +6245,8 @@ CURRICULUM: list[Topic] = (
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
     _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
-    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION + _WORLD_ECONOMIES
+    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION + _WORLD_ECONOMIES +
+    _UNIVERSITY_PATHWAYS
     # _OPTICS_LIGHT added below
 )
 
