@@ -5242,6 +5242,218 @@ _DISSENT = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Surveillance — The State, the Corporation, and the Watched Life
+# From the KGB card index to GCHQ's bulk collection to TikTok's data.
+# The history of state surveillance, its mechanics, its justifications,
+# the literature it produced (Orwell), and what it means to live
+# in the most surveilled democracy on Earth (the UK).
+# Orwell's 1984 is the spine — but the real systems are more interesting
+# and more disturbing than the fiction, because they are real.
+# ---------------------------------------------------------------------------
+
+_SURVEILLANCE = [
+
+    # --- The Concept ---
+    Topic("what_is_surveillance", "What Is Surveillance — Watching, Recording, and Control",
+          "Surveillance", [3], [7, 8, 9], 3, 5,
+          ["cyber_security", "digital_literacy"],
+          ["surveillance", "watching", "CCTV", "data", "control", "power",
+           "Bentham", "panopticon", "Foucault", "critical thinking"]),
+    # The panopticon (Jeremy Bentham, 1787): a prison designed so the
+    # inmates never know when they are being watched — so they behave as if
+    # always watched. Foucault's insight: this is how modern society works.
+    # The key distinction: surveillance as security (catching criminals after
+    # the fact) vs surveillance as control (preventing dissent, shaping behaviour
+    # before any crime is committed). The latter doesn't require the state to
+    # read every file — it only requires people to believe they might be.
+
+    Topic("orwell_1984", "1984 — George Orwell and the Language of Totalitarian Surveillance",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["what_is_surveillance", "pattern_authoritarian_rise"],
+          ["1984", "Orwell", "Big Brother", "Newspeak", "doublethink", "Thoughtcrime",
+           "Room 101", "surveillance", "totalitarianism", "literature",
+           "dystopia", "language"]),
+    # Orwell wrote 1984 in 1948 (reverse the last two digits) based on his
+    # observations of Stalin's USSR and Nazi Germany, and his experience at
+    # the BBC (he saw how language could be weaponised for propaganda).
+    # The key concepts: Big Brother (surveillance as omnipresent threat),
+    # Newspeak (reducing the vocabulary to make dissident thought impossible —
+    # if you have no word for "freedom" you cannot think the concept),
+    # doublethink (holding two contradictory beliefs simultaneously), Thoughtcrime.
+    # The Ministry of Truth produces lies. The Ministry of Love conducts torture.
+    # Room 101: your worst fear, used to break you.
+    # What Orwell got right vs what real surveillance states actually look like.
+
+    # --- Historical Surveillance States ---
+    Topic("soviet_surveillance", "The KGB and the Soviet Surveillance State",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["cold_war_context", "pattern_authoritarian_rise"],
+          ["KGB", "Soviet Union", "surveillance", "informers", "Stasi",
+           "files", "gulags", "dissident", "history", "totalitarianism",
+           "East Germany"]),
+    # The KGB at its peak had 480,000 officers and 5 million informers —
+    # roughly one informer per 6 Soviet citizens. Not to arrest everyone,
+    # but to create a climate where people self-censored. You didn't know
+    # who was reporting on you, so you were careful around everyone.
+    # The Stasi (East German secret police): 91,000 full-time officers for
+    # a country of 16 million. When the Berlin Wall fell and the Stasi files
+    # opened, people discovered their closest friends and family members had
+    # been filing reports on them for decades. The film *The Lives of Others*
+    # (2006) is the best dramatisation.
+    # The legacy: post-Soviet countries still deal with the social damage
+    # of networks of betrayal that ran through every community.
+
+    Topic("chinese_surveillance_state", "China's Surveillance State — Social Credit, AI, and the Panopticon at Scale",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["artificial_intelligence_basics", "what_is_surveillance"],
+          ["China", "surveillance", "social credit", "facial recognition",
+           "AI", "WeChat", "Great Firewall", "Xinjiang", "Uyghurs",
+           "digital authoritarianism", "critical thinking"]),
+    # China has built the most technologically advanced surveillance state
+    # in history. Key components:
+    # — 700 million+ CCTV cameras (ratio: roughly one per two people)
+    # — Facial recognition integrated with transport, payments, and access systems
+    # — WeChat: communications, payments, and identity on one platform the
+    #   government can read
+    # — The Great Firewall: no Google, Facebook, WhatsApp, YouTube — replaced
+    #   with domestic equivalents the government controls
+    # — Social credit systems (multiple, not one unified system — the Western
+    #   "Black Mirror" narrative is an oversimplification)
+    # — Xinjiang: the most intensive surveillance of the Uyghur Muslim minority —
+    #   considered by many governments and scholars as the infrastructure of genocide
+    # The export question: China is selling its surveillance infrastructure
+    # to authoritarian governments globally — "Digital Silk Road."
+
+    Topic("stasi_files", "The Stasi Files — What Happens When the Surveillance State Opens Its Records",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["soviet_surveillance", "censorship_history"],
+          ["Stasi", "East Germany", "files", "informers", "trauma", "betrayal",
+           "history", "surveillance", "reconciliation", "memory"]),
+    # When the Berlin Wall fell (1989), East Germans stormed Stasi offices
+    # before records could be destroyed. 111 km of files were preserved.
+    # Citizens can apply to see their own files — a bureaucratic process that
+    # for many people revealed devastating truths: a spouse who was an informer,
+    # a parent who filed reports, a friend who fed information for 20 years.
+    # The question of what to do with this knowledge — forgiveness, prosecution,
+    # or simply living with the fact — is one of the hardest questions in
+    # post-authoritarian societies.
+
+    # --- Democratic Surveillance ---
+    Topic("gchq_and_nsa", "GCHQ, the NSA, and Mass Surveillance in Democracies",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["cia_covert_history", "internet_dissent_anonymous"],
+          ["GCHQ", "NSA", "Five Eyes", "Snowden", "bulk collection", "metadata",
+           "PRISM", "Tempora", "surveillance", "democracy", "law", "privacy"]),
+    # GCHQ (UK) and NSA (US) were revealed by Snowden (2013) to be conducting
+    # bulk collection of internet communications — not targeted surveillance
+    # of suspects but collection of everyone's metadata and in many cases
+    # content. Key programmes:
+    # — PRISM (NSA): access to data from major US tech companies
+    # — Tempora (GCHQ): tapping undersea fibre optic cables to intercept
+    #   internet traffic passing through the UK
+    # — Upstream collection: tapping the internet's backbone infrastructure
+    # The legal architecture: the Investigatory Powers Act 2016 ("Snoopers'
+    # Charter") — legalised bulk collection in the UK. Upheld by courts.
+    # The Five Eyes: intelligence-sharing between UK, US, Canada, Australia,
+    # New Zealand — allows each to surveil the others' citizens and share the
+    # data, circumventing domestic legal restrictions.
+
+    Topic("uk_cctv_most_surveilled", "The UK — The Most Surveilled Country in the Democratic World",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["gchq_and_nsa", "what_is_surveillance"],
+          ["UK", "CCTV", "surveillance", "facial recognition", "police",
+           "London", "data retention", "surveillance capitalism",
+           "democracy", "critical thinking", "British"]),
+    # The UK has approximately 5.2 million CCTV cameras — one for every 13 people,
+    # the highest density in the democratic world after China.
+    # London is the 3rd most surveilled city on Earth after Taiyuan and
+    # Wuxi (China). Most cameras are privately owned (shops, offices,
+    # Transport for London) but accessible to police.
+    # The Prevent programme: UK schools and public sector workers are legally
+    # required to report anyone showing "signs of radicalisation" — creating
+    # a surveillance network in every classroom and hospital.
+    # Facial recognition trials by the Metropolitan Police — challenged in
+    # courts, use continues.
+    # The normalisation question: the UK public largely accepts this level
+    # of surveillance. Why? Is that acceptance informed?
+
+    Topic("surveillance_capitalism", "Surveillance Capitalism — Google, Facebook, and the Business of Watching",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["attention_economy", "gchq_and_nsa"],
+          ["surveillance capitalism", "Shoshana Zuboff", "data", "Google",
+           "Facebook", "behavioural prediction", "targeting", "advertising",
+           "privacy", "surveillance", "critical thinking"]),
+    # Shoshana Zuboff's term (2019): a new economic logic where human
+    # experience is the raw material, transformed into behavioural data,
+    # used to predict and modify behaviour, and sold as a commodity.
+    # The key insight: Google and Facebook are not primarily advertising
+    # companies — they are behavioural modification companies. The product
+    # is not ads; it is predictable human behaviour sold to clients.
+    # "If you're not paying for the product, you are the product" — and even
+    # this undersells it: you're the raw material in a factory that produces
+    # predictions about you and sells them to whoever will pay.
+    # State vs corporate surveillance: different in motivation but converging
+    # in infrastructure. States can compel corporations to share.
+
+    Topic("surveillance_and_protest", "Surveillance and Protest — How Movements Are Monitored and Disrupted",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["uk_cctv_most_surveilled", "protest_reform"],
+          ["surveillance", "protest", "undercover police", "COINTELPRO",
+           "Special Branch", "facial recognition", "chilling effect",
+           "dissent", "democracy", "history"]),
+    # COINTELPRO (FBI, 1956-1971): covert programme to "neutralise" civil rights,
+    # anti-war, and other movements — harassment, disinformation, informers.
+    # Martin Luther King Jr was under FBI surveillance from 1958 until his death.
+    # UK undercover police: officers spent years in relationships with activists,
+    # fathered children with women in environmental groups, infiltrated protest
+    # movements. Exposed through the "Spy Cops" inquiry (ongoing).
+    # The chilling effect: surveillance of protest movements doesn't require
+    # arrest to be effective — knowing you're being watched changes how people
+    # behave. The Met's use of facial recognition at protests.
+
+    Topic("privacy_as_right", "Privacy — Why It Matters Even If You Have Nothing to Hide",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["surveillance_capitalism", "rights_responsibilities"],
+          ["privacy", "nothing to hide", "rights", "autonomy", "surveillance",
+           "democracy", "critical thinking", "law", "human rights"]),
+    # "I have nothing to hide" — the most common response to surveillance.
+    # The responses to this argument:
+    # — Glenn Greenwald: "You don't need anything to hide to have something
+    #   to protect — privacy is the right to a self that isn't observed."
+    # — Bruce Schneier: the nothing-to-hide argument assumes the government
+    #   is benign today and will remain so. But laws change, governments change.
+    #   East Germans who had nothing to hide in 1975 may not have in 1950.
+    # — The chilling effect: privacy enables the exploration of ideas before
+    #   they're ready to be shared. Without it, people self-censor.
+    # — The power asymmetry: surveillance flows one way — the state sees you;
+    #   you do not see the state. This imbalance is itself a form of power.
+    # Article 8 of the European Convention on Human Rights: the right to private
+    # and family life — and how UK courts balance this against security.
+
+    Topic("resisting_surveillance", "Resisting Surveillance — What You Can Actually Do",
+          "Surveillance", [3], [8, 9], 3, 5,
+          ["privacy_as_right", "information_hygiene"],
+          ["surveillance", "privacy", "encryption", "VPN", "Tor", "Signal",
+           "GDPR", "subject access request", "practical", "digital literacy",
+           "critical thinking", "life skills"]),
+    # Practical tools and legal rights:
+    # — End-to-end encryption: Signal, WhatsApp (to a degree). What E2EE
+    #   actually means and what it doesn't protect against.
+    # — GDPR Subject Access Request: you have the right to ask any organisation
+    #   what data they hold about you, and they must tell you within 30 days.
+    # — Tor and VPNs: what they protect (IP address, ISP logging) and what
+    #   they don't (your identity at endpoints, metadata patterns).
+    # — Ad blockers and tracker blockers as basic hygiene.
+    # — Covering cameras, using cash, choosing not to use loyalty cards.
+    # — The ICO (Information Commissioner's Office): the UK data regulator
+    #   and how to make a complaint.
+    # The broader point: privacy is a skill that requires active maintenance,
+    # not a default state. Choosing your level of exposure is itself an act
+    # of agency.
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -5251,7 +5463,7 @@ CURRICULUM: list[Topic] = (
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
     _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
-    _CULTURAL_CAPITAL + _DISSENT
+    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE
     # _OPTICS_LIGHT added below
 )
 

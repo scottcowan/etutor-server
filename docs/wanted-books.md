@@ -819,6 +819,60 @@ Political Systems section.
 
 ---
 
+## Surveillance, Privacy, and the Watched State
+
+### 1984 — George Orwell (Secker & Warburg, 1949)
+The foundational text. Orwell's surveillance state as a model for understanding
+real ones — and as a vocabulary (Big Brother, Newspeak, doublethink, Thoughtcrime,
+Room 101) that has become part of the language. Should be read before or alongside
+the Surveillance curriculum section.
+*Use for:* `orwell_1984`, `what_is_surveillance`, `pattern_propaganda`,
+`censorship_history`
+**Age suitability:** 12+ (dark but not gratuitously so; the torture in Part 3
+is disturbing but important)
+*Also:* Orwell's essay "Politics and the English Language" (1946) — the best
+short guide to how language is used to obscure rather than illuminate, directly
+relevant to `propaganda_techniques` and `vocab_power_of_words`.
+
+### The Age of Surveillance Capitalism — Shoshana Zuboff (Profile Books, 2019)
+The definitive analysis of how Google, Facebook, and the attention economy work.
+Dense but important — even reading the first three chapters gives children the
+framework for understanding why "free" services aren't free.
+*Use for:* `surveillance_capitalism`, `attention_economy`, `data_science_concepts`
+**Age suitability for excerpts:** 14+; the core argument can be summarised
+for younger children
+
+### No Place to Hide — Glenn Greenwald (Metropolitan Books, 2014)
+Greenwald's account of working with Snowden to publish the NSA documents.
+The most readable account of what PRISM and Tempora actually collected and why
+it mattered. Short chapters, journalistic prose.
+*Use for:* `gchq_and_nsa`, `whistleblowers`, `privacy_as_right`
+**Age suitability:** 13+
+
+### The Lives of Others (film, 2006) — Florian Henckel von Donnersmarck
+Not a book, but the best dramatisation of the Stasi surveillance state.
+A Stasi officer assigned to monitor a playwright discovers his own humanity
+in the process of observing his subject's. Won the Academy Award for Best
+Foreign Language Film. The most emotionally effective way to understand
+what it meant to live under the East German surveillance system.
+*Use for:* `stasi_files`, `soviet_surveillance`, `orwell_1984`
+**Age suitability:** 12+ (some adult content, mostly intense rather than explicit)
+
+### Data and Goliath — Bruce Schneier (W.W. Norton, 2015)
+Security technologist's account of surveillance by both states and corporations.
+More practical and less theoretical than Zuboff — explains the actual systems
+and what they can and cannot do.
+*Use for:* `gchq_and_nsa`, `surveillance_capitalism`, `resisting_surveillance`
+**Age suitability for excerpts:** 13+
+
+### Nothing to Hide — Daniel Solove (Yale University Press, 2011)
+A law professor's comprehensive demolition of the "nothing to hide" argument.
+Short enough to read in excerpts; systematic in its reasoning.
+*Use for:* `privacy_as_right`, `surveillance_capitalism`
+**Age suitability for excerpts:** 13+
+
+---
+
 ## Science Reference
 
 ### The Way Things Work — David Macaulay (Dorling Kindersley)
