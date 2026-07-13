@@ -491,7 +491,7 @@ _HISTORY = [
           ["french revolution", "napoleon", "europe", "rights", "war", "modern history"]),
     Topic("abolition_movement", "Abolition — The Fight to End the Slave Trade",
           "History", [2, 3], [6, 7, 8], 3, 5, ["transatlantic_slave_trade"],
-          ["abolition", "wilberforce", "equiano", "civil rights", "empire", "resistance"]),
+          ["abolition", "wilberforce", "equiano", "civil rights", "empire", "resistance", "dissent"]),
 
     # --- KS2–3: The British Empire — core arc ---
     Topic("age_of_exploration", "The Age of Exploration — Trade, Navigation, and First Contact",
@@ -513,10 +513,10 @@ _HISTORY = [
     # --- KS2–3: Industrial Revolution (linked to Empire) ---
     Topic("industrial_revolution", "The Industrial Revolution — Factories, Cities, and Child Labour",
           "History", [2, 3], [6, 7, 8], 3, 4, ["union_of_britain"],
-          ["industrial revolution", "factories", "cities", "technology", "britain", "change"]),
+          ["industrial revolution", "factories", "cities", "technology", "britain", "change", "class"]),
     Topic("victorian_britain", "Victorian Britain — Society, Reform, and the Height of Empire",
           "History", [2, 3], [6, 7, 8], 3, 4, ["industrial_revolution", "british_empire_expansion"],
-          ["victorian", "britain", "reform", "empire", "poverty", "technology"]),
+          ["victorian", "britain", "reform", "empire", "poverty", "technology", "class"]),
 
     # --- KS3: World Wars and Decolonisation ---
     Topic("ww1_causes_consequences", "World War One — Causes, Trenches, and the End of Empires",
@@ -536,7 +536,7 @@ _HISTORY = [
           ["cold war", "usa", "ussr", "nuclear", "modern history", "geopolitics"]),
     Topic("windrush_immigration", "Windrush and Post-War Immigration — Building Modern Britain",
           "History", [3], [8, 9], 3, 5, ["decolonisation"],
-          ["windrush", "immigration", "caribbean", "empire", "identity", "modern britain"]),
+          ["windrush", "immigration", "caribbean", "empire", "identity", "modern britain", "class"]),
 
     # --- KS3: Britain in Global Context ---
     Topic("history_of_democracy_britain", "Democracy in Britain — From Magna Carta to Today",
@@ -1673,12 +1673,12 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [2, 3], [6, 7, 8, 9], 4, 6,
           ["ww1_causes_consequences"],
           ["propaganda", "persuasion", "posters", "media", "control",
-           "pattern", "critical thinking", "history", "social"]),
+           "pattern", "critical thinking", "history", "social", "questioning authority"]),
     Topic("pattern_authoritarian_rise", "How Authoritarians Come to Power — The Same Steps, Every Time",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["history_of_democracy_britain", "ww2_global_conflict"],
           ["authoritarianism", "fascism", "dictatorship", "pattern",
-           "critical thinking", "history", "democracy", "social"]),
+           "critical thinking", "history", "democracy", "social", "questioning authority"]),
     Topic("pattern_revolution", "Revolution — Why They Happen and What Comes Next",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["french_revolution_napoleon", "english_civil_war"],
@@ -1703,7 +1703,7 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [2, 3], [7, 8, 9], 4, 5,
           ["abolition_movement", "civil_rights_global"],
           ["protest", "reform", "suffrage", "civil rights", "pattern",
-           "change", "history", "social", "activism"]),
+           "change", "history", "social", "activism", "dissent"]),
     Topic("pattern_wealth_inequality", "Wealth and Inequality — Why the Gap Keeps Growing",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["industrial_revolution", "empire_trade_economy"],
@@ -4830,6 +4830,418 @@ _AEROSPACE = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Cultural Capital — Operating in Formal and Elite Environments
+# The unwritten rules that everyone in certain rooms already knows.
+# Not about becoming someone you're not — about having the knowledge
+# to move freely and not be wrong-footed by the codes of formal,
+# institutional, or class-marked environments.
+# Bourdieu called this cultural capital: the knowledge, behaviours, and
+# credentials that confer social advantage. Not teaching it is itself
+# a class mechanism — it keeps the rules invisible to those who
+# weren't born into them.
+# ---------------------------------------------------------------------------
+
+_CULTURAL_CAPITAL = [
+
+    # --- Understanding Class ---
+    Topic("british_class_system", "The British Class System — How It Works and Why It's So Hard to See",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["pattern_wealth_inequality", "industrial_revolution"],
+          ["class", "British class system", "working class", "middle class",
+           "upper class", "Bourdieu", "cultural capital", "accent", "school",
+           "social", "critical thinking"]),
+    # The British class system is unusual in that it is simultaneously
+    # very real and very denied. Class is marked by: accent (RP vs regional),
+    # school (state vs independent vs which independent), vocabulary choices,
+    # posture, what you eat and how, how you address strangers, what you find
+    # funny. These markers are not random — they are signals that trigger
+    # instant social sorting. A child who understands the system can navigate
+    # it consciously rather than being sorted by it unconsciously.
+
+    Topic("accent_class_signal", "Accent — Why How You Speak Marks Where You're From",
+          "Cultural Capital", [3], [7, 8, 9], 4, 5,
+          ["british_class_system", "dialects_accents"],
+          ["accent", "RP", "received pronunciation", "dialect", "class",
+           "code-switching", "voice", "social mobility", "identity"]),
+    # Received Pronunciation (RP) is not "correct" English — it is the accent
+    # of a specific class in a specific region. It became the standard for
+    # broadcasting, law, and formal institutions not because it's clearer
+    # but because it signals education and class membership.
+    # Code-switching: many people shift their accent depending on context —
+    # this is a skill, not inauthenticity. The question is whether you can
+    # choose to switch rather than being marked regardless.
+
+    Topic("cultural_capital_explained", "Cultural Capital — Bourdieu and the Hidden Curriculum",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["british_class_system"],
+          ["cultural capital", "Bourdieu", "habitus", "field", "hidden curriculum",
+           "class", "education", "social", "critical thinking", "sociology"]),
+    # Bourdieu identified three types of capital: economic (money), social
+    # (who you know), and cultural (what you know and how you behave).
+    # Cultural capital is inherited more than earned — children from professional
+    # families absorb it without being taught. The "hidden curriculum" of school:
+    # how to speak to teachers, how to advocate for yourself, how to use
+    # institutions — this is taught implicitly to some and not to others.
+
+    # --- Formal Behaviour and Etiquette ---
+    Topic("formal_dining_etiquette", "Formal Dining — Which Fork, How to Behave, and What It's All For",
+          "Cultural Capital", [2, 3], [7, 8, 9], 2, 4,
+          [],
+          ["etiquette", "formal dining", "table manners", "cutlery", "napkin",
+           "place setting", "toasting", "hosting", "class", "cultural capital"]),
+    # The rules of formal dining exist to signal membership and create comfort
+    # among those who know them — and to mark out those who don't.
+    # Practical knowledge: place settings (working from outside in),
+    # napkin placement and use, when to start eating, how to signal you've
+    # finished, bread rolls (tear don't cut), soup (spoon away from you),
+    # the fish knife, toasting protocol, how to address the table.
+    # Why it matters: job interviews, client dinners, formal occasions.
+    # The meta-lesson: these rules are arbitrary but real; knowing them is power.
+
+    Topic("formal_letter_email", "Formal Writing — Letters, Emails, and the Register of Institutions",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["directed_writing", "vocab_register_formality"],
+          ["formal letter", "formal email", "Dear Sir/Madam", "Yours faithfully",
+           "Yours sincerely", "register", "institutions", "professional",
+           "cultural capital", "writing"]),
+    # Dear Sir/Madam → Yours faithfully. Dear Mr Smith → Yours sincerely.
+    # The rule that nobody teaches formally but that marks out letters
+    # to institutions, job applications, and formal complaints.
+    # When to use formal email vs letter. How to address a judge, a bishop,
+    # a lord, a knight. The structure of a formal complaint letter.
+    # Why getting the register wrong in a formal context signals you
+    # don't know the rules — even when the content is correct.
+
+    Topic("how_institutions_work", "How Institutions Work — Schools, Courts, Hospitals, and Government Offices",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["separation_of_powers", "what_is_government"],
+          ["institutions", "how to navigate", "bureaucracy", "advocacy",
+           "rights", "procedures", "cultural capital", "life skills", "class"]),
+    # Most people who are comfortable in institutions learned this at home:
+    # how to make a complaint effectively, how to ask for what you're entitled to,
+    # how to escalate when the first answer is no, how to write to your MP,
+    # how to complain to a regulator, how to prepare for a formal meeting.
+    # The child who knows "you can ask to see the manager's manager, and here's
+    # how" has power that the child who accepts the first answer doesn't.
+
+    Topic("job_interview_performance", "Job Interviews — The Performance, the Questions, and the Unspoken Rules",
+          "Cultural Capital", [3], [8, 9], 3, 5,
+          ["public_speaking_confidence", "reading_rooms_social"],
+          ["interview", "job", "performance", "STAR method", "questions",
+           "appearance", "handshake", "preparation", "cultural capital",
+           "professional", "life skills"]),
+    # An interview is a performance with known conventions that are
+    # never stated. Arriving early (but not too early). The handshake.
+    # Eye contact. Questions you should always ask. The STAR method
+    # (Situation, Task, Action, Result) for behavioural questions.
+    # Salary negotiation. Follow-up thank-you emails. Research before.
+    # Why "do you have any questions?" is not a courtesy — it's a test.
+
+    Topic("networking_rooms", "Working a Room — Networking, Small Talk, and Making Connections Count",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["reading_rooms_social", "asking_good_questions"],
+          ["networking", "small talk", "working a room", "introductions",
+           "business cards", "follow up", "professional", "cultural capital",
+           "social skills", "class"]),
+    # The professional networking event is a coded social ritual.
+    # How to enter a group conversation, how to exit without rudeness,
+    # how to introduce yourself with a clear statement of what you do,
+    # how to remember names, how to follow up after. Small talk as
+    # a genuine skill: weather → area → work → shared interest, and
+    # how to ask questions that make people feel interesting rather
+    # than interrogated.
+
+    Topic("dress_codes", "Dress Codes — Black Tie, Smart Casual, and the Signals Clothing Sends",
+          "Cultural Capital", [2, 3], [7, 8, 9], 2, 4,
+          [],
+          ["dress code", "black tie", "white tie", "smart casual", "business casual",
+           "uniform", "clothing", "signals", "class", "cultural capital"]),
+    # Black tie: dinner jacket (tuxedo), black bow tie, black trousers with
+    # satin stripe — NOT a lounge suit with a black tie.
+    # White tie: the most formal. Morning dress: for weddings and Ascot.
+    # Business formal vs business casual vs smart casual vs casual —
+    # and why "smart casual" is deliberately ambiguous.
+    # The underlying principle: dress codes are exclusion mechanisms that
+    # require prior knowledge. Knowing them is power.
+
+    Topic("titles_forms_of_address", "Titles and Forms of Address — How to Address Anyone Correctly",
+          "Cultural Capital", [3], [7, 8, 9], 2, 3,
+          ["how_become_lord_mayor"],
+          ["titles", "forms of address", "Your Honour", "My Lord", "Sir",
+           "Dame", "Your Grace", "Your Royal Highness", "doctor", "professor",
+           "cultural capital", "etiquette", "class", "institutions"]),
+    # A judge in the Crown Court: "Your Honour." Court of Appeal: "My Lord/Lady."
+    # A bishop: "My Lord." An archbishop: "Your Grace." The King: "Your Majesty."
+    # A knight: "Sir [first name]." A dame: "Dame [first name]."
+    # A professor: "Professor [surname]," not "Dr" even if they have a doctorate.
+    # Why this matters: getting it wrong in a formal context is immediately
+    # visible and marks you as an outsider. Getting it right costs nothing
+    # once you know it.
+
+    Topic("elite_institutions_how_they_work", "Elite Institutions — Oxbridge, the Inns of Court, the City, and the Club",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["what_is_the_city_of_london", "history_of_democracy_britain"],
+          ["Oxford", "Cambridge", "Inns of Court", "gentlemen's clubs",
+           "elite institutions", "networks", "class", "cultural capital",
+           "how they work", "access", "meritocracy"]),
+    # Oxbridge admissions: the interview as a test of cultural capital as much
+    # as intellect. The tutorial system. The dining hall. What a "college" is.
+    # The Inns of Court: barristers must belong to one (Gray's Inn, Lincoln's Inn,
+    # Inner Temple, Middle Temple). They predate Parliament and still control
+    # access to the bar. Gentlemen's clubs (Reform, Athenaeum, White's):
+    # where decisions get made informally. The City: how the Lord Mayor,
+    # the livery companies, and the Square Mile form a parallel power structure
+    # that coexists with elected government.
+
+    # --- Class and Power ---
+    Topic("private_school_advantage", "Private Schools — What They Actually Teach Beyond the Curriculum",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["british_class_system", "cultural_capital_explained"],
+          ["private school", "independent school", "public school", "Eton",
+           "confidence", "networks", "cultural capital", "class", "inequality",
+           "debate", "speech", "critical thinking"]),
+    # The academic advantage of private schools is real but modest.
+    # The cultural advantage is large and rarely discussed:
+    # debating societies that teach how to argue confidently in public,
+    # cadet forces that teach command and leadership, the assumption that
+    # you will speak up and be heard, networks of peers who will be in
+    # positions of power. These are learnable. They can be practised.
+    # The child who knows this can acquire the skills without the school.
+
+    Topic("british_peerage", "The British Peerage — Lords, Earls, Dukes, and How the Aristocracy Works",
+          "Cultural Capital", [3], [7, 8, 9], 3, 5,
+          ["how_british_parliament_works", "norman_conquest"],
+          ["peerage", "Lords", "Duke", "Marquess", "Earl", "Viscount", "Baron",
+           "House of Lords", "hereditary peers", "life peers", "aristocracy",
+           "British", "class", "cultural capital", "history"]),
+    # Five ranks of the English peerage in descending order:
+    # Duke → Marquess → Earl → Viscount → Baron (and their female equivalents).
+    # How titles are inherited (eldest son), what happens to younger sons
+    # (they become "commoners" — Lord is a courtesy title not a peerage),
+    # why the second son of a duke is "Lord [first name]" not "Lord [surname]."
+    # Life peers: created by the Prime Minister, sit in the Lords, do not
+    # pass the title on. The 1999 Lords Reform Act removed most hereditary peers —
+    # 92 remain by election among themselves as a compromise.
+    # Courtesy titles vs actual titles. "The Honourable." Why some lords are
+    # Earls but called Lord [place name] not Lord [surname].
+
+    Topic("prominent_british_families", "Prominent British Families — Who They Are, How They Got There",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["british_peerage", "british_empire_expansion", "industrial_revolution"],
+          ["aristocracy", "prominent families", "Cavendish", "Churchill", "Cecil",
+           "Spencer", "Rothschild", "Cadbury", "Sainsbury", "historic families",
+           "wealth", "class", "British", "cultural capital", "history"]),
+    # The old landed aristocracy: Cavendish (Dukes of Devonshire — Chatsworth),
+    # Cecil (Marquesses of Salisbury — three Prime Ministers), Howard (Dukes of
+    # Norfolk — England's premier duke, hereditary Earl Marshal).
+    # Families who rose through Empire and industry: the Rothschilds (banking),
+    # the Cadburys and Rowntrees (chocolate and Quaker philanthropy), the
+    # Sainsburys (retail). The distinction between old money (land) and new money
+    # (trade) and how that distinction has softened but not disappeared.
+    # Why knowing these names matters: they appear constantly in British history,
+    # politics, art, and institutions. A child who recognises "Cavendish banana"
+    # (named after the 6th Duke of Devonshire's greenhouse) or knows that
+    # Winston Churchill's family are the Dukes of Marlborough is reading
+    # the culture with more depth.
+
+    Topic("stately_homes_estates", "Stately Homes and Country Estates — Architecture, Power, and Opening to the Public",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["british_peerage", "victorian_britain"],
+          ["stately homes", "country houses", "National Trust", "Chatsworth",
+           "Blenheim", "Longleat", "English Heritage", "architecture",
+           "aristocracy", "class", "history", "cultural capital"]),
+    # The stately home as a symbol of concentrated land ownership.
+    # Chatsworth (Cavendish), Blenheim (Churchill/Marlborough), Longleat
+    # (Thynn/Marquesses of Bath). The Country House crisis of the 20th century:
+    # death duties, the maintenance burden, and the mass demolition of
+    # hundreds of houses 1950-1980. The National Trust as a solution.
+    # Why many aristocratic families now open their homes commercially —
+    # the Duke of Devonshire runs Chatsworth as a significant business.
+    # The architecture as history: the sequence from medieval great hall
+    # through Tudor, Baroque, Palladian, and Victorian country house styles.
+
+    Topic("class_and_language", "Class and Language — Vocabulary, Grammar, and Social Sorting",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["british_class_system", "vocab_register_formality"],
+          ["class", "language", "vocabulary", "U and non-U", "Nancy Mitford",
+           "sofa vs settee", "toilet vs lavatory", "social markers",
+           "cultural capital", "critical thinking"]),
+    # Nancy Mitford's "U and Non-U" essay (1954) mapped upper-class vs
+    # non-upper-class vocabulary: "sofa" (U) vs "settee" (Non-U),
+    # "lavatory" (U) vs "toilet" (Non-U), "looking glass" vs "mirror."
+    # These markers are mostly invisible to those who use them naturally —
+    # that's the point. More recent markers: "lounge" vs "sitting room,"
+    # "pardon?" vs "sorry?" vs "what?" The grammar of authority —
+    # why "Can I help you?" sounds less confident than "How can I help?"
+]
+
+
+# ---------------------------------------------------------------------------
+# Dissent — The History of Refusing
+# Questioning authority, subversiveness, and the people who said no.
+# Not a celebration of rebellion for its own sake, but a rigorous look
+# at when and why individuals and groups refused to comply with unjust
+# systems — what it cost them, what it produced, and how to think about
+# the question "should I comply?" for yourself.
+# Authority is one of the most powerful forces shaping human behaviour
+# (Milgram: 65% of people administered what they thought were lethal
+# shocks when told to by an authority figure). Understanding it is
+# not subversive — it is essential.
+# ---------------------------------------------------------------------------
+
+_DISSENT = [
+
+    # --- Authority ---
+    Topic("milgram_asch_obedience", "Milgram and Asch — The Experiments That Changed How We Think About Compliance",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["cognitive_biases"],
+          ["Milgram", "Asch", "obedience", "conformity", "authority",
+           "experiment", "psychology", "dissent", "critical thinking", "ethics"]),
+    # Milgram's obedience study (1961): ordinary people administered what they
+    # believed were fatal 450-volt shocks when instructed by an authority figure.
+    # 65% went to the maximum. Replicated across cultures, genders, decades.
+    # Asch's conformity experiment (1951): participants denied the evidence of
+    # their own eyes to agree with a group's obviously wrong answer — even with
+    # no pressure beyond social disapproval.
+    # Both studies are disturbing because the participants were not unusual
+    # or cruel people — they were ordinary. The implication: the capacity
+    # for harmful compliance is not a personality trait but a situational response.
+    # The ethical controversy: both studies involved deception. Would the
+    # findings justify the deception? (This connects to research ethics.)
+
+    Topic("authority_and_obedience", "Authority and Obedience — Milgram, Asch, and Why We Comply",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["pattern_ingroup_outgroup", "milgram_asch_obedience"],
+          ["authority", "obedience", "Milgram", "Asch", "conformity",
+           "compliance", "groupthink", "dissent", "psychology", "critical thinking"]),
+    # Milgram (1961): 65% of ordinary people administered what they believed
+    # were fatal electric shocks to a stranger when told to by an authority
+    # figure in a white coat. The result shocked the world — and Milgram himself.
+    # Asch (1951): people denied the evidence of their own eyes to conform
+    # with a group's obviously wrong answer.
+    # The practical question: under what conditions should you comply with
+    # authority, and how do you build the habits of mind that let you say no?
+
+    Topic("legitimate_vs_illegitimate_authority", "When Should You Obey? — Legitimate and Illegitimate Authority",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["authority_and_obedience", "rights_responsibilities"],
+          ["authority", "legitimacy", "civil disobedience", "Thoreau",
+           "Nuremberg defence", "just following orders", "dissent",
+           "ethics", "critical thinking", "philosophy"]),
+    # The Nuremberg defence ("I was just following orders") was rejected —
+    # there are orders that must not be obeyed. But where is the line?
+    # Thoreau's "Civil Disobedience" (1849): you have a duty to refuse
+    # laws that are unjust. But who decides which laws are unjust?
+    # Weber's three types of legitimate authority: traditional (the king),
+    # charismatic (the prophet), rational-legal (the bureaucrat).
+    # The practical tool: ask not "who told me to?" but "is this instruction
+    # consistent with a rule I would endorse if I had made it?"
+
+    Topic("history_of_dissent", "The History of Dissent — People Who Said No and Changed the World",
+          "Dissent", [3], [7, 8, 9], 3, 5,
+          ["civil_rights_global", "abolition_movement"],
+          ["dissent", "history", "Galileo", "Mandela", "Gandhi", "Emmeline Pankhurst",
+           "Rosa Parks", "Alan Turing", "Malala", "whistleblowers",
+           "civil disobedience", "resistance", "courage"]),
+    # A gallery of dissidents across history and what their refusal cost them
+    # and produced. Galileo (house arrest). Wilberforce (decades of parliamentary
+    # failure before abolition). Gandhi (prison, eventual independence).
+    # Rosa Parks (arrest, movement). Nelson Mandela (27 years in prison).
+    # Emmeline Pankhurst (imprisonment, force-feeding). Alan Turing (chemical
+    # castration for his sexuality, then a pardon 60 years later).
+    # The pattern: dissent is expensive for the individual and often only
+    # vindicated long after. What gives people the capacity to sustain it?
+
+    Topic("whistleblowers", "Whistleblowers — When Loyalty Conflicts with Conscience",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["history_of_dissent", "cia_covert_history"],
+          ["whistleblowers", "Edward Snowden", "Chelsea Manning", "Daniel Ellsberg",
+           "Pentagon Papers", "GCHQ", "conscience", "loyalty", "dissent",
+           "ethics", "law", "public interest"]),
+    # Daniel Ellsberg (Pentagon Papers, 1971): leaked evidence that the US
+    # government had been systematically lying about Vietnam.
+    # Chelsea Manning: leaked evidence of civilian killings in Iraq.
+    # Edward Snowden: leaked evidence of mass surveillance of US citizens.
+    # All three faced serious legal consequences. All three argued public
+    # interest justified the breach of loyalty.
+    # The tension: loyalty to an institution vs. loyalty to the truth.
+    # When is leaking information a moral duty, and when is it a betrayal?
+
+    Topic("civil_disobedience_theory", "Civil Disobedience — Breaking the Law to Change It",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["legitimate_vs_illegitimate_authority", "protest_reform"],
+          ["civil disobedience", "Thoreau", "Gandhi", "King", "direct action",
+           "non-violence", "Extinction Rebellion", "suffragettes", "dissent",
+           "ethics", "philosophy", "political systems"]),
+    # Thoreau's conditions for civil disobedience: the law must be unjust,
+    # legal means must have been exhausted, the act must be public and
+    # accepted punishment willingly. Gandhi and King both developed these
+    # conditions into strategic doctrine.
+    # The debate: does accepting punishment make civil disobedience more
+    # legitimate? Is non-violence always necessary? What's the difference
+    # between civil disobedience and terrorism?
+
+    Topic("subcultures_counterculture", "Subcultures and Counterculture — When Groups Refuse the Mainstream",
+          "Dissent", [3], [7, 8, 9], 3, 5,
+          ["music_twentieth_century", "pattern_moral_panic"],
+          ["subculture", "counterculture", "punk", "hippies", "mods", "rockers",
+           "hip hop", "rave", "moral panic", "youth", "dissent",
+           "identity", "culture", "social patterns"]),
+    # Every generation produces a youth subculture that the previous generation
+    # finds threatening. The hippies (1960s) — anti-war, communal, drugs.
+    # Punk (1970s) — anti-establishment, DIY, deliberate offense.
+    # Rave culture (1980s-90s) — the Criminal Justice Act 1994 was written
+    # specifically to criminalise raves ("music characterised by the repetitive
+    # beats"). Each moral panic has the same structure (see pattern_moral_panic).
+    # The interesting question: which subcultures changed mainstream culture,
+    # and what was the mechanism?
+
+    Topic("art_as_dissent", "Art as Dissent — Satire, Propaganda Parody, and Banned Books",
+          "Dissent", [3], [7, 8, 9], 4, 5,
+          ["censorship_history", "art_digital_contemporary"],
+          ["art", "satire", "dissent", "Banksy", "Daumier", "Swift", "Orwell",
+           "banned books", "propaganda parody", "political art",
+           "freedom of expression", "culture"]),
+    # Art as a vehicle for dissent precisely because it's deniable.
+    # Swift's "A Modest Proposal" — proposing to eat Irish babies as
+    # a solution to famine is obviously satire, but impossible to prosecute.
+    # Daumier's caricatures of Louis-Philippe got him jailed.
+    # Shostakovich's coded dissent under Stalin in his symphonies.
+    # Banksy's work — anonymous, site-specific, illegal, globally recognised.
+    # The Index Librorum Prohibitorum (banned books list) as an inadvertent
+    # guide to which ideas were considered dangerous enough to suppress.
+
+    Topic("internet_dissent_anonymous", "The Internet and Anonymous Dissent — WikiLeaks, Anonymous, and Hacktivism",
+          "Dissent", [3], [8, 9], 4, 5,
+          ["whistleblowers", "how_internet_works_deep"],
+          ["WikiLeaks", "Anonymous", "hacktivism", "internet", "dissent",
+           "Assange", "digital activism", "Tor", "dark web",
+           "freedom of information", "censorship", "critical thinking"]),
+    # The internet created new forms of dissent: anonymous leak platforms
+    # (WikiLeaks), coordinated hacktivist campaigns (Anonymous), encrypted
+    # communication (Tor) allowing activists to organise under authoritarian
+    # regimes. The same tools that protect dissidents protect criminals.
+    # The legal grey zone: is publishing leaked government documents journalism
+    # or espionage? Different countries give different answers.
+
+    Topic("questioning_authority_practically", "How to Question Authority — Without Getting It Wrong",
+          "Dissent", [3], [7, 8, 9], 4, 5,
+          ["legitimate_vs_illegitimate_authority", "how_to_disagree"],
+          ["questioning authority", "practical", "when to comply", "when to push back",
+           "escalation", "documentation", "dissent", "critical thinking",
+           "life skills", "confidence"]),
+    # Practical skills for questioning authority constructively:
+    # Ask "can you help me understand the reason for this?" before deciding
+    # whether to comply. Document. Find the rule and read it yourself.
+    # Escalate in writing (email creates a record; verbal complaints don't).
+    # Know your rights and cite them calmly. The distinction between
+    # "I disagree with this" (express your view, comply) and
+    # "this is unlawful" (do not comply, document, report).
+    # When to involve a third party: union rep, solicitor, ombudsman, MP.
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -4838,7 +5250,8 @@ CURRICULUM: list[Topic] = (
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
-    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE
+    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
+    _CULTURAL_CAPITAL + _DISSENT
     # _OPTICS_LIGHT added below
 )
 
