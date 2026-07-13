@@ -5451,6 +5451,298 @@ _SURVEILLANCE = [
     # The broader point: privacy is a skill that requires active maintenance,
     # not a default state. Choosing your level of exposure is itself an act
     # of agency.
+
+    Topic("practical_surveillance_avoidance", "Practical Surveillance Avoidance — A Field Guide",
+          "Surveillance", [3], [8, 9], 3, 5,
+          ["resisting_surveillance", "cyber_security"],
+          ["surveillance avoidance", "OPSEC", "operational security", "Signal",
+           "encrypted email", "ProtonMail", "Tor browser", "VPN", "cash",
+           "metadata", "IMSI catcher", "faraday bag", "practical", "privacy"]),
+    # A practical, graded guide. Not paranoia — calibrated to actual threat models.
+    # Threat model: who might be watching you, and why?
+    # — Default: corporations (advertising data, behaviour prediction)
+    # — Elevated: employers, ex-partners, private investigators
+    # — High: journalists, activists, people in authoritarian environments
+    # — Extreme: state-level adversaries
+    # Most people need Level 1-2. The tools scale.
+    #
+    # Level 1 — Basic hygiene (everyone should do this):
+    # — Signal for messaging (E2EE, no metadata stored, open source)
+    # — Browser: Firefox with uBlock Origin. Or Brave.
+    # — DNS over HTTPS (stops your ISP logging every site you visit)
+    # — HTTPS everywhere (look for the padlock)
+    # — Strong unique passwords + password manager (Bitwarden is free)
+    # — 2FA on everything important (authenticator app, not SMS)
+    # — Review app permissions: which apps have your location, microphone, camera?
+    #
+    # Level 2 — Reducing the corporate surveillance footprint:
+    # — ProtonMail or Tutanota instead of Gmail for sensitive email
+    # — Cash for purchases you don't want linked to your identity
+    # — Decline loyalty cards (they build detailed purchase profiles)
+    # — Search: DuckDuckGo or Startpage instead of Google
+    # — Use a VPN when on public WiFi (prevents network-level snooping)
+    # — Turn off location services for apps that don't need them
+    # — GDPR Subject Access Requests: find out what Google/Facebook/your
+    #   bank actually holds about you (shocking the first time)
+    #
+    # Level 3 — Operational security for specific situations:
+    # — Tor Browser: routes traffic through multiple encrypted relays.
+    #   Slow. Not for daily use. Very effective for specific lookups.
+    # — Airplane mode is a hardware switch for radio — more reliable than
+    #   software "off." A phone in airplane mode cannot be tracked by cell towers.
+    # — IMSI catchers (Stingrays): devices that mimic cell towers and capture
+    #   phone identifiers. Used by police. Faraday bags block all signals.
+    # — Metadata: even E2EE doesn't hide who you talked to, when, and for how long.
+    #   Signal minimises metadata; most services don't.
+    # — Camera covers: functional. Microphone is harder — no physical switch
+    #   on most devices.
+    #
+    # The key concept: security is about reducing attack surface, not
+    # achieving perfect privacy. Every layer helps. You don't have to
+    # do everything to do something.
+]
+
+
+# ---------------------------------------------------------------------------
+# Corruption — How Power Is Actually Exercised
+# Not the cartoon version (a villain accepts a briefcase of cash)
+# but the institutional version: the revolving door, the consultancy,
+# the second job, the donation that coincides with a policy change,
+# the lobbying that shapes the legislation before it's written.
+# Western corruption is mostly legal. That's what makes it hard to see
+# and hard to argue against. This section teaches children to read
+# the structures, not just the scandals.
+# ---------------------------------------------------------------------------
+
+_CORRUPTION = [
+
+    # --- Defining the Problem ---
+    Topic("what_is_corruption", "What Is Corruption — Bribery, Conflicts of Interest, and the Spectrum",
+          "Corruption", [3], [7, 8, 9], 3, 5,
+          ["what_is_government", "pattern_wealth_inequality"],
+          ["corruption", "bribery", "conflict of interest", "nepotism",
+           "cronyism", "revolving door", "transparency", "accountability",
+           "power", "critical thinking"]),
+    # Corruption exists on a spectrum from the unambiguous (cash for a contract)
+    # to the entirely legal (a minister who regulated an industry joining its
+    # board on leaving office). Most of what determines who gets what in Western
+    # democracies sits in the legal middle of the spectrum — not technically
+    # corruption, but producing the same result: decisions that benefit those
+    # with access at the expense of those without.
+    # The key distinction: illegal corruption (bribery, fraud) vs. legal
+    # corruption (lobbying, revolving door, donations that shape policy).
+    # Transparency International's Corruption Perceptions Index: the UK scores
+    # relatively well on illegal corruption but poorly on the legal kind.
+
+    Topic("uk_lobbying", "Lobbying — How Money Influences UK Law Before It's Written",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["what_is_corruption", "how_laws_made_britain"],
+          ["lobbying", "UK", "Parliament", "amendments", "all-party groups",
+           "think tanks", "policy", "money", "corruption", "political systems",
+           "critical thinking"]),
+    # Lobbying is legal and largely unregulated in the UK compared to the US.
+    # Mechanisms:
+    # — All-Party Parliamentary Groups (APPGs): cross-party groups on any topic,
+    #   often funded and staffed by the industries they supposedly scrutinise.
+    #   There is an APPG on alcohol funded by the drinks industry.
+    # — Think tanks: many produce research that looks independent but is
+    #   funded by interested parties. The Institute of Economic Affairs
+    #   (pro-deregulation) has never disclosed its funders.
+    # — Amendments: lobbyists write specific legislative amendments, which
+    #   are then tabled by MPs. The public never sees who wrote the text.
+    # — "Second reading dinners": lobbyists invite MPs to dinners during
+    #   the legislative process.
+    # The Register of Lobbyists is voluntary and widely evaded.
+
+    Topic("revolving_door", "The Revolving Door — Ministers, Civil Servants, and the Industries They Regulate",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["what_is_corruption", "what_is_the_civil_service"],
+          ["revolving door", "UK", "ministers", "civil servants",
+           "advisory committee", "ACOBA", "conflict of interest",
+           "defence", "banking", "NHS", "corruption", "power"]),
+    # The revolving door: individuals move between government (where they
+    # make decisions) and private sector (where they profit from those decisions).
+    # The Advisory Committee on Business Appointments (ACOBA): meant to police
+    # this. In practice, toothless — it can only recommend, not enforce.
+    # Examples: former defence ministers joining arms companies, former health
+    # ministers joining pharmaceutical companies, former financial regulators
+    # joining banks. The "cooling off" period is usually two years — short enough
+    # to maintain relationships, long enough to be technically compliant.
+    # The deeper issue: even without explicit quid pro quo, the expectation of
+    # post-government employment shapes decisions made in government. You don't
+    # need to be bribed — you just need to know where the opportunities are.
+
+    Topic("cash_for_questions", "Cash for Questions and Pay to Play — UK Parliamentary Scandals",
+          "Corruption", [3], [8, 9], 4, 5,
+          ["revolving_door", "how_british_parliament_works"],
+          ["cash for questions", "pay to play", "UK", "Parliament",
+           "Hamilton", "Mandelson", "expenses scandal", "sleaze",
+           "history", "corruption", "political systems"]),
+    # Cash for Questions scandal (1994): Neil Hamilton and other Conservative MPs
+    # accepted cash from Mohamed Al Fayed to ask questions in Parliament.
+    # Exposed by the Guardian. Led to the Committee on Standards in Public Life
+    # (Nolan Committee) and the Seven Principles of Public Life.
+    # Peter Mandelson: resigned twice from Cabinet — once for a £373,000 home
+    # loan from a Cabinet colleague (Geoffrey Robinson) while his department
+    # was investigating Robinson's affairs; once over a passport application for
+    # a donor. Rehabilitated, later became European Commissioner and Baron.
+    # The 2009 expenses scandal: MPs claiming public money for duck houses,
+    # moat cleaning, and flipping second homes. 300+ MPs named.
+    # The pattern in each: the system created the opportunity; individuals
+    # took it. Reform followed scandal, then the cycle resumed.
+
+    Topic("political_donations_legislation", "Political Donations — How Money Shapes Legislation",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["uk_lobbying", "electoral_systems"],
+          ["political donations", "party funding", "donors", "legislation",
+           "peerages", "cash for honours", "tax policy", "correlation",
+           "corruption", "democracy", "critical thinking"]),
+    # UK political parties receive large donations from wealthy individuals
+    # and corporations. The system is legal and disclosed, but the correlation
+    # between donations and outcomes is consistent:
+    # — Cash for Honours (2006): Blair's government under police investigation
+    #   for awarding peerages to party donors. No charges. Practice continues.
+    # — The Tories received large donations from hedge funds before cutting
+    #   capital gains tax. Labour received from unions before employment legislation.
+    # — The Non-dom issue: donors who are non-domiciled for tax purposes
+    #   funding parties that then protect non-dom status.
+    # The methodological challenge: proving causation vs. correlation is
+    # genuinely difficult. Rich people donate to parties whose policies
+    # they prefer — or parties adopt policies preferred by donors who fund them?
+    # Both can be true simultaneously. This is what makes legal corruption
+    # so hard to prosecute.
+
+    Topic("us_corruption_systems", "US Political Corruption — Citizens United, Super PACs, and Dark Money",
+          "Corruption", [3], [9], 4, 6,
+          ["political_donations_legislation", "how_central_banks_work"],
+          ["US", "Citizens United", "Super PAC", "dark money", "lobbying",
+           "K Street", "campaign finance", "Congress", "corruption",
+           "political systems", "critical thinking"]),
+    # The US system is more explicitly monetised than the UK's.
+    # Citizens United v. FEC (2010): Supreme Court ruled corporations have
+    # free speech rights — corporate political spending cannot be limited.
+    # This created Super PACs: unlimited spending organisations.
+    # Dark money: nonprofit organisations that spend on elections without
+    # disclosing donors. Completely legal.
+    # K Street: Washington DC's lobbying corridor. 12,000+ registered lobbyists.
+    # The revolving door is more formalised: staff go from Congressional committees
+    # to industry lobbying and back. The data: lobbying spend in the US is
+    # ~$4 billion annually. For most industries, every $1 spent on lobbying
+    # produces $220 in tax breaks or regulatory savings.
+
+    Topic("offshore_tax_avoidance", "Offshore Finance — Tax Avoidance, Secrecy Jurisdictions, and the UK's Role",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["pattern_wealth_inequality", "empire_trade_economy"],
+          ["offshore", "tax avoidance", "Cayman Islands", "British Virgin Islands",
+           "Jersey", "secrecy jurisdiction", "Panama Papers", "Pandora Papers",
+           "UK", "City of London", "corruption", "inequality", "critical thinking"]),
+    # The UK sits at the centre of the world's offshore financial system.
+    # The Crown Dependencies (Jersey, Guernsey, Isle of Man) and Overseas
+    # Territories (Cayman Islands, British Virgin Islands, Bermuda) are
+    # secrecy jurisdictions — nominally independent but with the City of
+    # London at their hub. They hold an estimated £9-36 trillion in offshore
+    # wealth. This is not illegal — it is the system operating as designed.
+    # Panama Papers (2016): 11.5 million leaked documents from Mossack Fonseca,
+    # revealing offshore structures used by world leaders, celebrities, and
+    # criminals. The UK's response: a public register of beneficial ownership
+    # (who actually owns shell companies) — but the Overseas Territories
+    # were given extensions until 2027 and lobbied successfully against it.
+    # The City of London's role: not just a financial centre but the architect
+    # and defender of the offshore system it profits from.
+
+    Topic("media_ownership_and_politicians", "The Murdoch Problem — Media Ownership, Politicians, and Mutual Dependency",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["media_ownership", "political_donations_legislation"],
+          ["Murdoch", "News International", "Sun", "Times", "phone hacking",
+           "Leveson", "media ownership", "politicians", "influence",
+           "UK", "corruption", "democracy", "critical thinking"]),
+    # Every British Prime Minister since Thatcher has cultivated Rupert Murdoch.
+    # Blair flew to Australia to address News Corp executives before the 1997
+    # election. Cameron was personal friends with Rebekah Brooks.
+    # Phone hacking scandal: News of the World hacked phones of murder victims,
+    # soldiers' families, and celebrities. Closure of the paper, Leveson Inquiry,
+    # no significant legislation followed.
+    # The mechanism: Murdoch's papers can destroy a politician's reputation
+    # through consistent hostile coverage, or build it through endorsement.
+    # Politicians know this. The access granted, the favours done, the policies
+    # adopted in response are rarely provable but structurally predictable.
+    # The Leveson Inquiry heard evidence of direct contact between News
+    # International executives and government ministers over policy decisions.
+
+    Topic("corruption_global_context", "Global Corruption — From Kleptocracies to the World Bank's Failure",
+          "Corruption", [3], [9], 4, 5,
+          ["what_is_corruption", "globalisation_ks3"],
+          ["corruption", "kleptocracy", "Nigeria", "Russia", "World Bank",
+           "aid", "development", "oligarchs", "sanctions", "global",
+           "critical thinking", "political systems"]),
+    # Kleptocracy: government as organised theft. Russia under Putin is the
+    # clearest current example — state assets transferred to oligarchs loyal
+    # to the regime; estimated $200bn+ taken offshore by the Putin circle.
+    # The role of Western enablers: London lawyers, PR firms, accountants,
+    # and banks that legitimise and manage stolen wealth.
+    # "Londongrad": how London became the preferred destination for oligarch
+    # wealth — libel law used to suppress journalism, Companies House
+    # registration no-questions-asked, prime property as a store of value.
+    # Aid and development: World Bank money intended for infrastructure in
+    # poor countries that ends up in Swiss accounts. The structural problem
+    # of building institutions in the absence of accountability.
+
+    Topic("eastern_corruption_direct", "Corruption in the East — Baksheesh, Speed Money, and the Everyday Price of Everything",
+          "Corruption", [3], [8, 9], 3, 5,
+          ["what_is_corruption", "global_corruption"],
+          ["corruption", "baksheesh", "speed money", "India", "Russia", "China",
+           "Middle East", "Africa", "everyday corruption", "police", "permits",
+           "culture", "comparative", "critical thinking"]),
+    # In many countries, corruption is not a scandal but a system — the
+    # actual mechanism by which things get done. The contrast with the West:
+    # Western corruption is mostly legal (lobbying, revolving door, donations).
+    # Eastern corruption is often illegal but normalised. Both produce the
+    # same result: outcomes determined by who has money and connections,
+    # not by merit or law.
+    # Baksheesh (Arabic/Persian/Urdu/Hindi): a tip, a bribe, a payment
+    # for a favour — the word is deliberately ambiguous. In practice:
+    # paying a policeman not to write a ticket, paying a bureaucrat to
+    # process a permit faster, paying a doctor to jump a hospital queue.
+    # Speed money: payments to make the bureaucracy move at normal speed
+    # (what should be free is made deliberately slow to extract payment).
+    # Russia: corruption is structural — tax inspectors, police, and courts
+    # as revenue-generation systems for their operators. The raider system:
+    # profitable businesses seized through corrupt court orders.
+    # India: "inspector raj" — every permit, licence, and inspection is an
+    # extraction opportunity. The Right to Information Act (2005) was
+    # partly an anti-corruption tool.
+    # Nigeria: oil revenue corruption — the mechanics of how oil money
+    # meant for development gets distributed to political networks.
+    # The difference in visibility: in the UK, a child is unlikely to
+    # personally encounter a corrupt official. In many countries, they
+    # would encounter it at every checkpoint, every government office,
+    # every interaction with authority. Both systems are corrupt.
+    # The West's version just has better PR.
+
+    Topic("anti_corruption_tools", "Fighting Corruption — Transparency, Accountability, and What Works",
+          "Corruption", [3], [8, 9], 4, 5,
+          ["what_is_corruption", "how_to_fact_check"],
+          ["anti-corruption", "transparency", "FOI", "Freedom of Information",
+           "whistleblowing", "journalism", "accountability", "Transparency International",
+           "GRECO", "practical", "critical thinking", "democracy"]),
+    # Freedom of Information requests: the legal right to request any
+    # information held by public bodies. Used by journalists to expose
+    # the expenses scandal, council waste, NHS contracts. The government
+    # has repeatedly tried to weaken it.
+    # Investigative journalism: the Panama Papers, Pandora Papers, and
+    # phone hacking were all broken by journalists, not regulators.
+    # The OCCRP (Organised Crime and Corruption Reporting Project):
+    # cross-border collaboration between investigative journalists.
+    # The practical question: what can an individual citizen do?
+    # — Register to vote and use it
+    # — Read beyond the headline (who funded this think tank?)
+    # — Support investigative journalism financially
+    # — Use FOI requests
+    # — Know who your MP is and write to them
+    # The structural answer: public funding of political parties (removes
+    # donor dependency), stronger lobbying registers, closed revolving door.
+    # None of these happen without political will. Political will doesn't
+    # happen without an informed, engaged public.
 ]
 
 
@@ -5463,7 +5755,7 @@ CURRICULUM: list[Topic] = (
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
     _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
-    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE
+    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION
     # _OPTICS_LIGHT added below
 )
 
