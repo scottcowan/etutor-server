@@ -5746,6 +5746,285 @@ _CORRUPTION = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# World Economies — How Different Countries Organise Their Economies
+# Not "capitalism good / socialism bad" or vice versa — a serious look
+# at the different models countries have tried, what they produce,
+# who benefits, and what trade-offs each involves.
+# Covers: economic systems as theory, case studies of specific countries,
+# sectors and industries, trade and globalisation, development, and
+# how you actually read an economy.
+# ---------------------------------------------------------------------------
+
+_WORLD_ECONOMIES = [
+
+    # --- Economic Systems ---
+    Topic("economic_systems_overview", "Economic Systems — Capitalism, Socialism, and Everything Between",
+          "World Economies", [3], [7, 8, 9], 3, 5,
+          ["supply_demand_prices", "what_is_government"],
+          ["capitalism", "socialism", "mixed economy", "command economy",
+           "market", "economic systems", "ideology", "comparison",
+           "critical thinking", "economics"]),
+    # Pure capitalism (no government intervention) and pure communism
+    # (total state ownership) are both theoretical extremes no country has
+    # fully implemented. Every real economy is a mixed economy somewhere
+    # on the spectrum. The interesting questions are: what gets mixed and
+    # how, who decides, and who benefits?
+    # Key dimensions: who owns the means of production, how prices are set,
+    # how goods are distributed, what the state provides, how inequality
+    # is managed. Different countries have made very different choices on
+    # each of these — and changed their minds over time.
+
+    Topic("nordic_model", "The Nordic Model — High Tax, High Trust, and Why It Works",
+          "World Economies", [3], [7, 8, 9], 4, 5,
+          ["economic_systems_overview", "welfare_state"],
+          ["Nordic model", "Sweden", "Norway", "Denmark", "Finland",
+           "high tax", "universal services", "social trust", "unions",
+           "Gini coefficient", "happiness index", "economics", "comparison"]),
+    # Sweden, Denmark, Norway, and Finland consistently top rankings for
+    # happiness, social mobility, and economic competitiveness despite
+    # (or because of?) very high taxes and strong unions.
+    # Key features: universal healthcare and education, strong employment
+    # protection, high minimum wages set by collective bargaining not law,
+    # significant state ownership in strategic sectors.
+    # The trust argument: high-trust societies can sustain high-tax models
+    # because citizens believe the money is spent well and fairly.
+    # The oil question: Norway's Government Pension Fund (oil revenues
+    # invested for future generations) — one of the world's largest
+    # sovereign wealth funds. Deliberate policy choice, not luck.
+    # Criticisms: high conformity pressure, high cost of living, difficult
+    # immigration integration, small homogeneous populations easier to run.
+
+    Topic("us_economy_model", "The US Model — Deregulation, Innovation, and the World's Reserve Currency",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "us_corruption_systems"],
+          ["USA", "deregulation", "free market", "Silicon Valley", "innovation",
+           "Federal Reserve", "dollar", "reserve currency", "inequality",
+           "healthcare", "economics", "comparison"]),
+    # The US model: lower taxes, less regulation, weaker safety net than
+    # most developed economies — but higher innovation, higher GDP per capita,
+    # and dominant global technology companies.
+    # The dollar as the world's reserve currency: most international trade
+    # is denominated in dollars. This gives the US extraordinary power —
+    # it can run large deficits that other countries couldn't, and it can
+    # use financial sanctions (cutting countries off from dollar systems)
+    # as a geopolitical weapon.
+    # The costs: healthcare is the most expensive in the world with mediocre
+    # outcomes, the highest income inequality among developed nations,
+    # the largest prison population, and infrastructure that lags behind
+    # peer countries.
+    # The tech giant question: Apple, Google, Amazon, Microsoft, Meta —
+    # five companies that each exceed the GDP of most countries.
+
+    Topic("china_economy_model", "The Chinese Model — State Capitalism and the Middle Income Trap",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "chinese_surveillance_state"],
+          ["China", "state capitalism", "Belt and Road", "SOEs", "five year plan",
+           "middle income trap", "Deng Xiaoping", "manufacturing", "development",
+           "economics", "comparison"]),
+    # China's model: market mechanisms at the micro level, state direction
+    # at the macro level. Not communism (markets are real) and not capitalism
+    # (the Party controls key sectors and can override market outcomes).
+    # The development miracle: 800 million people lifted out of poverty in
+    # 40 years — the fastest large-scale development in history.
+    # How it was done: Deng Xiaoping's "socialist market economy" reforms
+    # (1978), Special Economic Zones, state-directed industrial policy,
+    # export manufacturing, massive infrastructure investment.
+    # Belt and Road Initiative: $1 trillion+ in infrastructure investment
+    # across Asia, Africa, and Europe — loans, not grants. The "debt trap"
+    # debate: does BRI create economic dependency or mutual benefit?
+    # The middle income trap: most developing countries stall here.
+    # China is trying to escape it through technology upgrading.
+
+    Topic("german_economy_model", "The German Model — Mittelstand, Apprenticeships, and Patient Capital",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "industrial_revolution"],
+          ["Germany", "Mittelstand", "apprenticeships", "vocational training",
+           "works councils", "patient capital", "Bundesbank", "export model",
+           "manufacturing", "economics", "comparison"]),
+    # Germany as a model for "coordinated market economy" — capitalism
+    # with strong institutions that coordinate rather than just compete.
+    # The Mittelstand: thousands of medium-sized, family-owned companies
+    # that dominate their global niche (machine tools, specialist chemicals,
+    # precision engineering). Not maximising profit but sustaining quality
+    # over generations. Half the world's market-leading niche companies are German.
+    # Works councils: workers have legal rights to be consulted on major
+    # business decisions. Supervisory boards include worker representatives.
+    # Vocational training: half of German school leavers go into apprenticeships
+    # — highly respected, well-paid, well-structured. Germany has almost no
+    # stigma around not attending university.
+    # The export surplus question: Germany's persistent trade surplus is
+    # criticised by the US and within the EU for suppressing domestic demand.
+
+    Topic("japanese_economy_model", "Japan — Lifetime Employment, Deflation, and the Lost Decades",
+          "World Economies", [3], [9], 4, 5,
+          ["economic_systems_overview"],
+          ["Japan", "keiretsu", "lifetime employment", "deflation",
+           "Lost Decade", "Abenomics", "demographics", "ageing population",
+           "economics", "comparison"]),
+    # Japan as a case study in both economic miracle and economic stagnation.
+    # The miracle (1950s-80s): MITI (Ministry of International Trade and Industry)
+    # directing industrial policy, keiretsu (corporate groups with cross-holdings),
+    # lifetime employment creating loyal, stable workforces, trade surpluses
+    # in electronics and cars.
+    # The Lost Decades (1991-present): asset price bubble collapse, deflation
+    # trap (if prices will be lower tomorrow, why buy today?), zombie companies
+    # kept alive by bank forbearance rather than allowed to fail.
+    # The demographic crisis: shrinking, ageing population with almost no
+    # immigration. Japan is the most extreme example of a challenge facing
+    # most developed economies.
+
+    Topic("singapore_model", "Singapore — Authoritarian Capitalism and the City-State That Shouldn't Work",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "what_is_government"],
+          ["Singapore", "Lee Kuan Yew", "authoritarian capitalism", "city-state",
+           "port", "finance", "meritocracy", "CPF", "PAP", "economics",
+           "comparison", "development"]),
+    # Singapore: a city-state of 5.8 million with no natural resources,
+    # surrounded by larger potentially hostile neighbours, that in 50 years
+    # became one of the wealthiest countries in the world.
+    # Lee Kuan Yew's model: single-party rule (PAP), ruthless meritocracy,
+    # zero tolerance for corruption (civil servants paid competitively to
+    # remove the temptation), state ownership of housing (80% of Singaporeans
+    # live in HDB flats, which they own), forced savings (CPF — central
+    # provident fund), strategic position as a hub.
+    # The trade-off: personal freedoms are constrained. Chewing gum was
+    # banned. The press is not free. Opposition politicians are sued into
+    # bankruptcy. Is rapid development worth political repression? Singapore
+    # makes this question concrete rather than abstract.
+
+    Topic("indian_economy", "India — The World's Largest Democracy and Its Economic Contradictions",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "mughal_empire"],
+          ["India", "IT sector", "informal economy", "caste", "licence raj",
+           "services", "manufacturing gap", "demographics", "Bangalore",
+           "economics", "comparison", "development"]),
+    # India: 1.4 billion people, the world's largest democracy, enormous
+    # talent pool, and a paradox — world-class IT and pharmaceutical sectors
+    # alongside mass rural poverty.
+    # The licence raj (pre-1991): every business decision required government
+    # approval. Entrepreneurship was strangled in bureaucracy.
+    # The 1991 reforms: liberalisation triggered by a balance of payments
+    # crisis. Opened markets, reduced controls — GDP growth accelerated.
+    # Why services but not manufacturing? India built an IT sector without
+    # the mass employment manufacturing phase that China used to lift rural
+    # workers into the middle class. Bangalore is world-class; hundreds of
+    # millions remain in subsistence agriculture.
+    # Caste: still affects economic opportunity despite being illegal to
+    # discriminate by. A structural constraint on meritocracy.
+    # The demographic dividend: India will have the world's largest
+    # working-age population by 2030 — a potential advantage or a crisis
+    # depending on whether jobs materialise.
+
+    Topic("gulf_states_model", "The Gulf States — Oil, Sovereign Wealth, and the Post-Oil Question",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "oil_petroleum"],
+          ["Gulf states", "Saudi Arabia", "UAE", "Qatar", "Kuwait",
+           "sovereign wealth fund", "oil", "Vision 2030", "migrant workers",
+           "tourism", "finance", "economics", "comparison"]),
+    # The Gulf model: monetise oil while it's valuable, invest the proceeds
+    # in sovereign wealth funds and economic diversification before the oil
+    # runs out or becomes worthless.
+    # UAE's model: Dubai as a global hub for trade, finance, tourism, and
+    # now tech. The fastest implementation of urban infrastructure in history.
+    # Saudi Arabia's Vision 2030: attempt to diversify before oil revenues
+    # decline. NEOM, tourism, entertainment — sectors previously prohibited.
+    # The migrant worker question: the kafala system ties migrant workers
+    # (who are 90% of the UAE's population) to their employer — they cannot
+    # change jobs or leave without permission. Mass human rights concerns.
+    # Abu Dhabi Investment Authority: one of the world's largest sovereign
+    # wealth funds — owns significant stakes in UK infrastructure, London
+    # property, and global companies.
+
+    Topic("african_economies", "African Economies — Resources, Debt, and the Leapfrog Potential",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "decolonisation"],
+          ["Africa", "resource curse", "China in Africa", "mobile money",
+           "M-Pesa", "fintech", "leapfrog", "debt", "IMF", "structural adjustment",
+           "economics", "comparison", "development"]),
+    # Africa is not one economy — 54 countries with vast differences.
+    # The resource curse: countries with oil/mineral wealth often have
+    # worse development outcomes than those without. Why? Revenue flows
+    # to elites, Dutch disease undermines other sectors, resource revenue
+    # removes the need to tax citizens (which would require accountability).
+    # The IMF structural adjustment programmes of the 1980s-90s:
+    # conditional loans requiring privatisation, deregulation, and cuts to
+    # public spending. Widely blamed for devastation of health and education
+    # systems. Still contested.
+    # The leapfrog story: mobile money (M-Pesa in Kenya — more people have
+    # M-Pesa accounts than bank accounts), mobile internet, solar energy
+    # bypassing grid infrastructure. Africa may not need the development
+    # path Europe took.
+    # China in Africa: infrastructure investment (Belt and Road), commodity
+    # extraction deals, and the debate about whether this is development
+    # or neo-colonialism.
+
+    Topic("latin_america_boom_bust", "Latin America — The Boom-Bust Cycle and Commodity Dependence",
+          "World Economies", [3], [9], 4, 5,
+          ["economic_systems_overview", "pattern_boom_bust"],
+          ["Latin America", "commodity cycle", "Argentina", "Venezuela",
+           "Brazil", "CEPAL", "resource nationalism", "inequality",
+           "populism", "Lula", "Chávez", "economics", "comparison"]),
+    # Latin America's recurring pattern: commodity boom → inward investment
+    # → debt accumulation → commodity bust → debt crisis → austerity → repeat.
+    # Argentina: 9 sovereign debt defaults — the most in history. Why?
+    # A country that was one of the world's richest in 1900 has had a century
+    # of mismanagement, military coups, and commodity dependence.
+    # Venezuela: the richest oil reserves in the world, one of the worst
+    # economic collapses in modern history. How Chávez's social programmes
+    # were unsustainable, and how Maduro turned a recession into a catastrophe.
+    # Brazil: the B in BRICS. 2003-2014 under Lula — 40 million people
+    # lifted out of poverty through targeted cash transfers (Bolsa Família).
+    # Then commodity bust, corruption scandal, Bolsonaro, pandemic.
+    # The structural challenge: inequality so extreme it distorts markets,
+    # institutions captured by elites, and economies dependent on exports
+    # of commodities whose prices they don't control.
+
+    Topic("development_economics_models", "Development Economics — How Countries Escape Poverty",
+          "World Economies", [3], [9], 4, 6,
+          ["development_inequality_geo", "african_economies"],
+          ["development economics", "poverty trap", "big push", "comparative advantage",
+           "Washington Consensus", "industrial policy", "Ha-Joon Chang",
+           "South Korea", "Taiwan", "catch-up growth", "economics"]),
+    # The central question of development economics: why are some countries
+    # rich and others poor, and what can be done about it?
+    # The Washington Consensus (1989): deregulate, privatise, fiscal discipline,
+    # open markets. Imposed by IMF/World Bank on developing countries.
+    # Results: mixed at best, catastrophic in some cases (Argentina 2001).
+    # The East Asian alternative: South Korea and Taiwan developed through
+    # industrial policy — government picking sectors to build, protecting
+    # infant industries, directing credit. Ha-Joon Chang's argument: every
+    # rich country used industrial policy to develop, then pulled up the
+    # ladder and told developing countries to use free markets.
+    # The poverty trap: poor households can't save, can't invest in health
+    # and education, which keeps them poor. Requires external intervention
+    # to break. Conditional cash transfers (Brazil's Bolsa Família, Mexico's
+    # Oportunidades) as evidence-based tools.
+
+    Topic("how_to_read_an_economy", "How to Read an Economy — GDP, Gini, HDI, and What the Numbers Actually Mean",
+          "World Economies", [3], [7, 8, 9], 3, 5,
+          ["statistics_ks2", "development_inequality_geo"],
+          ["GDP", "GNI", "Gini coefficient", "HDI", "inflation", "unemployment",
+           "trade balance", "current account", "economic indicators",
+           "how to read", "critical thinking", "economics", "maths"]),
+    # GDP (Gross Domestic Product): total value of goods and services produced.
+    # Why it's imperfect: a car crash increases GDP (repairs, medical care).
+    # Unpaid care work (childcare, eldercare) is excluded. Environmental
+    # destruction is excluded.
+    # GNI (Gross National Income): includes income earned abroad.
+    # Important for countries with large diaspora remittances (Philippines, India).
+    # The Gini coefficient: 0 = perfect equality, 1 = one person owns everything.
+    # UK: ~0.35. Nordic countries: ~0.25. US: ~0.40. South Africa: ~0.63.
+    # HDI (Human Development Index): combines income, education, and life
+    # expectancy — gives a richer picture than GDP alone.
+    # Inflation: too low risks deflation (Japan's lost decades), too high
+    # erodes savings and destabilises (Venezuela, Zimbabwe, Weimar Germany).
+    # The 2% target: why central banks aim for 2% inflation, not 0%.
+    # Trade balance: running a surplus is not always good (Germany),
+    # running a deficit is not always bad (the US can because of the dollar).
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -5755,7 +6034,7 @@ CURRICULUM: list[Topic] = (
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
     _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
-    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION
+    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION + _WORLD_ECONOMIES
     # _OPTICS_LIGHT added below
 )
 
