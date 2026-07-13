@@ -727,6 +727,98 @@ age 12+. Selected concepts work well from Year 4 upwards.
 
 ---
 
+## Cultural Capital and Class
+
+### Watching the English — Kate Fox (Hodder, 2004)
+The single best guide to how the English actually behave. An anthropologist
+applies field research methods to English social rituals — the pub, the queue,
+the weather conversation, the class markers embedded in vocabulary and behaviour.
+*Why it matters:* The book decodes the unwritten rules explicitly, which is exactly
+what the Cultural Capital curriculum section aims to do. Fox names the class signals
+that most English people absorb without realising.
+*Use for:* `british_class_system`, `class_and_language`, `accent_class_signal`,
+`formal_dining_etiquette`
+**Age suitability for excerpts:** 12+
+
+### Watching the English: The Hidden Rules of English Behaviour — Kate Fox
+Same book, different note: the chapters on "class" and "talk" are the most directly
+curriculum-relevant and work well as standalone read-along passages.
+
+### Snobs — Julian Fellowes (Weidenfeld & Nicolson, 2004)
+A novel about class mobility and the British aristocracy by the creator of
+Downton Abbey. A young woman marries into the aristocracy and discovers the
+unspoken rules she doesn't know. Entertaining and sociologically precise.
+*Use for:* `british_peerage`, `prominent_british_families`, `class_and_language`
+**Age suitability:** 14+
+
+### The English Aristocracy — Nancy Mitford (Encounter, 1956)
+The essay that introduced "U and Non-U" vocabulary distinctions to the public.
+Short (essay length), sharp, and funny. The original source for the sofa/settee
+and lavatory/toilet distinctions discussed in `class_and_language`.
+*Use for:* `class_and_language`, `british_peerage`
+
+### Debrett's Correct Form (Debrett's Peerage Ltd)
+The authoritative reference for titles, forms of address, and social etiquette
+in Britain. Updated regularly. The definitive source for `titles_forms_of_address`.
+*Use for:* `titles_forms_of_address`, `british_peerage`, `formal_dining_etiquette`
+
+### Educated — Tara Westover (Hutchinson, 2018)
+Memoir of a woman raised without formal education in rural Idaho who eventually
+reaches Cambridge. One of the most powerful accounts of cultural capital —
+what it feels like to enter an elite institution without the cultural preparation.
+*Use for:* `cultural_capital_explained`, `elite_institutions_how_they_work`
+**Age suitability:** 14+
+
+---
+
+## Dissent and Authority
+
+### Civil Disobedience — Henry David Thoreau (1849)
+Short essay (pamphlet length) that founded the theory of civil disobedience.
+"The only obligation which I have a right to assume is to do at any time what
+I think right." Gandhi and Martin Luther King Jr both cite it as foundational.
+*Use for:* `civil_disobedience_theory`, `legitimate_vs_illegitimate_authority`
+**Age suitability:** 12+ (short enough to read in full)
+
+### The Milgram Experiment — Stanley Milgram (Harper & Row, 1974)
+Milgram's own account of his obedience studies. More accessible than the
+academic papers. The chapter describing individual participant reactions
+is among the most disturbing social science writing ever published.
+*Use for:* `milgram_asch_obedience`, `authority_and_obedience`
+**Age suitability:** 13+
+
+### The Anatomy of Fascism — Robert Paxton (Knopf, 2004)
+The most rigorous analysis of what fascism actually is (a movement and behaviour,
+not an ideology) and how authoritarian movements come to power. Directly relevant
+to `pattern_authoritarian_rise`.
+*Use for:* `pattern_authoritarian_rise`, `authority_and_obedience`
+**Age suitability:** 14+
+
+### The Spy Who Came in from the Cold — John le Carré (Gollancz, 1963)
+The best Cold War spy novel — and a profound examination of institutional loyalty,
+moral compromise, and what happens when the rules of "our side" turn out to be
+as bad as the other side's. Fiction that teaches the Milgram lesson through story.
+*Use for:* `whistleblowers`, `legitimate_vs_illegitimate_authority`, `cold_war_context`
+**Age suitability:** 13+
+
+### Permanent Record — Edward Snowden (Metropolitan Books, 2019)
+Snowden's own account of how and why he leaked NSA surveillance programmes.
+Whatever your view of his decision, it is one of the most detailed first-person
+accounts of the whistleblower's dilemma — institutional loyalty vs. conscience.
+*Use for:* `whistleblowers`, `cia_covert_history`
+**Age suitability:** 13+
+
+### The Rights of Man — Thomas Paine (1791)
+Written in response to Burke's defence of the French monarchy. Paine's argument
+that rights are inherent to persons, not granted by governments, is the foundation
+of modern human rights theory. Connects to both the Dissent curriculum and the
+Political Systems section.
+*Use for:* `civil_disobedience_theory`, `history_of_dissent`,
+`history_of_democracy_britain`
+**Age suitability:** 12+ for excerpts; accessible prose for the period
+
+---
+
 ## Science Reference
 
 ### The Way Things Work — David Macaulay (Dorling Kindersley)
