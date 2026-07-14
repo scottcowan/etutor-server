@@ -3,7 +3,6 @@ from pydantic import BaseModel
 import tempfile, os
 
 from config.settings import get_settings
-from services.profiles import get_child_by_device_id
 
 router = APIRouter()
 
