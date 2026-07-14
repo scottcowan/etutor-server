@@ -52,7 +52,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 01-03-PLAN.md — TDD: Session, InteractionEvent, MasteryState CRUD
+- [x] 01-03-PLAN.md — TDD: Session, InteractionEvent, MasteryState CRUD
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
@@ -196,7 +196,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Database Foundation | 3/7 | In Progress|  |
+| 1. Database Foundation | 4/7 | In Progress|  |
 | 2. Knowledge Tracing Backend | 0/TBD | Not started | - |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
