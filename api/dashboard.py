@@ -13,10 +13,15 @@ async def dashboard(session: AsyncSession = Depends(get_db)):
     return {
         "children": [
             {
-                "id": c.id, "name": c.name, "age": c.age,
-                "device_id": c.device_id, "interests": c.interests,
-                "reading_level": c.reading_level, "current_topic": c.current_topic,
-                "current_books": c.current_books, "session_count": c.session_count,
+                "id": c.id,
+                "name": c.name,
+                "age": c.age,
+                "device_id": c.device_id,
+                "interests": c.interests,
+                "reading_level": c.reading_level,
+                "current_topic": c.current_topic,
+                "current_books": c.current_books,
+                "session_count": c.session_count,
                 "neurodivergence": c.neurodivergence,
             }
             for c in children

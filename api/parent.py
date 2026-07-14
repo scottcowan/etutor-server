@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,7 +11,10 @@ templates = Jinja2Templates(directory="web/parent/templates")
 
 
 @router.get("/", response_class=HTMLResponse)
-async def parent_dashboard(request: Request, session: AsyncSession = Depends(get_db)):
+async def parent_dashboard(
+    request: Request,
+    session: AsyncSession = Depends(get_db),
+):
     children = await list_children(session)
     sessions = {}  # Phase 1: session replay deferred to Phase 4
     return templates.TemplateResponse(
