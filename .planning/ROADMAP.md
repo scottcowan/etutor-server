@@ -43,12 +43,12 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 **Wave 1**
 
-- [ ] 01-01-PLAN.md — Bootstrap db/ package: install deps, ORM models, session factory, dev seeds, pytest-asyncio fixture
+- [x] 01-01-PLAN.md — Bootstrap db/ package: install deps, ORM models, session factory, dev seeds, pytest-asyncio fixture
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 01-02-PLAN.md — TDD: ChildProfile CRUD (create, read by id/device_id, list, update_interests) + seed idempotency
-- [ ] 01-04-PLAN.md — Alembic init, async env.py, initial migration (all 4 tables), upgrade/downgrade verified
+- [x] 01-02-PLAN.md — TDD: ChildProfile CRUD (create, read by id/device_id, list, update_interests) + seed idempotency
+- [x] 01-04-PLAN.md — Alembic init, async env.py, initial migration (all 4 tables), upgrade/downgrade verified
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -196,7 +196,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Database Foundation | 0/7 | Not started | - |
+| 1. Database Foundation | 3/7 | In Progress|  |
 | 2. Knowledge Tracing Backend | 0/TBD | Not started | - |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
