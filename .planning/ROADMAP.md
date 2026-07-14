@@ -34,7 +34,16 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `alembic upgrade head` runs cleanly on a fresh SQLite file and on PostgreSQL
   3. Existing chat and STT endpoints continue to pass their evals after the migration
   4. Interaction events (kc_id, correct, response_ms, hint_used, timestamp) are written on every chat turn
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Bootstrap db/ package: install deps, ORM models, session factory, dev seeds, pytest-asyncio fixture
+- [ ] 01-02-PLAN.md — TDD: ChildProfile CRUD (create, read by id/device_id, list, update_interests) + seed idempotency
+- [ ] 01-03-PLAN.md — TDD: Session, InteractionEvent, MasteryState CRUD
+- [ ] 01-04-PLAN.md — Alembic init, async env.py, initial migration (all 4 tables), upgrade/downgrade verified
+- [ ] 01-05-PLAN.md — Migrate services/profiles.py and services/sessions.py to thin wrappers; remove stt.py dead import
+- [ ] 01-06-PLAN.md — Wire DB into api/main.py lifespan + api/chat.py session injection
+- [ ] 01-07-PLAN.md — Session injection into remaining 5 API routes; remove vars() serialisation
 
 **Key decisions / risks:**
 - In-memory `services/profiles.py` and `services/sessions.py` stubs must be replaced; eval fixtures must still pass
@@ -148,7 +157,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Database Foundation | 0/TBD | Not started | - |
+| 1. Database Foundation | 0/7 | Not started | - |
 | 2. Knowledge Tracing Backend | 0/TBD | Not started | - |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
