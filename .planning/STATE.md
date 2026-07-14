@@ -58,7 +58,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None yet. (See .planning/todos/ for any captured ideas.)
+5 pending todos. See .planning/todos/pending/ for details.
 
 ### Blockers/Concerns
 
