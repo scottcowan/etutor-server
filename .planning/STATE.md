@@ -75,6 +75,6 @@ None yet. (See .planning/todos/ for any captured ideas.)
 
 ## Session Continuity
 
-Last session: 2026-07-10
-Stopped at: Roadmap created — ready to plan Phase 1
-Resume file: None
+Last session: 2026-07-14
+Stopped at: Phase 1 context gathered
+Resume file: .planning/phases/01-database-foundation/01-CONTEXT.md
