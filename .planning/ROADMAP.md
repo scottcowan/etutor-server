@@ -56,7 +56,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 01-05-PLAN.md — Migrate services/profiles.py and services/sessions.py to thin wrappers; remove stt.py dead import
+- [x] 01-05-PLAN.md — Migrate services/profiles.py and services/sessions.py to thin wrappers; remove stt.py dead import
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
@@ -196,7 +196,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Database Foundation | 4/7 | In Progress|  |
+| 1. Database Foundation | 5/7 | In Progress|  |
 | 2. Knowledge Tracing Backend | 0/TBD | Not started | - |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
