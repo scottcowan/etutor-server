@@ -1,9 +1,9 @@
 import httpx
 from config.settings import get_settings
-from services.profiles import ChildProfile
+from db.models import ChildProfileModel
 
 
-async def get_recommendations(child: ChildProfile, limit: int = 5) -> list[dict]:
+async def get_recommendations(child: ChildProfileModel, limit: int = 5) -> list[dict]:
     """
     Fetch books from Calibre-Web matching child's interests and reading level.
     Falls back to empty list if Calibre-Web is unavailable.
@@ -36,7 +36,7 @@ async def get_recommendations(child: ChildProfile, limit: int = 5) -> list[dict]
     return [b for _, b in scored[:limit]]
 
 
-async def build_recommendation_message(child: ChildProfile) -> str:
+async def build_recommendation_message(child: ChildProfileModel) -> str:
     books = await get_recommendations(child)
     if not books:
         return ""
