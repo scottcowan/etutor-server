@@ -1,6 +1,6 @@
 import httpx
 from config.settings import get_settings
-from services.profiles import ChildProfile
+from db.models import ChildProfileModel as ChildProfile
 
 
 async def get_recommendations(child: ChildProfile, limit: int = 5) -> list[dict]:
