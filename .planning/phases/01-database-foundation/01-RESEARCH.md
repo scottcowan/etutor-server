@@ -498,22 +498,19 @@ class MasteryStateModel(Base):
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **`api/stt.py` dead-code path**
+1. **`api/stt.py` dead-code path** *(RESOLVED — Plan 01-05)*
    - What we know: `stt.py` calls `get_child_by_device_id(device_id)` but does nothing with the result — no variable is assigned, no profile data is used.
-   - What's unclear: Is this intentional scaffolding for a future feature, or a dead-code artifact?
-   - Recommendation: Remove the call from `stt.py` in Phase 1 (simplest migration path) and re-add when STT needs to personalise on profile data.
+   - Resolution: Remove the unused import and dead-code call from `stt.py` in Plan 01-05 during service migration. Re-add when STT needs to personalise on profile data.
 
-2. **Session creation trigger for DB-03**
+2. **Session creation trigger for DB-03** *(RESOLVED — Plan 01-06)*
    - What we know: DB-03 requires a `sessions` table with `session_id, started_at, ended_at, turn_count`. The current code has no session creation event — turns are just appended.
-   - What's unclear: Should a new `Session` row be created per HTTP `/chat/completions` call, per device connection, or when the client explicitly starts a session?
-   - Recommendation: Create a `Session` row on the first `log_turn` call if no open session exists for the child (implicit session start). Set `ended_at` on an explicit `/sessions/{id}/end` call or via a timeout — Phase 1 can leave `ended_at` nullable and populate it in Phase 3.
+   - Resolution: Plan 01-06 adds a `create_session(child_id, session)` call in `api/chat.py` before `log_turn`. A new Session row is created implicitly on each `/chat/completions` request. `ended_at` is nullable in Phase 1; Phase 3 closes sessions explicitly.
 
-3. **`neurodivergence_block` format string `{{` issue**
-   - What we know: `SYSTEM_PROMPT_TEMPLATE` in `tutor.py` uses `{neurodivergence_block}`. The current `.format()` call passes `nd_section` which is an empty string or a block. This works today.
-   - What's unclear: If the ORM model returns `None` instead of `[]` for `neurodivergence`, `getattr(child, "neurodivergence", [])` will still return `[]` — no issue. But `nd_flags or []` check should remain.
-   - Recommendation: Map ORM column default to `[]` not `None` to avoid defensive coding in tutor.py.
+3. **`neurodivergence_block` format string `{{` issue** *(RESOLVED — Plan 01-01)*
+   - What we know: `SYSTEM_PROMPT_TEMPLATE` in `tutor.py` uses `{neurodivergence_block}`. ORM model must expose `neurodivergence` as a list (not None) to avoid breaking `nd_flags or []` check.
+   - Resolution: `InteractionEventModel` and `ChildProfileModel` map `neurodivergence` column with `default=list` (not `default=None`). `getattr(child, "neurodivergence", [])` in tutor.py continues to work correctly.
 
 ---
 

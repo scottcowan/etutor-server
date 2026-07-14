@@ -31,6 +31,10 @@ Replace all in-memory stores (`_profiles` dict in `services/profiles.py`, `_sess
 - **D-09:** Each eval run gets a fresh in-memory SQLite database (`sqlite:///:memory:`). `tests/conftest.py` creates the engine, applies Alembic migrations, inserts a fixture child profile, and provides a `db_session` fixture.
 - **D-10:** Evals call service functions directly with `db_session` as an explicit argument. FastAPI's `app.dependency_overrides` is not used for evals — the service function signature is the integration point.
 
+### Approved Scope Narrowings
+- **D-11 (PostgreSQL verification):** `alembic upgrade head` is verified against SQLite only in Phase 1. PostgreSQL execution verification is explicitly deferred to Phase 6 (Safety, Performance, and Polish). The async `env.py` pattern is PostgreSQL-compatible by design; this deferral is an environmental constraint, not a code incompatibility.
+- **D-12 (eval fixture):** `tests/conftest.py` uses `Base.metadata.create_all` instead of programmatic Alembic invocation for the in-memory test fixture. Produces an identical schema for Phase 1 (single initial migration, no data migration steps) and is simpler. Revisit if migration script correctness must be exercised in tests.
+
 ### Claude's Discretion
 - Exact column names, table names, and SQLAlchemy model class names — standard FastAPI/SQLAlchemy conventions apply.
 - Whether `db/models.py` and `db/crud.py` are single files or split further — planner decides based on number of models.
