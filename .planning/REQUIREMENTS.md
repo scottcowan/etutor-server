@@ -3,11 +3,11 @@
 ## v1 Requirements
 
 ### DB-01: Persistent Database
-- [ ] **DB-01**: SQLite database with SQLAlchemy ORM and Alembic migrations replaces in-memory stores
-- [ ] **DB-02**: ChildProfile persisted (name, age, reading_level, interests, neurodivergence, device_id)
-- [ ] **DB-03**: Session records persisted (session_id, child_id, started_at, ended_at, turn count)
-- [ ] **DB-04**: Interaction events persisted (kc_id, correct, response_ms, hint_used, timestamp)
-- [ ] **DB-05**: Concept mastery state persisted per child×KC (BKT params + FSRS params)
+- [x] **DB-01**: SQLite database with SQLAlchemy ORM and Alembic migrations replaces in-memory stores
+- [x] **DB-02**: ChildProfile persisted (name, age, reading_level, interests, neurodivergence, device_id)
+- [x] **DB-03**: Session records persisted (session_id, child_id, started_at, ended_at, turn count)
+- [x] **DB-04**: Interaction events persisted (kc_id, correct, response_ms, hint_used, timestamp)
+- [x] **DB-05**: Concept mastery state persisted per child×KC (BKT params + FSRS params)
 
 ### KT-01: Knowledge Tracing
 - [ ] **KT-01**: BKT mastery model per child per KC (p_mastery, p_learn, p_slip, p_guess)
@@ -78,11 +78,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DB-01 | Phase 1: Database Foundation | Pending |
-| DB-02 | Phase 1: Database Foundation | Pending |
-| DB-03 | Phase 1: Database Foundation | Pending |
-| DB-04 | Phase 1: Database Foundation | Pending |
-| DB-05 | Phase 1: Database Foundation | Pending |
+| DB-01 | Phase 1: Database Foundation | Complete |
+| DB-02 | Phase 1: Database Foundation | Complete |
+| DB-03 | Phase 1: Database Foundation | Complete |
+| DB-04 | Phase 1: Database Foundation | Complete |
+| DB-05 | Phase 1: Database Foundation | Complete |
 | KT-01 | Phase 2: Knowledge Tracing Backend | Pending |
 | KT-02 | Phase 2: Knowledge Tracing Backend | Pending |
 | KT-03 | Phase 2: Knowledge Tracing Backend | Pending |
