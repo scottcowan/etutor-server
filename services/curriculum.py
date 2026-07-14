@@ -491,7 +491,7 @@ _HISTORY = [
           ["french revolution", "napoleon", "europe", "rights", "war", "modern history"]),
     Topic("abolition_movement", "Abolition — The Fight to End the Slave Trade",
           "History", [2, 3], [6, 7, 8], 3, 5, ["transatlantic_slave_trade"],
-          ["abolition", "wilberforce", "equiano", "civil rights", "empire", "resistance"]),
+          ["abolition", "wilberforce", "equiano", "civil rights", "empire", "resistance", "dissent"]),
 
     # --- KS2–3: The British Empire — core arc ---
     Topic("age_of_exploration", "The Age of Exploration — Trade, Navigation, and First Contact",
@@ -513,10 +513,10 @@ _HISTORY = [
     # --- KS2–3: Industrial Revolution (linked to Empire) ---
     Topic("industrial_revolution", "The Industrial Revolution — Factories, Cities, and Child Labour",
           "History", [2, 3], [6, 7, 8], 3, 4, ["union_of_britain"],
-          ["industrial revolution", "factories", "cities", "technology", "britain", "change"]),
+          ["industrial revolution", "factories", "cities", "technology", "britain", "change", "class"]),
     Topic("victorian_britain", "Victorian Britain — Society, Reform, and the Height of Empire",
           "History", [2, 3], [6, 7, 8], 3, 4, ["industrial_revolution", "british_empire_expansion"],
-          ["victorian", "britain", "reform", "empire", "poverty", "technology"]),
+          ["victorian", "britain", "reform", "empire", "poverty", "technology", "class"]),
 
     # --- KS3: World Wars and Decolonisation ---
     Topic("ww1_causes_consequences", "World War One — Causes, Trenches, and the End of Empires",
@@ -536,7 +536,7 @@ _HISTORY = [
           ["cold war", "usa", "ussr", "nuclear", "modern history", "geopolitics"]),
     Topic("windrush_immigration", "Windrush and Post-War Immigration — Building Modern Britain",
           "History", [3], [8, 9], 3, 5, ["decolonisation"],
-          ["windrush", "immigration", "caribbean", "empire", "identity", "modern britain"]),
+          ["windrush", "immigration", "caribbean", "empire", "identity", "modern britain", "class"]),
 
     # --- KS3: Britain in Global Context ---
     Topic("history_of_democracy_britain", "Democracy in Britain — From Magna Carta to Today",
@@ -1264,7 +1264,7 @@ _HOW_THINGS_ARE_MADE = [
           "How Things Are Made", [2, 3], [5, 6, 7, 8], 3, 5,
           ["electricity_ks2"],
           ["electricity", "power stations", "coal", "wind", "solar", "nuclear",
-           "energy", "environment", "how things work"]),
+           "geothermal", "Iceland", "energy", "environment", "how things work"]),
     Topic("how_computers_made", "How Computers Are Made — Silicon, Chips, and Factories",
           "How Things Are Made", [3], [7, 8, 9], 4, 5,
           ["data_representation"],
@@ -1673,12 +1673,12 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [2, 3], [6, 7, 8, 9], 4, 6,
           ["ww1_causes_consequences"],
           ["propaganda", "persuasion", "posters", "media", "control",
-           "pattern", "critical thinking", "history", "social"]),
+           "pattern", "critical thinking", "history", "social", "questioning authority"]),
     Topic("pattern_authoritarian_rise", "How Authoritarians Come to Power — The Same Steps, Every Time",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["history_of_democracy_britain", "ww2_global_conflict"],
           ["authoritarianism", "fascism", "dictatorship", "pattern",
-           "critical thinking", "history", "democracy", "social"]),
+           "critical thinking", "history", "democracy", "social", "questioning authority"]),
     Topic("pattern_revolution", "Revolution — Why They Happen and What Comes Next",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["french_revolution_napoleon", "english_civil_war"],
@@ -1703,7 +1703,7 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [2, 3], [7, 8, 9], 4, 5,
           ["abolition_movement", "civil_rights_global"],
           ["protest", "reform", "suffrage", "civil rights", "pattern",
-           "change", "history", "social", "activism"]),
+           "change", "history", "social", "activism", "dissent"]),
     Topic("pattern_wealth_inequality", "Wealth and Inequality — Why the Gap Keeps Growing",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["industrial_revolution", "empire_trade_economy"],
@@ -1720,7 +1720,7 @@ _SOCIAL_PATTERNS = [
           "Social Patterns", [3], [8, 9], 4, 5,
           ["industrial_revolution", "entrepreneurship"],
           ["boom", "bust", "crash", "economics", "pattern",
-           "1929", "2008", "history", "social", "money"]),
+           "1929", "2008", "Iceland", "banking crisis", "history", "social", "money"]),
     Topic("pattern_tragedy_commons", "The Tragedy of the Commons — Why We Overuse Shared Resources",
           "Social Patterns", [3], [8, 9], 4, 6,
           ["ecosystems_ks3", "climate_change_ks3"],
@@ -2538,7 +2538,7 @@ _POLITICAL_SYSTEMS = [
           "Political Systems", [3], [9], 4, 5,
           ["how_taxes_work", "pattern_boom_bust"],
           ["central bank", "Bank of England", "interest rates", "inflation",
-           "how it works", "money", "economics", "CGP Grey", "political systems"]),
+           "Iceland", "capital controls", "how it works", "money", "economics", "CGP Grey", "political systems"]),
     Topic("what_is_the_civil_service", "What Is the Civil Service — The Permanent Government",
           "Political Systems", [3], [8, 9], 4, 5,
           ["how_british_parliament_works"],
@@ -4830,6 +4830,1412 @@ _AEROSPACE = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Cultural Capital — Operating in Formal and Elite Environments
+# The unwritten rules that everyone in certain rooms already knows.
+# Not about becoming someone you're not — about having the knowledge
+# to move freely and not be wrong-footed by the codes of formal,
+# institutional, or class-marked environments.
+# Bourdieu called this cultural capital: the knowledge, behaviours, and
+# credentials that confer social advantage. Not teaching it is itself
+# a class mechanism — it keeps the rules invisible to those who
+# weren't born into them.
+# ---------------------------------------------------------------------------
+
+_CULTURAL_CAPITAL = [
+
+    # --- Understanding Class ---
+    Topic("british_class_system", "The British Class System — How It Works and Why It's So Hard to See",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["pattern_wealth_inequality", "industrial_revolution"],
+          ["class", "British class system", "working class", "middle class",
+           "upper class", "Bourdieu", "cultural capital", "accent", "school",
+           "social", "critical thinking"]),
+    # The British class system is unusual in that it is simultaneously
+    # very real and very denied. Class is marked by: accent (RP vs regional),
+    # school (state vs independent vs which independent), vocabulary choices,
+    # posture, what you eat and how, how you address strangers, what you find
+    # funny. These markers are not random — they are signals that trigger
+    # instant social sorting. A child who understands the system can navigate
+    # it consciously rather than being sorted by it unconsciously.
+
+    Topic("accent_class_signal", "Accent — Why How You Speak Marks Where You're From",
+          "Cultural Capital", [3], [7, 8, 9], 4, 5,
+          ["british_class_system", "dialects_accents"],
+          ["accent", "RP", "received pronunciation", "dialect", "class",
+           "code-switching", "voice", "social mobility", "identity"]),
+    # Received Pronunciation (RP) is not "correct" English — it is the accent
+    # of a specific class in a specific region. It became the standard for
+    # broadcasting, law, and formal institutions not because it's clearer
+    # but because it signals education and class membership.
+    # Code-switching: many people shift their accent depending on context —
+    # this is a skill, not inauthenticity. The question is whether you can
+    # choose to switch rather than being marked regardless.
+
+    Topic("cultural_capital_explained", "Cultural Capital — Bourdieu and the Hidden Curriculum",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["british_class_system"],
+          ["cultural capital", "Bourdieu", "habitus", "field", "hidden curriculum",
+           "class", "education", "social", "critical thinking", "sociology"]),
+    # Bourdieu identified three types of capital: economic (money), social
+    # (who you know), and cultural (what you know and how you behave).
+    # Cultural capital is inherited more than earned — children from professional
+    # families absorb it without being taught. The "hidden curriculum" of school:
+    # how to speak to teachers, how to advocate for yourself, how to use
+    # institutions — this is taught implicitly to some and not to others.
+
+    # --- Formal Behaviour and Etiquette ---
+    Topic("formal_dining_etiquette", "Formal Dining — Which Fork, How to Behave, and What It's All For",
+          "Cultural Capital", [2, 3], [7, 8, 9], 2, 4,
+          [],
+          ["etiquette", "formal dining", "table manners", "cutlery", "napkin",
+           "place setting", "toasting", "hosting", "class", "cultural capital"]),
+    # The rules of formal dining exist to signal membership and create comfort
+    # among those who know them — and to mark out those who don't.
+    # Practical knowledge: place settings (working from outside in),
+    # napkin placement and use, when to start eating, how to signal you've
+    # finished, bread rolls (tear don't cut), soup (spoon away from you),
+    # the fish knife, toasting protocol, how to address the table.
+    # Why it matters: job interviews, client dinners, formal occasions.
+    # The meta-lesson: these rules are arbitrary but real; knowing them is power.
+
+    Topic("formal_letter_email", "Formal Writing — Letters, Emails, and the Register of Institutions",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["directed_writing", "vocab_register_formality"],
+          ["formal letter", "formal email", "Dear Sir/Madam", "Yours faithfully",
+           "Yours sincerely", "register", "institutions", "professional",
+           "cultural capital", "writing"]),
+    # Dear Sir/Madam → Yours faithfully. Dear Mr Smith → Yours sincerely.
+    # The rule that nobody teaches formally but that marks out letters
+    # to institutions, job applications, and formal complaints.
+    # When to use formal email vs letter. How to address a judge, a bishop,
+    # a lord, a knight. The structure of a formal complaint letter.
+    # Why getting the register wrong in a formal context signals you
+    # don't know the rules — even when the content is correct.
+
+    Topic("how_institutions_work", "How Institutions Work — Schools, Courts, Hospitals, and Government Offices",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 5,
+          ["separation_of_powers", "what_is_government"],
+          ["institutions", "how to navigate", "bureaucracy", "advocacy",
+           "rights", "procedures", "cultural capital", "life skills", "class"]),
+    # Most people who are comfortable in institutions learned this at home:
+    # how to make a complaint effectively, how to ask for what you're entitled to,
+    # how to escalate when the first answer is no, how to write to your MP,
+    # how to complain to a regulator, how to prepare for a formal meeting.
+    # The child who knows "you can ask to see the manager's manager, and here's
+    # how" has power that the child who accepts the first answer doesn't.
+
+    Topic("job_interview_performance", "Job Interviews — The Performance, the Questions, and the Unspoken Rules",
+          "Cultural Capital", [3], [8, 9], 3, 5,
+          ["public_speaking_confidence", "reading_rooms_social"],
+          ["interview", "job", "performance", "STAR method", "questions",
+           "appearance", "handshake", "preparation", "cultural capital",
+           "professional", "life skills"]),
+    # An interview is a performance with known conventions that are
+    # never stated. Arriving early (but not too early). The handshake.
+    # Eye contact. Questions you should always ask. The STAR method
+    # (Situation, Task, Action, Result) for behavioural questions.
+    # Salary negotiation. Follow-up thank-you emails. Research before.
+    # Why "do you have any questions?" is not a courtesy — it's a test.
+
+    Topic("networking_rooms", "Working a Room — Networking, Small Talk, and Making Connections Count",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["reading_rooms_social", "asking_good_questions"],
+          ["networking", "small talk", "working a room", "introductions",
+           "business cards", "follow up", "professional", "cultural capital",
+           "social skills", "class"]),
+    # The professional networking event is a coded social ritual.
+    # How to enter a group conversation, how to exit without rudeness,
+    # how to introduce yourself with a clear statement of what you do,
+    # how to remember names, how to follow up after. Small talk as
+    # a genuine skill: weather → area → work → shared interest, and
+    # how to ask questions that make people feel interesting rather
+    # than interrogated.
+
+    Topic("dress_codes", "Dress Codes — Black Tie, Smart Casual, and the Signals Clothing Sends",
+          "Cultural Capital", [2, 3], [7, 8, 9], 2, 4,
+          [],
+          ["dress code", "black tie", "white tie", "smart casual", "business casual",
+           "uniform", "clothing", "signals", "class", "cultural capital"]),
+    # Black tie: dinner jacket (tuxedo), black bow tie, black trousers with
+    # satin stripe — NOT a lounge suit with a black tie.
+    # White tie: the most formal. Morning dress: for weddings and Ascot.
+    # Business formal vs business casual vs smart casual vs casual —
+    # and why "smart casual" is deliberately ambiguous.
+    # The underlying principle: dress codes are exclusion mechanisms that
+    # require prior knowledge. Knowing them is power.
+
+    Topic("titles_forms_of_address", "Titles and Forms of Address — How to Address Anyone Correctly",
+          "Cultural Capital", [3], [7, 8, 9], 2, 3,
+          ["how_become_lord_mayor"],
+          ["titles", "forms of address", "Your Honour", "My Lord", "Sir",
+           "Dame", "Your Grace", "Your Royal Highness", "doctor", "professor",
+           "cultural capital", "etiquette", "class", "institutions"]),
+    # A judge in the Crown Court: "Your Honour." Court of Appeal: "My Lord/Lady."
+    # A bishop: "My Lord." An archbishop: "Your Grace." The King: "Your Majesty."
+    # A knight: "Sir [first name]." A dame: "Dame [first name]."
+    # A professor: "Professor [surname]," not "Dr" even if they have a doctorate.
+    # Why this matters: getting it wrong in a formal context is immediately
+    # visible and marks you as an outsider. Getting it right costs nothing
+    # once you know it.
+
+    Topic("elite_institutions_how_they_work", "Elite Institutions — Oxbridge, the Inns of Court, the City, and the Club",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["what_is_the_city_of_london", "history_of_democracy_britain"],
+          ["Oxford", "Cambridge", "Inns of Court", "gentlemen's clubs",
+           "elite institutions", "networks", "class", "cultural capital",
+           "how they work", "access", "meritocracy"]),
+    # Oxbridge admissions: the interview as a test of cultural capital as much
+    # as intellect. The tutorial system. The dining hall. What a "college" is.
+    # The Inns of Court: barristers must belong to one (Gray's Inn, Lincoln's Inn,
+    # Inner Temple, Middle Temple). They predate Parliament and still control
+    # access to the bar. Gentlemen's clubs (Reform, Athenaeum, White's):
+    # where decisions get made informally. The City: how the Lord Mayor,
+    # the livery companies, and the Square Mile form a parallel power structure
+    # that coexists with elected government.
+
+    # --- Class and Power ---
+    Topic("private_school_advantage", "Private Schools — What They Actually Teach Beyond the Curriculum",
+          "Cultural Capital", [3], [8, 9], 4, 6,
+          ["british_class_system", "cultural_capital_explained"],
+          ["private school", "independent school", "public school", "Eton",
+           "confidence", "networks", "cultural capital", "class", "inequality",
+           "debate", "speech", "critical thinking"]),
+    # The academic advantage of private schools is real but modest.
+    # The cultural advantage is large and rarely discussed:
+    # debating societies that teach how to argue confidently in public,
+    # cadet forces that teach command and leadership, the assumption that
+    # you will speak up and be heard, networks of peers who will be in
+    # positions of power. These are learnable. They can be practised.
+    # The child who knows this can acquire the skills without the school.
+
+    Topic("british_peerage", "The British Peerage — Lords, Earls, Dukes, and How the Aristocracy Works",
+          "Cultural Capital", [3], [7, 8, 9], 3, 5,
+          ["how_british_parliament_works", "norman_conquest"],
+          ["peerage", "Lords", "Duke", "Marquess", "Earl", "Viscount", "Baron",
+           "House of Lords", "hereditary peers", "life peers", "aristocracy",
+           "British", "class", "cultural capital", "history"]),
+    # Five ranks of the English peerage in descending order:
+    # Duke → Marquess → Earl → Viscount → Baron (and their female equivalents).
+    # How titles are inherited (eldest son), what happens to younger sons
+    # (they become "commoners" — Lord is a courtesy title not a peerage),
+    # why the second son of a duke is "Lord [first name]" not "Lord [surname]."
+    # Life peers: created by the Prime Minister, sit in the Lords, do not
+    # pass the title on. The 1999 Lords Reform Act removed most hereditary peers —
+    # 92 remain by election among themselves as a compromise.
+    # Courtesy titles vs actual titles. "The Honourable." Why some lords are
+    # Earls but called Lord [place name] not Lord [surname].
+
+    Topic("prominent_british_families", "Prominent British Families — Who They Are, How They Got There",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["british_peerage", "british_empire_expansion", "industrial_revolution"],
+          ["aristocracy", "prominent families", "Cavendish", "Churchill", "Cecil",
+           "Spencer", "Rothschild", "Cadbury", "Sainsbury", "historic families",
+           "wealth", "class", "British", "cultural capital", "history"]),
+    # The old landed aristocracy: Cavendish (Dukes of Devonshire — Chatsworth),
+    # Cecil (Marquesses of Salisbury — three Prime Ministers), Howard (Dukes of
+    # Norfolk — England's premier duke, hereditary Earl Marshal).
+    # Families who rose through Empire and industry: the Rothschilds (banking),
+    # the Cadburys and Rowntrees (chocolate and Quaker philanthropy), the
+    # Sainsburys (retail). The distinction between old money (land) and new money
+    # (trade) and how that distinction has softened but not disappeared.
+    # Why knowing these names matters: they appear constantly in British history,
+    # politics, art, and institutions. A child who recognises "Cavendish banana"
+    # (named after the 6th Duke of Devonshire's greenhouse) or knows that
+    # Winston Churchill's family are the Dukes of Marlborough is reading
+    # the culture with more depth.
+
+    Topic("stately_homes_estates", "Stately Homes and Country Estates — Architecture, Power, and Opening to the Public",
+          "Cultural Capital", [2, 3], [6, 7, 8, 9], 3, 4,
+          ["british_peerage", "victorian_britain"],
+          ["stately homes", "country houses", "National Trust", "Chatsworth",
+           "Blenheim", "Longleat", "English Heritage", "architecture",
+           "aristocracy", "class", "history", "cultural capital"]),
+    # The stately home as a symbol of concentrated land ownership.
+    # Chatsworth (Cavendish), Blenheim (Churchill/Marlborough), Longleat
+    # (Thynn/Marquesses of Bath). The Country House crisis of the 20th century:
+    # death duties, the maintenance burden, and the mass demolition of
+    # hundreds of houses 1950-1980. The National Trust as a solution.
+    # Why many aristocratic families now open their homes commercially —
+    # the Duke of Devonshire runs Chatsworth as a significant business.
+    # The architecture as history: the sequence from medieval great hall
+    # through Tudor, Baroque, Palladian, and Victorian country house styles.
+
+    Topic("class_and_language", "Class and Language — Vocabulary, Grammar, and Social Sorting",
+          "Cultural Capital", [3], [8, 9], 4, 5,
+          ["british_class_system", "vocab_register_formality"],
+          ["class", "language", "vocabulary", "U and non-U", "Nancy Mitford",
+           "sofa vs settee", "toilet vs lavatory", "social markers",
+           "cultural capital", "critical thinking"]),
+    # Nancy Mitford's "U and Non-U" essay (1954) mapped upper-class vs
+    # non-upper-class vocabulary: "sofa" (U) vs "settee" (Non-U),
+    # "lavatory" (U) vs "toilet" (Non-U), "looking glass" vs "mirror."
+    # These markers are mostly invisible to those who use them naturally —
+    # that's the point. More recent markers: "lounge" vs "sitting room,"
+    # "pardon?" vs "sorry?" vs "what?" The grammar of authority —
+    # why "Can I help you?" sounds less confident than "How can I help?"
+]
+
+
+# ---------------------------------------------------------------------------
+# Dissent — The History of Refusing
+# Questioning authority, subversiveness, and the people who said no.
+# Not a celebration of rebellion for its own sake, but a rigorous look
+# at when and why individuals and groups refused to comply with unjust
+# systems — what it cost them, what it produced, and how to think about
+# the question "should I comply?" for yourself.
+# Authority is one of the most powerful forces shaping human behaviour
+# (Milgram: 65% of people administered what they thought were lethal
+# shocks when told to by an authority figure). Understanding it is
+# not subversive — it is essential.
+# ---------------------------------------------------------------------------
+
+_DISSENT = [
+
+    # --- Authority ---
+    Topic("milgram_asch_obedience", "Milgram and Asch — The Experiments That Changed How We Think About Compliance",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["cognitive_biases"],
+          ["Milgram", "Asch", "obedience", "conformity", "authority",
+           "experiment", "psychology", "dissent", "critical thinking", "ethics"]),
+    # Milgram's obedience study (1961): ordinary people administered what they
+    # believed were fatal 450-volt shocks when instructed by an authority figure.
+    # 65% went to the maximum. Replicated across cultures, genders, decades.
+    # Asch's conformity experiment (1951): participants denied the evidence of
+    # their own eyes to agree with a group's obviously wrong answer — even with
+    # no pressure beyond social disapproval.
+    # Both studies are disturbing because the participants were not unusual
+    # or cruel people — they were ordinary. The implication: the capacity
+    # for harmful compliance is not a personality trait but a situational response.
+    # The ethical controversy: both studies involved deception. Would the
+    # findings justify the deception? (This connects to research ethics.)
+
+    Topic("authority_and_obedience", "Authority and Obedience — Milgram, Asch, and Why We Comply",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["pattern_ingroup_outgroup", "milgram_asch_obedience"],
+          ["authority", "obedience", "Milgram", "Asch", "conformity",
+           "compliance", "groupthink", "dissent", "psychology", "critical thinking"]),
+    # Milgram (1961): 65% of ordinary people administered what they believed
+    # were fatal electric shocks to a stranger when told to by an authority
+    # figure in a white coat. The result shocked the world — and Milgram himself.
+    # Asch (1951): people denied the evidence of their own eyes to conform
+    # with a group's obviously wrong answer.
+    # The practical question: under what conditions should you comply with
+    # authority, and how do you build the habits of mind that let you say no?
+
+    Topic("legitimate_vs_illegitimate_authority", "When Should You Obey? — Legitimate and Illegitimate Authority",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["authority_and_obedience", "rights_responsibilities"],
+          ["authority", "legitimacy", "civil disobedience", "Thoreau",
+           "Nuremberg defence", "just following orders", "dissent",
+           "ethics", "critical thinking", "philosophy"]),
+    # The Nuremberg defence ("I was just following orders") was rejected —
+    # there are orders that must not be obeyed. But where is the line?
+    # Thoreau's "Civil Disobedience" (1849): you have a duty to refuse
+    # laws that are unjust. But who decides which laws are unjust?
+    # Weber's three types of legitimate authority: traditional (the king),
+    # charismatic (the prophet), rational-legal (the bureaucrat).
+    # The practical tool: ask not "who told me to?" but "is this instruction
+    # consistent with a rule I would endorse if I had made it?"
+
+    Topic("history_of_dissent", "The History of Dissent — People Who Said No and Changed the World",
+          "Dissent", [3], [7, 8, 9], 3, 5,
+          ["civil_rights_global", "abolition_movement"],
+          ["dissent", "history", "Galileo", "Mandela", "Gandhi", "Emmeline Pankhurst",
+           "Rosa Parks", "Alan Turing", "Malala", "whistleblowers",
+           "civil disobedience", "resistance", "courage"]),
+    # A gallery of dissidents across history and what their refusal cost them
+    # and produced. Galileo (house arrest). Wilberforce (decades of parliamentary
+    # failure before abolition). Gandhi (prison, eventual independence).
+    # Rosa Parks (arrest, movement). Nelson Mandela (27 years in prison).
+    # Emmeline Pankhurst (imprisonment, force-feeding). Alan Turing (chemical
+    # castration for his sexuality, then a pardon 60 years later).
+    # The pattern: dissent is expensive for the individual and often only
+    # vindicated long after. What gives people the capacity to sustain it?
+
+    Topic("whistleblowers", "Whistleblowers — When Loyalty Conflicts with Conscience",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["history_of_dissent", "cia_covert_history"],
+          ["whistleblowers", "Edward Snowden", "Chelsea Manning", "Daniel Ellsberg",
+           "Pentagon Papers", "GCHQ", "conscience", "loyalty", "dissent",
+           "ethics", "law", "public interest"]),
+    # Daniel Ellsberg (Pentagon Papers, 1971): leaked evidence that the US
+    # government had been systematically lying about Vietnam.
+    # Chelsea Manning: leaked evidence of civilian killings in Iraq.
+    # Edward Snowden: leaked evidence of mass surveillance of US citizens.
+    # All three faced serious legal consequences. All three argued public
+    # interest justified the breach of loyalty.
+    # The tension: loyalty to an institution vs. loyalty to the truth.
+    # When is leaking information a moral duty, and when is it a betrayal?
+
+    Topic("civil_disobedience_theory", "Civil Disobedience — Breaking the Law to Change It",
+          "Dissent", [3], [8, 9], 4, 6,
+          ["legitimate_vs_illegitimate_authority", "protest_reform"],
+          ["civil disobedience", "Thoreau", "Gandhi", "King", "direct action",
+           "non-violence", "Extinction Rebellion", "suffragettes", "dissent",
+           "ethics", "philosophy", "political systems"]),
+    # Thoreau's conditions for civil disobedience: the law must be unjust,
+    # legal means must have been exhausted, the act must be public and
+    # accepted punishment willingly. Gandhi and King both developed these
+    # conditions into strategic doctrine.
+    # The debate: does accepting punishment make civil disobedience more
+    # legitimate? Is non-violence always necessary? What's the difference
+    # between civil disobedience and terrorism?
+
+    Topic("subcultures_counterculture", "Subcultures and Counterculture — When Groups Refuse the Mainstream",
+          "Dissent", [3], [7, 8, 9], 3, 5,
+          ["music_twentieth_century", "pattern_moral_panic"],
+          ["subculture", "counterculture", "punk", "hippies", "mods", "rockers",
+           "hip hop", "rave", "moral panic", "youth", "dissent",
+           "identity", "culture", "social patterns"]),
+    # Every generation produces a youth subculture that the previous generation
+    # finds threatening. The hippies (1960s) — anti-war, communal, drugs.
+    # Punk (1970s) — anti-establishment, DIY, deliberate offense.
+    # Rave culture (1980s-90s) — the Criminal Justice Act 1994 was written
+    # specifically to criminalise raves ("music characterised by the repetitive
+    # beats"). Each moral panic has the same structure (see pattern_moral_panic).
+    # The interesting question: which subcultures changed mainstream culture,
+    # and what was the mechanism?
+
+    Topic("art_as_dissent", "Art as Dissent — Satire, Propaganda Parody, and Banned Books",
+          "Dissent", [3], [7, 8, 9], 4, 5,
+          ["censorship_history", "art_digital_contemporary"],
+          ["art", "satire", "dissent", "Banksy", "Daumier", "Swift", "Orwell",
+           "banned books", "propaganda parody", "political art",
+           "freedom of expression", "culture"]),
+    # Art as a vehicle for dissent precisely because it's deniable.
+    # Swift's "A Modest Proposal" — proposing to eat Irish babies as
+    # a solution to famine is obviously satire, but impossible to prosecute.
+    # Daumier's caricatures of Louis-Philippe got him jailed.
+    # Shostakovich's coded dissent under Stalin in his symphonies.
+    # Banksy's work — anonymous, site-specific, illegal, globally recognised.
+    # The Index Librorum Prohibitorum (banned books list) as an inadvertent
+    # guide to which ideas were considered dangerous enough to suppress.
+
+    Topic("internet_dissent_anonymous", "The Internet and Anonymous Dissent — WikiLeaks, Anonymous, and Hacktivism",
+          "Dissent", [3], [8, 9], 4, 5,
+          ["whistleblowers", "how_internet_works_deep"],
+          ["WikiLeaks", "Anonymous", "hacktivism", "internet", "dissent",
+           "Assange", "digital activism", "Tor", "dark web",
+           "freedom of information", "censorship", "critical thinking"]),
+    # The internet created new forms of dissent: anonymous leak platforms
+    # (WikiLeaks), coordinated hacktivist campaigns (Anonymous), encrypted
+    # communication (Tor) allowing activists to organise under authoritarian
+    # regimes. The same tools that protect dissidents protect criminals.
+    # The legal grey zone: is publishing leaked government documents journalism
+    # or espionage? Different countries give different answers.
+
+    Topic("questioning_authority_practically", "How to Question Authority — Without Getting It Wrong",
+          "Dissent", [3], [7, 8, 9], 4, 5,
+          ["legitimate_vs_illegitimate_authority", "how_to_disagree"],
+          ["questioning authority", "practical", "when to comply", "when to push back",
+           "escalation", "documentation", "dissent", "critical thinking",
+           "life skills", "confidence"]),
+    # Practical skills for questioning authority constructively:
+    # Ask "can you help me understand the reason for this?" before deciding
+    # whether to comply. Document. Find the rule and read it yourself.
+    # Escalate in writing (email creates a record; verbal complaints don't).
+    # Know your rights and cite them calmly. The distinction between
+    # "I disagree with this" (express your view, comply) and
+    # "this is unlawful" (do not comply, document, report).
+    # When to involve a third party: union rep, solicitor, ombudsman, MP.
+]
+
+
+# ---------------------------------------------------------------------------
+# Surveillance — The State, the Corporation, and the Watched Life
+# From the KGB card index to GCHQ's bulk collection to TikTok's data.
+# The history of state surveillance, its mechanics, its justifications,
+# the literature it produced (Orwell), and what it means to live
+# in the most surveilled democracy on Earth (the UK).
+# Orwell's 1984 is the spine — but the real systems are more interesting
+# and more disturbing than the fiction, because they are real.
+# ---------------------------------------------------------------------------
+
+_SURVEILLANCE = [
+
+    # --- The Concept ---
+    Topic("what_is_surveillance", "What Is Surveillance — Watching, Recording, and Control",
+          "Surveillance", [3], [7, 8, 9], 3, 5,
+          ["cyber_security", "digital_literacy"],
+          ["surveillance", "watching", "CCTV", "data", "control", "power",
+           "Bentham", "panopticon", "Foucault", "critical thinking"]),
+    # The panopticon (Jeremy Bentham, 1787): a prison designed so the
+    # inmates never know when they are being watched — so they behave as if
+    # always watched. Foucault's insight: this is how modern society works.
+    # The key distinction: surveillance as security (catching criminals after
+    # the fact) vs surveillance as control (preventing dissent, shaping behaviour
+    # before any crime is committed). The latter doesn't require the state to
+    # read every file — it only requires people to believe they might be.
+
+    Topic("orwell_1984", "1984 — George Orwell and the Language of Totalitarian Surveillance",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["what_is_surveillance", "pattern_authoritarian_rise"],
+          ["1984", "Orwell", "Big Brother", "Newspeak", "doublethink", "Thoughtcrime",
+           "Room 101", "surveillance", "totalitarianism", "literature",
+           "dystopia", "language"]),
+    # Orwell wrote 1984 in 1948 (reverse the last two digits) based on his
+    # observations of Stalin's USSR and Nazi Germany, and his experience at
+    # the BBC (he saw how language could be weaponised for propaganda).
+    # The key concepts: Big Brother (surveillance as omnipresent threat),
+    # Newspeak (reducing the vocabulary to make dissident thought impossible —
+    # if you have no word for "freedom" you cannot think the concept),
+    # doublethink (holding two contradictory beliefs simultaneously), Thoughtcrime.
+    # The Ministry of Truth produces lies. The Ministry of Love conducts torture.
+    # Room 101: your worst fear, used to break you.
+    # What Orwell got right vs what real surveillance states actually look like.
+
+    # --- Historical Surveillance States ---
+    Topic("soviet_surveillance", "The KGB and the Soviet Surveillance State",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["cold_war_context", "pattern_authoritarian_rise"],
+          ["KGB", "Soviet Union", "surveillance", "informers", "Stasi",
+           "files", "gulags", "dissident", "history", "totalitarianism",
+           "East Germany"]),
+    # The KGB at its peak had 480,000 officers and 5 million informers —
+    # roughly one informer per 6 Soviet citizens. Not to arrest everyone,
+    # but to create a climate where people self-censored. You didn't know
+    # who was reporting on you, so you were careful around everyone.
+    # The Stasi (East German secret police): 91,000 full-time officers for
+    # a country of 16 million. When the Berlin Wall fell and the Stasi files
+    # opened, people discovered their closest friends and family members had
+    # been filing reports on them for decades. The film *The Lives of Others*
+    # (2006) is the best dramatisation.
+    # The legacy: post-Soviet countries still deal with the social damage
+    # of networks of betrayal that ran through every community.
+
+    Topic("chinese_surveillance_state", "China's Surveillance State — Social Credit, AI, and the Panopticon at Scale",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["artificial_intelligence_basics", "what_is_surveillance"],
+          ["China", "surveillance", "social credit", "facial recognition",
+           "AI", "WeChat", "Great Firewall", "Xinjiang", "Uyghurs",
+           "digital authoritarianism", "critical thinking"]),
+    # China has built the most technologically advanced surveillance state
+    # in history. Key components:
+    # — 700 million+ CCTV cameras (ratio: roughly one per two people)
+    # — Facial recognition integrated with transport, payments, and access systems
+    # — WeChat: communications, payments, and identity on one platform the
+    #   government can read
+    # — The Great Firewall: no Google, Facebook, WhatsApp, YouTube — replaced
+    #   with domestic equivalents the government controls
+    # — Social credit systems (multiple, not one unified system — the Western
+    #   "Black Mirror" narrative is an oversimplification)
+    # — Xinjiang: the most intensive surveillance of the Uyghur Muslim minority —
+    #   considered by many governments and scholars as the infrastructure of genocide
+    # The export question: China is selling its surveillance infrastructure
+    # to authoritarian governments globally — "Digital Silk Road."
+
+    Topic("stasi_files", "The Stasi Files — What Happens When the Surveillance State Opens Its Records",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["soviet_surveillance", "censorship_history"],
+          ["Stasi", "East Germany", "files", "informers", "trauma", "betrayal",
+           "history", "surveillance", "reconciliation", "memory"]),
+    # When the Berlin Wall fell (1989), East Germans stormed Stasi offices
+    # before records could be destroyed. 111 km of files were preserved.
+    # Citizens can apply to see their own files — a bureaucratic process that
+    # for many people revealed devastating truths: a spouse who was an informer,
+    # a parent who filed reports, a friend who fed information for 20 years.
+    # The question of what to do with this knowledge — forgiveness, prosecution,
+    # or simply living with the fact — is one of the hardest questions in
+    # post-authoritarian societies.
+
+    # --- Democratic Surveillance ---
+    Topic("gchq_and_nsa", "GCHQ, the NSA, and Mass Surveillance in Democracies",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["cia_covert_history", "internet_dissent_anonymous"],
+          ["GCHQ", "NSA", "Five Eyes", "Snowden", "bulk collection", "metadata",
+           "PRISM", "Tempora", "surveillance", "democracy", "law", "privacy"]),
+    # GCHQ (UK) and NSA (US) were revealed by Snowden (2013) to be conducting
+    # bulk collection of internet communications — not targeted surveillance
+    # of suspects but collection of everyone's metadata and in many cases
+    # content. Key programmes:
+    # — PRISM (NSA): access to data from major US tech companies
+    # — Tempora (GCHQ): tapping undersea fibre optic cables to intercept
+    #   internet traffic passing through the UK
+    # — Upstream collection: tapping the internet's backbone infrastructure
+    # The legal architecture: the Investigatory Powers Act 2016 ("Snoopers'
+    # Charter") — legalised bulk collection in the UK. Upheld by courts.
+    # The Five Eyes: intelligence-sharing between UK, US, Canada, Australia,
+    # New Zealand — allows each to surveil the others' citizens and share the
+    # data, circumventing domestic legal restrictions.
+
+    Topic("uk_cctv_most_surveilled", "The UK — The Most Surveilled Country in the Democratic World",
+          "Surveillance", [3], [8, 9], 4, 5,
+          ["gchq_and_nsa", "what_is_surveillance"],
+          ["UK", "CCTV", "surveillance", "facial recognition", "police",
+           "London", "data retention", "surveillance capitalism",
+           "democracy", "critical thinking", "British"]),
+    # The UK has approximately 5.2 million CCTV cameras — one for every 13 people,
+    # the highest density in the democratic world after China.
+    # London is the 3rd most surveilled city on Earth after Taiyuan and
+    # Wuxi (China). Most cameras are privately owned (shops, offices,
+    # Transport for London) but accessible to police.
+    # The Prevent programme: UK schools and public sector workers are legally
+    # required to report anyone showing "signs of radicalisation" — creating
+    # a surveillance network in every classroom and hospital.
+    # Facial recognition trials by the Metropolitan Police — challenged in
+    # courts, use continues.
+    # The normalisation question: the UK public largely accepts this level
+    # of surveillance. Why? Is that acceptance informed?
+
+    Topic("surveillance_capitalism", "Surveillance Capitalism — Google, Facebook, and the Business of Watching",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["attention_economy", "gchq_and_nsa"],
+          ["surveillance capitalism", "Shoshana Zuboff", "data", "Google",
+           "Facebook", "behavioural prediction", "targeting", "advertising",
+           "privacy", "surveillance", "critical thinking"]),
+    # Shoshana Zuboff's term (2019): a new economic logic where human
+    # experience is the raw material, transformed into behavioural data,
+    # used to predict and modify behaviour, and sold as a commodity.
+    # The key insight: Google and Facebook are not primarily advertising
+    # companies — they are behavioural modification companies. The product
+    # is not ads; it is predictable human behaviour sold to clients.
+    # "If you're not paying for the product, you are the product" — and even
+    # this undersells it: you're the raw material in a factory that produces
+    # predictions about you and sells them to whoever will pay.
+    # State vs corporate surveillance: different in motivation but converging
+    # in infrastructure. States can compel corporations to share.
+
+    Topic("surveillance_and_protest", "Surveillance and Protest — How Movements Are Monitored and Disrupted",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["uk_cctv_most_surveilled", "protest_reform"],
+          ["surveillance", "protest", "undercover police", "COINTELPRO",
+           "Special Branch", "facial recognition", "chilling effect",
+           "dissent", "democracy", "history"]),
+    # COINTELPRO (FBI, 1956-1971): covert programme to "neutralise" civil rights,
+    # anti-war, and other movements — harassment, disinformation, informers.
+    # Martin Luther King Jr was under FBI surveillance from 1958 until his death.
+    # UK undercover police: officers spent years in relationships with activists,
+    # fathered children with women in environmental groups, infiltrated protest
+    # movements. Exposed through the "Spy Cops" inquiry (ongoing).
+    # The chilling effect: surveillance of protest movements doesn't require
+    # arrest to be effective — knowing you're being watched changes how people
+    # behave. The Met's use of facial recognition at protests.
+
+    Topic("privacy_as_right", "Privacy — Why It Matters Even If You Have Nothing to Hide",
+          "Surveillance", [3], [8, 9], 4, 6,
+          ["surveillance_capitalism", "rights_responsibilities"],
+          ["privacy", "nothing to hide", "rights", "autonomy", "surveillance",
+           "democracy", "critical thinking", "law", "human rights"]),
+    # "I have nothing to hide" — the most common response to surveillance.
+    # The responses to this argument:
+    # — Glenn Greenwald: "You don't need anything to hide to have something
+    #   to protect — privacy is the right to a self that isn't observed."
+    # — Bruce Schneier: the nothing-to-hide argument assumes the government
+    #   is benign today and will remain so. But laws change, governments change.
+    #   East Germans who had nothing to hide in 1975 may not have in 1950.
+    # — The chilling effect: privacy enables the exploration of ideas before
+    #   they're ready to be shared. Without it, people self-censor.
+    # — The power asymmetry: surveillance flows one way — the state sees you;
+    #   you do not see the state. This imbalance is itself a form of power.
+    # Article 8 of the European Convention on Human Rights: the right to private
+    # and family life — and how UK courts balance this against security.
+
+    Topic("resisting_surveillance", "Resisting Surveillance — What You Can Actually Do",
+          "Surveillance", [3], [8, 9], 3, 5,
+          ["privacy_as_right", "information_hygiene"],
+          ["surveillance", "privacy", "encryption", "VPN", "Tor", "Signal",
+           "GDPR", "subject access request", "practical", "digital literacy",
+           "critical thinking", "life skills"]),
+    # Practical tools and legal rights:
+    # — End-to-end encryption: Signal, WhatsApp (to a degree). What E2EE
+    #   actually means and what it doesn't protect against.
+    # — GDPR Subject Access Request: you have the right to ask any organisation
+    #   what data they hold about you, and they must tell you within 30 days.
+    # — Tor and VPNs: what they protect (IP address, ISP logging) and what
+    #   they don't (your identity at endpoints, metadata patterns).
+    # — Ad blockers and tracker blockers as basic hygiene.
+    # — Covering cameras, using cash, choosing not to use loyalty cards.
+    # — The ICO (Information Commissioner's Office): the UK data regulator
+    #   and how to make a complaint.
+    # The broader point: privacy is a skill that requires active maintenance,
+    # not a default state. Choosing your level of exposure is itself an act
+    # of agency.
+
+    Topic("practical_surveillance_avoidance", "Practical Surveillance Avoidance — A Field Guide",
+          "Surveillance", [3], [8, 9], 3, 5,
+          ["resisting_surveillance", "cyber_security"],
+          ["surveillance avoidance", "OPSEC", "operational security", "Signal",
+           "encrypted email", "ProtonMail", "Tor browser", "VPN", "cash",
+           "metadata", "IMSI catcher", "faraday bag", "practical", "privacy"]),
+    # A practical, graded guide. Not paranoia — calibrated to actual threat models.
+    # Threat model: who might be watching you, and why?
+    # — Default: corporations (advertising data, behaviour prediction)
+    # — Elevated: employers, ex-partners, private investigators
+    # — High: journalists, activists, people in authoritarian environments
+    # — Extreme: state-level adversaries
+    # Most people need Level 1-2. The tools scale.
+    #
+    # Level 1 — Basic hygiene (everyone should do this):
+    # — Signal for messaging (E2EE, no metadata stored, open source)
+    # — Browser: Firefox with uBlock Origin. Or Brave.
+    # — DNS over HTTPS (stops your ISP logging every site you visit)
+    # — HTTPS everywhere (look for the padlock)
+    # — Strong unique passwords + password manager (Bitwarden is free)
+    # — 2FA on everything important (authenticator app, not SMS)
+    # — Review app permissions: which apps have your location, microphone, camera?
+    #
+    # Level 2 — Reducing the corporate surveillance footprint:
+    # — ProtonMail or Tutanota instead of Gmail for sensitive email
+    # — Cash for purchases you don't want linked to your identity
+    # — Decline loyalty cards (they build detailed purchase profiles)
+    # — Search: DuckDuckGo or Startpage instead of Google
+    # — Use a VPN when on public WiFi (prevents network-level snooping)
+    # — Turn off location services for apps that don't need them
+    # — GDPR Subject Access Requests: find out what Google/Facebook/your
+    #   bank actually holds about you (shocking the first time)
+    #
+    # Level 3 — Operational security for specific situations:
+    # — Tor Browser: routes traffic through multiple encrypted relays.
+    #   Slow. Not for daily use. Very effective for specific lookups.
+    # — Airplane mode is a hardware switch for radio — more reliable than
+    #   software "off." A phone in airplane mode cannot be tracked by cell towers.
+    # — IMSI catchers (Stingrays): devices that mimic cell towers and capture
+    #   phone identifiers. Used by police. Faraday bags block all signals.
+    # — Metadata: even E2EE doesn't hide who you talked to, when, and for how long.
+    #   Signal minimises metadata; most services don't.
+    # — Camera covers: functional. Microphone is harder — no physical switch
+    #   on most devices.
+    #
+    # The key concept: security is about reducing attack surface, not
+    # achieving perfect privacy. Every layer helps. You don't have to
+    # do everything to do something.
+]
+
+
+# ---------------------------------------------------------------------------
+# Corruption — How Power Is Actually Exercised
+# Not the cartoon version (a villain accepts a briefcase of cash)
+# but the institutional version: the revolving door, the consultancy,
+# the second job, the donation that coincides with a policy change,
+# the lobbying that shapes the legislation before it's written.
+# Western corruption is mostly legal. That's what makes it hard to see
+# and hard to argue against. This section teaches children to read
+# the structures, not just the scandals.
+# ---------------------------------------------------------------------------
+
+_CORRUPTION = [
+
+    # --- Defining the Problem ---
+    Topic("what_is_corruption", "What Is Corruption — Bribery, Conflicts of Interest, and the Spectrum",
+          "Corruption", [3], [7, 8, 9], 3, 5,
+          ["what_is_government", "pattern_wealth_inequality"],
+          ["corruption", "bribery", "conflict of interest", "nepotism",
+           "cronyism", "revolving door", "transparency", "accountability",
+           "power", "critical thinking"]),
+    # Corruption exists on a spectrum from the unambiguous (cash for a contract)
+    # to the entirely legal (a minister who regulated an industry joining its
+    # board on leaving office). Most of what determines who gets what in Western
+    # democracies sits in the legal middle of the spectrum — not technically
+    # corruption, but producing the same result: decisions that benefit those
+    # with access at the expense of those without.
+    # The key distinction: illegal corruption (bribery, fraud) vs. legal
+    # corruption (lobbying, revolving door, donations that shape policy).
+    # Transparency International's Corruption Perceptions Index: the UK scores
+    # relatively well on illegal corruption but poorly on the legal kind.
+
+    Topic("uk_lobbying", "Lobbying — How Money Influences UK Law Before It's Written",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["what_is_corruption", "how_laws_made_britain"],
+          ["lobbying", "UK", "Parliament", "amendments", "all-party groups",
+           "think tanks", "policy", "money", "corruption", "political systems",
+           "critical thinking"]),
+    # Lobbying is legal and largely unregulated in the UK compared to the US.
+    # Mechanisms:
+    # — All-Party Parliamentary Groups (APPGs): cross-party groups on any topic,
+    #   often funded and staffed by the industries they supposedly scrutinise.
+    #   There is an APPG on alcohol funded by the drinks industry.
+    # — Think tanks: many produce research that looks independent but is
+    #   funded by interested parties. The Institute of Economic Affairs
+    #   (pro-deregulation) has never disclosed its funders.
+    # — Amendments: lobbyists write specific legislative amendments, which
+    #   are then tabled by MPs. The public never sees who wrote the text.
+    # — "Second reading dinners": lobbyists invite MPs to dinners during
+    #   the legislative process.
+    # The Register of Lobbyists is voluntary and widely evaded.
+
+    Topic("revolving_door", "The Revolving Door — Ministers, Civil Servants, and the Industries They Regulate",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["what_is_corruption", "what_is_the_civil_service"],
+          ["revolving door", "UK", "ministers", "civil servants",
+           "advisory committee", "ACOBA", "conflict of interest",
+           "defence", "banking", "NHS", "corruption", "power"]),
+    # The revolving door: individuals move between government (where they
+    # make decisions) and private sector (where they profit from those decisions).
+    # The Advisory Committee on Business Appointments (ACOBA): meant to police
+    # this. In practice, toothless — it can only recommend, not enforce.
+    # Examples: former defence ministers joining arms companies, former health
+    # ministers joining pharmaceutical companies, former financial regulators
+    # joining banks. The "cooling off" period is usually two years — short enough
+    # to maintain relationships, long enough to be technically compliant.
+    # The deeper issue: even without explicit quid pro quo, the expectation of
+    # post-government employment shapes decisions made in government. You don't
+    # need to be bribed — you just need to know where the opportunities are.
+
+    Topic("cash_for_questions", "Cash for Questions and Pay to Play — UK Parliamentary Scandals",
+          "Corruption", [3], [8, 9], 4, 5,
+          ["revolving_door", "how_british_parliament_works"],
+          ["cash for questions", "pay to play", "UK", "Parliament",
+           "Hamilton", "Mandelson", "expenses scandal", "sleaze",
+           "history", "corruption", "political systems"]),
+    # Cash for Questions scandal (1994): Neil Hamilton and other Conservative MPs
+    # accepted cash from Mohamed Al Fayed to ask questions in Parliament.
+    # Exposed by the Guardian. Led to the Committee on Standards in Public Life
+    # (Nolan Committee) and the Seven Principles of Public Life.
+    # Peter Mandelson: resigned twice from Cabinet — once for a £373,000 home
+    # loan from a Cabinet colleague (Geoffrey Robinson) while his department
+    # was investigating Robinson's affairs; once over a passport application for
+    # a donor. Rehabilitated, later became European Commissioner and Baron.
+    # The 2009 expenses scandal: MPs claiming public money for duck houses,
+    # moat cleaning, and flipping second homes. 300+ MPs named.
+    # The pattern in each: the system created the opportunity; individuals
+    # took it. Reform followed scandal, then the cycle resumed.
+
+    Topic("political_donations_legislation", "Political Donations — How Money Shapes Legislation",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["uk_lobbying", "electoral_systems"],
+          ["political donations", "party funding", "donors", "legislation",
+           "peerages", "cash for honours", "tax policy", "correlation",
+           "corruption", "democracy", "critical thinking"]),
+    # UK political parties receive large donations from wealthy individuals
+    # and corporations. The system is legal and disclosed, but the correlation
+    # between donations and outcomes is consistent:
+    # — Cash for Honours (2006): Blair's government under police investigation
+    #   for awarding peerages to party donors. No charges. Practice continues.
+    # — The Tories received large donations from hedge funds before cutting
+    #   capital gains tax. Labour received from unions before employment legislation.
+    # — The Non-dom issue: donors who are non-domiciled for tax purposes
+    #   funding parties that then protect non-dom status.
+    # The methodological challenge: proving causation vs. correlation is
+    # genuinely difficult. Rich people donate to parties whose policies
+    # they prefer — or parties adopt policies preferred by donors who fund them?
+    # Both can be true simultaneously. This is what makes legal corruption
+    # so hard to prosecute.
+
+    Topic("us_corruption_systems", "US Political Corruption — Citizens United, Super PACs, and Dark Money",
+          "Corruption", [3], [9], 4, 6,
+          ["political_donations_legislation", "how_central_banks_work"],
+          ["US", "Citizens United", "Super PAC", "dark money", "lobbying",
+           "K Street", "campaign finance", "Congress", "corruption",
+           "political systems", "critical thinking"]),
+    # The US system is more explicitly monetised than the UK's.
+    # Citizens United v. FEC (2010): Supreme Court ruled corporations have
+    # free speech rights — corporate political spending cannot be limited.
+    # This created Super PACs: unlimited spending organisations.
+    # Dark money: nonprofit organisations that spend on elections without
+    # disclosing donors. Completely legal.
+    # K Street: Washington DC's lobbying corridor. 12,000+ registered lobbyists.
+    # The revolving door is more formalised: staff go from Congressional committees
+    # to industry lobbying and back. The data: lobbying spend in the US is
+    # ~$4 billion annually. For most industries, every $1 spent on lobbying
+    # produces $220 in tax breaks or regulatory savings.
+
+    Topic("offshore_tax_avoidance", "Offshore Finance — Tax Avoidance, Secrecy Jurisdictions, and the UK's Role",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["pattern_wealth_inequality", "empire_trade_economy"],
+          ["offshore", "tax avoidance", "Cayman Islands", "British Virgin Islands",
+           "Jersey", "secrecy jurisdiction", "Panama Papers", "Pandora Papers",
+           "UK", "City of London", "corruption", "inequality", "critical thinking"]),
+    # The UK sits at the centre of the world's offshore financial system.
+    # The Crown Dependencies (Jersey, Guernsey, Isle of Man) and Overseas
+    # Territories (Cayman Islands, British Virgin Islands, Bermuda) are
+    # secrecy jurisdictions — nominally independent but with the City of
+    # London at their hub. They hold an estimated £9-36 trillion in offshore
+    # wealth. This is not illegal — it is the system operating as designed.
+    # Panama Papers (2016): 11.5 million leaked documents from Mossack Fonseca,
+    # revealing offshore structures used by world leaders, celebrities, and
+    # criminals. The UK's response: a public register of beneficial ownership
+    # (who actually owns shell companies) — but the Overseas Territories
+    # were given extensions until 2027 and lobbied successfully against it.
+    # The City of London's role: not just a financial centre but the architect
+    # and defender of the offshore system it profits from.
+
+    Topic("media_ownership_and_politicians", "The Murdoch Problem — Media Ownership, Politicians, and Mutual Dependency",
+          "Corruption", [3], [8, 9], 4, 6,
+          ["media_ownership", "political_donations_legislation"],
+          ["Murdoch", "News International", "Sun", "Times", "phone hacking",
+           "Leveson", "media ownership", "politicians", "influence",
+           "UK", "corruption", "democracy", "critical thinking"]),
+    # Every British Prime Minister since Thatcher has cultivated Rupert Murdoch.
+    # Blair flew to Australia to address News Corp executives before the 1997
+    # election. Cameron was personal friends with Rebekah Brooks.
+    # Phone hacking scandal: News of the World hacked phones of murder victims,
+    # soldiers' families, and celebrities. Closure of the paper, Leveson Inquiry,
+    # no significant legislation followed.
+    # The mechanism: Murdoch's papers can destroy a politician's reputation
+    # through consistent hostile coverage, or build it through endorsement.
+    # Politicians know this. The access granted, the favours done, the policies
+    # adopted in response are rarely provable but structurally predictable.
+    # The Leveson Inquiry heard evidence of direct contact between News
+    # International executives and government ministers over policy decisions.
+
+    Topic("corruption_global_context", "Global Corruption — From Kleptocracies to the World Bank's Failure",
+          "Corruption", [3], [9], 4, 5,
+          ["what_is_corruption", "globalisation_ks3"],
+          ["corruption", "kleptocracy", "Nigeria", "Russia", "World Bank",
+           "aid", "development", "oligarchs", "sanctions", "global",
+           "critical thinking", "political systems"]),
+    # Kleptocracy: government as organised theft. Russia under Putin is the
+    # clearest current example — state assets transferred to oligarchs loyal
+    # to the regime; estimated $200bn+ taken offshore by the Putin circle.
+    # The role of Western enablers: London lawyers, PR firms, accountants,
+    # and banks that legitimise and manage stolen wealth.
+    # "Londongrad": how London became the preferred destination for oligarch
+    # wealth — libel law used to suppress journalism, Companies House
+    # registration no-questions-asked, prime property as a store of value.
+    # Aid and development: World Bank money intended for infrastructure in
+    # poor countries that ends up in Swiss accounts. The structural problem
+    # of building institutions in the absence of accountability.
+
+    Topic("eastern_corruption_direct", "Corruption in the East — Baksheesh, Speed Money, and the Everyday Price of Everything",
+          "Corruption", [3], [8, 9], 3, 5,
+          ["what_is_corruption", "global_corruption"],
+          ["corruption", "baksheesh", "speed money", "India", "Russia", "China",
+           "Middle East", "Africa", "everyday corruption", "police", "permits",
+           "culture", "comparative", "critical thinking"]),
+    # In many countries, corruption is not a scandal but a system — the
+    # actual mechanism by which things get done. The contrast with the West:
+    # Western corruption is mostly legal (lobbying, revolving door, donations).
+    # Eastern corruption is often illegal but normalised. Both produce the
+    # same result: outcomes determined by who has money and connections,
+    # not by merit or law.
+    # Baksheesh (Arabic/Persian/Urdu/Hindi): a tip, a bribe, a payment
+    # for a favour — the word is deliberately ambiguous. In practice:
+    # paying a policeman not to write a ticket, paying a bureaucrat to
+    # process a permit faster, paying a doctor to jump a hospital queue.
+    # Speed money: payments to make the bureaucracy move at normal speed
+    # (what should be free is made deliberately slow to extract payment).
+    # Russia: corruption is structural — tax inspectors, police, and courts
+    # as revenue-generation systems for their operators. The raider system:
+    # profitable businesses seized through corrupt court orders.
+    # India: "inspector raj" — every permit, licence, and inspection is an
+    # extraction opportunity. The Right to Information Act (2005) was
+    # partly an anti-corruption tool.
+    # Nigeria: oil revenue corruption — the mechanics of how oil money
+    # meant for development gets distributed to political networks.
+    # The difference in visibility: in the UK, a child is unlikely to
+    # personally encounter a corrupt official. In many countries, they
+    # would encounter it at every checkpoint, every government office,
+    # every interaction with authority. Both systems are corrupt.
+    # The West's version just has better PR.
+
+    Topic("anti_corruption_tools", "Fighting Corruption — Transparency, Accountability, and What Works",
+          "Corruption", [3], [8, 9], 4, 5,
+          ["what_is_corruption", "how_to_fact_check"],
+          ["anti-corruption", "transparency", "FOI", "Freedom of Information",
+           "whistleblowing", "journalism", "accountability", "Transparency International",
+           "GRECO", "practical", "critical thinking", "democracy"]),
+    # Freedom of Information requests: the legal right to request any
+    # information held by public bodies. Used by journalists to expose
+    # the expenses scandal, council waste, NHS contracts. The government
+    # has repeatedly tried to weaken it.
+    # Investigative journalism: the Panama Papers, Pandora Papers, and
+    # phone hacking were all broken by journalists, not regulators.
+    # The OCCRP (Organised Crime and Corruption Reporting Project):
+    # cross-border collaboration between investigative journalists.
+    # The practical question: what can an individual citizen do?
+    # — Register to vote and use it
+    # — Read beyond the headline (who funded this think tank?)
+    # — Support investigative journalism financially
+    # — Use FOI requests
+    # — Know who your MP is and write to them
+    # The structural answer: public funding of political parties (removes
+    # donor dependency), stronger lobbying registers, closed revolving door.
+    # None of these happen without political will. Political will doesn't
+    # happen without an informed, engaged public.
+]
+
+
+# ---------------------------------------------------------------------------
+# World Economies — How Different Countries Organise Their Economies
+# Not "capitalism good / socialism bad" or vice versa — a serious look
+# at the different models countries have tried, what they produce,
+# who benefits, and what trade-offs each involves.
+# Covers: economic systems as theory, case studies of specific countries,
+# sectors and industries, trade and globalisation, development, and
+# how you actually read an economy.
+# ---------------------------------------------------------------------------
+
+_WORLD_ECONOMIES = [
+
+    # --- Economic Systems ---
+    Topic("economic_systems_overview", "Economic Systems — Capitalism, Socialism, and Everything Between",
+          "World Economies", [3], [7, 8, 9], 3, 5,
+          ["supply_demand_prices", "what_is_government"],
+          ["capitalism", "socialism", "mixed economy", "command economy",
+           "market", "economic systems", "ideology", "comparison",
+           "critical thinking", "economics"]),
+    # Pure capitalism (no government intervention) and pure communism
+    # (total state ownership) are both theoretical extremes no country has
+    # fully implemented. Every real economy is a mixed economy somewhere
+    # on the spectrum. The interesting questions are: what gets mixed and
+    # how, who decides, and who benefits?
+    # Key dimensions: who owns the means of production, how prices are set,
+    # how goods are distributed, what the state provides, how inequality
+    # is managed. Different countries have made very different choices on
+    # each of these — and changed their minds over time.
+
+    Topic("nordic_model", "The Nordic Model — High Tax, High Trust, and Why It Works",
+          "World Economies", [3], [7, 8, 9], 4, 5,
+          ["economic_systems_overview", "welfare_state"],
+          ["Nordic model", "Sweden", "Norway", "Denmark", "Finland", "Iceland",
+           "high tax", "universal services", "social trust", "unions",
+           "Gini coefficient", "happiness index", "economics", "comparison"]),
+    # Sweden, Denmark, Norway, and Finland consistently top rankings for
+    # happiness, social mobility, and economic competitiveness despite
+    # (or because of?) very high taxes and strong unions.
+    # Key features: universal healthcare and education, strong employment
+    # protection, high minimum wages set by collective bargaining not law,
+    # significant state ownership in strategic sectors.
+    # The trust argument: high-trust societies can sustain high-tax models
+    # because citizens believe the money is spent well and fairly.
+    # The oil question: Norway's Government Pension Fund (oil revenues
+    # invested for future generations) — one of the world's largest
+    # sovereign wealth funds. Deliberate policy choice, not luck.
+    # Criticisms: high conformity pressure, high cost of living, difficult
+    # immigration integration, small homogeneous populations easier to run.
+
+    Topic("us_economy_model", "The US Model — Deregulation, Innovation, and the World's Reserve Currency",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "us_corruption_systems"],
+          ["USA", "deregulation", "free market", "Silicon Valley", "innovation",
+           "Federal Reserve", "dollar", "reserve currency", "inequality",
+           "healthcare", "economics", "comparison"]),
+    # The US model: lower taxes, less regulation, weaker safety net than
+    # most developed economies — but higher innovation, higher GDP per capita,
+    # and dominant global technology companies.
+    # The dollar as the world's reserve currency: most international trade
+    # is denominated in dollars. This gives the US extraordinary power —
+    # it can run large deficits that other countries couldn't, and it can
+    # use financial sanctions (cutting countries off from dollar systems)
+    # as a geopolitical weapon.
+    # The costs: healthcare is the most expensive in the world with mediocre
+    # outcomes, the highest income inequality among developed nations,
+    # the largest prison population, and infrastructure that lags behind
+    # peer countries.
+    # The tech giant question: Apple, Google, Amazon, Microsoft, Meta —
+    # five companies that each exceed the GDP of most countries.
+
+    Topic("china_economy_model", "The Chinese Model — State Capitalism and the Middle Income Trap",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "chinese_surveillance_state"],
+          ["China", "state capitalism", "Belt and Road", "SOEs", "five year plan",
+           "middle income trap", "Deng Xiaoping", "manufacturing", "development",
+           "economics", "comparison"]),
+    # China's model: market mechanisms at the micro level, state direction
+    # at the macro level. Not communism (markets are real) and not capitalism
+    # (the Party controls key sectors and can override market outcomes).
+    # The development miracle: 800 million people lifted out of poverty in
+    # 40 years — the fastest large-scale development in history.
+    # How it was done: Deng Xiaoping's "socialist market economy" reforms
+    # (1978), Special Economic Zones, state-directed industrial policy,
+    # export manufacturing, massive infrastructure investment.
+    # Belt and Road Initiative: $1 trillion+ in infrastructure investment
+    # across Asia, Africa, and Europe — loans, not grants. The "debt trap"
+    # debate: does BRI create economic dependency or mutual benefit?
+    # The middle income trap: most developing countries stall here.
+    # China is trying to escape it through technology upgrading.
+
+    Topic("german_economy_model", "The German Model — Mittelstand, Apprenticeships, and Patient Capital",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "industrial_revolution"],
+          ["Germany", "Mittelstand", "apprenticeships", "vocational training",
+           "works councils", "patient capital", "Bundesbank", "export model",
+           "manufacturing", "economics", "comparison"]),
+    # Germany as a model for "coordinated market economy" — capitalism
+    # with strong institutions that coordinate rather than just compete.
+    # The Mittelstand: thousands of medium-sized, family-owned companies
+    # that dominate their global niche (machine tools, specialist chemicals,
+    # precision engineering). Not maximising profit but sustaining quality
+    # over generations. Half the world's market-leading niche companies are German.
+    # Works councils: workers have legal rights to be consulted on major
+    # business decisions. Supervisory boards include worker representatives.
+    # Vocational training: half of German school leavers go into apprenticeships
+    # — highly respected, well-paid, well-structured. Germany has almost no
+    # stigma around not attending university.
+    # The export surplus question: Germany's persistent trade surplus is
+    # criticised by the US and within the EU for suppressing domestic demand.
+
+    Topic("japanese_economy_model", "Japan — Lifetime Employment, Deflation, and the Lost Decades",
+          "World Economies", [3], [9], 4, 5,
+          ["economic_systems_overview"],
+          ["Japan", "keiretsu", "lifetime employment", "deflation",
+           "Lost Decade", "Abenomics", "demographics", "ageing population",
+           "economics", "comparison"]),
+    # Japan as a case study in both economic miracle and economic stagnation.
+    # The miracle (1950s-80s): MITI (Ministry of International Trade and Industry)
+    # directing industrial policy, keiretsu (corporate groups with cross-holdings),
+    # lifetime employment creating loyal, stable workforces, trade surpluses
+    # in electronics and cars.
+    # The Lost Decades (1991-present): asset price bubble collapse, deflation
+    # trap (if prices will be lower tomorrow, why buy today?), zombie companies
+    # kept alive by bank forbearance rather than allowed to fail.
+    # The demographic crisis: shrinking, ageing population with almost no
+    # immigration. Japan is the most extreme example of a challenge facing
+    # most developed economies.
+
+    Topic("singapore_model", "Singapore — Authoritarian Capitalism and the City-State That Shouldn't Work",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "what_is_government"],
+          ["Singapore", "Lee Kuan Yew", "authoritarian capitalism", "city-state",
+           "port", "finance", "meritocracy", "CPF", "PAP", "economics",
+           "comparison", "development"]),
+    # Singapore: a city-state of 5.8 million with no natural resources,
+    # surrounded by larger potentially hostile neighbours, that in 50 years
+    # became one of the wealthiest countries in the world.
+    # Lee Kuan Yew's model: single-party rule (PAP), ruthless meritocracy,
+    # zero tolerance for corruption (civil servants paid competitively to
+    # remove the temptation), state ownership of housing (80% of Singaporeans
+    # live in HDB flats, which they own), forced savings (CPF — central
+    # provident fund), strategic position as a hub.
+    # The trade-off: personal freedoms are constrained. Chewing gum was
+    # banned. The press is not free. Opposition politicians are sued into
+    # bankruptcy. Is rapid development worth political repression? Singapore
+    # makes this question concrete rather than abstract.
+
+    Topic("indian_economy", "India — The World's Largest Democracy and Its Economic Contradictions",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "mughal_empire"],
+          ["India", "IT sector", "informal economy", "caste", "licence raj",
+           "services", "manufacturing gap", "demographics", "Bangalore",
+           "economics", "comparison", "development"]),
+    # India: 1.4 billion people, the world's largest democracy, enormous
+    # talent pool, and a paradox — world-class IT and pharmaceutical sectors
+    # alongside mass rural poverty.
+    # The licence raj (pre-1991): every business decision required government
+    # approval. Entrepreneurship was strangled in bureaucracy.
+    # The 1991 reforms: liberalisation triggered by a balance of payments
+    # crisis. Opened markets, reduced controls — GDP growth accelerated.
+    # Why services but not manufacturing? India built an IT sector without
+    # the mass employment manufacturing phase that China used to lift rural
+    # workers into the middle class. Bangalore is world-class; hundreds of
+    # millions remain in subsistence agriculture.
+    # Caste: still affects economic opportunity despite being illegal to
+    # discriminate by. A structural constraint on meritocracy.
+    # The demographic dividend: India will have the world's largest
+    # working-age population by 2030 — a potential advantage or a crisis
+    # depending on whether jobs materialise.
+
+    Topic("gulf_states_model", "The Gulf States — Oil, Sovereign Wealth, and the Post-Oil Question",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "oil_petroleum"],
+          ["Gulf states", "Saudi Arabia", "UAE", "Qatar", "Kuwait",
+           "sovereign wealth fund", "oil", "Vision 2030", "migrant workers",
+           "tourism", "finance", "economics", "comparison"]),
+    # The Gulf model: monetise oil while it's valuable, invest the proceeds
+    # in sovereign wealth funds and economic diversification before the oil
+    # runs out or becomes worthless.
+    # UAE's model: Dubai as a global hub for trade, finance, tourism, and
+    # now tech. The fastest implementation of urban infrastructure in history.
+    # Saudi Arabia's Vision 2030: attempt to diversify before oil revenues
+    # decline. NEOM, tourism, entertainment — sectors previously prohibited.
+    # The migrant worker question: the kafala system ties migrant workers
+    # (who are 90% of the UAE's population) to their employer — they cannot
+    # change jobs or leave without permission. Mass human rights concerns.
+    # Abu Dhabi Investment Authority: one of the world's largest sovereign
+    # wealth funds — owns significant stakes in UK infrastructure, London
+    # property, and global companies.
+
+    Topic("african_economies", "African Economies — Resources, Debt, and the Leapfrog Potential",
+          "World Economies", [3], [8, 9], 4, 5,
+          ["economic_systems_overview", "decolonisation"],
+          ["Africa", "resource curse", "China in Africa", "mobile money",
+           "M-Pesa", "fintech", "leapfrog", "debt", "IMF", "structural adjustment",
+           "economics", "comparison", "development"]),
+    # Africa is not one economy — 54 countries with vast differences.
+    # The resource curse: countries with oil/mineral wealth often have
+    # worse development outcomes than those without. Why? Revenue flows
+    # to elites, Dutch disease undermines other sectors, resource revenue
+    # removes the need to tax citizens (which would require accountability).
+    # The IMF structural adjustment programmes of the 1980s-90s:
+    # conditional loans requiring privatisation, deregulation, and cuts to
+    # public spending. Widely blamed for devastation of health and education
+    # systems. Still contested.
+    # The leapfrog story: mobile money (M-Pesa in Kenya — more people have
+    # M-Pesa accounts than bank accounts), mobile internet, solar energy
+    # bypassing grid infrastructure. Africa may not need the development
+    # path Europe took.
+    # China in Africa: infrastructure investment (Belt and Road), commodity
+    # extraction deals, and the debate about whether this is development
+    # or neo-colonialism.
+
+    Topic("latin_america_boom_bust", "Latin America — The Boom-Bust Cycle and Commodity Dependence",
+          "World Economies", [3], [9], 4, 5,
+          ["economic_systems_overview", "pattern_boom_bust"],
+          ["Latin America", "commodity cycle", "Argentina", "Venezuela",
+           "Brazil", "CEPAL", "resource nationalism", "inequality",
+           "populism", "Lula", "Chávez", "economics", "comparison"]),
+    # Latin America's recurring pattern: commodity boom → inward investment
+    # → debt accumulation → commodity bust → debt crisis → austerity → repeat.
+    # Argentina: 9 sovereign debt defaults — the most in history. Why?
+    # A country that was one of the world's richest in 1900 has had a century
+    # of mismanagement, military coups, and commodity dependence.
+    # Venezuela: the richest oil reserves in the world, one of the worst
+    # economic collapses in modern history. How Chávez's social programmes
+    # were unsustainable, and how Maduro turned a recession into a catastrophe.
+    # Brazil: the B in BRICS. 2003-2014 under Lula — 40 million people
+    # lifted out of poverty through targeted cash transfers (Bolsa Família).
+    # Then commodity bust, corruption scandal, Bolsonaro, pandemic.
+    # The structural challenge: inequality so extreme it distorts markets,
+    # institutions captured by elites, and economies dependent on exports
+    # of commodities whose prices they don't control.
+
+    Topic("development_economics_models", "Development Economics — How Countries Escape Poverty",
+          "World Economies", [3], [9], 4, 6,
+          ["development_inequality_geo", "african_economies"],
+          ["development economics", "poverty trap", "big push", "comparative advantage",
+           "Washington Consensus", "industrial policy", "Ha-Joon Chang",
+           "South Korea", "Taiwan", "catch-up growth", "economics"]),
+    # The central question of development economics: why are some countries
+    # rich and others poor, and what can be done about it?
+    # The Washington Consensus (1989): deregulate, privatise, fiscal discipline,
+    # open markets. Imposed by IMF/World Bank on developing countries.
+    # Results: mixed at best, catastrophic in some cases (Argentina 2001).
+    # The East Asian alternative: South Korea and Taiwan developed through
+    # industrial policy — government picking sectors to build, protecting
+    # infant industries, directing credit. Ha-Joon Chang's argument: every
+    # rich country used industrial policy to develop, then pulled up the
+    # ladder and told developing countries to use free markets.
+    # The poverty trap: poor households can't save, can't invest in health
+    # and education, which keeps them poor. Requires external intervention
+    # to break. Conditional cash transfers (Brazil's Bolsa Família, Mexico's
+    # Oportunidades) as evidence-based tools.
+
+    Topic("how_to_read_an_economy", "How to Read an Economy — GDP, Gini, HDI, and What the Numbers Actually Mean",
+          "World Economies", [3], [7, 8, 9], 3, 5,
+          ["statistics_ks2", "development_inequality_geo"],
+          ["GDP", "GNI", "Gini coefficient", "HDI", "inflation", "unemployment",
+           "trade balance", "current account", "economic indicators",
+           "how to read", "critical thinking", "economics", "maths"]),
+    # GDP (Gross Domestic Product): total value of goods and services produced.
+    # Why it's imperfect: a car crash increases GDP (repairs, medical care).
+    # Unpaid care work (childcare, eldercare) is excluded. Environmental
+    # destruction is excluded.
+    # GNI (Gross National Income): includes income earned abroad.
+    # Important for countries with large diaspora remittances (Philippines, India).
+    # The Gini coefficient: 0 = perfect equality, 1 = one person owns everything.
+    # UK: ~0.35. Nordic countries: ~0.25. US: ~0.40. South Africa: ~0.63.
+    # HDI (Human Development Index): combines income, education, and life
+    # expectancy — gives a richer picture than GDP alone.
+    # Inflation: too low risks deflation (Japan's lost decades), too high
+    # erodes savings and destabilises (Venezuela, Zimbabwe, Weimar Germany).
+    # The 2% target: why central banks aim for 2% inflation, not 0%.
+    # Trade balance: running a surplus is not always good (Germany),
+    # running a deficit is not always bad (the US can because of the dollar).
+]
+
+
+# ---------------------------------------------------------------------------
+# University Pathway Topics
+# Concepts from major undergraduate degrees made accessible before 18.
+# Each topic: teaches a real university-level concept at age-appropriate depth,
+# tags with the degree(s) it feeds, has prerequisites from existing curriculum.
+# Degrees covered: PPE, Law, Medicine, Engineering, Computer Science,
+# Psychology, Sociology, Environmental Science, Architecture.
+# ---------------------------------------------------------------------------
+
+_UNIVERSITY_PATHWAYS = [
+
+    # ===== PPE =====
+    Topic("formal_logic_intro", "Formal Logic — Validity, Soundness, and Truth Tables",
+          "PPE", [3], [8, 9], 4, 6,
+          ["argument_structure", "mathematical_reasoning"],
+          ["logic", "formal logic", "validity", "soundness", "truth table",
+           "modus ponens", "reductio", "PPE", "philosophy", "university"]),
+    Topic("epistemology_intro", "Epistemology — What Is Knowledge and How Do We Have Any?",
+          "PPE", [3], [8, 9], 4, 6,
+          ["scientific_method", "how_to_change_your_mind"],
+          ["epistemology", "knowledge", "JTB", "Gettier", "scepticism",
+           "Descartes", "Hume", "empiricism", "rationalism", "PPE", "philosophy", "university"]),
+    Topic("ethics_frameworks", "Ethical Frameworks — Utilitarianism, Kant, and Virtue Ethics",
+          "PPE", [3], [8, 9], 4, 6,
+          ["ethics_dilemmas", "comparative_ethics"],
+          ["ethics", "utilitarianism", "Kant", "deontology", "virtue ethics",
+           "Bentham", "Mill", "Aristotle", "categorical imperative",
+           "PPE", "philosophy", "university", "moral philosophy"]),
+    Topic("rawls_justice", "Rawls and Justice — The Veil of Ignorance",
+          "PPE", [3], [8, 9], 5, 6,
+          ["ethics_frameworks", "supply_demand_prices"],
+          ["Rawls", "justice", "veil of ignorance", "difference principle",
+           "liberal egalitarianism", "PPE", "philosophy", "political philosophy", "university"]),
+    Topic("game_theory_intro", "Game Theory — Rational Choices When Others Are Choosing Too",
+          "PPE", [3], [8, 9], 4, 6,
+          ["combinatorics", "supply_demand_prices"],
+          ["game theory", "prisoner's dilemma", "Nash equilibrium",
+           "dominant strategy", "zero-sum", "PPE", "economics", "philosophy", "university"]),
+    Topic("market_failure_deep", "Market Failure — Externalities, Public Goods, and Information Asymmetry",
+          "PPE", [3], [8, 9], 4, 6,
+          ["supply_demand_prices", "pattern_tragedy_commons"],
+          ["market failure", "externalities", "public goods", "information asymmetry",
+           "moral hazard", "adverse selection", "Coase theorem",
+           "PPE", "economics", "university"]),
+    Topic("comparative_political_thought", "The Big Political Thinkers — Hobbes to Rawls",
+          "PPE", [3], [8, 9], 4, 6,
+          ["history_of_democracy_britain", "ethics_frameworks"],
+          ["political philosophy", "Hobbes", "Locke", "Rousseau",
+           "Mill", "Marx", "Rawls", "social contract", "liberty",
+           "PPE", "philosophy", "politics", "university"]),
+
+    # ===== LAW =====
+    Topic("jurisprudence_what_is_law", "What Is Law? — Natural Law, Positivism, and Hard Cases",
+          "Law", [3], [8, 9], 4, 6,
+          ["how_laws_made_britain", "ethics_frameworks"],
+          ["jurisprudence", "natural law", "legal positivism", "Hart",
+           "Dworkin", "rule of law", "law", "philosophy of law", "university"]),
+    Topic("contract_law_basics", "How Contract Law Works — Offer, Acceptance, and Consideration",
+          "Law", [3], [8, 9], 3, 5,
+          ["what_is_a_contract", "formal_logic_intro"],
+          ["contract", "offer", "acceptance", "consideration",
+           "breach", "remedies", "law", "university", "life skills"]),
+    Topic("tort_law", "Tort Law — Negligence, Duty of Care, and the Neighbour Principle",
+          "Law", [3], [8, 9], 4, 5,
+          ["jurisprudence_what_is_law"],
+          ["tort", "negligence", "duty of care", "Donoghue v Stevenson",
+           "reasonable person", "causation", "damages", "law", "university"]),
+    Topic("criminal_law_elements", "Criminal Law — Actus Reus, Mens Rea, and Burden of Proof",
+          "Law", [3], [8, 9], 4, 5,
+          ["criminal_law_basics", "formal_logic_intro"],
+          ["criminal law", "actus reus", "mens rea", "intention", "recklessness",
+           "strict liability", "burden of proof", "law", "university"]),
+    Topic("constitutional_law", "Constitutional Law — Parliamentary Sovereignty and Judicial Review",
+          "Law", [3], [8, 9], 4, 6,
+          ["separation_of_powers", "history_of_democracy_britain"],
+          ["constitutional law", "parliamentary sovereignty", "rule of law",
+           "ECHR", "judicial review", "law", "university", "political systems"]),
+
+    # ===== MEDICINE =====
+    Topic("homeostasis", "Homeostasis — How the Body Maintains Stable Conditions",
+          "Medicine", [3], [7, 8, 9], 3, 5,
+          ["human_body_ks2", "nervous_system"],
+          ["homeostasis", "feedback loops", "negative feedback", "blood glucose",
+           "thermoregulation", "medicine", "biology", "university"]),
+    Topic("pharmacology_intro", "Pharmacology — How Drugs Work on the Body",
+          "Medicine", [3], [8, 9], 4, 5,
+          ["how_medicine_made", "nervous_system"],
+          ["pharmacology", "receptor", "agonist", "antagonist", "dose-response",
+           "half-life", "blood-brain barrier", "medicine", "biology", "university"]),
+    Topic("clinical_reasoning", "Clinical Reasoning — How Doctors Think Through a Diagnosis",
+          "Medicine", [3], [8, 9], 4, 5,
+          ["homeostasis", "scientific_method"],
+          ["clinical reasoning", "differential diagnosis", "Bayesian reasoning",
+           "sensitivity", "specificity", "medicine", "university", "critical thinking"]),
+
+    # ===== ENGINEERING =====
+    Topic("systems_thinking", "Systems Thinking — Emergence, Feedback Loops, and Unintended Consequences",
+          "Engineering", [3], [8, 9], 4, 6,
+          ["engineering_design_process", "food_webs_energy_flow"],
+          ["systems thinking", "feedback loops", "emergence", "resilience",
+           "unintended consequences", "complexity", "engineering", "university"]),
+    Topic("materials_selection_engineering", "Materials Selection — How Engineers Choose What to Build With",
+          "Engineering", [3], [8, 9], 4, 5,
+          ["materials_properties", "engineering_design_process"],
+          ["materials selection", "Ashby chart", "Young's modulus", "yield strength",
+           "trade-offs", "engineering", "university"]),
+    Topic("thermodynamics_engineering", "Thermodynamics — Energy, Entropy, and Why You Can't Win",
+          "Engineering", [3], [8, 9], 4, 6,
+          ["heat_thermal_energy", "how_engines_work"],
+          ["thermodynamics", "first law", "second law", "entropy", "efficiency",
+           "Carnot", "engineering", "physics", "university"]),
+
+    # ===== COMPUTER SCIENCE =====
+    Topic("computational_complexity", "Computational Complexity — P vs NP and What Computers Can't Solve",
+          "Computer Science", [3], [9], 4, 6,
+          ["algorithms_complexity", "mathematical_reasoning"],
+          ["computational complexity", "P vs NP", "NP-complete", "halting problem",
+           "Turing", "computer science", "university", "maths"]),
+    Topic("machine_learning_fundamentals", "How Machine Learning Actually Works",
+          "Computer Science", [3], [8, 9], 4, 5,
+          ["artificial_intelligence_basics", "statistics_ks2"],
+          ["machine learning", "training", "loss function", "gradient descent",
+           "overfitting", "neural networks", "computer science", "university", "AI"]),
+    Topic("information_theory", "Information Theory — Shannon, Bits, and the Limits of Communication",
+          "Computer Science", [3], [9], 4, 6,
+          ["compression_encoding", "mathematical_beauty"],
+          ["information theory", "Shannon", "entropy", "bits", "channel capacity",
+           "compression", "computer science", "maths", "university"]),
+
+    # ===== PSYCHOLOGY =====
+    Topic("developmental_psychology_stages", "Developmental Psychology — Piaget, Vygotsky, and How Children Think",
+          "Psychology", [3], [8, 9], 4, 5,
+          ["perspective_taking", "growing_up"],
+          ["developmental psychology", "Piaget", "conservation", "theory of mind",
+           "zone of proximal development", "Vygotsky", "psychology", "university"]),
+    Topic("social_psychology_foundations", "Social Psychology — Why Context Determines Behaviour",
+          "Psychology", [3], [8, 9], 4, 6,
+          ["milgram_asch_obedience", "pattern_ingroup_outgroup"],
+          ["social psychology", "fundamental attribution error", "bystander effect",
+           "social identity theory", "Tajfel", "situationism",
+           "psychology", "university"]),
+    Topic("cognitive_psychology", "Cognitive Psychology — Memory, Attention, and Dual Process Theory",
+          "Psychology", [3], [8, 9], 4, 5,
+          ["memory_how_it_works", "cognitive_biases"],
+          ["cognitive psychology", "working memory", "long-term memory",
+           "schemas", "dual process", "System 1 System 2", "Kahneman",
+           "psychology", "university"]),
+
+    # ===== SOCIOLOGY =====
+    Topic("sociological_imagination", "The Sociological Imagination — Personal Problems as Social Issues",
+          "Sociology", [3], [8, 9], 4, 6,
+          ["cultural_capital_explained", "british_class_system"],
+          ["sociology", "C. Wright Mills", "sociological imagination",
+           "social structure", "agency", "university", "critical thinking"]),
+    Topic("stratification_and_mobility", "Social Stratification — Class, Race, Gender, and Intersectionality",
+          "Sociology", [3], [8, 9], 4, 6,
+          ["british_class_system", "civil_rights_global"],
+          ["stratification", "class", "race", "gender", "intersectionality",
+           "Crenshaw", "meritocracy", "social mobility",
+           "sociology", "university", "critical thinking"]),
+
+    # ===== ENVIRONMENTAL SCIENCE =====
+    Topic("planetary_boundaries", "Planetary Boundaries — Nine Limits for a Safe Operating Space",
+          "Environmental Science", [3], [8, 9], 4, 6,
+          ["climate_change_ks3", "carbon_cycle"],
+          ["planetary boundaries", "Rockström", "tipping points",
+           "biodiversity loss", "ocean acidification",
+           "environmental science", "university"]),
+    Topic("ecological_economics", "Ecological Economics — When GDP Is the Wrong Measure",
+          "Environmental Science", [3], [9], 4, 6,
+          ["planetary_boundaries", "how_to_read_an_economy"],
+          ["ecological economics", "Doughnut Economics", "Kate Raworth",
+           "natural capital", "ecosystem services", "degrowth",
+           "university", "economics", "environment"]),
+
+    # ===== ARCHITECTURE =====
+    Topic("architectural_theory", "Architectural Theory — Form, Function, Firmitas, and Meaning",
+          "Architecture", [3], [8, 9], 4, 5,
+          ["architecture_what_architects_do", "art_history_ancient_renaissance"],
+          ["architectural theory", "Vitruvius", "Modernism", "Brutalism",
+           "critical regionalism", "phenomenology",
+           "architecture", "university"]),
+    Topic("urban_design_cities", "Urban Design — Jane Jacobs, Le Corbusier, and What Makes Cities Work",
+          "Architecture", [3], [8, 9], 4, 5,
+          ["architectural_theory", "urbanisation"],
+          ["urban design", "Jane Jacobs", "Le Corbusier", "mixed use",
+           "street life", "public space", "15-minute city",
+           "architecture", "university", "geography"]),
+
+    # ===== LINGUISTICS (bonus) =====
+    Topic("linguistics_intro", "Linguistics — How Language Is Structured and Why It Matters",
+          "Linguistics", [3], [8, 9], 4, 5,
+          ["story_of_language", "vocab_roots_latin_greek"],
+          ["linguistics", "phonology", "morphology", "syntax", "semantics",
+           "pragmatics", "Chomsky", "Saussure", "universal grammar",
+           "university", "language"]),
+    # Linguistics studies language as a system. The levels:
+    # Phonology: sound patterns. Morphology: word structure (un-break-able).
+    # Syntax: sentence structure (why "dog bites man" differs from "man bites dog").
+    # Semantics: meaning. Pragmatics: meaning in context (why "can you pass the salt?"
+    # means "please pass the salt").
+    # Chomsky's universal grammar: all human languages share deep structural features —
+    # evidence for an innate language acquisition device in the brain.
+    # Saussure: language is a system of differences. Words don't have meaning in
+    # themselves — only in relation to other words. "Chair" means what it means
+    # partly because it's not "table," not "sofa," not "stool."
+    # Why it matters: linguistics underpins AI language models, translation,
+    # speech therapy, education, and our understanding of human cognition.
+]
+
+
 CURRICULUM: list[Topic] = (
     _ENGLISH + _MATHS + _SCIENCE + _HISTORY + _GEOGRAPHY +
     _COMPUTING + _ART_MUSIC + _PSHE + _VOCATIONAL + _GRAND_NARRATIVES +
@@ -4838,7 +6244,9 @@ CURRICULUM: list[Topic] = (
     _GROWING_UP + _VOCABULARY + _MANIPULATION + _POLITICAL_SYSTEMS +
     _EXPERIMENTS + _FILM +
     _MUSIC_DEEP + _PERFORMING_ARTS + _SPORT + _SPORTS_MEDICINE +
-    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE
+    _MODEL_PROGRESSIONS + _WORLD_RELIGIONS + _AEROSPACE +
+    _CULTURAL_CAPITAL + _DISSENT + _SURVEILLANCE + _CORRUPTION + _WORLD_ECONOMIES +
+    _UNIVERSITY_PATHWAYS
     # _OPTICS_LIGHT added below
 )
 
