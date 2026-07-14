@@ -17,7 +17,7 @@ self-contained capability that the phase after it depends on.
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Database Foundation** - Persistent SQLite/PostgreSQL storage replaces all in-memory stores
+- [x] **Phase 1: Database Foundation** - Persistent SQLite/PostgreSQL storage replaces all in-memory stores (completed 2026-07-14)
 - [ ] **Phase 2: Knowledge Tracing Backend** - BKT mastery model + FSRS scheduling per child × KC
 - [ ] **Phase 3: Session Intelligence** - History injection, curriculum routing, and interest graph
 - [ ] **Phase 4: Parent Dashboard** - Session replay, mastery map, profile editor, and alert feed
@@ -60,8 +60,8 @@ Plans:
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
-- [ ] 01-06-PLAN.md — Wire DB into api/main.py lifespan + api/chat.py session injection
-- [ ] 01-07-PLAN.md — Session injection into remaining 5 API routes; remove vars() serialisation
+- [x] 01-06-PLAN.md — Wire DB into api/main.py lifespan + api/chat.py session injection
+- [x] 01-07-PLAN.md — Session injection into remaining 5 API routes; remove vars() serialisation
 
 **Key decisions / risks:**
 
@@ -196,7 +196,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Database Foundation | 5/7 | In Progress|  |
+| 1. Database Foundation | 7/7 | Complete   | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 0/TBD | Not started | - |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
