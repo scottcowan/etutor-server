@@ -309,11 +309,29 @@ Untested on Boox specifically. The wake lock + foreground service pattern above 
 ### Bluetooth audio configuration changes
 BT headset connect/disconnect triggers an Android `AudioManager` configuration change. Test that the app doesn't crash when a child plugs in headphones mid-session.
 
+### ADB / Developer mode path (non-standard on Boox)
+The standard Android "tap Build Number 7 times" path does NOT work on Boox. The actual path:
+```
+Apps (top-right menu) → App Management → Enable USB Debug Mode
+```
+On some models (Note Air 3), a third-party "Android Hidden Settings" app is needed to reach the Build Number field.
+
+### AudioRecord sample rate (unconfirmed)
+Boox's native recorder app uses 8,000 Hz AMR-NB. 16,000 Hz (required by Whisper) is unconfirmed but likely works — Android mandates 44,100 Hz support and recommends 16,000 Hz as a low-rate option. **Enumerate at runtime:**
+```kotlin
+val rate = if (AudioRecord.getMinBufferSize(16000, CHANNEL_IN_MONO, ENCODING_PCM_16BIT) > 0) 16000 else 44100
+// if 44100, downsample to 16000 before sending to Whisper
+```
+Use `AudioSource.MIC` — not `VOICE_COMMUNICATION` (known routing bugs on some Boox firmware).
+
+### No 3.5mm jack on any current Boox model
+All current Boox devices are USB-C audio only. Plan for USB-C adapter or Bluetooth speaker/headphones for children who need clearer audio output.
+
 ---
 
 ## Open Questions
 
-- [ ] Buy Go Color 7 Gen II first — test mic quality with real child speech
+- [ ] Buy Go Color 7 Gen II first — test `AudioRecord` at 16 kHz with real child speech
 - [ ] Wake word phrase — "Hey Tutor"? needs Porcupine Console training or sherpa-onnx custom model
 - [ ] Kiosk mode — Android app pinning via `startLockTask()` for child safety
 - [ ] Boox parental controls — app blocking, screen time limits
@@ -325,14 +343,19 @@ BT headset connect/disconnect triggers an Android `AudioManager` configuration c
 | Repo | Purpose |
 |------|---------|
 | https://github.com/onyx-intl/OnyxAndroidDemo | Official Onyx SDK demos + EPD docs |
+| https://github.com/onyx-intl/public-wiki | Official dev docs and EPD mode reference |
 | https://github.com/hbmartin/onyx-android-sdk | Full SDK source mirror |
 | https://github.com/timschneeb/OnyxTweaks | Boox internals (MMKV config, feature flags) |
 | https://github.com/mbulling83/boox-eink-skills | Claude Code skills for Boox Android dev |
-| https://github.com/aitorpazos/piper-tts-android | Piper as Android system TTS provider |
-| https://github.com/k2-fsa/sherpa-onnx | ONNX KWS + TTS for Android |
+| **https://github.com/BoltAI/Inka** | **Native Kotlin AI app for Boox Note Air — BYOK Anthropic/OpenAI, closest analog to etutor client** |
+| https://github.com/alexdremov/notate | Best native Kotlin Boox app, EpdController patterns |
+| https://github.com/lEWFkRAD/hermes-agents-guide-to-the-galaxy | Device↔server architecture matching etutor-server |
+| https://github.com/aitorpazos/piper-tts-android | Piper as Android system TTS provider (v1.21.0, Mar 2026) |
+| https://github.com/k2-fsa/sherpa-onnx | ONNX KWS + TTS for Android (Apache-2.0) |
 | https://github.com/Picovoice/porcupine | Porcupine wake word (Android SDK) |
-| https://github.com/lad6mntzezhbll4d-dev/boox-ai-reader | EpdController reflection pattern |
+| https://github.com/lad6mntzezhbll4d-dev/boox-ai-reader | EpdController reflection pattern for non-Boox compat |
 | https://github.com/buggins/coolreader | Real reader app with Onyx integration |
+| https://github.com/koreader/koreader | Dominant open-source e-reader; TTS + spaced repetition; runs on Boox |
 
 ---
 
