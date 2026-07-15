@@ -39,7 +39,7 @@ async def get_recommendations(child: ChildProfileModel, limit: int = 5) -> list[
 
 async def build_recommendation_message(child: ChildProfileModel) -> str:
     books = await get_recommendations(child)
-    if not books:
+    if not books or not child.interests:
         return ""
     titles = ", ".join(f'"{b["title"]}"' for b in books[:3])
     return f"Based on your interest in {child.interests[0]}, you might enjoy: {titles}."
