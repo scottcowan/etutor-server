@@ -21,29 +21,38 @@
 
 ## Recommended Models
 
-### Primary: Boox Palma 2 (6")
-- **Dual microphones** — best audio capture for child voice
-- **Dual speakers** — good for TTS playback
-- **Pocket-sized** — holdable by a 6-year-old single-handed
-- Android 13, ~3950mAh battery
-- ~£180-200 UK
+Pricing confirmed July 2026 from ereader.store (EUR) and shop.boox.com (USD). GBP estimates include import duty; buy from Amazon UK where possible to avoid customs.
 
-### Alternative: Boox Go 10.3 (10.3")
-- **Built-in microphone + dual speakers**
-- Larger screen — better for reading/illustrations
-- Heavier — may be harder for younger children to hold portably
-- Good as a desk device
-- ~£220-250 UK
+### Primary: Boox Go Color 7 Gen II (~£240)
+- 7" Kaleido 3 color e-ink, 300ppi — best size for children, good for illustrations
+- **Physical page-turn buttons on both sides** — important for younger children
+- Microphone + speaker, Android 13, 195g, 2,300mAh
+- USD $269.99 / EUR €271.32
+
+### Second: Boox Palma 2 (~£220) — best microphone
+- **Dual microphones** — the only sub-10" model with dual mics; better for noisy environments
+- Phone form factor (159×80mm, 170g) — very holdable, good for portability
+- Single speaker — pair with Bluetooth speaker for room-filling TTS
+- Android 13, 3,950mAh (best battery of any small model)
+- USD $249.99
+
+### Desk device: Boox Go 10.3 Gen II (~£370)
+- **Dual stereo speakers** — noticeably better TTS output
+- 10.3", ~350g — too heavy for extended handheld use, good on a desk
+- Single microphone, no physical page-turn buttons
+- Android 13, 3,700mAh
 
 ### To avoid
-- **Boox Leaf / Poke / basic Go 6** — most lack microphones entirely
-- **Kobo / Kindle** — no Android custom app support (or severely restricted)
+- **Boox Go 6 Gen II** — no confirmed built-in speaker (USB-C audio only)
+- **Boox Leaf 3C, Nova Air C, Tab Mini C** — discontinued/sold out
+- **Kobo / Kindle** — no Android custom app support
 - **reMarkable** — Linux, no Android APK, no mic/speaker
+- **PineNote** — developer toy, no production Android
 
-### Color E-Ink: Boox Go Color 7 / Leaf 3C
-- Kaleido 3 color e-ink — acceptable for illustrations, ~4096 colours
-- Refresh is slower on color panels and color contrast is muted
-- Worth considering for the illustration library feature but not essential for v1
+### Three actions before buying
+1. Confirm Go Color 7 Gen II is in stock at Amazon UK
+2. Buy one, test `AudioRecord` with a real child speaker — measure WER against etutor-server Whisper
+3. Test foreground service survival: start the service, lock the screen for 10 minutes, verify it is still running
 
 ---
 
@@ -57,8 +66,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.onyx.android.sdk:onyxsdk-device:1.1.11'
-    implementation 'com.onyx.android.sdk:onyxsdk-pen:1.2.1'
+    implementation 'com.onyx.android.sdk:onyxsdk-device:1.3.5'
+    implementation 'com.onyx.android.sdk:onyxsdk-pen:1.5.4'
+    implementation 'com.onyx.android.sdk:onyxsdk-base:1.4.3.7'
 }
 ```
 
@@ -272,13 +282,41 @@ Screen refresh (300ms partial) runs **in parallel** with audio — not in the cr
 
 ---
 
+## Critical Gotchas
+
+### Whisper cannot run on-device
+On ARM Android without GPU/NNAPI acceleration, Whisper runs **10–31x slower than real-time**. A 3-second child audio clip takes ~31 seconds. The <2s latency target requires server-side Whisper — always. This is already the architecture; this confirms it is the only viable approach.
+
+### Background service survival (Boox Android 12, OS 3.5+)
+Boox battery optimisation kills background services. `Unrestricted` battery mode silently reverts to `Restricted` for some apps. ADB whitelist commands have no effect in this state.
+
+**Required mitigations:**
+```xml
+<service android:name=".TutorService"
+         android:foregroundServiceType="microphone"
+         android:exported="false" />
+```
+Also acquire `PARTIAL_WAKE_LOCK` in the service — foreground service alone is insufficient. On Android 14+ (`Palma 2 Pro`, `Note Air 5C`), the `foregroundServiceType="microphone"` declaration is **mandatory** or the app crashes at install.
+
+Users may need to manually disable "App Freeze" for the app in Boox system settings — document this in the app's setup flow.
+
+### Hardware video codec disabled (Boox firmware 3.x+)
+Onyx disabled H.264/HEVC hardware encoders as a side-effect of their screen mirroring feature. **Audio codecs (AAC software encoder) are unaffected**, but verify if using `MediaCodec` anywhere in the audio pipeline.
+
+### Audio recording while screen is off
+Untested on Boox specifically. The wake lock + foreground service pattern above should keep the audio subsystem active, but verify on the target device before shipping.
+
+### Bluetooth audio configuration changes
+BT headset connect/disconnect triggers an Android `AudioManager` configuration change. Test that the app doesn't crash when a child plugs in headphones mid-session.
+
+---
+
 ## Open Questions
 
-- [ ] Which specific Boox model to buy first (Palma 2 vs Go 10.3)
-- [ ] Wake word phrase — "Hey Tutor"? needs Porcupine Console training
-- [ ] Kiosk mode / single-app lock for child safety (Android app pinning via `startLockTask()`)
-- [ ] Boox parental controls — app blocking, usage time limits
-- [ ] Pricing verification — confirm current UK pricing before ordering
+- [ ] Buy Go Color 7 Gen II first — test mic quality with real child speech
+- [ ] Wake word phrase — "Hey Tutor"? needs Porcupine Console training or sherpa-onnx custom model
+- [ ] Kiosk mode — Android app pinning via `startLockTask()` for child safety
+- [ ] Boox parental controls — app blocking, screen time limits
 
 ---
 
