@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, Header, HTTPException
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 from typing import Optional
 import json
 
@@ -25,6 +25,13 @@ class ChatRequest(BaseModel):
     messages: list[Message]
     stream: bool = False
     child_id: Optional[str] = None
+
+    @field_validator("messages")
+    @classmethod
+    def messages_not_empty(cls, v):
+        if not v:
+            raise ValueError("messages must not be empty")
+        return v
 
 
 @router.post("/chat/completions")
