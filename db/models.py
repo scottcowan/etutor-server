@@ -9,7 +9,7 @@ Models:
 
 Importing this module does NOT trigger any DB I/O.
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, JSON, String
@@ -44,7 +44,7 @@ class SessionModel(Base):
     child_id: Mapped[str] = mapped_column(
         String, ForeignKey("child_profiles.id"), nullable=False, index=True
     )
-    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 
 
@@ -62,7 +62,7 @@ class InteractionEventModel(Base):
     question: Mapped[str] = mapped_column(String, nullable=False)
     answer: Mapped[str] = mapped_column(String, nullable=False)
     topic: Mapped[Optional[str]] = mapped_column(String, nullable=True)
-    timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     # DB-04 scaffold columns — nullable in Phase 1; populated in Phase 2 (BKT) and Phase 1 chat timing
     kc_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)   # set by Phase 2 BKT
     correct: Mapped[Optional[bool]] = mapped_column(Boolean, nullable=True)  # set by Phase 2 BKT
@@ -88,4 +88,4 @@ class MasteryStateModel(Base):
     difficulty_d: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
     card_state: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     next_review: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
-    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))

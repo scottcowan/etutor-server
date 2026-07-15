@@ -16,7 +16,7 @@ SQLAlchemy will raise AttributeError on unknown column names. Internal-only
 callers in Phase 1.
 """
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy import select
@@ -207,5 +207,5 @@ async def update_mastery_state(
         raise ValueError(f"MasteryState not found for ({child_id}, {kc_id})")
     for k, v in fields.items():
         setattr(model, k, v)
-    model.updated_at = datetime.utcnow()
+    model.updated_at = datetime.now(timezone.utc)
     await session.commit()
