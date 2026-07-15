@@ -21,38 +21,46 @@
 
 ## Recommended Models
 
-Pricing confirmed July 2026 from ereader.store (EUR) and shop.boox.com (USD). GBP estimates include import duty; buy from Amazon UK where possible to avoid customs.
+GBP prices confirmed from PriceRunner/UK retailers July 2026. EUR from ereader.store.
 
-### Primary: Boox Go Color 7 Gen II (~£240)
-- 7" Kaleido 3 color e-ink, 300ppi — best size for children, good for illustrations
-- **Physical page-turn buttons on both sides** — important for younger children
-- Microphone + speaker, Android 13, 195g, 2,300mAh
-- USD $269.99 / EUR €271.32
+### ⚠ Screen fragility warning
+Boox devices use regular glass (not Gorilla Glass). Community reports of cracked screens from light pressure, bag compression, and spontaneous battery swell are widespread. Repair costs ~£250 — near the device price — and Boox's warranty covers nothing screen-related. **A ruggedised airbag-corner TPU case is mandatory before handing to a child.** Budget ~£8–15 on AliExpress; official Boox magnetic case ~£35.
 
-### Second: Boox Palma 2 (~£220) — best microphone
-- **Dual microphones** — the only sub-10" model with dual mics; better for noisy environments
+### Primary: Boox Go Color 7 Gen II — £226.98 (confirmed)
+- 7" Kaleido 3 color e-ink, 300ppi text / 150ppi color
+- **Physical page-turn buttons on both sides** — important for younger children (7", 195g, 156×137mm)
+- Microphone + speaker, **Android 12**, 2,300mAh
+- Color quality is muted/washed-out compared to LCD — fine for text-heavy tutoring, limited for picture books
+- USD $269.99 / EUR €289.99
+
+### Second: Boox Palma 2 — £335.98 (confirmed, over budget)
+- **Dual microphones** — only sub-10" model with dual mics; better for child speech capture
 - Phone form factor (159×80mm, 170g) — very holdable, good for portability
 - Single speaker — pair with Bluetooth speaker for room-filling TTS
-- Android 13, 3,950mAh (best battery of any small model)
-- USD $249.99
+- **Android 13**, 3,950mAh (best battery of any small model)
+- Screen is 6.13" — marginal for a beginning reader aged 6–7
 
-### Desk device: Boox Go 10.3 Gen II (~£370)
+### Desk device: Boox Go 10.3 Gen II (~£315)
 - **Dual stereo speakers** — noticeably better TTS output
-- 10.3", ~350g — too heavy for extended handheld use, good on a desk
-- Single microphone, no physical page-turn buttons
-- Android 13, 3,700mAh
+- 10.3", ~350g — too heavy for a child to handheld, good on a desk
+- Single microphone, no physical page-turn buttons, **Android 15**
+
+### Mono budget option: Boox Go 7 (~£180–190, unconfirmed GBP)
+- Same physical form factor as Go Color 7 Gen II (156×137mm, 195g)
+- No colour — but voice-first tutoring is text-heavy, colour matters less
+- **Android 13**, same mic/speaker/buttons spec
+- Likely cheapest option within or near the £200 budget
 
 ### To avoid
-- **Boox Go 6 Gen II** — no confirmed built-in speaker (USB-C audio only)
+- **Boox Go 6 Gen II** — no confirmed built-in speaker
 - **Boox Leaf 3C, Nova Air C, Tab Mini C** — discontinued/sold out
-- **Kobo / Kindle** — no Android custom app support
-- **reMarkable** — Linux, no Android APK, no mic/speaker
-- **PineNote** — developer toy, no production Android
+- **Kobo / Kindle / PocketBook / reMarkable** — proprietary OS, no APK sideloading, no mic
+- **PineNote** — no working Android build as of November 2024
 
 ### Three actions before buying
-1. Confirm Go Color 7 Gen II is in stock at Amazon UK
-2. Buy one, test `AudioRecord` with a real child speaker — measure WER against etutor-server Whisper
-3. Test foreground service survival: start the service, lock the screen for 10 minutes, verify it is still running
+1. Buy a Go Color 7 Gen II + airbag TPU case (~£235 total)
+2. Test `AudioRecord` at 16 kHz with a real child speaker — measure WER against etutor-server Whisper
+3. Test foreground service survival: start the service, lock screen for 10 minutes, verify it's still running
 
 ---
 
