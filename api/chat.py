@@ -62,11 +62,16 @@ async def chat(
     import litellm
     if req.stream:
         async def generate():
+            db_session_row = await create_session(child_id, session)
+            full_content = []
             response = await litellm.acompletion(model=model, messages=messages, stream=True)
             async for chunk in response:
                 delta = chunk.choices[0].delta.content or ""
+                full_content.append(delta)
                 yield f"data: {json.dumps({'choices': [{'delta': {'content': delta}}]})}\n\n"
             yield "data: [DONE]\n\n"
+            await log_turn(child_id, req.messages[-1].content, "".join(full_content),
+                           session, session_id=db_session_row.id)
         return StreamingResponse(generate(), media_type="text/event-stream")
     else:
         response = await litellm.acompletion(model=model, messages=messages)
