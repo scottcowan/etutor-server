@@ -157,17 +157,17 @@ async def get_session_history(
 ) -> list[InteractionEventModel]:
     """Return the most recent `limit` interaction events for child_id, ordered ASC by timestamp.
 
-    Fetches all events ordered ASC then slices the last `limit` items in Python
-    for most-recent-N semantics without SQL complexity (T-1-07: child_id-scoped).
+    Fetches the most recent `limit` rows using SQL ORDER BY DESC LIMIT, then
+    reverses to return ASC order for callers (T-1-07: child_id-scoped).
     """
     result = await session.execute(
         select(InteractionEventModel)
         .where(InteractionEventModel.child_id == child_id)
-        .order_by(InteractionEventModel.timestamp.asc())
-        # No .limit() in SQL — fetch all, slice in Python for most-recent-N semantics
+        .order_by(InteractionEventModel.timestamp.desc())
+        .limit(limit)
     )
     rows = list(result.scalars().all())
-    return rows[-limit:] if limit else rows
+    return list(reversed(rows))  # restore ASC order for callers
 
 
 # ---------------------------------------------------------------------------
