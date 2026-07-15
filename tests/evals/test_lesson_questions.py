@@ -321,13 +321,12 @@ async def run_scenario(scenario: LessonScenario, model: str) -> dict:
 # Pytest tests
 # ---------------------------------------------------------------------------
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
-_has_creds = bool(os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("AWS_PROFILE"))
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("scenario", SCENARIOS,
     ids=[f"age{s.age}_{s.topic}" for s in SCENARIOS])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_bloom_level_appropriate(scenario):
     """Tutor question must be at the right Bloom level for the age group."""
     result = asyncio.get_event_loop().run_until_complete(run_scenario(scenario, MODEL))
@@ -342,7 +341,7 @@ def test_bloom_level_appropriate(scenario):
 
 @pytest.mark.parametrize("scenario", [s for s in SCENARIOS if s.age <= 7],
     ids=[f"age{s.age}_{s.topic}" for s in SCENARIOS if s.age <= 7])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_no_abstract_language_ages_6_7(scenario):
     """Ages 6-7: no abstract/technical vocabulary."""
     result = asyncio.get_event_loop().run_until_complete(run_scenario(scenario, MODEL))
@@ -354,7 +353,7 @@ def test_no_abstract_language_ages_6_7(scenario):
 
 @pytest.mark.parametrize("scenario", [s for s in SCENARIOS if s.age <= 9],
     ids=[f"age{s.age}_{s.topic}" for s in SCENARIOS if s.age <= 9])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_vocabulary_not_overwhelming(scenario):
     """Ages 6-7 allow 0 unfamiliar long words; ages 8-9 allow 1."""
     result = asyncio.get_event_loop().run_until_complete(run_scenario(scenario, MODEL))
@@ -368,7 +367,7 @@ def test_vocabulary_not_overwhelming(scenario):
 
 @pytest.mark.parametrize("scenario", SCENARIOS,
     ids=[f"age{s.age}_{s.topic}" for s in SCENARIOS])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_question_is_answerable(scenario):
     """Tutor must end with a genuine open question the child can answer."""
     result = asyncio.get_event_loop().run_until_complete(run_scenario(scenario, MODEL))

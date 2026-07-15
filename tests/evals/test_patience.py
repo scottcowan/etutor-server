@@ -164,14 +164,11 @@ async def run_case(case: PatienceCase, model: str) -> dict:
     }
 
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_no_impatience_on_first_reexplain(case):
     """Tutor must not show impatience when child asks for a re-explanation."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -182,10 +179,7 @@ def test_no_impatience_on_first_reexplain(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_no_impatience_on_second_reexplain(case):
     """Tutor must not show impatience on the second re-explanation request either."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -196,10 +190,7 @@ def test_no_impatience_on_second_reexplain(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_varied_reexplanation(case):
     """Two re-explanations of the same concept should not be near-verbatim copies."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))

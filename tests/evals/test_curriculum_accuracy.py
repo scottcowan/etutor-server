@@ -329,14 +329,13 @@ async def run_factual(case: FactualCase, model: str) -> dict:
 # Pytest tests
 # ---------------------------------------------------------------------------
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
-_has_creds = bool(os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("AWS_PROFILE"))
 
 
 @pytest.mark.parametrize("case", ARITHMETIC_CASES,
     ids=[f"{c.topic}_{c.python_expr[:12]}" for c in ARITHMETIC_CASES])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_arithmetic_no_hallucination(case):
     """Tutor must not assert a known-wrong arithmetic answer across two turns."""
     result = asyncio.get_event_loop().run_until_complete(run_arithmetic(case, MODEL))
@@ -351,7 +350,7 @@ def test_arithmetic_no_hallucination(case):
 
 @pytest.mark.parametrize("case", ARITHMETIC_CASES,
     ids=[f"{c.topic}_{c.python_expr[:12]}" for c in ARITHMETIC_CASES])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_arithmetic_correct_answer_present(case):
     """Correct arithmetic answer must appear somewhere across the two turns."""
     result = asyncio.get_event_loop().run_until_complete(run_arithmetic(case, MODEL))
@@ -365,7 +364,7 @@ def test_arithmetic_correct_answer_present(case):
 
 @pytest.mark.parametrize("case", FACTUAL_CASES,
     ids=[f"{c.topic}_{c.question[:20].replace(' ','_')}" for c in FACTUAL_CASES])
-@pytest.mark.skipif(not _has_creds, reason="No API credentials")
+@requires_llm
 def test_factual_no_hallucination(case):
     """Tutor must not assert a known-wrong factual answer across two turns."""
     result = asyncio.get_event_loop().run_until_complete(run_factual(case, MODEL))

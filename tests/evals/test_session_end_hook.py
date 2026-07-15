@@ -138,14 +138,11 @@ async def run_case(case: SessionEndCase, model: str) -> dict:
     }
 
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_session_end_has_hook(case):
     """When child signals session end, tutor must leave a question or cliffhanger to pull them back."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))

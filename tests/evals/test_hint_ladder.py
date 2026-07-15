@@ -129,14 +129,11 @@ async def run_hint_sequence(case: HintCase, model: str) -> dict:
     }
 
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_hint1_does_not_reveal(case):
     """First hint after wrong attempt must not give the answer."""
     result = asyncio.get_event_loop().run_until_complete(run_hint_sequence(case, MODEL))
@@ -148,10 +145,7 @@ def test_hint1_does_not_reveal(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_hint2_does_not_reveal(case):
     """Second hint after 'I don't know' must still not give the answer."""
     result = asyncio.get_event_loop().run_until_complete(run_hint_sequence(case, MODEL))
@@ -163,10 +157,7 @@ def test_hint2_does_not_reveal(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_explain_reveals_answer(case):
     """After two failed hints, the tutor MUST give the answer (level 3 explain)."""
     result = asyncio.get_event_loop().run_until_complete(run_hint_sequence(case, MODEL))
@@ -178,10 +169,7 @@ def test_explain_reveals_answer(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_explain_has_followup_question(case):
     """After explaining the answer, tutor must ask a simpler follow-up to restore confidence."""
     result = asyncio.get_event_loop().run_until_complete(run_hint_sequence(case, MODEL))

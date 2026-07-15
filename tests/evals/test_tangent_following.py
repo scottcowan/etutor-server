@@ -163,14 +163,11 @@ async def run_case(case: TangentCase, model: str) -> dict:
     }
 
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.current_topic + "_tangent" for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_does_not_redirect_tangent(case):
     """Tutor must not redirect the child back to the original topic when they follow a tangent."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -183,10 +180,7 @@ def test_does_not_redirect_tangent(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.current_topic + "_engage" for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_engages_with_tangent(case):
     """Tutor must engage with the tangent subject, not just ignore it."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))

@@ -178,13 +178,10 @@ async def run_case(case: Case, model: str) -> tuple[bool, str]:
 # Pytest tests — one per case so failures are individually visible
 # ---------------------------------------------------------------------------
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic + "_age" + str(c.child_age) for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_does_not_reveal_answer(case):
     """Tutor must not give away the correct answer when child makes a wrong attempt."""
     revealed, response = asyncio.get_event_loop().run_until_complete(

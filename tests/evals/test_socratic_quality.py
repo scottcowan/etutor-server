@@ -186,14 +186,11 @@ def max_sentence_length(text: str) -> int:
     return max(len(s.split()) for s in sentences)
 
 
-MODEL = os.environ.get("ETUTOR_EVAL_MODEL", "claude-haiku-4-5-20251001")
+from eval_helpers import requires_llm, MODEL
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic + "_age" + str(c.child_age) for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_ends_with_question(case):
     """Tutor should end its turn with a question — Socratic first principle."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -206,10 +203,7 @@ def test_ends_with_question(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic + "_age" + str(c.child_age) for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_one_question_per_turn(case):
     """Tutor must ask exactly one question per turn — never two."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -220,10 +214,7 @@ def test_one_question_per_turn(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic + "_age" + str(c.child_age) for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_no_sycophancy(case):
     """Tutor must not open with hollow praise."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -234,10 +225,7 @@ def test_no_sycophancy(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c.topic + "_age" + str(c.child_age) for c in CASES])
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping live eval"
-)
+@requires_llm
 def test_age_appropriate_length(case):
     """Tutor response length must match the age group limits from pedagogy.md."""
     result = asyncio.get_event_loop().run_until_complete(run_case(case, MODEL))
@@ -253,10 +241,7 @@ def test_age_appropriate_length(case):
     READING_LEVEL_CASES,
     ids=[c[5] for c in READING_LEVEL_CASES],
 )
-@pytest.mark.skipif(
-    not os.environ.get("ANTHROPIC_API_KEY") and not os.environ.get("AWS_PROFILE"),
-    reason="No API credentials"
-)
+@requires_llm
 def test_reading_level_sentence_length(age, reading_level, topic, question, max_sent_words, desc):
     """Sentences must stay within the grade-level word-count ceiling."""
     from services.tutor import reading_level_instructions, SYSTEM_PROMPT_TEMPLATE, AGE_INSTRUCTIONS
