@@ -37,9 +37,9 @@ app = FastAPI(title="eTutor Server", version="0.1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=["http://localhost", "http://127.0.0.1"],  # tighten per deployment
+    allow_methods=["POST", "GET"],
+    allow_headers=["X-Child-ID", "X-Device-ID", "Content-Type"],
 )
 
 # OpenAI-compatible endpoints (device-facing)
