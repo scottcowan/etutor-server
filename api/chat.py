@@ -51,6 +51,8 @@ async def chat(
         raise HTTPException(status_code=400, detail="No child identity — provide X-Child-ID or X-Device-ID header")
 
     child = await get_child_by_id(child_id, session)
+    if not child:
+        raise HTTPException(status_code=404, detail="Child not found")
     system_prompt = await build_system_prompt(child)
     model = route_model(child)
 
