@@ -27,7 +27,7 @@ class ChildProfileModel(Base):
     id: Mapped[str] = mapped_column(String, primary_key=True)
     name: Mapped[str] = mapped_column(String, nullable=False)
     age: Mapped[int] = mapped_column(Integer, nullable=False)
-    device_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
+    device_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True, unique=True)
     reading_level: Mapped[str] = mapped_column(String, default="age-appropriate")
     interests: Mapped[list] = mapped_column(JSON, default=list)
     neurodivergence: Mapped[list] = mapped_column(JSON, default=list)

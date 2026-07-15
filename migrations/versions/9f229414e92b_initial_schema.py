@@ -34,7 +34,7 @@ def upgrade() -> None:
     sa.Column('session_count', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_index(op.f('ix_child_profiles_device_id'), 'child_profiles', ['device_id'], unique=False)
+    op.create_index(op.f('ix_child_profiles_device_id'), 'child_profiles', ['device_id'], unique=True)
     op.create_table('mastery_state',
     sa.Column('child_id', sa.String(), nullable=False),
     sa.Column('kc_id', sa.String(), nullable=False),
