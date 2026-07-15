@@ -212,31 +212,36 @@ The WebView renders the tutor UI. JS calls the native shell via `JavascriptInter
 
 ---
 
-## Wake Word Detection
+## Wake Word / Activation
 
-### Recommendation: Picovoice Porcupine (free personal tier)
-- **Official Android SDK** — well-maintained, first-class support
-- Requires AccessKey from Picovoice Console (free for personal/non-commercial)
-- 0.6% CPU on RPi5 (vendor claim); negligible battery impact with hardware DSP
-- Custom wake words via Picovoice Console
-- "Hey Tutor" will need to be trained
+### Recommendation: Tap-to-talk (hold physical button)
 
-### Alternative: sherpa-onnx KWS (fully Apache-2.0)
-- https://github.com/k2-fsa/sherpa-onnx
-- Pre-built Android APKs for keyword spotting
-- ONNX Runtime, Kotlin/Java API
-- No licensing concerns
-- Less mature Android tooling than Porcupine
+Porcupine's **free custom wake word tier ended June 30, 2026** — custom "Hey Tutor" now requires an enterprise contract (pricing unpublished, likely $1,000+/year). Always-on software wake word on Boox (no hardware DSP) costs **30–80 mAh/hour** — roughly 8–25% battery drain per hour on standby. For a child's dedicated device with physical page-turn buttons, **hold-to-speak is more reliable and zero battery cost**.
+
+**Start with tap-to-talk. Revisit wake word only if usage patterns demand it.**
+
+### If wake word is needed later
+- **sherpa-onnx KWS** (https://github.com/k2-fsa/sherpa-onnx) — Apache-2.0, Android APKs provided, ONNX Runtime — the clean open-source path
+- **Porcupine built-in keywords** (Apache-2.0 free): ~10 built-in phrases remain free; custom training is now enterprise-only
 
 ### Do not use
-- **Snowboy** — abandoned since 2018, vendor sunset 2020
-- **openWakeWord** — no official Android port; pre-trained models are **CC-BY-NC-SA** (non-commercial only)
-- **microWakeWord** — microcontroller-only (ESPHome)
+- **Snowboy** — abandoned 2018, vendor sunset 2020
+- **openWakeWord** — no Android port; pre-trained models are CC-BY-NC-SA (non-commercial)
+- **microWakeWord** — microcontroller-only
 
-### Battery Impact (wake word always-on)
-On non-Snapdragon SoCs (which Boox uses — typically Rockchip/i.MX without Hexagon DSP):
-- Estimated **0.5–2%/day** battery drain running wake word on Cortex-A CPU
-- Acceptable for the 3000-4000mAh batteries in Palma 2 / Go 10.3
+## VAD (Voice Activity Detection)
+
+Use **Silero VAD** via `android-vad:silero` (https://github.com/gkonovalov/android-vad):
+- DNN-based, ROC-AUC 0.97 vs WebRTC GMM 0.73
+- Handles children's higher pitch (200–400 Hz) — WebRTC GMM was trained on adult speech (85–180 Hz)
+- ~2MB ONNX model
+
+**Critical: set silence threshold to 600–800ms** for ages 6–8 (default 300ms is too aggressive — children pause mid-thought). Build this state machine on top of the library:
+```
+SILENCE → [speech_prob > 0.5] → SPEAKING → [silence ≥ 700ms] → SEND_TO_SERVER
+```
+
+Note: a crash in Silero 2.0.10 is open as of September 2025 (issue #39) — test on target device.
 
 ---
 
@@ -267,7 +272,7 @@ The server gap analysis identified 9 gaps. Priority order:
 - New: `ContentPackageModel` (KC-level offline bundles, `expires_at`)
 
 ### WebSocket vs HTTP
-No WebSocket needed. The 3-hop HTTP flow (STT → chat SSE → TTS) meets <2s target on home LAN. SSE streaming already implemented in `api/chat.py`.
+Prefer a **persistent WebSocket** over per-request HTTP for the audio pipeline. It amortizes the TCP handshake across the session (measured difference TCP vs UDP on local WiFi: 0.05ms — negligible). SSE streaming in `api/chat.py` is fine for text; for audio upload + TTS streaming, WebSocket is cleaner.
 
 ---
 
@@ -275,16 +280,27 @@ No WebSocket needed. The 3-hop HTTP flow (STT → chat SSE → TTS) meets <2s ta
 
 Target: **<2s end-to-end** (VAD end → first TTS word from speaker)
 
-| Stage | Estimate | Notes |
-|-------|----------|-------|
-| VAD detection + crop | ~50ms | Silero VAD on device |
-| WiFi upload (WAV) | ~50ms | Home LAN, ~300KB audio |
-| Whisper STT (base.en) | ~300-500ms | On home server GPU/CPU |
-| LLM TTFT (Haiku) | ~300-500ms | Claude API, first token |
-| TTS synthesis (Piper) | ~500ms | Server-side, full response |
-| WiFi download (WAV) | ~50ms | |
-| `MediaPlayer` buffer + play | ~100ms | |
-| **Total** | **~1.35–1.75s** | Within 2s target |
+| Stage | With server GPU | CPU-only server | Notes |
+|-------|----------------|-----------------|-------|
+| VAD detection + crop | ~80ms | ~80ms | Silero VAD; 700ms silence threshold already elapsed |
+| WiFi upload (5 GHz) | ~15ms | ~15ms | Home LAN |
+| Whisper STT (faster-whisper small-int8) | ~500ms | ~900ms | RTF ~0.08 GPU / ~0.13 CPU |
+| Claude Haiku TTFT (Vertex AI) | ~600ms | ~600ms | 350ms faster than Anthropic direct |
+| Claude Haiku TTFT (Anthropic direct) | ~950ms | ~950ms | Falls back to this if Vertex unavailable |
+| Piper TTS first sentence | ~180ms | ~180ms | RTF ~0.06 on i5 |
+| WiFi download + ExoPlayer buffer (tuned 200ms) | ~275ms | ~275ms | Default 1,000ms buffer BREAKS this — must reconfigure |
+| **Total (GPU + Vertex)** | **~1.65s** | — | ✓ Within target |
+| **Total (CPU + Vertex)** | — | **~2.05s** | Borderline — use distil-whisper + stream first sentence |
+| **Total (CPU + Anthropic direct)** | — | **~2.40s** | Over budget |
+
+**Critical:** ExoPlayer's default `bufferForPlaybackMs = 1,000ms` alone breaks the 2s target. Reconfigure to 200ms:
+```kotlin
+DefaultLoadControl.Builder()
+    .setBufferDurationsMs(1000, 10000, 200, 500)
+    .build()
+```
+
+**Without a GPU:** Use Vertex AI for Claude (saves ~350ms TTFT) + distil-whisper-small-int8 (~2x faster than vanilla Whisper) + start streaming Piper before LLM finishes. This recovers enough margin.
 
 Screen refresh (300ms partial) runs **in parallel** with audio — not in the critical path.
 
@@ -324,13 +340,17 @@ Apps (top-right menu) → App Management → Enable USB Debug Mode
 ```
 On some models (Note Air 3), a third-party "Android Hidden Settings" app is needed to reach the Build Number field.
 
-### AudioRecord sample rate (unconfirmed)
-Boox's native recorder app uses 8,000 Hz AMR-NB. 16,000 Hz (required by Whisper) is unconfirmed but likely works — Android mandates 44,100 Hz support and recommends 16,000 Hz as a low-rate option. **Enumerate at runtime:**
+### AudioRecord: capture at 48kHz, not 16kHz
+Requesting 16kHz directly forces the Android kernel resampler, which evicts the track from FastMixer and adds ~20ms latency. **Always capture at 48kHz and downsample in software:**
 ```kotlin
-val rate = if (AudioRecord.getMinBufferSize(16000, CHANNEL_IN_MONO, ENCODING_PCM_16BIT) > 0) 16000 else 44100
-// if 44100, downsample to 16000 before sending to Whisper
+val recorder = AudioRecord(
+    MediaRecorder.AudioSource.VOICE_RECOGNITION,  // NOT MIC — disables OEM AGC/noise suppression
+    48000, CHANNEL_IN_MONO, ENCODING_PCM_16BIT,
+    AudioRecord.getMinBufferSize(48000, CHANNEL_IN_MONO, ENCODING_PCM_16BIT) * 4
+)
+// Downsample 48kHz → 16kHz (3:1) before sending to Whisper
 ```
-Use `AudioSource.MIC` — not `VOICE_COMMUNICATION` (known routing bugs on some Boox firmware).
+Use `VOICE_RECOGNITION` not `MIC` — the whisper.cpp Android example uses `MIC` and this is wrong for production.
 
 ### No 3.5mm jack on any current Boox model
 All current Boox devices are USB-C audio only. Plan for USB-C adapter or Bluetooth speaker/headphones for children who need clearer audio output.
