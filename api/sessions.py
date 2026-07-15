@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.session import get_db
@@ -10,7 +10,7 @@ router = APIRouter()
 @router.get("/sessions/{child_id}")
 async def get_sessions(
     child_id: str,
-    limit: int = 50,
+    limit: int = Query(default=50, ge=1, le=500),
     session: AsyncSession = Depends(get_db),
 ):
     turns = await get_session_history(child_id, session, limit)
