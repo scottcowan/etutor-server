@@ -96,7 +96,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2)*
 
-- [ ] 02-03-PLAN.md — TDD: FSRS update_fsrs_schedule() + fit_fsrs_params() (KT-02)
+- [x] 02-03-PLAN.md — TDD: FSRS update_fsrs_schedule() + fit_fsrs_params() (KT-02)
 
 **Wave 4** *(blocked on Wave 3, parallel pair)*
 
@@ -219,7 +219,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
-| 2. Knowledge Tracing Backend | 2/6 | In Progress|  |
+| 2. Knowledge Tracing Backend | 3/6 | In Progress|  |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
