@@ -88,7 +88,7 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 02-01-PLAN.md — DB scaffold: ChildFSRSParamsModel, FSRS CRUD, log_turn kc_id/correct, Alembic migration, fsrs dependency
+- [x] 02-01-PLAN.md — DB scaffold: ChildFSRSParamsModel, FSRS CRUD, log_turn kc_id/correct, Alembic migration, fsrs dependency
 
 **Wave 2** *(blocked on Wave 1)*
 
@@ -219,7 +219,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
-| 2. Knowledge Tracing Backend | 0/6 | Planned    |  |
+| 2. Knowledge Tracing Backend | 1/6 | In Progress|  |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
