@@ -1,5 +1,5 @@
 """
-TDD tests for BKT knowledge tracing service (KT-01).
+TDD tests for BKT + FSRS knowledge tracing service (KT-01, KT-02).
 
 RED phase: imports will fail until services/knowledge_tracing.py is created.
 
@@ -9,11 +9,25 @@ Covers:
   - update_bkt() output clamped to [0.0, 1.0]
   - update_bkt_for_session() batch-processes kc_id-tagged events in a session
   - update_bkt_for_session() returns {} when no kc_id-tagged events exist
+  - update_fsrs_schedule() writes FSRS fields to mastery_state (KT-02)
+  - fit_fsrs_params() cold-start guard and weights write (KT-02)
 """
 import pytest
 
-from services.knowledge_tracing import update_bkt, update_bkt_for_session
-from db.crud import create_child, create_session, log_turn, create_or_get_mastery_state
+from services.knowledge_tracing import (
+    update_bkt,
+    update_bkt_for_session,
+    update_fsrs_schedule,
+    fit_fsrs_params,
+    FSRS_MIN_REVIEWS_FOR_FIT,
+)
+from db.crud import (
+    create_child,
+    create_session,
+    log_turn,
+    create_or_get_mastery_state,
+    get_child_fsrs_params,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -189,3 +203,128 @@ async def test_update_bkt_for_session_persists_to_db(db_session):
     ms = await create_or_get_mastery_state(child.id, "kc-times-tables", db_session)
     assert ms.p_mastery == pytest.approx(result["kc-times-tables"])
     assert ms.p_mastery > 0.1
+
+
+# ---------------------------------------------------------------------------
+# KT-02: update_fsrs_schedule() — FSRS scheduling integration tests
+# ---------------------------------------------------------------------------
+
+async def test_update_fsrs_schedule_correct(db_session):
+    """After a correct review, FSRS fields are written to mastery_state."""
+    child = await create_child(db_session, id="child-fsrs-01", name="Eve", age=10)
+
+    await update_fsrs_schedule(child.id, "kc-fractions", correct=True, db=db_session)
+
+    ms = await create_or_get_mastery_state(child.id, "kc-fractions", db_session)
+
+    # stability must be a positive float after first review
+    assert ms.stability is not None
+    assert ms.stability > 0.0
+
+    # difficulty_d must be a positive float
+    assert ms.difficulty_d is not None
+    assert ms.difficulty_d > 0.0
+
+    # card_state must be a non-empty string
+    assert ms.card_state is not None
+    assert ms.card_state in ("Learning", "Review", "Relearning")
+
+    # next_review must be a UTC-aware datetime in the future
+    from datetime import datetime, timezone
+    assert ms.next_review is not None
+    nr = ms.next_review
+    if nr.tzinfo is None:
+        nr = nr.replace(tzinfo=timezone.utc)
+    assert nr > datetime.now(timezone.utc)
+
+
+async def test_update_fsrs_schedule_incorrect_shorter_interval(db_session):
+    """After Again rating (correct=False), next_review is closer than after Good (correct=True)."""
+    from datetime import datetime, timezone
+
+    child_good = await create_child(db_session, id="child-fsrs-02", name="Fred", age=10)
+    child_again = await create_child(db_session, id="child-fsrs-03", name="Gina", age=10)
+
+    now = datetime.now(timezone.utc)
+
+    await update_fsrs_schedule(child_good.id, "kc-spelling", correct=True, db=db_session, review_datetime=now)
+    await update_fsrs_schedule(child_again.id, "kc-spelling", correct=False, db=db_session, review_datetime=now)
+
+    ms_good = await create_or_get_mastery_state(child_good.id, "kc-spelling", db_session)
+    ms_again = await create_or_get_mastery_state(child_again.id, "kc-spelling", db_session)
+
+    nr_good = ms_good.next_review
+    nr_again = ms_again.next_review
+
+    # Normalise timezone
+    if nr_good.tzinfo is None:
+        nr_good = nr_good.replace(tzinfo=timezone.utc)
+    if nr_again.tzinfo is None:
+        nr_again = nr_again.replace(tzinfo=timezone.utc)
+
+    # Again should schedule sooner than Good (shorter interval)
+    assert nr_again < nr_good
+
+
+# ---------------------------------------------------------------------------
+# KT-02: fit_fsrs_params() — cold-start guard and weights write
+# ---------------------------------------------------------------------------
+
+def test_fsrs_min_reviews_constant():
+    """FSRS_MIN_REVIEWS_FOR_FIT is the expected integer 10."""
+    assert FSRS_MIN_REVIEWS_FOR_FIT == 10
+
+
+async def test_fit_fsrs_cold_start_guard_zero_events(db_session):
+    """Given 0 rated events, fit_fsrs_params() returns without writing to child_fsrs_params."""
+    child = await create_child(db_session, id="child-fit-01", name="Hal", age=9)
+
+    await fit_fsrs_params(child.id, db_session)
+
+    params = await get_child_fsrs_params(child.id, db_session)
+    assert params is None
+
+
+async def test_fit_fsrs_cold_start_guard_nine_events(db_session):
+    """Given 9 rated events (below threshold), fit_fsrs_params() returns without writing."""
+    child = await create_child(db_session, id="child-fit-02", name="Iris", age=10)
+
+    for i in range(9):
+        await log_turn(
+            child.id,
+            f"Question {i}",
+            f"Answer {i}",
+            db_session,
+            kc_id="kc-reading",
+            correct=(i % 2 == 0),
+        )
+
+    await fit_fsrs_params(child.id, db_session)
+
+    params = await get_child_fsrs_params(child.id, db_session)
+    assert params is None
+
+
+async def test_fit_fsrs_writes_params_with_fifteen_events(db_session):
+    """Given 15 rated events, fit_fsrs_params() writes a 21-float weights list."""
+    from datetime import datetime, timezone, timedelta
+
+    child = await create_child(db_session, id="child-fit-03", name="Jake", age=11)
+
+    for i in range(15):
+        await log_turn(
+            child.id,
+            f"Question {i}",
+            f"Answer {i}",
+            db_session,
+            kc_id="kc-maths",
+            correct=(i % 2 == 0),
+        )
+
+    await fit_fsrs_params(child.id, db_session)
+
+    params = await get_child_fsrs_params(child.id, db_session)
+    assert params is not None
+    assert isinstance(params.weights, list)
+    assert len(params.weights) == 21
+    assert all(isinstance(w, float) for w in params.weights)
