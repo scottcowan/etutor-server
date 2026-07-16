@@ -151,3 +151,29 @@ Separate product repo. Could import etutor-server's BKT/FSRS/session layer
 as a library, or fork and diverge. Do not add compliance features to
 etutor-server itself — different audience, different regulatory context,
 different product.
+
+## Assessment Mechanism
+
+The LLM doesn't mark right/wrong — it scores against a concept rubric:
+
+```yaml
+concept: UKBA-03 — hospitality that could influence business decisions
+required_elements:
+  - identifies the conflict-of-interest risk
+  - references the relevant policy threshold (or asks for it)
+  - describes the escalation/disclosure path
+  - does NOT just say "I'd refuse" without reasoning
+```
+
+The score is structured (which elements present/absent), feeds directly into BKT
+`correct` determination, and produces an audit trail that includes the raw response
+text + the rubric + the assessment. More legible to a regulator than a multiple-
+choice score, because you have the actual reasoning.
+
+**Failure mode:** employees learn to include the magic words without understanding.
+**Mitigation:** novel scenarios each time + one Socratic follow-up on suspiciously
+formulaic responses ("you said you'd escalate — what would you say to your
+manager?"). If the reasoning collapses under one follow-up, mastery doesn't update.
+
+**Marking latency:** 1-3 seconds (synchronous UX). Employee gets immediate feedback
+with specific gaps called out, not "incorrect — the right answer was B."
