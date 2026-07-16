@@ -21,13 +21,16 @@ from fsrs import Optimizer
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import InteractionEventModel
+from db.models import InteractionEventModel, MasteryStateModel
 from db.crud import (
     create_or_get_mastery_state,
+    get_child_by_id,
     get_child_fsrs_params,
     update_mastery_state,
     upsert_child_fsrs_params,
 )
+from services.curriculum import Topic
+from services.curriculum import next_topics as curriculum_next_topics
 
 
 # ---------------------------------------------------------------------------
@@ -304,3 +307,168 @@ async def fit_fsrs_params(
 
     # Persist fitted weights
     await upsert_child_fsrs_params(child_id, list(optimal), db)
+
+
+# ---------------------------------------------------------------------------
+# KT-03: Mastery bucket helper (private)
+# ---------------------------------------------------------------------------
+
+# Bucket rank for sorting: lower = higher priority in result
+BUCKET_ORDER: dict[str, int] = {
+    "fragile": 0,
+    "in_progress": 1,
+    "not_started": 2,
+    "solid": 99,
+}
+
+
+def _mastery_bucket(p_mastery: Optional[float]) -> str:
+    """
+    Map a p_mastery float to a bucket label (D-12 thresholds).
+
+    - None or < 0.1  → "not_started"
+    - 0.1 <= p < 0.7 → "fragile"
+    - 0.7 <= p < 0.95 → "in_progress"
+    - p >= 0.95      → "solid"
+    """
+    if p_mastery is None or p_mastery < 0.1:
+        return "not_started"
+    if p_mastery < 0.7:
+        return "fragile"
+    if p_mastery < 0.95:
+        return "in_progress"
+    return "solid"
+
+
+# ---------------------------------------------------------------------------
+# KT-03: next_topics() — FSRS-aware topic ranking
+# ---------------------------------------------------------------------------
+
+async def next_topics(
+    child_id: str,
+    db: AsyncSession,
+    limit: int = 10,
+) -> list[Topic]:
+    """
+    KT-03: Return ordered list of recommended Topic objects for a child.
+
+    Ranking (D-07, D-08):
+    1. FSRS-due KCs (next_review <= now), most overdue first.
+    2. Within same tier, rank by mastery bucket: fragile < in_progress < not_started.
+    3. Exclude solid KCs with a future next_review.
+    4. KCs with no mastery_state row treated as not_started / due today (D-09).
+
+    Delegates candidate pool to curriculum.next_topics() which already enforces
+    age-gating and prerequisite checks internally.
+
+    Security note (T-2-08): child_id is parameterised via SQLAlchemy ORM —
+    never string-interpolated.
+    """
+    # Load child profile
+    child = await get_child_by_id(child_id, db)
+    if child is None:
+        return []
+
+    # Load all mastery_state rows for this child
+    stmt = select(MasteryStateModel).where(MasteryStateModel.child_id == child_id)
+    result = await db.execute(stmt)
+    mastery_rows = list(result.scalars().all())
+
+    # Build mastered KC set (solid: p_mastery >= 0.95)
+    mastered_ids = [r.kc_id for r in mastery_rows if r.p_mastery >= 0.95]
+
+    # Get curriculum candidates (pure function — already filtered by age/prereqs)
+    candidates = curriculum_next_topics(child.age, mastered_ids, child.interests)
+
+    # Build mastery lookup by kc_id
+    mastery_by_kc = {r.kc_id: r for r in mastery_rows}
+    now = datetime.now(timezone.utc)
+
+    def rank_key(topic: Topic) -> tuple:
+        row = mastery_by_kc.get(topic.id)
+        if row is None:
+            # D-09: no mastery row → treat as not_started, due today
+            return (0, 0, BUCKET_ORDER["not_started"])
+
+        bucket = _mastery_bucket(row.p_mastery)
+        nr = row.next_review
+        if nr is not None and nr.tzinfo is None:
+            nr = nr.replace(tzinfo=timezone.utc)
+
+        if nr is None:
+            is_due = True
+            overdue_days = 0
+        else:
+            is_due = nr <= now
+            overdue_days = (now - nr).days if is_due else 0
+
+        return (0 if is_due else 1, -overdue_days, BUCKET_ORDER[bucket])
+
+    ranked = sorted(candidates, key=rank_key)
+
+    # Filter: exclude solid KCs (p_mastery >= 0.95) with a future next_review.
+    # Solid KCs that are overdue (next_review <= now) are NOT excluded — they need review.
+    def _is_solid_future(topic: Topic) -> bool:
+        row = mastery_by_kc.get(topic.id)
+        if row is None:
+            return False
+        if row.p_mastery < 0.95:
+            return False
+        nr = row.next_review
+        if nr is None:
+            return False
+        if nr.tzinfo is None:
+            nr = nr.replace(tzinfo=timezone.utc)
+        return nr > now
+
+    filtered = [t for t in ranked if not _is_solid_future(t)]
+
+    return filtered[:limit]
+
+
+# ---------------------------------------------------------------------------
+# KT-05: mastery_context_for_prompt() — prompt injection formatting
+# ---------------------------------------------------------------------------
+
+async def mastery_context_for_prompt(
+    child_id: str,
+    db: AsyncSession,
+    limit: int = 5,
+) -> list[dict]:
+    """
+    KT-05: Returns top-N KCs as dicts for build_system_prompt() injection.
+
+    Calls next_topics(child_id, db, limit=limit) then formats each Topic as:
+    {"name": topic.name, "bucket": "fragile"|"in_progress"|"not_started"}.
+    "solid" KCs are never returned (filtered out defensively).
+
+    Returns [] when next_topics() returns [] or when child_id is unknown.
+    """
+    topics = await next_topics(child_id, db, limit=limit)
+    if not topics:
+        return []
+
+    # Load mastery state rows for the returned topic IDs in one query
+    topic_ids = [t.id for t in topics]
+    stmt = (
+        select(MasteryStateModel)
+        .where(MasteryStateModel.child_id == child_id)
+        .where(MasteryStateModel.kc_id.in_(topic_ids))
+    )
+    result = await db.execute(stmt)
+    mastery_rows = list(result.scalars().all())
+    mastery_by_kc = {r.kc_id: r for r in mastery_rows}
+
+    context: list[dict] = []
+    for topic in topics:
+        row = mastery_by_kc.get(topic.id)
+        p = row.p_mastery if row is not None else None
+        bucket = _mastery_bucket(p)
+
+        # Defensive: never expose solid KCs in prompt context
+        if bucket == "solid":
+            continue
+
+        context.append({"name": topic.name, "bucket": bucket})
+
+    return context

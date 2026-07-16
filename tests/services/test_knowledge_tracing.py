@@ -328,3 +328,174 @@ async def test_fit_fsrs_writes_params_with_fifteen_events(db_session):
     assert isinstance(params.weights, list)
     assert len(params.weights) == 21
     assert all(isinstance(w, float) for w in params.weights)
+
+
+# ---------------------------------------------------------------------------
+# KT-03: next_topics() — ranking and filtering (RED phase — will fail until
+# next_topics and mastery_context_for_prompt are added to knowledge_tracing.py)
+# ---------------------------------------------------------------------------
+
+from services.knowledge_tracing import next_topics, mastery_context_for_prompt
+
+
+async def test_next_topics_due_first(db_session):
+    """Overdue KC appears before a KC with a future next_review.
+
+    Uses limit=20 to ensure both KCs appear despite other not_started KCs also
+    being eligible at age 6 (15 total topics). The assertion is about relative order.
+    """
+    from datetime import datetime, timezone, timedelta
+
+    child = await create_child(db_session, id="child-kt03-01", name="Leah", age=6)
+    now = datetime.now(timezone.utc)
+
+    # KC-A: overdue (next_review = yesterday)
+    ms_a = await create_or_get_mastery_state(child.id, "phonics_phase1", db_session)
+    ms_a.p_mastery = 0.4
+    ms_a.next_review = now - timedelta(days=1)
+    await db_session.commit()
+
+    # KC-B: future review (next_review = tomorrow)
+    ms_b = await create_or_get_mastery_state(child.id, "counting_numbers", db_session)
+    ms_b.p_mastery = 0.4
+    ms_b.next_review = now + timedelta(days=1)
+    await db_session.commit()
+
+    # limit=20 captures all 15 age-6 topics including the future-review KC
+    result = await next_topics(child.id, db_session, limit=20)
+
+    ids = [t.id for t in result]
+    assert "phonics_phase1" in ids
+    assert "counting_numbers" in ids
+    assert ids.index("phonics_phase1") < ids.index("counting_numbers")
+
+
+async def test_next_topics_bucket_ranking(db_session):
+    """Fragile KC (p_mastery=0.3) ranked before in_progress KC (p_mastery=0.8) when both due."""
+    from datetime import datetime, timezone, timedelta
+
+    child = await create_child(db_session, id="child-kt03-02", name="Maya", age=6)
+    now = datetime.now(timezone.utc)
+
+    # KC-X: fragile (p_mastery=0.3), due today
+    ms_x = await create_or_get_mastery_state(child.id, "phonics_phase1", db_session)
+    ms_x.p_mastery = 0.3
+    ms_x.next_review = now - timedelta(hours=1)
+    await db_session.commit()
+
+    # KC-Y: in_progress (p_mastery=0.8), due today
+    ms_y = await create_or_get_mastery_state(child.id, "counting_numbers", db_session)
+    ms_y.p_mastery = 0.8
+    ms_y.next_review = now - timedelta(hours=1)
+    await db_session.commit()
+
+    result = await next_topics(child.id, db_session, limit=10)
+
+    ids = [t.id for t in result]
+    assert "phonics_phase1" in ids
+    assert "counting_numbers" in ids
+    assert ids.index("phonics_phase1") < ids.index("counting_numbers")
+
+
+async def test_next_topics_excludes_solid_future(db_session):
+    """Solid KC (p_mastery=0.97) with future next_review is excluded from results."""
+    from datetime import datetime, timezone, timedelta
+
+    child = await create_child(db_session, id="child-kt03-03", name="Nora", age=6)
+    now = datetime.now(timezone.utc)
+
+    # KC-Z: solid with future review — should be excluded
+    ms_z = await create_or_get_mastery_state(child.id, "phonics_phase1", db_session)
+    ms_z.p_mastery = 0.97
+    ms_z.next_review = now + timedelta(days=7)
+    await db_session.commit()
+
+    result = await next_topics(child.id, db_session, limit=10)
+
+    ids = [t.id for t in result]
+    assert "phonics_phase1" not in ids
+
+
+async def test_next_topics_no_mastery_row(db_session):
+    """KC with no mastery_state row is treated as not_started and included (D-09)."""
+    child = await create_child(db_session, id="child-kt03-04", name="Owen", age=6)
+
+    # No mastery rows created — all KCs are "not started"
+    result = await next_topics(child.id, db_session, limit=10)
+
+    assert len(result) > 0
+    ids = [t.id for t in result]
+    # phonics_phase1 is in year_groups=[1] for age=6 (year 1)
+    assert "phonics_phase1" in ids
+
+
+async def test_next_topics_limit(db_session):
+    """Result length is always <= limit."""
+    child = await create_child(db_session, id="child-kt03-05", name="Petra", age=6)
+
+    result = await next_topics(child.id, db_session, limit=3)
+
+    assert len(result) <= 3
+
+
+async def test_next_topics_returns_empty_for_unknown_child(db_session):
+    """Unknown child_id returns empty list without raising."""
+    result = await next_topics("nonexistent-child-id", db_session, limit=10)
+
+    assert result == []
+
+
+# ---------------------------------------------------------------------------
+# KT-05: mastery_context_for_prompt() — shape and filtering tests
+# ---------------------------------------------------------------------------
+
+async def test_mastery_context_for_prompt_shape(db_session):
+    """Result is list[dict] with 'name' and 'bucket' keys."""
+    child = await create_child(db_session, id="child-mc-01", name="Quinn", age=6)
+
+    result = await mastery_context_for_prompt(child.id, db_session, limit=5)
+
+    assert isinstance(result, list)
+    for item in result:
+        assert isinstance(item, dict)
+        assert "name" in item
+        assert "bucket" in item
+        assert isinstance(item["name"], str)
+        assert isinstance(item["bucket"], str)
+
+
+async def test_mastery_context_for_prompt_bucket_values(db_session):
+    """All bucket values are one of: fragile, in_progress, not_started."""
+    child = await create_child(db_session, id="child-mc-02", name="Rosa", age=6)
+
+    result = await mastery_context_for_prompt(child.id, db_session, limit=5)
+
+    valid_buckets = {"fragile", "in_progress", "not_started"}
+    for item in result:
+        assert item["bucket"] in valid_buckets, f"Unexpected bucket: {item['bucket']!r}"
+
+
+async def test_mastery_context_no_solid(db_session):
+    """'solid' bucket never appears in the returned list."""
+    from datetime import datetime, timezone, timedelta
+
+    child = await create_child(db_session, id="child-mc-03", name="Sam", age=6)
+    now = datetime.now(timezone.utc)
+
+    # Seed a solid KC — it should be filtered out
+    ms = await create_or_get_mastery_state(child.id, "phonics_phase1", db_session)
+    ms.p_mastery = 0.97
+    ms.next_review = now + timedelta(days=7)
+    await db_session.commit()
+
+    result = await mastery_context_for_prompt(child.id, db_session, limit=5)
+
+    for item in result:
+        assert item["bucket"] != "solid", f"Solid KC leaked into mastery_context: {item}"
+
+
+async def test_mastery_context_returns_empty_for_unknown_child(db_session):
+    """Unknown child_id returns [] without raising."""
+    result = await mastery_context_for_prompt("nonexistent-id", db_session, limit=5)
+
+    assert result == []
