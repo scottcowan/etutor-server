@@ -92,7 +92,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1)*
 
-- [ ] 02-02-PLAN.md — TDD: BKT update_bkt() + update_bkt_for_session() (KT-01)
+- [x] 02-02-PLAN.md — TDD: BKT update_bkt() + update_bkt_for_session() (KT-01)
 
 **Wave 3** *(blocked on Wave 2)*
 
@@ -219,7 +219,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
-| 2. Knowledge Tracing Backend | 1/6 | In Progress|  |
+| 2. Knowledge Tracing Backend | 2/6 | In Progress|  |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
