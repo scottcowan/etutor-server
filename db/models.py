@@ -6,6 +6,7 @@ Models:
   - SessionModel: tutoring session record (DB-03)
   - InteractionEventModel: per-turn interaction events (DB-04)
   - MasteryStateModel: BKT + FSRS mastery scaffold (DB-05)
+  - ChildFSRSParamsModel: per-child FSRS-5 fitted weight vector (D-06)
 
 Importing this module does NOT trigger any DB I/O.
 """
@@ -89,3 +90,18 @@ class MasteryStateModel(Base):
     card_state: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     next_review: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class ChildFSRSParamsModel(Base):
+    """Per-child FSRS-5 fitted weight vector (D-06)."""
+    __tablename__ = "child_fsrs_params"
+
+    child_id: Mapped[str] = mapped_column(
+        String, ForeignKey("child_profiles.id"), primary_key=True
+    )
+    # JSON list of 21 floats — FSRS-5 weight vector
+    weights: Mapped[list] = mapped_column(JSON, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+    )

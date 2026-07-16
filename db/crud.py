@@ -22,7 +22,7 @@ from typing import Optional
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import ChildProfileModel, InteractionEventModel, MasteryStateModel, SessionModel
+from db.models import ChildFSRSParamsModel, ChildProfileModel, InteractionEventModel, MasteryStateModel, SessionModel
 
 
 async def create_child(
@@ -130,11 +130,17 @@ async def log_turn(
     *,
     topic: Optional[str] = None,
     session_id: Optional[str] = None,
+    kc_id: Optional[str] = None,
+    correct: Optional[bool] = None,
 ) -> InteractionEventModel:
     """Insert a new InteractionEvent (turn) row and return the refreshed model.
 
-    topic and session_id are keyword-only to prevent positional-argument breakage
-    when services/sessions.py wraps this function in Plan 05.
+    topic, session_id, kc_id, and correct are keyword-only to prevent positional-argument
+    breakage when services/sessions.py wraps this function.
+
+    kc_id and correct are Phase 2 BKT parameters (KT-04). Pass kc_id to associate the
+    turn with a knowledge component; pass correct=True/False to enable BKT batch update.
+    Both default to None — existing callers are unaffected (T-2-01: parameterised INSERT).
     """
     model = InteractionEventModel(
         id=str(uuid.uuid4()),
@@ -143,6 +149,8 @@ async def log_turn(
         answer=answer,
         topic=topic,
         session_id=session_id,
+        kc_id=kc_id,
+        correct=correct,
     )
     session.add(model)
     await session.commit()
@@ -208,4 +216,39 @@ async def update_mastery_state(
     for k, v in fields.items():
         setattr(model, k, v)
     model.updated_at = datetime.now(timezone.utc)
+    await session.commit()
+
+
+# ---------------------------------------------------------------------------
+# ChildFSRSParams CRUD (D-06)
+# ---------------------------------------------------------------------------
+
+async def get_child_fsrs_params(
+    child_id: str,
+    session: AsyncSession,
+) -> Optional[ChildFSRSParamsModel]:
+    """Return ChildFSRSParamsModel for child_id, or None if not found (cold-start)."""
+    return await session.get(ChildFSRSParamsModel, child_id)
+
+
+async def upsert_child_fsrs_params(
+    child_id: str,
+    weights: list,
+    session: AsyncSession,
+) -> None:
+    """Insert or update the per-child FSRS-5 weight vector.
+
+    Uses session.get() PK lookup (parameterised) — no string-interpolation risk (T-2-02).
+    Follows the get-or-create pattern from create_or_get_mastery_state().
+    """
+    existing = await session.get(ChildFSRSParamsModel, child_id)
+    if existing:
+        existing.weights = weights
+        existing.updated_at = datetime.now(timezone.utc)
+    else:
+        session.add(ChildFSRSParamsModel(
+            child_id=child_id,
+            weights=weights,
+            updated_at=datetime.now(timezone.utc),
+        ))
     await session.commit()

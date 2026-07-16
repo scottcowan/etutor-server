@@ -23,10 +23,17 @@ async def log_turn(
     question: str,
     answer: str,
     session: AsyncSession,
-    topic: str = None,
-    session_id: str = None,
+    topic: Optional[str] = None,
+    session_id: Optional[str] = None,
+    kc_id: Optional[str] = None,
+    correct: Optional[bool] = None,
 ):
-    return await db_log_turn(child_id, question, answer, session, topic=topic, session_id=session_id)
+    """Thin wrapper over db.crud.log_turn — forwards all parameters including Phase 2 BKT fields."""
+    return await db_log_turn(
+        child_id, question, answer, session,
+        topic=topic, session_id=session_id,
+        kc_id=kc_id, correct=correct,
+    )
 
 
 async def get_session_history(child_id: str, session: AsyncSession, limit: int = 50):
