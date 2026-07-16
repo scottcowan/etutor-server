@@ -63,6 +63,30 @@ a wrong answer without understanding why it was wrong?"
   obvious entry point — universal, expensive to get wrong, current training
   is universally terrible)
 
+## The Cynicism Problem
+
+Corporate compliance buyers (legal/risk teams) don't primarily want better learning
+outcomes. They want a defensible audit trail: employee X was shown content version Y
+on date Z and passed. Static click-through achieves that cheaply. Adaptive training
+costs more to build and doesn't automatically make the audit trail stronger.
+
+**Where the product actually wins:**
+- FCA, ICO, and some US federal regulators are shifting from "did you train them"
+  to "was the training effective." BKT mastery score per concept is a stronger
+  evidence artefact than a binary pass/fail when effectiveness is the question.
+- Risk-tiered records: someone in procurement has deeper anti-bribery training
+  than someone in IT — adaptive naturally produces differentiated records that
+  show proportionate effort.
+- Repeat near-miss tracking: if an employee has two expense-report incidents,
+  the system resurfaces that module and logs it automatically. Genuinely useful
+  defensively.
+
+**The product that works:** adaptive enough to produce better learning outcomes,
+but with audit trail and evidence artefacts front-and-centre so legal teams can
+still buy it for the right (cynical) reasons. BKT mastery score as evidence
+artefact is the bridge — it gives compliance teams something to show regulators,
+and it actually means something about whether the person understands.
+
 ## Repo Strategy
 
 Separate product repo. Could import etutor-server's BKT/FSRS/session layer
