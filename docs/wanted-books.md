@@ -3881,3 +3881,44 @@ Cycle, Cú Chulainn, Finn McCool. Tutor reference rather than child-facing.
 4. **Book recommendations** — when the interest graph detects "vikings",
    "egypt", or "world war", surface the matching DK Eyewitness or Horrible
    Histories title as a next-session suggestion.
+
+---
+
+## Missing from Library — Files Absent from NAS
+
+Books confirmed in the Calibre database (metadata present, book shows in search)
+but the EPUB/MOBI file is missing from disk. The Calibre record exists but points
+to a file that was never imported or has since been moved/deleted.
+
+These need to be sourced and re-imported into Calibre-Web.
+
+### Neil Gaiman — Three titles
+
+**Coraline** (HarperCollins, 2002)
+A girl discovers a secret door to a parallel world where everything seems
+better — until it isn't. Perfect for ages 9–12. Horror-adjacent but not
+frightening; teaches courage and the value of the ordinary.
+*Library:* Calibre-Web | *Age:* 9–12
+
+**The Graveyard Book** (Bloomsbury, 2008)
+A boy raised by ghosts in a graveyard. Won the Carnegie Medal and Newbery
+Medal. One of the finest children's novels of the 2000s — genuinely
+literary, funny, and moving.
+*Library:* Calibre-Web | *Age:* 10–12
+
+**Norse Mythology** (Bloomsbury, 2017)
+Gaiman's retelling of the Norse myths — Odin, Thor, Loki, Ragnarök. Ideal
+companion to the curriculum's Norse history and mythology topics. Engaging
+prose that works for children and adults equally.
+*Library:* Calibre-Web | *Age:* 10–12
+
+---
+
+### Philip Pullman — His Dark Materials Book 3
+
+**The Amber Spyglass** (Scholastic, 2000)
+The conclusion of His Dark Materials. Already have The Golden Compass and
+The Subtle Knife — this completes the trilogy. Won the Whitbread Prize,
+the first children's book to do so.
+*Library:* Calibre-Web | *Age:* 11–12
+
