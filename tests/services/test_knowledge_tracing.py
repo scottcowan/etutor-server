@@ -59,7 +59,13 @@ def test_bkt_near_certain_correct_stays_high():
 
 
 def test_bkt_near_zero_incorrect_stays_low():
-    """Near-zero mastery stays near 0.0 after an incorrect observation."""
+    """Near-zero mastery does not spike to high values after an incorrect observation.
+
+    With p_mastery=0.01 and correct=False, the BKT posterior is ~0 but the
+    forward transition step adds approximately p_learn (0.2), so the output
+    is ~0.2 — not a spike. Threshold is set to 0.3 to guard against genuine
+    spurious increases while tolerating the p_learn floor.
+    """
     result = update_bkt(
         p_mastery=0.01,
         p_learn=0.2,
@@ -67,7 +73,7 @@ def test_bkt_near_zero_incorrect_stays_low():
         p_guess=0.2,
         correct=False,
     )
-    assert result < 0.2
+    assert result < 0.3  # does not spike; p_learn floor ≈ 0.2 is expected
 
 
 def test_bkt_output_clamped_to_unit_interval():
