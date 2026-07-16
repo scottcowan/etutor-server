@@ -11,6 +11,7 @@ from db.session import get_db
 from services.tutor import build_system_prompt, route_model
 from services.profiles import get_child_by_device_id, get_child_by_id
 from services.sessions import log_turn
+from services.knowledge_tracing import mastery_context_for_prompt
 
 router = APIRouter()
 
@@ -53,7 +54,8 @@ async def chat(
     child = await get_child_by_id(child_id, session)
     if not child:
         raise HTTPException(status_code=404, detail="Child not found")
-    system_prompt = await build_system_prompt(child)
+    mastery_ctx = await mastery_context_for_prompt(child_id, session, limit=5)
+    system_prompt = await build_system_prompt(child, mastery_context=mastery_ctx or None)
     model = route_model(child)
 
     messages = [{"role": "system", "content": system_prompt}]
