@@ -818,25 +818,15 @@ Adding `mastery_context: list[dict] | None = None` to `build_system_prompt()` is
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **How is kc_id set per turn?**
-   - What we know: `InteractionEventModel.kc_id` exists, `log_turn()` does not set it, nothing in Phase 1 sets it.
-   - What's unclear: Should the client send `kc_id` in the chat request? Should the server infer it from `child.current_topic`? Should the LLM response include a structured tag?
-   - Recommendation: Simplest approach for Phase 2 — infer `kc_id` from `child.current_topic` at log time (it's a slug already). Extend `log_turn()` to accept `kc_id: Optional[str] = None`. Document that Phase 5 device sync will send explicit `kc_id`.
+1. **How is kc_id set per turn?** — RESOLVED: Plan 02-01 extends `log_turn()` to accept `kc_id: Optional[str] = None`; inferred from `child.current_topic` at chat time. Phase 5 device sync will send explicit `kc_id`.
 
-2. **How is `correct` determined per turn?**
-   - What we know: `InteractionEventModel.correct` exists, nothing sets it.
-   - What's unclear: Determining correctness requires either the client to grade the answer or an LLM call to assess it.
-   - Recommendation: For Phase 2, let the chat endpoint pass `correct=None` unless the LLM response contains an explicit signal (e.g. structured output tag). Correctness grading is a Phase 3/6 concern. BKT will no-op for turns with `correct=None` — this is acceptable and clearly documented.
+2. **How is `correct` determined per turn?** — RESOLVED: Pass `correct=None` for Phase 2. BKT no-ops on NULL rows. Correctness grading is Phase 3/6 scope.
 
-3. **Where does POST /sessions/{id}/end live — `api/sessions.py` or new `api/knowledge_tracing.py`?**
-   - What we know: `api/sessions.py` already has `GET /sessions/{child_id}`.
-   - Recommendation: Add to `api/sessions.py` for cohesion. If the file grows large, extract later.
+3. **Where does POST /sessions/{id}/end live?** — RESOLVED: Added to `api/sessions.py` for cohesion (Plan 02-05).
 
-4. **`fsrs[optimizer]` brings torch as a transitive dependency — is this acceptable?**
-   - What we know: `torch` is a large package (~700MB). The server runs on a standard machine, not the e-ink device. Package size is not a concern server-side.
-   - Recommendation: Add `fsrs[optimizer]` to `requirements.txt`. If CI has size limits, note that `torch` can be installed with `--index-url https://download.pytorch.org/whl/cpu` for the CPU-only build.
+4. **`fsrs[optimizer]` torch dependency acceptable?** — RESOLVED: Added to `requirements.txt` in Plan 02-01. CPU-only install via `--index-url https://download.pytorch.org/whl/cpu` for CI if needed.
 
 ---
 
