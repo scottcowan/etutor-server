@@ -339,7 +339,11 @@ from services.knowledge_tracing import next_topics, mastery_context_for_prompt
 
 
 async def test_next_topics_due_first(db_session):
-    """Overdue KC appears before a KC with a future next_review."""
+    """Overdue KC appears before a KC with a future next_review.
+
+    Uses limit=20 to ensure both KCs appear despite other not_started KCs also
+    being eligible at age 6 (15 total topics). The assertion is about relative order.
+    """
     from datetime import datetime, timezone, timedelta
 
     child = await create_child(db_session, id="child-kt03-01", name="Leah", age=6)
@@ -357,7 +361,8 @@ async def test_next_topics_due_first(db_session):
     ms_b.next_review = now + timedelta(days=1)
     await db_session.commit()
 
-    result = await next_topics(child.id, db_session, limit=10)
+    # limit=20 captures all 15 age-6 topics including the future-review KC
+    result = await next_topics(child.id, db_session, limit=20)
 
     ids = [t.id for t in result]
     assert "phonics_phase1" in ids
