@@ -87,6 +87,41 @@ still buy it for the right (cynical) reasons. BKT mastery score as evidence
 artefact is the bridge — it gives compliance teams something to show regulators,
 and it actually means something about whether the person understands.
 
+## Regulatory Trajectory
+
+The shift from "did you train them" to "was training effective" is already in motion:
+
+- **UK FCA Consumer Duty (2023)** — firms must demonstrate employees *understand*
+  their obligations. "Tick-box compliance" explicitly called out as insufficient.
+- **ICO Interserve (£4.4m fine, 2022)** — staff clicked phishing links despite
+  "completed" training. ICO used failure rates as evidence training was ineffective,
+  not just absent. Establishes the precedent: completion + pass/fail is not enough.
+- **US DOJ Corporate Compliance Guidance (2023)** — prosecutors explicitly ask
+  whether training is "tested and updated" and whether employees *understand* it.
+- **EU AI Act (2024)** — requires "AI literacy" for staff working with AI systems.
+  No specification yet on what "adequate" means — creates the same gap.
+
+The pattern: regulators write outcome-based standards, enforcement creates precedent
+defining what "effective" means operationally, the market needs evidence artefacts
+that map to those precedents.
+
+**The arbitrage:** the gap between what buyers currently accept as proof
+(completion + pass/fail) and what regulators are moving toward (demonstrated
+retention over time, behaviour change evidence, risk-tiered depth). A product
+that produces per-concept mastery scores with decay curves + timestamped spaced
+revisiting evidence + risk-tiered depth can be sold on existing grounds while
+being defensible against the next generation of enforcement.
+
+**Why the window is open:** Workday, Cornerstone, SAP SuccessFactors are LMS
+infrastructure with bolted-on compliance modules. They won't rebuild their
+assessment models around BKT — platform lock-in makes architectural change slow.
+The learning science is available, the regulatory direction is visible, and the
+incumbents can't move fast enough.
+
+**The risk:** regulators move slowly and unpredictably. The hedge is that better
+learning outcomes are also a real selling point to compliance officers and culture
+teams inside the firm, not just to legal teams managing regulatory exposure.
+
 ## Repo Strategy
 
 Separate product repo. Could import etutor-server's BKT/FSRS/session layer
