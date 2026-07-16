@@ -122,6 +122,29 @@ incumbents can't move fast enough.
 learning outcomes are also a real selling point to compliance officers and culture
 teams inside the firm, not just to legal teams managing regulatory exposure.
 
+## The AI Acceleration Effect
+
+Static compliance training is now trivially gameable by AI. A competent employee
+can paste the training content into Claude and get a summary + correct answers in
+under 4 minutes. This isn't a failure of employee ethics — it's a product failure.
+If the training isn't teaching anything you can't look up instantly, minimising
+time on it is the rational response.
+
+This doesn't just make the product worse — it accelerates the regulatory response.
+A few high-profile enforcement cases where a firm's "we trained our staff" defence
+is undercut by evidence that employees routed around training, and "completion
+records" stop being sufficient overnight. The regulatory timeline compresses.
+
+**The moat:** The compliance training that can't be screenshot-through is the one
+that asks you to reason through novel scenarios in your own words, in real time,
+with responses that require actual judgment. Socratic adaptive training is exactly
+that — and it's the one thing you can't automate away with a paste into Claude,
+because the reasoning process is the point, not the answer.
+
+The window between "static training is gameable by AI" and "regulators require
+evidence of actual understanding" is probably shorter than the regulatory timeline
+alone suggests. The product that's built before that window closes owns the market.
+
 ## Repo Strategy
 
 Separate product repo. Could import etutor-server's BKT/FSRS/session layer
