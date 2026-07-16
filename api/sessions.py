@@ -1,7 +1,11 @@
-from fastapi import APIRouter, Depends, Query
+from datetime import datetime, timezone
+
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from db.crud import get_session
 from db.session import get_db
+from services.knowledge_tracing import fit_fsrs_params, update_bkt_for_session
 from services.sessions import get_session_history
 
 router = APIRouter()
@@ -28,4 +32,40 @@ async def get_sessions(
             }
             for t in turns
         ],
+    }
+
+
+@router.post("/sessions/{session_id}/end")
+async def end_session(
+    session_id: str,
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    KT-04: Close a tutoring session and trigger BKT + FSRS updates.
+
+    Sets sessions.ended_at = now(), runs batch BKT update for all session events,
+    then re-fits per-child FSRS parameters.
+
+    Security note (T-2-10): session_id passed to get_session() which uses SQLAlchemy
+    parameterised select() — never string-interpolated.
+    Security note (T-2-12): 409 guard prevents BKT/FSRS from running on already-ended sessions.
+    """
+    session_row = await get_session(session_id, db)
+    if session_row is None:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    if session_row.ended_at is not None:
+        raise HTTPException(status_code=409, detail="Session already ended")
+
+    session_row.ended_at = datetime.now(timezone.utc)
+    await db.commit()
+    await db.refresh(session_row)
+
+    bkt_updates = await update_bkt_for_session(session_id, db)
+    await fit_fsrs_params(session_row.child_id, db)
+
+    return {
+        "session_id": session_id,
+        "ended_at": session_row.ended_at.isoformat(),
+        "kcs_updated": len(bkt_updates),
     }
