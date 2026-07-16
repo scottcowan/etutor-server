@@ -1,3 +1,5 @@
+from typing import Optional
+
 from config.settings import get_settings
 
 
@@ -185,6 +187,37 @@ You are an encouraging tutor talking to a child (age 8-12).
 """,
 }
 
+MASTERY_CONTEXT_TEMPLATE = "\nFocus topics this session:\n{topic_lines}\n"
+
+
+def _format_mastery_context(mastery_context: list) -> str:
+    """
+    Format mastery context dicts into a prompt block (D-10).
+
+    Buckets:
+      fragile      → "(fragile — needs reinforcement)"
+      in_progress  → "(due for review)"
+      not_started  → "(not yet started — prerequisites met)"
+      solid        → skip (defensive filter — solid should never reach here per D-08)
+
+    Returns empty string if no lines generated after filtering.
+    """
+    lines = []
+    for item in mastery_context:
+        name = item["name"]
+        bucket = item["bucket"]
+        if bucket == "fragile":
+            lines.append(f"- {name} (fragile — needs reinforcement)")
+        elif bucket == "in_progress":
+            lines.append(f"- {name} (due for review)")
+        elif bucket == "not_started":
+            lines.append(f"- {name} (not yet started — prerequisites met)")
+        # "solid" is intentionally skipped
+    if not lines:
+        return ""
+    return MASTERY_CONTEXT_TEMPLATE.format(topic_lines="\n".join(lines))
+
+
 SYSTEM_PROMPT_TEMPLATE = """
 {age_instructions}
 
@@ -206,7 +239,7 @@ End every exchange with an open question or unresolved wonder — never with a c
 """.strip()
 
 
-async def build_system_prompt(child) -> str:
+async def build_system_prompt(child, mastery_context: Optional[list] = None) -> str:
     settings = get_settings()
 
     if child is None:
@@ -224,7 +257,7 @@ async def build_system_prompt(child) -> str:
     nd_block = neurodivergence_instructions(nd_flags)
     nd_section = f"\n{nd_block}\n" if nd_block else ""
 
-    return SYSTEM_PROMPT_TEMPLATE.format(
+    base_prompt = SYSTEM_PROMPT_TEMPLATE.format(
         age_instructions=AGE_INSTRUCTIONS[age_key],
         name=child.name,
         age=age,
@@ -236,6 +269,9 @@ async def build_system_prompt(child) -> str:
         current_books=books,
         top_interest=top_interest,
     )
+
+    mastery_section = _format_mastery_context(mastery_context) if mastery_context else ""
+    return base_prompt + mastery_section
 
 
 def route_model(child) -> str:
