@@ -1,0 +1,257 @@
+[
+  {
+    "book": "Cosmos",
+    "author": "Carl Sagan",
+    "chapter": "Chapter I: The Shores of the Cosmic Ocean",
+    "passage": "The Cosmos is all that is or ever was or ever will be. Our feeblest contemplations of the Cosmos stir us—there is a tingling in the spine, a catch in the voice, a faint sensation, as if a distant memory, of falling from a height. We know we are approaching the greatest of mysteries. The size and age of the Cosmos are beyond ordinary human understanding. Lost somewhere between immensity and eternity is our tiny planetary home. In a cosmic perspective, most human concerns seem insignificant, even petty. And yet our species is young and curious and brave and shows much promise. In the last few millennia we have made the most astonishing and unexpected discoveries about the Cosmos and our place within it, explorations that are exhilarating to consider. They remind us that humans have evolved to wonder, that understanding is a joy, that knowledge is prerequisite to survival. I believe our future depends on how well we know this Cosmos in which we float like a mote of dust in the morning sky. Those explorations required skepticism and imagination both. Imagination will often carry us to worlds that never were. But without it, we go nowhere. Skepticism enables us to distinguish fancy from fact, to test our speculations. The Cosmos is rich beyond measure—in elegant facts, in exquisite interrelationships, in the subtle machinery of awe.",
+    "word_count": 188,
+    "curriculum_topics": ["astronomy-solar-system", "cosmology-big-bang", "scientific-method", "history-of-science"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Sagan says we 'float like a mote of dust in the morning sky.' If Earth is that tiny, why does he say our species shows 'much promise'? Do those two ideas contradict each other?",
+      "He says we need both imagination and skepticism. Can you think of a time when imagination alone—without skepticism—might lead a scientist in the wrong direction?",
+      "What do you think Sagan means when he says the Cosmos has 'elegant facts'? Can a fact be elegant?"
+    ],
+    "hook": "Carl Sagan opens the most-watched science documentary ever made with this paragraph — here's why it stopped people in their tracks.",
+    "library": "kavita"
+  },
+  {
+    "book": "Cosmos",
+    "author": "Carl Sagan",
+    "chapter": "Chapter I: The Shores of the Cosmic Ocean",
+    "passage": "Eratosthenes had the presence of mind to do an experiment, actually to observe whether in Alexandria vertical sticks cast shadows near noon on June 21. And, he discovered, sticks do. Eratosthenes asked himself how, at the same moment, a stick in Syene could cast no shadow and a stick in Alexandria, far to the north, could cast a pronounced shadow. Consider a map of ancient Egypt with two vertical sticks of equal length, one stuck in Alexandria, the other in Syene. If the two sticks cast shadows of equal length, that would make sense on a flat Earth. But how could it be that at the same instant there was no shadow at Syene and a substantial shadow at Alexandria? The only possible answer, he saw, was that the surface of the Earth is curved. The Sun is so far away that its rays are parallel when they reach the Earth. For the observed difference in the shadow lengths, the distance between Alexandria and Syene had to be about seven degrees along the surface of the Earth—one-fiftieth of three hundred and sixty degrees, the full circumference. Eratosthenes knew the distance between Alexandria and Syene was approximately 800 kilometres, because he hired a man to pace it out. Eight hundred kilometres times fifty is 40,000 kilometres: the circumference of the Earth. This is the right answer. Eratosthenes' only tools were sticks, eyes, feet and brains, plus a taste for experiment.",
+    "word_count": 220,
+    "curriculum_topics": ["mathematics-geometry", "history-of-science", "earth-science-structure", "measurement-estimation"],
+    "age_range": "10-12",
+    "bloom_level": "analyse",
+    "socratic_questions": [
+      "Eratosthenes never left Egypt—he measured the whole planet using sticks and shadows. What assumptions did he have to make for his method to work?",
+      "He 'hired a man to pace out' the distance between two cities. Why is that measurement the most uncertain step in the whole calculation?",
+      "If you only had sticks, string, and a sunny day, how would you try to repeat this experiment at your school?"
+    ],
+    "hook": "Two thousand years before satellites, one man measured the entire Earth using only shadows and a pair of feet — and got it right.",
+    "library": "kavita"
+  },
+  {
+    "book": "Cosmos",
+    "author": "Carl Sagan",
+    "chapter": "Chapter IX: The Lives of the Stars",
+    "passage": "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff. Some of the rarer elements are generated in the supernova explosion itself. We have relatively abundant gold and uranium on Earth only because many supernova explosions had occurred just before the solar system formed. The origin and evolution of life are connected in the most intimate way with the origin and evolution of the stars. First: the very matter of which we are composed, the atoms that make life possible, were generated long ago and far away in giant red stars. The relative abundance of the chemical elements found in the Cosmos matches the relative abundance of atoms generated in stars so well as to leave little doubt that red giants and supernovae are the ovens and crucibles in which matter has been forged. The Sun is a second- or third-generation star. All the matter in it, all the matter you see around you, has been through one or two previous cycles of stellar alchemy. Hydrogen fuses into helium, helium into carbon, carbon into oxygen, and in massive stars the chain continues all the way to iron. These are all familiar chemical elements. We recognise their names. They are returned to the interstellar gas and swept up in subsequent generations of cloud collapse and star and planet formation.",
+    "word_count": 205,
+    "curriculum_topics": ["chemistry-atoms-elements", "astronomy-stellar-evolution", "biology-molecules-of-life", "nuclear-physics"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Sagan says 'We are made of starstuff.' The iron in your blood was forged inside a star that died before the Sun was born. Does that idea change how you think about yourself?",
+      "Why does Sagan say the Sun is a 'second- or third-generation star'? What happened to the first-generation stars?",
+      "Hydrogen fuses into helium, helium into carbon — why does this chain stop at iron? What is special about iron?"
+    ],
+    "hook": "Every atom of iron in your blood was forged inside a dying star billions of years ago — here's how Sagan explains what that actually means.",
+    "library": "kavita"
+  },
+  {
+    "book": "Cosmos",
+    "author": "Carl Sagan",
+    "chapter": "Chapter III: The Harmony of Worlds",
+    "passage": "If we lived on a planet where nothing ever changed, there would be little to do. There would be nothing to figure out. There would be no impetus for science. And if we lived in an unpredictable world, where things changed in random or very complex ways, we would not be able to figure things out. Again, there would be no such thing as science. But we live in an in-between universe, where things change, but according to patterns, rules, or, as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it becomes possible to figure things out. We can do science, and with it we can improve our lives. Human beings are good at understanding the world. We always have been. We were able to hunt game or build fires only because we had figured something out. There was a time before television, before motion pictures, before radio, before books. The greatest part of human existence was spent in such a time. Over the dying embers of the campfire, on a moonless night, we watched the stars. The night sky is interesting. There are patterns there. Without even trying, you can imagine pictures. These pictures are not, of course, really in the night sky; we put them there ourselves.",
+    "word_count": 196,
+    "curriculum_topics": ["scientific-method", "astronomy-constellations", "history-of-science", "pattern-recognition"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Sagan says science is only possible because we live in an 'in-between' universe — not too predictable and not too chaotic. Can you think of a law of nature that is more like a 'pattern' than an exact rule?",
+      "He says the pictures in the night sky are ones 'we put there ourselves.' Does that mean constellations are not real? What does 'real' mean here?",
+      "Our ancestors figured things out without books or schools. What kinds of figuring-out do you think they were best at that we might have lost?"
+    ],
+    "hook": "Why does science exist at all? Sagan has a surprisingly simple answer — and it starts with throwing a stick.",
+    "library": "kavita"
+  },
+  {
+    "book": "Six Easy Pieces",
+    "author": "Richard Feynman",
+    "chapter": "1: Atoms in Motion",
+    "passage": "If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generations of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis that all things are made of atoms—little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied. To illustrate the power of the atomic idea, suppose that we have a drop of water a quarter of an inch on the side. If we look at it very closely we see nothing but water—smooth, continuous water. Even if we magnify it with the best optical microscope available—roughly two thousand times—then the water drop will be roughly forty feet across, about as big as a large room, and we would still see relatively smooth water—but here and there small football-shaped things swimming back and forth. These are paramecia. You may get so curious about the paramecia with their wiggling cilia and twisting bodies that you go no further. This, of course, is a subject for biology, but for the present we pass on and look still more closely at the water material itself, magnifying it two thousand times again.",
+    "word_count": 206,
+    "curriculum_topics": ["chemistry-atoms-elements", "states-of-matter", "scientific-method", "physics-particle-theory"],
+    "age_range": "10-12",
+    "bloom_level": "analyse",
+    "socratic_questions": [
+      "Feynman says if everything were destroyed, the atomic hypothesis would carry the most information. Do you agree? Is there another single sentence about nature that might carry more?",
+      "He describes magnifying a drop of water until you see paramecia — living things inside 'just water.' What does this tell you about where the boundary between 'physics' and 'biology' really is?",
+      "Atoms repel when squeezed together. If that's true, how can solids be solid — why don't your atoms just pass through the chair you're sitting on?"
+    ],
+    "hook": "Feynman asked: if a catastrophe wiped out all of human science, what single sentence would save the most knowledge? Here is his answer.",
+    "library": "kavita"
+  },
+  {
+    "book": "Six Easy Pieces",
+    "author": "Richard Feynman",
+    "chapter": "1: Atoms in Motion",
+    "passage": "Now imagine this great drop of water with all of these jiggling particles stuck together and tagging along with each other. The water keeps its volume; it does not fall apart, because of the attraction of the molecules for each other. If the drop is on a slope the water will flow, but things do not just fly apart—because of the molecular attraction. Now the jiggling motion is what we represent as heat: when we increase the temperature, we increase the motion. If we heat the water, the jiggling increases and the volume between the atoms increases, and if the heating continues there comes a time when the pull between the molecules is not enough to hold them together and they do fly apart and become separated from one another. Of course, this is how we manufacture steam out of water—by increasing the temperature; the particles fly apart because of the increased motion. Another way to remember the size of atoms: if an apple is magnified to the size of the Earth, then the atoms in the apple are approximately the size of the original apple. One more striking fact: the atoms are about one or two angstroms in radius. If you lined up a hundred million atoms in a row, the line would be about one centimetre long.",
+    "word_count": 195,
+    "curriculum_topics": ["states-of-matter", "chemistry-atoms-elements", "heat-and-temperature", "physics-particle-theory"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Feynman says heat is just atoms jiggling faster. So when you warm your hands by rubbing them together, what exactly is happening at the atomic level?",
+      "He says if an apple were magnified to the size of the Earth, its atoms would be the size of the original apple. Try to picture that. Does that make atoms seem bigger or smaller than you imagined?",
+      "Water and steam are made of identical molecules. The only difference is how fast they are moving. Why does that speed change make such a dramatic difference — from liquid to invisible gas?"
+    ],
+    "hook": "Heat is not a thing — it is atoms moving. Feynman's explanation of how water becomes steam will change the way you see a boiling kettle forever.",
+    "library": "kavita"
+  },
+  {
+    "book": "Six Easy Pieces",
+    "author": "Richard Feynman",
+    "chapter": "4: Conservation of Energy",
+    "passage": "There is a fact, or if you wish, a law, governing all natural phenomena that are known to date. There is no known exception to this law—it is exact so far as we know. The law is called the conservation of energy. It states that there is a certain quantity, which we call energy, that does not change in the manifold changes which nature undergoes. It is a mathematical principle: there is a numerical quantity which does not change when something happens. It is not a description of a mechanism, or anything concrete; it is just a strange fact that we can calculate some number and when we finish watching nature go through her tricks and calculate the number again, it is the same. Since it is an abstract idea, we shall illustrate it by an analogy. Imagine a child who has 28 absolutely indestructible blocks. His mother puts him with his 28 blocks into a room at the beginning of the day. At the end of the day, being curious, she counts the blocks very carefully, and discovers a phenomenal law—no matter what he does with the blocks, there are always 28 remaining! This continues for a number of days, until one day there are only 27 blocks, but investigating shows that there is one under the rug—she must look everywhere to be sure the number of blocks has not changed.",
+    "word_count": 213,
+    "curriculum_topics": ["physics-energy", "scientific-method", "mathematics-algebra", "conservation-laws"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Feynman says energy conservation is 'not a description of a mechanism' — it is just a numerical quantity that stays the same. Does that feel like a satisfying explanation, or does it leave you wanting to know *why* it stays the same?",
+      "In the blocks analogy, the mother has to count the blocks in the box, under the rug, in the bath water, to keep the number right. What are the 'hidden boxes' that physicists have to search when energy seems to disappear in real experiments?",
+      "Can you think of a situation where energy seems to vanish — like a bouncing ball that eventually stops? Where does the energy actually go?"
+    ],
+    "hook": "One of the most powerful laws in all of physics — and Feynman explains it using a boy and some indestructible blocks.",
+    "library": "kavita"
+  },
+  {
+    "book": "Surely You're Joking, Mr. Feynman!",
+    "author": "Richard Feynman",
+    "chapter": "He Fixes Radios by Thinking!",
+    "passage": "Radio circuits were much easier to understand in those days because everything was out in the open. After you took the set apart, you could see this was a resistor, that's a condenser; they were all labelled. And if wax had been dripping from the condenser, it was too hot and you could tell that the condenser was burned out. If there was charcoal on one of the resistors you knew where the trouble was. Or, if you couldn't tell what was the matter by looking at it, you'd test it with your voltmeter and see whether voltage was coming through. The sets were simple, the circuits were not complicated. So it wasn't hard for me to fix a radio by understanding what was going on inside, noticing that something wasn't working right, and fixing it. Sometimes it took quite a while. One time it took the whole afternoon to find a burned-out resistor that was not apparent. I finally fixed it because I had, and still have, persistence. Once I get on a puzzle, I can't get off. If anyone had said, 'Never mind, it's too much work,' I'd have blown my top, because I want to beat this damn thing, as long as I've gone this far. I have to keep going to find out ultimately what is the matter with it in the end. That's a puzzle drive.",
+    "word_count": 213,
+    "curriculum_topics": ["electronics-circuits", "problem-solving", "scientific-method", "engineering-design"],
+    "age_range": "10-12",
+    "bloom_level": "apply",
+    "socratic_questions": [
+      "Feynman says he fixed radios 'by understanding what was going on inside.' His neighbours were amazed — they thought you fixed things by fiddling, not thinking. What is the difference between those two approaches?",
+      "He says he has a 'puzzle drive' — once he starts on a problem he cannot stop. Is that a useful quality for a scientist? Could it ever be a disadvantage?",
+      "When you open up a broken device, you can see burned parts and loose wires. But in software, you cannot see anything. How do programmers find bugs they cannot see?"
+    ],
+    "hook": "When 11-year-old Feynman fixed a broken radio by standing there thinking, the neighbour couldn't believe it — why would anyone fix a radio by thinking?",
+    "library": "kavita"
+  },
+  {
+    "book": "Surely You're Joking, Mr. Feynman!",
+    "author": "Richard Feynman",
+    "chapter": "He Fixes Radios by Thinking!",
+    "passage": "When I was about eleven or twelve I set up a lab in my house. It consisted of an old wooden packing box that I put shelves in. I also had a storage battery, and a lamp bank. To build the lamp bank I went down to the shop and got some sockets, and connected them with pieces of bell wire. By making different combinations of switches—in series or parallel—I knew I could get different voltages. But what I hadn't realized was that a bulb's resistance depends on its temperature, so the results of my calculations weren't the same as the stuff that came out of the circuit. But it was all right, and when the bulbs were in series, all half-lit, they would gloooooooooow, very pretty—it was great! I had a fuse in the system so if I shorted anything, the fuse would blow. Now I had to have a fuse that was weaker than the fuse in the house, so I made my own fuses by taking tin foil and wrapping it around an old burnt-out fuse. Across my fuse I had a five-watt bulb, so when my fuse blew, it would light up the bulb. The bulb was on the switchboard behind a piece of brown candy paper—so if something went off, I'd look up to the switchboard and there would be a big red spot where the fuse went.",
+    "word_count": 203,
+    "curriculum_topics": ["electronics-circuits", "electricity-voltage-current", "engineering-design", "scientific-curiosity"],
+    "age_range": "10-12",
+    "bloom_level": "apply",
+    "socratic_questions": [
+      "Feynman discovered that a bulb's resistance changes with temperature — his calculations were wrong. Instead of giving up, he said 'but it was all right.' What does that tell you about his approach to experiments?",
+      "He built a homemade fuse from tin foil. A fuse is designed to fail on purpose — why? What problem does it solve?",
+      "Feynman taught himself electronics at 11 with a wooden box and bits from a shop. What would the equivalent 'home lab' look like today?"
+    ],
+    "hook": "Before Feynman won the Nobel Prize, he was an 11-year-old wiring up his bedroom as a science lab — here is what he built.",
+    "library": "kavita"
+  },
+  {
+    "book": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "chapter": "Chapter 1: Our Picture of the Universe",
+    "passage": "A well-known scientist once gave a public lecture on astronomy. He described how the earth orbits around the sun and how the sun, in turn, orbits around the center of a vast collection of stars called our galaxy. At the end of the lecture, a little old lady at the back of the room got up and said: 'What you have told us is rubbish. The world is really a flat plate supported on the back of a giant tortoise.' The scientist gave a superior smile before replying, 'What is the tortoise standing on?' 'You're very clever, young man, very clever,' said the old lady. 'But it's turtles all the way down!' Most people would find the picture of our universe as an infinite tower of tortoises rather ridiculous, but why do we think we know better? What do we know about the universe, and how do we know it? Where did the universe come from, and where is it going? Did the universe have a beginning, and if so, what happened before then? What is the nature of time? Will it ever come to an end? Can we go back in time? Recent breakthroughs in physics suggest answers to some of these longstanding questions. Someday these answers may seem as obvious to us as the earth orbiting the sun—or perhaps as ridiculous as a tower of tortoises. Only time (whatever that may be) will tell.",
+    "word_count": 215,
+    "curriculum_topics": ["cosmology-big-bang", "history-of-science", "philosophy-of-science", "astronomy-solar-system"],
+    "age_range": "10-12",
+    "bloom_level": "evaluate",
+    "socratic_questions": [
+      "The old lady's 'turtles all the way down' answer sounds absurd, but the scientist can't actually answer what the universe is sitting in or what came before the Big Bang. Is her answer really so different from 'we don't know'?",
+      "Hawking asks, 'What happened before the beginning?' Do you think that question even makes sense? Can there be a 'before' if time itself started at the Big Bang?",
+      "Hawking says our current answers might one day seem 'as ridiculous as a tower of tortoises.' What scientific ideas from today do you think future scientists might laugh at?"
+    ],
+    "hook": "The most famous opening in popular science — Hawking starts his book about the universe with a story about an old lady and an infinite tower of tortoises.",
+    "library": "kavita"
+  },
+  {
+    "book": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "chapter": "Chapter 6: Black Holes",
+    "passage": "The term black hole is of very recent origin. It was coined in 1969 by the American scientist John Wheeler as a graphic description of an idea that goes back at least two hundred years. John Michell wrote a paper in 1783 pointing out that a star that was sufficiently massive and compact would have such a strong gravitational field that light could not escape: any light emitted from the surface of the star would be dragged back by the star's gravitational attraction before it could get very far. Michell suggested that there might be a large number of stars like this. Although we would not be able to see them because the light from them would not reach us, we would still feel their gravitational attraction. Such objects are what we now call black holes—black voids in space. A star is formed when a large amount of gas starts to collapse in on itself due to its gravitational attraction. As it contracts, the atoms of the gas collide with each other more and more frequently and at greater and greater speeds—the gas heats up. Eventually, the gas will be so hot that when the hydrogen atoms collide they no longer bounce off each other, but instead coalesce to form helium. The heat released in this reaction, which is like a controlled hydrogen bomb explosion, is what makes the star shine.",
+    "word_count": 213,
+    "curriculum_topics": ["astronomy-stellar-evolution", "physics-gravity", "nuclear-physics", "cosmology-black-holes"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Michell predicted black holes in 1783 — nearly 200 years before we could detect them. He couldn't see them, so how did he reason they must exist?",
+      "A star shines because gravity is trying to crush it inward and nuclear explosions push outward — they balance. What do you think happens when a star runs out of nuclear fuel?",
+      "Light cannot escape a black hole because gravity drags it back. But light has no mass. How can gravity affect something with no mass?"
+    ],
+    "hook": "Black holes were predicted in 1783 by a country clergyman doing calculations with a quill — 190 years before anyone named them.",
+    "library": "kavita"
+  },
+  {
+    "book": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "chapter": "Chapter 1: Our Picture of the Universe",
+    "passage": "As long ago as 340 B.C. the Greek philosopher Aristotle was able to put forward two good arguments for believing that the earth was a round sphere rather than a flat plate. First, he realized that eclipses of the moon were caused by the earth coming between the sun and the moon. The earth's shadow on the moon was always round, which would be true only if the earth was spherical. If the earth had been a flat disk, the shadow would have been elongated and elliptical, unless the eclipse always occurred at a time when the sun was directly under the center of the disk. Second, the Greeks knew from their travels that the North Star appeared lower in the sky when viewed in the south than it did in more northerly regions. Since the North Star lies over the North Pole, it appears to be directly above an observer at the North Pole, but to someone looking from the equator, it appears to lie just at the horizon. From the difference in the apparent position of the North Star in Egypt and Greece, Aristotle even quoted an estimate that the distance around the earth was 400,000 stadia. The Greeks even had a third argument that the earth must be round, for why else does one first see the sails of a ship coming over the horizon, and only later see the hull?",
+    "word_count": 196,
+    "curriculum_topics": ["history-of-science", "earth-science-structure", "astronomy-observation", "mathematics-geometry"],
+    "age_range": "10-12",
+    "bloom_level": "analyse",
+    "socratic_questions": [
+      "Aristotle had three independent arguments for a round Earth: eclipse shadows, the North Star, and ships' sails. Why is it stronger to have three separate arguments than just one very good one?",
+      "He noticed that the North Star sits lower in the sky the further south you travel. If you were standing exactly on the equator, where would the North Star appear?",
+      "You can prove the Earth is round without any technology at all — just observations. Which of Aristotle's three arguments do you find the most convincing, and why?"
+    ],
+    "hook": "People didn't think the Earth was flat in the Middle Ages — Greeks proved it was round 2,300 years ago, using only shadows and ships.",
+    "library": "kavita"
+  },
+  {
+    "book": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "chapter": "Chapter 1: Why Are People?",
+    "passage": "Intelligent life on a planet comes of age when it first works out the reason for its own existence. If superior creatures from space ever visit earth, the first question they will ask, in order to assess the level of our civilization, is: 'Have they discovered evolution yet?' Living organisms had existed on earth, without ever knowing why, for over three thousand million years before the truth finally dawned on one of them. His name was Charles Darwin. To be fair, others had had inklings of the truth, but it was Darwin who first put together a coherent and tenable account of why we exist. Darwin made it possible for us to give a sensible answer to the curious child whose question heads this chapter. We no longer have to resort to superstition when faced with the deep problems: Is there a meaning to life? What are we for? What is man? Today the theory of evolution is about as much open to doubt as the theory that the earth goes round the sun, but the full implications of Darwin's revolution have yet to be widely realized. Zoology is still a minority subject in universities, and even those who choose to study it often make their decision without appreciating its profound philosophical significance. Philosophy and the subjects known as 'humanities' are still taught almost as if Darwin had never lived. No doubt this will change in time.",
+    "word_count": 210,
+    "curriculum_topics": ["biology-evolution", "history-of-science", "philosophy-of-science", "natural-selection"],
+    "age_range": "10-12",
+    "bloom_level": "evaluate",
+    "socratic_questions": [
+      "Dawkins says aliens would judge our civilisation by asking 'Have they discovered evolution?' Why would that be the test, rather than something like maths or technology?",
+      "He says organisms existed for three billion years 'without ever knowing why.' Does knowing the reason for your existence change anything about how you live?",
+      "Dawkins argues philosophy is still taught 'as if Darwin had never lived.' What ideas in philosophy or ethics might be changed if we took evolution seriously as a starting point?"
+    ],
+    "hook": "Dawkins opens The Selfish Gene with a challenge: what would the first question be if aliens arrived to judge how advanced human civilisation is?",
+    "library": "kavita"
+  },
+  {
+    "book": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "chapter": "Chapter 2: The Replicators",
+    "passage": "At some point a particularly remarkable molecule was formed by accident. We will call it the Replicator. It may not necessarily have been the biggest or the most complex molecule around, but it had the extraordinary property of being able to create copies of itself. This may seem a very unlikely sort of accident to happen. So it was. It was exceedingly improbable. In the lifetime of a man, things that are that improbable can be treated for practical purposes as impossible. But in our human estimates of what is probable, we are not used to dealing in hundreds of millions of years. Think of the replicator as a mould or template. Imagine it as a large molecule consisting of a complex chain of various sorts of building block molecules. Now suppose that each building block has an affinity for its own kind. Then whenever a building block from out in the soup lands up next to a part of the replicator for which it has an affinity, it will tend to stick there. The building blocks that attach themselves in this way will automatically be arranged in a sequence that mimics that of the replicator itself. It is easy then to think of them joining up to form a stable chain just as in the formation of the original replicator. This process could continue as a progressive stacking up, layer upon layer. This is how crystals are formed.",
+    "word_count": 215,
+    "curriculum_topics": ["biology-evolution", "chemistry-molecules", "origin-of-life", "probability-statistics"],
+    "age_range": "10-12",
+    "bloom_level": "understand",
+    "socratic_questions": [
+      "Dawkins says the first replicator forming by accident was 'exceedingly improbable' — but then argues that given enough time, improbable things become inevitable. Does that argument convince you?",
+      "He compares the replicator to a crystal growing — the same pattern stacking up layer by layer. What is the key difference between a crystal growing and a molecule replicating?",
+      "Once the first replicating molecule existed, Dawkins says 'it only had to arise once.' Why does the whole story of life depend on that single accidental moment?"
+    ],
+    "hook": "Three billion years ago, one molecule formed by accident that could copy itself — and that accident is why you exist.",
+    "library": "kavita"
+  },
+  {
+    "book": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "chapter": "Chapter 11: Memes: The New Replicators",
+    "passage": "I think that a new kind of replicator has recently emerged on this very planet. It is staring us in the face. It is still in its infancy, still drifting clumsily about in its primeval soup, but already it is achieving evolutionary change at a rate that leaves the old gene panting far behind. The new soup is the soup of human culture. We need a name for the new replicator, a noun that conveys the idea of a unit of cultural transmission, or a unit of imitation. 'Mimeme' comes from a suitable Greek root, but I want a monosyllable that sounds a bit like 'gene'. I hope my classicist friends will forgive me if I abbreviate mimeme to meme. Examples of memes are tunes, ideas, catch-phrases, clothes fashions, ways of making pots or of building arches. Just as genes propagate themselves in the gene pool by leaping from body to body via sperms or eggs, so memes propagate themselves in the meme pool by leaping from brain to brain via a process which can be called imitation. If a scientist hears a good idea, he passes it on to his colleagues and students. If the idea catches on, it can be said to propagate itself, spreading from brain to brain. When you plant a fertile meme in my mind you literally parasitize my brain, turning it into a vehicle for the meme's propagation in just the way that a virus may parasitize the genetic mechanism of a host cell.",
+    "word_count": 229,
+    "curriculum_topics": ["biology-evolution", "cultural-studies", "communication-language", "psychology-learning"],
+    "age_range": "10-12",
+    "bloom_level": "analyse",
+    "socratic_questions": [
+      "Dawkins invented the word 'meme' in 1976 — and now it is used by millions of people online every day. Is that itself an example of a successful meme?",
+      "He says a meme 'parasitizes your brain' like a virus. Is every idea a meme? What makes some ideas spread and others disappear?",
+      "Genes evolve over generations — it takes thousands of years. Memes can spread across the whole world in hours. Does that make cultural evolution more powerful than genetic evolution now?"
+    ],
+    "hook": "Richard Dawkins invented the word 'meme' in 1976 — 15 years before the internet existed — to describe an idea that spreads from brain to brain like a virus.",
+    "library": "kavita"
+  }
+]
