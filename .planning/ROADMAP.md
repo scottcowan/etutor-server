@@ -100,8 +100,8 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3, parallel pair)*
 
-- [ ] 02-04-PLAN.md — TDD: next_topics() + mastery_context_for_prompt() (KT-03, KT-05 partial)
-- [ ] 02-05-PLAN.md — TDD: POST /sessions/{id}/end endpoint (KT-04)
+- [x] 02-04-PLAN.md — TDD: next_topics() + mastery_context_for_prompt() (KT-03, KT-05 partial)
+- [x] 02-05-PLAN.md — TDD: POST /sessions/{id}/end endpoint (KT-04)
 
 **Wave 5** *(blocked on Wave 4)*
 
@@ -219,7 +219,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
-| 2. Knowledge Tracing Backend | 3/6 | In Progress|  |
+| 2. Knowledge Tracing Backend | 5/6 | In Progress|  |
 | 3. Session Intelligence | 0/TBD | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
