@@ -60,8 +60,9 @@
 - Calibre-Web book recommendation integration
 - Fine-grained interest graph (vector embeddings of session transcript)
 - Parent read-aloud recording playback (captured in .planning/todos/)
-- Historical language two-pass modernisation system
-- Per-book language notes (modernised vs original text flag)
+- Historical language two-pass modernisation system: serve modernised passage to ages 6-9, original with annotation to ages 10+; tracks per-child reading history to know which pass to serve
+- Per-book language notes (modernised vs original text flag): `language_notes` field on passage objects flagging shifted-meaning words with age-calibrated tutor responses
+- Language change as curriculum topic: `english-language-change-semantic-shift` topic added to curriculum, tagged to book passages containing shifted-meaning words, surfaced when child is reading older fiction
 - FSRS per-child parameter personalisation (requires 50+ interactions per KC)
 - Experiment guides interactive mode (tutor walks through lab step-by-step)
 
