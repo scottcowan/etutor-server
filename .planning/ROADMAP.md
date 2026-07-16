@@ -83,7 +83,29 @@ Plans:
   3. Mastery bucket labels (not_started / fragile / in_progress / solid) appear in the rendered system prompt
   4. A KC whose FSRS next_review is in the future is deprioritised in next_topics() output
 
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+**Wave 1**
+
+- [ ] 02-01-PLAN.md — DB scaffold: ChildFSRSParamsModel, FSRS CRUD, log_turn kc_id/correct, Alembic migration, fsrs dependency
+
+**Wave 2** *(blocked on Wave 1)*
+
+- [ ] 02-02-PLAN.md — TDD: BKT update_bkt() + update_bkt_for_session() (KT-01)
+
+**Wave 3** *(blocked on Wave 2)*
+
+- [ ] 02-03-PLAN.md — TDD: FSRS update_fsrs_schedule() + fit_fsrs_params() (KT-02)
+
+**Wave 4** *(blocked on Wave 3, parallel pair)*
+
+- [ ] 02-04-PLAN.md — TDD: next_topics() + mastery_context_for_prompt() (KT-03, KT-05 partial)
+- [ ] 02-05-PLAN.md — TDD: POST /sessions/{id}/end endpoint (KT-04)
+
+**Wave 5** *(blocked on Wave 4)*
+
+- [ ] 02-06-PLAN.md — build_system_prompt() mastery_context extension + api/chat.py wiring (KT-05)
 
 **Key decisions / risks:**
 
