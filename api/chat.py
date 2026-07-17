@@ -12,6 +12,15 @@ from services.tutor import build_system_prompt, route_model
 from services.profiles import get_child_by_device_id, get_child_by_id
 from services.sessions import log_turn
 from services.knowledge_tracing import mastery_context_for_prompt
+from services.session_intelligence import (
+    build_24hr_history_context,
+    build_prereq_tree_context,
+    get_session_prereq_state,
+    increment_prereq_turn,
+    reset_prereq_turn,
+    extract_and_update_interests,
+)
+from db.crud import get_most_recent_ended_session
 
 router = APIRouter()
 
@@ -55,7 +64,28 @@ async def chat(
     if not child:
         raise HTTPException(status_code=404, detail="Child not found")
     mastery_ctx = await mastery_context_for_prompt(child_id, session, limit=5)
-    system_prompt = await build_system_prompt(child, mastery_context=mastery_ctx or None)
+
+    # Phase 3 session intelligence (HIST-01, HIST-02, CURR-02)
+    history_ctx = await build_24hr_history_context(child_id, session)
+    prereq_tree = await build_prereq_tree_context(child_id, session, limit=5)
+    prereq_state = get_session_prereq_state(child_id)
+
+    # D-07: advance escalation counter for each unmet prereq on this turn
+    for _entry in (prereq_tree or []):
+        increment_prereq_turn(child_id, _entry["prereq_kc_id"])
+
+    # D-08 catch-up: extract interests from previous session that missed /end call
+    prev_session = await get_most_recent_ended_session(child_id, session)
+    if prev_session and prev_session.id:
+        await extract_and_update_interests(prev_session.id, child_id, session)
+
+    system_prompt = await build_system_prompt(
+        child,
+        mastery_context=mastery_ctx or None,
+        history_context=history_ctx or None,
+        prereq_tree=prereq_tree or None,
+        session_prereq_state=prereq_state or None,
+    )
     model = route_model(child)
 
     messages = [{"role": "system", "content": system_prompt}]
@@ -79,7 +109,14 @@ async def chat(
         response = await litellm.acompletion(model=model, messages=messages)
         content = response.choices[0].message.content
         db_session_row = await create_session(child_id, session)
-        await log_turn(child_id, req.messages[-1].content, content, session, session_id=db_session_row.id)
+        turn = await log_turn(child_id, req.messages[-1].content, content, session, session_id=db_session_row.id)
+        # D-06 reset: clear escalation counter when child answers a prereq probe correctly.
+        # correct and kc_id are not yet resolved in this path (Phase 4 will wire BKT probe detection).
+        # Guard is non-operative until then — included to complete D-06 wiring.
+        _correct = turn.correct
+        _kc_id = turn.kc_id
+        if _correct and _kc_id and _kc_id in [_e.get("prereq_kc_id") for _e in (prereq_tree or [])]:
+            reset_prereq_turn(child_id, _kc_id)
         return {
             "choices": [{"message": {"role": "assistant", "content": content}}]
         }

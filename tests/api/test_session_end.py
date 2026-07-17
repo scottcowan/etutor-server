@@ -131,3 +131,14 @@ async def test_session_end_409(test_client, test_data):
     second = await test_client.post(f"/v1/sessions/{session_id}/end")
     assert second.status_code == 409
     assert "already ended" in second.json()["detail"].lower()
+
+
+async def test_end_session_extracts_interests(test_client, test_data):
+    """CURR-03: POST /sessions/{id}/end calls extract_and_update_interests"""
+    child_id, session_id = test_data
+    response = await test_client.post(f"/v1/sessions/{session_id}/end")
+    assert response.status_code == 200
+    body = response.json()
+    assert "session_id" in body
+    # Interest extraction is best-effort; verify the endpoint did not crash
+    # Full interest content test is covered in tests/services/test_session_intelligence.py

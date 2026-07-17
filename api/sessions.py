@@ -3,9 +3,10 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.crud import get_session
+from db.crud import get_session, get_turns_by_session_id
 from db.session import get_db
 from services.knowledge_tracing import fit_fsrs_params, update_bkt_for_session
+from services.session_intelligence import extract_and_update_interests
 from services.sessions import get_session_history
 
 router = APIRouter()
@@ -25,6 +26,29 @@ async def get_sessions(
                 "id": t.id,
                 "child_id": t.child_id,
                 "session_id": t.session_id,
+                "question": t.question,
+                "answer": t.answer,
+                "topic": t.topic,
+                "timestamp": t.timestamp.isoformat() if t.timestamp else None,
+            }
+            for t in turns
+        ],
+    }
+
+
+@router.get("/sessions/{session_id}/turns")
+async def get_session_turns(
+    session_id: str,
+    db: AsyncSession = Depends(get_db),
+):
+    # HIST-03 (CR-02 note): same IDOR exposure as GET /sessions/{child_id} — fix both together in auth phase
+    turns = await get_turns_by_session_id(session_id, db)
+    return {
+        "session_id": session_id,
+        "turns": [
+            {
+                "id": t.id,
+                "child_id": t.child_id,
                 "question": t.question,
                 "answer": t.answer,
                 "topic": t.topic,
@@ -63,6 +87,7 @@ async def end_session(
 
     bkt_updates = await update_bkt_for_session(session_id, db)
     await fit_fsrs_params(session_row.child_id, db)
+    await extract_and_update_interests(session_id, session_row.child_id, db)
 
     return {
         "session_id": session_id,
