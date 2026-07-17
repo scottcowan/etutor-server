@@ -130,16 +130,20 @@ async def test_history_context_empty_when_no_events(db_session):
 # ---------------------------------------------------------------------------
 
 async def test_prereq_tree_filters_solid_prereqs(db_session):
-    """build_prereq_tree_context() excludes prerequisites with solid mastery (D-13)."""
-    from services.curriculum import CURRICULUM, _by_id
+    """build_prereq_tree_context() excludes prerequisites with solid mastery (D-13).
+
+    next_topics() is mocked via services.session_intelligence.next_topics because
+    the fsrs package in this dev environment (v3.1.0) does not export Scheduler.
+    The test focuses on the filtering logic, not the candidate ranking.
+    """
+    from services.curriculum import _by_id
 
     await create_child(db_session, id="child-si-05", name="Eve", age=10)
 
-    # Find a topic with a prerequisite from CURRICULUM
-    topic_with_prereq = next(t for t in CURRICULUM if t.prerequisites)
-    solid_prereq_id = topic_with_prereq.prerequisites[0]
+    # Use a known CURRICULUM prereq as our solid one
+    solid_prereq_id = "phonics_phase1"  # first prereq of phonics_phase2
 
-    # Insert solid mastery for that prereq
+    # Insert solid mastery for that prereq (p_mastery=0.96 -> "solid" bucket)
     db_session.add(MasteryStateModel(
         child_id="child-si-05",
         kc_id=solid_prereq_id,
@@ -147,9 +151,16 @@ async def test_prereq_tree_filters_solid_prereqs(db_session):
     ))
     await db_session.commit()
 
-    result = await build_prereq_tree_context("child-si-05", db_session)
+    # Topic that requires phonics_phase1 as a prerequisite
+    fake_topics = [
+        types.SimpleNamespace(id="phonics_phase2", name="Phonics — Letter Sounds and Blending",
+                              prerequisites=["phonics_phase1"], tags=[]),
+    ]
 
-    # The solid prereq should not appear
+    with patch("services.session_intelligence.next_topics", new=AsyncMock(return_value=fake_topics)):
+        result = await build_prereq_tree_context("child-si-05", db_session)
+
+    # phonics_phase1 is solid — should NOT appear in result
     solid_prereq_name = _by_id[solid_prereq_id].name if solid_prereq_id in _by_id else None
     for entry in result:
         if solid_prereq_name:
