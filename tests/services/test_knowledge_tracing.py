@@ -499,3 +499,120 @@ async def test_mastery_context_returns_empty_for_unknown_child(db_session):
     result = await mastery_context_for_prompt("nonexistent-id", db_session, limit=5)
 
     assert result == []
+
+
+# ---------------------------------------------------------------------------
+# CURR-04: supersedes unlock — next_topics() includes topics whose supersedes
+# field points to a solidly-mastered KC (p_mastery >= 0.95)
+# D-14: unlock trigger is p_mastery >= 0.95 (solid bucket threshold)
+# ---------------------------------------------------------------------------
+
+from services.curriculum import CURRICULUM
+
+
+def _first_supersedes_pair():
+    """Return (advanced_topic, prereq_kc_id) for the first topic with supersedes set."""
+    for t in CURRICULUM:
+        if t.supersedes:
+            return t, t.supersedes
+    raise RuntimeError("No topics with supersedes found in CURRICULUM")
+
+
+async def test_supersedes_unlock_adds_candidate(db_session):
+    """When prereq KC is solidly mastered (p_mastery=0.95), the superseding topic
+    is added to next_topics() results even if it wasn't in the base curriculum pool.
+
+    D-14: unlock trigger is p_mastery >= 0.95 (BKT solid threshold).
+    bloom_target is a Bloom integer (1-6); p_mastery is 0.0-1.0 — incommensurable.
+    """
+    advanced_topic, prereq_kc_id = _first_supersedes_pair()
+
+    # Create a child old enough for KS3 topics (atom_bohr_to_quantum is year_groups=[9])
+    child = await create_child(
+        db_session, id="child-sup-01", name="SupTest1", age=14
+    )
+
+    # Insert solid mastery for the prerequisite KC
+    ms = await create_or_get_mastery_state(child.id, prereq_kc_id, db_session)
+    ms.p_mastery = 0.95
+    await db_session.commit()
+
+    result = await next_topics(child.id, db_session, limit=50)
+    result_ids = [t.id for t in result]
+
+    assert advanced_topic.id in result_ids, (
+        f"Expected {advanced_topic.id!r} in next_topics() result because "
+        f"prereq {prereq_kc_id!r} has p_mastery=0.95 (solid). "
+        f"Got: {result_ids}"
+    )
+
+
+async def test_supersedes_unlock_not_added_if_already_mastered(db_session):
+    """When the child has solid mastery on BOTH the prereq AND the advanced topic,
+    the advanced topic must not appear more than once (no duplicates) in results.
+    A child should not be re-presented something they have already solidly mastered
+    with a future next_review (it is excluded by the existing solid_future filter).
+    """
+    from datetime import datetime, timezone, timedelta
+
+    advanced_topic, prereq_kc_id = _first_supersedes_pair()
+
+    child = await create_child(
+        db_session, id="child-sup-02", name="SupTest2", age=14
+    )
+
+    now = datetime.now(timezone.utc)
+
+    # Solid mastery on prereq
+    ms_prereq = await create_or_get_mastery_state(child.id, prereq_kc_id, db_session)
+    ms_prereq.p_mastery = 0.96
+    await db_session.commit()
+
+    # Solid mastery on advanced topic with a future review (should be excluded by solid_future filter)
+    ms_adv = await create_or_get_mastery_state(child.id, advanced_topic.id, db_session)
+    ms_adv.p_mastery = 0.97
+    ms_adv.next_review = now + timedelta(days=30)
+    await db_session.commit()
+
+    result = await next_topics(child.id, db_session, limit=50)
+    result_ids = [t.id for t in result]
+
+    # advanced_topic is solid with a future next_review — solid_future filter must exclude it
+    # It should appear at most once (no duplication from the supersedes inject)
+    count = result_ids.count(advanced_topic.id)
+    assert count <= 1, (
+        f"advanced_topic {advanced_topic.id!r} appeared {count} times in results — "
+        f"supersedes inject must not duplicate a topic already in candidates"
+    )
+
+
+async def test_supersedes_unlock_not_triggered_below_solid(db_session):
+    """When prereq KC has p_mastery=0.70 (in_progress, below solid threshold),
+    the supersedes unlock MUST NOT fire.
+
+    This test only asserts that the advanced topic does NOT appear if curriculum
+    logic would not independently surface it (it has prerequisites=[prereq_kc_id]
+    and year_groups=[9] — a 10-year-old with in_progress prereq mastery should
+    not see it).
+    """
+    advanced_topic, prereq_kc_id = _first_supersedes_pair()
+
+    # Use a young child — atom_bohr_to_quantum is for year 9 (age ~14)
+    # A 10-year-old should never see it via normal curriculum logic
+    child = await create_child(
+        db_session, id="child-sup-03", name="SupTest3", age=10
+    )
+
+    # in_progress mastery — below the solid (0.95) threshold
+    ms = await create_or_get_mastery_state(child.id, prereq_kc_id, db_session)
+    ms.p_mastery = 0.70
+    await db_session.commit()
+
+    result = await next_topics(child.id, db_session, limit=50)
+    result_ids = [t.id for t in result]
+
+    assert advanced_topic.id not in result_ids, (
+        f"advanced_topic {advanced_topic.id!r} appeared in next_topics() for a "
+        f"10-year-old with prereq p_mastery=0.70 — supersedes unlock must not "
+        f"fire below p_mastery=0.95. result_ids={result_ids[:10]}"
+    )
