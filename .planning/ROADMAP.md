@@ -137,7 +137,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 — Plan 01)*
 
-- [ ] 03-03-PLAN.md — TDD: services/session_intelligence.py — build_24hr_history_context, build_prereq_tree_context, escalation counter, extract_and_update_interests (HIST-01, HIST-02, CURR-02, CURR-03)
+- [x] 03-03-PLAN.md — TDD: services/session_intelligence.py — build_24hr_history_context, build_prereq_tree_context, escalation counter, extract_and_update_interests (HIST-01, HIST-02, CURR-02, CURR-03)
 
 **Wave 3** *(blocked on Wave 2)*
 
@@ -235,7 +235,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
-| 3. Session Intelligence | 2/4 | In Progress|  |
+| 3. Session Intelligence | 3/4 | In Progress|  |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
