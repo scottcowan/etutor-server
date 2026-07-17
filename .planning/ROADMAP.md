@@ -19,7 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Database Foundation** - Persistent SQLite/PostgreSQL storage replaces all in-memory stores (completed 2026-07-14)
 - [x] **Phase 2: Knowledge Tracing Backend** - BKT mastery model + FSRS scheduling per child × KC (completed 2026-07-16)
-- [ ] **Phase 3: Session Intelligence** - History injection, curriculum routing, and interest graph
+- [x] **Phase 3: Session Intelligence** - History injection, curriculum routing, and interest graph (completed 2026-07-17)
 - [ ] **Phase 4: Parent Dashboard** - Session replay, mastery map, profile editor, and alert feed
 - [ ] **Phase 5: Child Interface + Device Sync** - Browser testing UI and e-ink device sync endpoints
 - [ ] **Phase 6: Safety, Performance, and Polish** - Multi-turn safety monitoring and <2s latency validation
@@ -141,7 +141,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2)*
 
-- [ ] 03-04-PLAN.md — Wiring: extend build_system_prompt(), add HIST-03 endpoint, wire interest extraction in end_session(), wire all intelligence calls in chat() (HIST-01, HIST-02, HIST-03, CURR-01, CURR-02, CURR-03)
+- [x] 03-04-PLAN.md — Wiring: extend build_system_prompt(), add HIST-03 endpoint, wire interest extraction in end_session(), wire all intelligence calls in chat() (HIST-01, HIST-02, HIST-03, CURR-01, CURR-02, CURR-03)
 
 **Key decisions / risks:**
 
@@ -235,7 +235,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
-| 3. Session Intelligence | 3/4 | In Progress|  |
+| 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
