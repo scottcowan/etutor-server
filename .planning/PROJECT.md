@@ -29,12 +29,14 @@ A child should be able to ask any question, follow it as far as their curiosity 
 - `docs/pedagogy-montessori.md` — Montessori evidence synthesis
 - `docs/wanted-books.md` — reference library and reading samples
 
+**What exists (implemented, continued):**
+- `db/` — SQLAlchemy ORM models, CRUD, Alembic migrations (Phase 1 — 2026-07-14)
+- `services/knowledge_tracing.py` — BKT + FSRS mastery model, next_topics(), mastery bucket labels in system prompt (Phase 2 — 2026-07-16)
+- `services/session_intelligence.py` — 24hr history injection, prerequisite tree surfacing, escalation counter, interest extraction (Phase 3 — 2026-07-17)
+- `api/sessions.py` — GET /sessions/{id}/turns (HIST-03); interest extraction on session end (Phase 3)
+- `api/chat.py` — fully wired with Phase 3 intelligence: history context, prereq tree, escalation state, D-08 catch-up, D-06 reset guard (Phase 3)
+
 **What does NOT exist yet:**
-- Database (everything is in-memory — no persistence across restarts)
-- Knowledge tracing (BKT + FSRS — designed, not implemented)
-- Session history injection into prompts
-- Interest graph inference
-- Learning plan generation (planner service stub)
 - Parent dashboard (scaffolded empty)
 - Child web interface (templates present, untested)
 - Calibre-Web integration (recommender stub)
