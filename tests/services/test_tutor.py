@@ -82,3 +82,52 @@ async def test_system_prompt_with_mastery_context_not_started():
     assert "Focus topics this session:" in result
     assert "not yet started" in result
     assert "Algebra Basics" in result
+
+
+# ---------------------------------------------------------------------------
+# Phase 3 new params: history_context, prereq_tree, session_prereq_state
+# ---------------------------------------------------------------------------
+
+async def test_system_prompt_with_history_context():
+    """history_context list → 'Recent topics: X, Y' block in prompt."""
+    child = _make_child()
+    result = await build_system_prompt(child, history_context=["volcanoes", "plate tectonics"])
+    assert "Recent topics: volcanoes, plate tectonics" in result
+
+
+async def test_system_prompt_with_prereq_tree():
+    """prereq_tree list → prereq names and unlock names in prompt."""
+    child = _make_child()
+    result = await build_system_prompt(
+        child,
+        prereq_tree=[{"prereq_name": "Rock Types", "prereq_kc_id": "rocks_soils", "unlocks": ["Volcanoes", "Plate Tectonics"]}],
+    )
+    assert "Rock Types" in result
+    assert "Volcanoes" in result
+
+
+async def test_system_prompt_prereq_escalation_turn1():
+    """D-07: Turn 1 session_prereq_state → engage/hint instruction in prompt."""
+    child = _make_child()
+    prereq_entry = {"prereq_name": "Rock Types", "prereq_kc_id": "rocks_soils", "unlocks": ["Volcanoes"]}
+    state_turn1 = {"rocks_soils": 1}
+    result = await build_system_prompt(child, prereq_tree=[prereq_entry], session_prereq_state=state_turn1)
+    assert "Turn 1" in result or "engage" in result
+
+
+async def test_system_prompt_prereq_escalation_turn3():
+    """D-07: Turn 3+ session_prereq_state → active steer instruction in prompt."""
+    child = _make_child()
+    prereq_entry = {"prereq_name": "Rock Types", "prereq_kc_id": "rocks_soils", "unlocks": ["Volcanoes"]}
+    state_turn3 = {"rocks_soils": 3}
+    result = await build_system_prompt(child, prereq_tree=[prereq_entry], session_prereq_state=state_turn3)
+    assert "Turn 3" in result or "steer" in result
+
+
+async def test_system_prompt_backward_compat_no_new_params():
+    """build_system_prompt(child) with no new params — does not crash, no history section."""
+    child = _make_child()
+    result = await build_system_prompt(child)
+    assert isinstance(result, str)
+    assert len(result) > 0
+    assert "Recent topics" not in result
