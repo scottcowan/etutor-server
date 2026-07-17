@@ -10,6 +10,7 @@ Uses direct model insertion with explicit timestamps for time-sensitive tests.
 """
 import uuid
 from datetime import datetime, timedelta, timezone
+from typing import Optional
 
 import pytest
 
@@ -28,7 +29,7 @@ def _now() -> datetime:
     return datetime.now(timezone.utc)
 
 
-def _event(child_id: str, session_id: str | None, offset_hours: float) -> InteractionEventModel:
+def _event(child_id: str, session_id: Optional[str], offset_hours: float) -> InteractionEventModel:
     """Build an InteractionEventModel with an explicit timestamp offset from now."""
     return InteractionEventModel(
         id=str(uuid.uuid4()),
