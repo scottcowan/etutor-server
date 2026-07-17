@@ -16,7 +16,7 @@ SQLAlchemy will raise AttributeError on unknown column names. Internal-only
 callers in Phase 1.
 """
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from sqlalchemy import select
@@ -118,6 +118,25 @@ async def get_session(session_id: str, session: AsyncSession) -> Optional[Sessio
     return result.scalar_one_or_none()
 
 
+async def get_most_recent_ended_session(
+    child_id: str,
+    session: AsyncSession,
+) -> Optional[SessionModel]:
+    """Return the most recent ended SessionModel row for child_id, or None if none exist.
+
+    D-08: catch-up interest extraction trigger.
+    child_id parameterised via SQLAlchemy ORM — no string interpolation.
+    """
+    result = await session.execute(
+        select(SessionModel)
+        .where(SessionModel.child_id == child_id)
+        .where(SessionModel.ended_at.isnot(None))
+        .order_by(SessionModel.ended_at.desc())
+        .limit(1)
+    )
+    return result.scalars().first()
+
+
 # ---------------------------------------------------------------------------
 # InteractionEvent CRUD (DB-04)
 # ---------------------------------------------------------------------------
@@ -176,6 +195,44 @@ async def get_session_history(
     )
     rows = list(result.scalars().all())
     return list(reversed(rows))  # restore ASC order for callers
+
+
+async def get_24hr_history(
+    child_id: str,
+    session: AsyncSession,
+    limit: int = 50,
+) -> list[InteractionEventModel]:
+    """Return interaction events for child_id from the last 24 hours, DESC by timestamp.
+
+    HIST-01 (D-03): UTC-aware datetime comparison — never datetime.utcnow().
+    Security comment: child_id parameterised via SQLAlchemy ORM.
+    """
+    since = datetime.now(timezone.utc) - timedelta(hours=24)
+    result = await session.execute(
+        select(InteractionEventModel)
+        .where(InteractionEventModel.child_id == child_id)
+        .where(InteractionEventModel.timestamp >= since)
+        .order_by(InteractionEventModel.timestamp.desc())
+        .limit(limit)
+    )
+    return list(result.scalars().all())
+
+
+async def get_turns_by_session_id(
+    session_id: str,
+    db: AsyncSession,
+) -> list[InteractionEventModel]:
+    """Return all interaction events for the given session_id, ASC by timestamp.
+
+    HIST-03: Same IDOR exposure as get_session_history() — fix both together in auth phase (CR-02).
+    Parameter named `db` (not `session`) to avoid confusion with SessionModel rows — matches end_session() convention.
+    """
+    result = await db.execute(
+        select(InteractionEventModel)
+        .where(InteractionEventModel.session_id == session_id)
+        .order_by(InteractionEventModel.timestamp.asc())
+    )
+    return list(result.scalars().all())
 
 
 # ---------------------------------------------------------------------------
