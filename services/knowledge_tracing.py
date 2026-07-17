@@ -31,6 +31,23 @@ from db.crud import (
 )
 from services.curriculum import Topic
 from services.curriculum import next_topics as curriculum_next_topics
+from services.curriculum import CURRICULUM, _by_id
+
+
+# ---------------------------------------------------------------------------
+# CURR-04: Reverse supersedes index — built once at import time
+# Reverse supersedes index: {superseded_topic_id: [superseding_topic_id, ...]}
+# Built once at import time — O(N) over CURRICULUM (870 topics, 14 have supersedes).
+# D-14: unlock trigger is p_mastery >= 0.95 (solid bucket threshold).
+# bloom_target is a Bloom integer (1-6); p_mastery is 0.0-1.0 — scales are
+# incommensurable. "Reaches bloom_target mastery" = solidly mastered per BKT =
+# p_mastery >= 0.95.
+# ---------------------------------------------------------------------------
+
+_superseded_by: dict[str, list[str]] = {}
+for _t in CURRICULUM:
+    if _t.supersedes:
+        _superseded_by.setdefault(_t.supersedes, []).append(_t.id)
 
 
 # ---------------------------------------------------------------------------
@@ -379,6 +396,19 @@ async def next_topics(
 
     # Get curriculum candidates (pure function — already filtered by age/prereqs)
     candidates = curriculum_next_topics(child.age, mastered_ids, child.interests)
+
+    # D-14: inject supersedes unlocks for fully-mastered (solid) KCs.
+    # When a child has solidly mastered a KC (p_mastery >= 0.95), any topic whose
+    # supersedes field points to that KC becomes a candidate — regardless of whether
+    # the curriculum's age/prereq filter would surface it independently.
+    # This ensures model-progression topics unlock automatically when the child
+    # is ready, implementing the "lies to children" refinement mechanic.
+    for kc_id in mastered_ids:
+        for superseding_id in _superseded_by.get(kc_id, []):
+            superseding_topic = _by_id.get(superseding_id)
+            if superseding_topic and superseding_id not in mastered_ids:
+                if superseding_topic not in candidates:
+                    candidates.append(superseding_topic)
 
     # Build mastery lookup by kc_id
     mastery_by_kc = {r.kc_id: r for r in mastery_rows}
