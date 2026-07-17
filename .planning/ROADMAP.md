@@ -132,8 +132,8 @@ Plans:
 Plans:
 **Wave 1** *(parallel pair — no shared files)*
 
-- [ ] 03-01-PLAN.md — TDD: get_24hr_history, get_turns_by_session_id, get_most_recent_ended_session CRUD functions (HIST-03)
-- [ ] 03-02-PLAN.md — TDD: supersedes unlock in next_topics() via _superseded_by reverse index (CURR-04)
+- [x] 03-01-PLAN.md — TDD: get_24hr_history, get_turns_by_session_id, get_most_recent_ended_session CRUD functions (HIST-03)
+- [x] 03-02-PLAN.md — TDD: supersedes unlock in next_topics() via _superseded_by reverse index (CURR-04)
 
 **Wave 2** *(blocked on Wave 1 — Plan 01)*
 
@@ -235,7 +235,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
-| 3. Session Intelligence | 0/4 | Not started | - |
+| 3. Session Intelligence | 2/4 | In Progress|  |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
