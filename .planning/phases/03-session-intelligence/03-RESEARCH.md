@@ -683,22 +683,22 @@ if prev_session and prev_session.id:
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **A1: Precise supersedes unlock trigger**
    - What we know: D-14 says "p_mastery reaches bloom_target"; `bloom_target` is 1–6, `p_mastery` is 0.0–1.0
    - What's unclear: Is the trigger `p_mastery >= 0.95` (existing solid) or a Bloom→p_mastery mapping?
-   - Recommendation: Default to `p_mastery >= 0.95` and document the assumption. Clarify with user at plan review if needed.
+   - RESOLVED: Use `p_mastery >= 0.95` (solid threshold) — `bloom_target` (Bloom integer 1–6) is incommensurable with `p_mastery` (BKT float 0.0–1.0).
 
 2. **A2: Session-start catch-up scope**
    - What we know: D-08 says "on next session start" to catch sessions that ended without `/end`
    - What's unclear: Does "next session start" mean catch-up for ALL previous un-extracted sessions or just the most recent one?
-   - Recommendation: Implement for the most-recent ended session only. If the device was offline for weeks, catching up 30 sessions on start would be slow. One session catch-up is the correct scope.
+   - RESOLVED: Most-recent ended session only for catch-up path — scanning all unextracted sessions deferred to Phase 6.
 
 3. **HIST-03 endpoint path conflict**
    - Current path: `GET /sessions/{child_id}` (child_id in path)
    - New path: `GET /sessions/{session_id}/turns` (session_id in path)
-   - These are non-overlapping (the `/turns` suffix disambiguates). No conflict.
+   - RESOLVED: Non-overlapping paths — no conflict confirmed.
 
 ---
 
