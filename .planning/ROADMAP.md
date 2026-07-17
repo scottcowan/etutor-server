@@ -127,13 +127,28 @@ Plans:
   3. If a child mentions "volcanoes" twice in a session, "volcanoes" appears as an interest tag in their profile by session end
   4. A topic in the `supersedes` chain unlocks automatically once the prerequisite hits `bloom_target` mastery
 
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+**Wave 1** *(parallel pair — no shared files)*
+
+- [ ] 03-01-PLAN.md — TDD: get_24hr_history, get_turns_by_session_id, get_most_recent_ended_session CRUD functions (HIST-03)
+- [ ] 03-02-PLAN.md — TDD: supersedes unlock in next_topics() via _superseded_by reverse index (CURR-04)
+
+**Wave 2** *(blocked on Wave 1 — Plan 01)*
+
+- [ ] 03-03-PLAN.md — TDD: services/session_intelligence.py — build_24hr_history_context, build_prereq_tree_context, escalation counter, extract_and_update_interests (HIST-01, HIST-02, CURR-02, CURR-03)
+
+**Wave 3** *(blocked on Wave 2)*
+
+- [ ] 03-04-PLAN.md — Wiring: extend build_system_prompt(), add HIST-03 endpoint, wire interest extraction in end_session(), wire all intelligence calls in chat() (HIST-01, HIST-02, HIST-03, CURR-01, CURR-02, CURR-03)
 
 **Key decisions / risks:**
 
 - HIST-01 history summary must be token-budget-aware — inject last N turns, not unlimited history
-- CURR-02 prerequisite enforcement needs a decision: hard block (tutor refuses) vs. soft redirect (tutor steers away) — log decision in PROJECT.md
-- CURR-03 interest inference can start as keyword extraction; vector-embedding approach is v2
+- CURR-02 prerequisite enforcement: rubber-band escalation pattern (D-04) — soft redirect with escalating probe cadence, not hard block
+- CURR-03 interest inference: keyword/tag extraction (v1); vector-embedding approach is v2
+- CURR-04 unlock trigger: p_mastery >= 0.95 (solid threshold) — bloom_target is a Bloom integer (1-6), incommensurable with p_mastery (0.0-1.0)
 - Phase 3 is the first phase where curriculum.py and the DB are tightly coupled; integration tests required
 
 **UI hint**: no
@@ -220,7 +235,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
-| 3. Session Intelligence | 0/TBD | Not started | - |
+| 3. Session Intelligence | 0/4 | Not started | - |
 | 4. Parent Dashboard | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
