@@ -46,10 +46,10 @@ Declared values (multiples of 4):
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| xs | 4px | Icon-to-label gaps, mastery dot margin |
-| sm | 8px | Compact inner padding, badge padding, tag gaps |
+| xs | 4px | Icon-to-label gaps, mastery dot margin, badge vertical padding |
+| sm | 8px | Compact inner padding, tag gaps, submit button vertical padding |
 | md | 16px | Default element spacing, form field margin, header padding vertical |
-| lg | 24px | Card padding, section margin-bottom |
+| lg | 24px | Card padding, section margin-bottom, submit button horizontal padding |
 | xl | 32px | Main content top/bottom margin |
 | 2xl | 48px | Between major page sections |
 | 3xl | 64px | Not used in this phase |
@@ -65,8 +65,8 @@ Exceptions:
 
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
-| Body | 16px | 400 | 1.5 | Default paragraph, turn answer text, form labels |
-| Label | 14px | 400 | 1.4 | Meta text, timestamps, reading level, interests |
+| Body | 16px | 400 | 1.5 | Default paragraph, turn answer text, form labels, safety flag marker |
+| Label | 14px | 400 | 1.4 | Meta text, timestamps, reading level, interests, alert badge text |
 | Heading | 18px | 600 | 1.2 | Section headings (h2), card headings (h3), accordion summary subject name |
 | Display | 20px | 600 | 1.2 | Page-level header title (h1 in `<header>`) |
 
@@ -118,7 +118,7 @@ Mastery dot: 10px × 10px circle, `border-radius: 50%`, `display: inline-block`.
 | `sensitive` | `#f8d7da` | `#721c24` | `#f5c6cb` |
 | `new-interest` | `#d1ecf1` | `#0c5460` | `#bee5eb` |
 
-Badge padding: 2px 8px, `border-radius: 12px`, font-size: 12px, font-weight: 600.
+Badge padding: `4px 8px`, `border-radius: 12px`, font-size: 14px (Label), font-weight: 600.
 
 ---
 
@@ -168,7 +168,7 @@ Inline form at `/parent/children/{child_id}`. HTML form POST — no JS.
 Input fields:    width: 100%, border: 1px solid #e0e0e0, border-radius: 6px, padding: 8px 12px, font-size: 16px
 Select:          same as inputs
 Checkboxes:      16px × 16px, gap: 8px between checkbox and label, display in flex-wrap row
-Submit button:   background: #7a9e7e, color: white, border: none, border-radius: 8px, padding: 10px 24px, font-size: 16px, font-weight: 600, cursor: pointer
+Submit button:   background: #7a9e7e, color: white, border: none, border-radius: 8px, padding: 8px 24px, font-size: 16px, font-weight: 600, cursor: pointer
 Form field gap:  16px between fields
 Label weight:    600
 ```
@@ -191,8 +191,8 @@ Last turn:          no border-bottom
 Q label:            "Q: " prefix, color: #888888, font-weight: 600
 A label:            "A: " prefix, color: #7a9e7e, font-weight: 600
 Question text:      font-weight: 600, color: #2c2c2c
-Answer text:        font-weight: 400, color: #444444, font-size: 15px
-Safety flag marker: 🚩 icon + "Flagged" text in #721c24, font-size: 12px, appears inline after Q text
+Answer text:        font-weight: 400, color: #444444, font-size: 16px (Body)
+Safety flag marker: 🚩 icon + "Flagged" text in #721c24, font-size: 16px (Body), appears inline after Q text
 ```
 
 ### Alert Feed Row
@@ -266,6 +266,8 @@ Snippet:            14px, color: #444444, italic, max 80 chars, truncated with e
 ---
 
 ## Page Layout
+
+Child cards are the primary visual focal point: high-contrast white cards against the `#f8f8f8` background draw the parent's eye first; the coloured alert badge on each card is the secondary focus.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
