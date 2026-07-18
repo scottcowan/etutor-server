@@ -19,9 +19,9 @@ class Settings(BaseSettings):
     model_under_8: str = "claude-haiku-4-5-20251001"
     model_8_plus: str = "claude-sonnet-5"
 
-    calibre_web_url: str = "http://192.168.0.25:8084"
+    calibre_web_url: str = "http://192.168.0.25:8083"
     calibre_web_admin_user: str = "admin"
-    calibre_web_admin_password: str = "admin123"
+    calibre_web_admin_password: str = ""
 
     class Config:
         env_file = "config/.env"
