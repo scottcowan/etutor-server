@@ -167,13 +167,24 @@ Plans:
   3. Parent can update neurodivergence flags and reading level and the next chat turn reflects the change
   4. Dashboard displays an alert feed showing sensitive-topic questions, frustration signals, and off-plan interest spikes
 
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+
+**Wave 1** *(parallel pair — no shared files)*
+
+- [ ] 04-01-PLAN.md — Auth infrastructure: itsdangerous dep, SessionMiddleware, login/logout routes, AlertModel + safety_flag migration (PARENT-05)
+- [ ] 04-02-PLAN.md — TDD: Alert CRUD layer + frustration tally at end_session + safety_flag keyword check at log_turn (PARENT-04)
+
+**Wave 2** *(blocked on Wave 1)*
+
+- [ ] 04-03-PLAN.md — Dashboard views: /parent, /parent/sessions/{id}, /parent/children/{id}, /parent/alerts + Jinja2 templates (PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05)
 
 **Key decisions / risks:**
 
-- Auth for parent dashboard: simple token/session cookie is fine for v1 (single-family use); do not over-engineer
-- Mastery map with 777 topics needs a browsable UI — consider subject-grouped accordion, not a flat list
-- PARENT-04 alert generation requires defining "frustration signal" heuristics (e.g., >3 hint requests on same KC)
+- Auth: fixed passphrase in .env, itsdangerous-signed session cookie — simple, upgradeable (D-01, D-02)
+- Mastery map: 870 topics / 44 subjects (live curriculum count) in subject-grouped accordion using native HTML details/summary
+- Alert detection: frustration = hint_used count > 3 per KC per session; sensitive = keyword frozenset; new-interest = Phase 3 interest extraction output
 
 **UI hint**: yes
 
