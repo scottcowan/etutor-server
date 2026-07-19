@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 
 from api import stt, chat, sync, sessions, dashboard
 from api.child import router as child_router
@@ -41,6 +42,7 @@ app.add_middleware(
     allow_methods=["POST", "GET"],
     allow_headers=["X-Child-ID", "X-Device-ID", "Content-Type"],
 )
+app.add_middleware(SessionMiddleware, secret_key=get_settings().secret_key, https_only=False)
 
 # OpenAI-compatible endpoints (device-facing)
 app.include_router(stt.router, prefix="/v1")

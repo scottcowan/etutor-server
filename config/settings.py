@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
     secret_key: str = "dev-secret-change-me"
+    parent_password: str = "change-me-in-env"
     database_url: str = "sqlite+aiosqlite:///./data/etutor.db"
 
     stt_provider: str = "local"
