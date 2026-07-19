@@ -623,22 +623,22 @@ async def update_child_profile(
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **CR-02 scope: HTML gate only vs. also gate `/v1/sessions/` JSON endpoints**
    - What we know: Device (child e-ink reader) calls `/v1/sessions/{child_id}` to sync history. Parent auth cookie is browser-only.
    - What's unclear: Does the device call these endpoints? If yes, parent cookie gate on `/v1/` routes breaks device sync.
-   - Recommendation: Gate HTML views (`/parent/sessions/*`) on parent cookie. Gate `/v1/sessions/*` on `X-Device-ID` ownership check (the interim fix suggested in CR-02 review). This fully closes IDOR without breaking device.
+   - RESOLVED: Gate HTML views (`/parent/sessions/*`) on parent cookie. Gate `/v1/sessions/*` on `X-Device-ID` ownership check (the interim fix suggested in CR-02 review). This fully closes IDOR without breaking device.
 
 2. **`last_studied` date source for mastery map**
    - What we know: `MasteryStateModel.updated_at` is set at session end when BKT/FSRS runs. It is `not None` only for KCs the child has been tested on.
    - What's unclear: `updated_at` is the BKT update time, not the turn timestamp. For topics with no mastery row, `last_studied` will be None.
-   - Recommendation: Display `updated_at` as "last practiced"; show "never" for None. This is accurate and expected.
+   - RESOLVED: Display `updated_at` as "last practiced"; show "never" for None. This is accurate and expected.
 
 3. **`hint_used` bool vs. future count upgrade**
    - What we know: D-10 counts per-session per-KC via aggregation. The bool is sufficient for this.
    - What's unclear: Future phases may want a hint count per turn (e.g., "used 2 out of 3 hints"). Current bool loses that.
-   - Recommendation: Keep bool for Phase 4. Add a `hint_count: int` column in a future phase if needed.
+   - RESOLVED: Keep bool for Phase 4. Add a `hint_count: int` column in a future phase if needed.
 
 ---
 

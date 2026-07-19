@@ -20,7 +20,7 @@ Requirements: PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05
 - **D-02:** Auth state lives in a server-side httpOnly session cookie. Set on successful login at `POST /parent/login`. No JS needed for auth.
 - **D-03:** Login page at `/parent/login` is minimal — one password field, one submit button, matching the white-card aesthetic. No username field (single-family v1).
 - **D-04:** On failed login or expired session: redirect to `/parent/login` with no error message (clean, minimal).
-- **D-05:** All `/parent/*` routes (except `/parent/login`) require a valid session cookie. Redirect to login if missing or invalid. This also fixes CR-02 (IDOR on session endpoints) — session endpoints must verify the authenticated parent's child_id matches.
+- **D-05:** All `/parent/*` routes (except `/parent/login`) require a valid session cookie. Redirect to login if missing or invalid. CR-02 fix for HTML views: gating `/parent/*` on session cookie prevents parent-facing IDOR. Device-facing `/v1/sessions/*` JSON endpoints are intentionally NOT gated by parent cookie (gating them would break device sync) — deferred to Phase 5 X-Device-ID auth.
 
 ### Mastery Map (PARENT-02)
 - **D-06:** Layout is a subject-grouped accordion: 28 subjects collapsed by default, each expands to show its topics. Parent is on a full browser (no e-ink constraint).
@@ -78,7 +78,7 @@ Requirements: PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05
 - `.planning/phases/03-session-intelligence/03-CONTEXT.md` — D-08 dual-trigger interest extraction already wired; Phase 4 reads the result
 
 ### Known Bugs to Fix
-- `.planning/phases/02-knowledge-tracing-backend/02-REVIEW.md` — CR-02 (IDOR on session endpoints): Phase 4 auth gate is the right time to fix this. Session endpoints must verify the authenticated parent's child_id.
+- `.planning/phases/02-knowledge-tracing-backend/02-REVIEW.md` — CR-02 (IDOR on session endpoints): Phase 4 fixes the parent-facing IDOR by gating `/parent/*` HTML views on the session cookie. The device-facing `/v1/sessions/*` JSON endpoints are intentionally NOT gated by parent cookie (would break device sync); their IDOR fix is deferred to Phase 5 X-Device-ID auth.
 
 </canonical_refs>
 

@@ -171,12 +171,15 @@ Plans:
 
 Plans:
 
-**Wave 1** *(parallel pair — no shared files)*
+**Wave 1**
 
 - [ ] 04-01-PLAN.md — Auth infrastructure: itsdangerous dep, SessionMiddleware, login/logout routes, AlertModel + safety_flag migration (PARENT-05)
-- [ ] 04-02-PLAN.md — TDD: Alert CRUD layer + frustration tally at end_session + safety_flag keyword check at log_turn (PARENT-04)
 
 **Wave 2** *(blocked on Wave 1)*
+
+- [ ] 04-02-PLAN.md — TDD: Alert CRUD layer + frustration tally at end_session + safety_flag keyword check at log_turn (PARENT-04)
+
+**Wave 3** *(blocked on Waves 1 + 2)*
 
 - [ ] 04-03-PLAN.md — Dashboard views: /parent, /parent/sessions/{id}, /parent/children/{id}, /parent/alerts + Jinja2 templates (PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05)
 
