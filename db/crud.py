@@ -19,10 +19,27 @@ import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import ChildFSRSParamsModel, ChildProfileModel, InteractionEventModel, MasteryStateModel, SessionModel
+from db.models import AlertModel, ChildFSRSParamsModel, ChildProfileModel, InteractionEventModel, MasteryStateModel, SessionModel
+
+
+# ---------------------------------------------------------------------------
+# Safety keyword detection (D-12, D-13)
+# ---------------------------------------------------------------------------
+
+_SAFETY_KEYWORDS: frozenset = frozenset([
+    "suicide", "self-harm", "kill myself", "die", "hurt myself",
+    "abuse", "naked", "sex", "drugs", "weapons", "bomb",
+    "hurt someone", "run away", "dangerous",
+])
+
+
+def _has_safety_flag(text: str) -> bool:
+    """Return True if text contains any safety keyword (case-insensitive)."""
+    text_lower = text.lower()
+    return any(kw in text_lower for kw in _SAFETY_KEYWORDS)
 
 
 async def create_child(
@@ -151,6 +168,7 @@ async def log_turn(
     session_id: Optional[str] = None,
     kc_id: Optional[str] = None,
     correct: Optional[bool] = None,
+    hint_used: Optional[bool] = None,
 ) -> InteractionEventModel:
     """Insert a new InteractionEvent (turn) row and return the refreshed model.
 
@@ -160,7 +178,11 @@ async def log_turn(
     kc_id and correct are Phase 2 BKT parameters (KT-04). Pass kc_id to associate the
     turn with a knowledge component; pass correct=True/False to enable BKT batch update.
     Both default to None — existing callers are unaffected (T-2-01: parameterised INSERT).
+
+    D-12/D-13: safety_flag is set automatically from question text using _has_safety_flag().
+    When safety_flag=True, an AlertModel row with alert_type='sensitive' is also written.
     """
+    flagged = _has_safety_flag(question)
     model = InteractionEventModel(
         id=str(uuid.uuid4()),
         child_id=child_id,
@@ -170,10 +192,23 @@ async def log_turn(
         session_id=session_id,
         kc_id=kc_id,
         correct=correct,
+        hint_used=hint_used,
+        safety_flag=True if flagged else None,
     )
     session.add(model)
     await session.commit()
     await session.refresh(model)
+
+    # D-13: write sensitive AlertModel row so parent alert feed surfaces this event
+    if flagged:
+        await create_alert(
+            child_id,
+            "sensitive",
+            session,
+            snippet=question[:80],
+            session_id=session_id,
+        )
+
     return model
 
 
@@ -309,3 +344,135 @@ async def upsert_child_fsrs_params(
             updated_at=datetime.now(timezone.utc),
         ))
     await session.commit()
+
+
+# ---------------------------------------------------------------------------
+# Parent dashboard CRUD (04-02)
+# ---------------------------------------------------------------------------
+
+async def update_child_profile(
+    child_id: str,
+    session: AsyncSession,
+    *,
+    name: Optional[str] = None,
+    age: Optional[int] = None,
+    reading_level: Optional[str] = None,
+    neurodivergence: Optional[list] = None,
+    interests: Optional[list] = None,
+) -> Optional[ChildProfileModel]:
+    """Update only the supplied fields on a ChildProfile row; omitted fields unchanged.
+
+    Returns the updated child, or None if child_id not found (D-15, D-16).
+    """
+    child = await get_child_by_id(child_id, session)
+    if child is None:
+        return None
+    if name is not None:
+        child.name = name
+    if age is not None:
+        child.age = age
+    if reading_level is not None:
+        child.reading_level = reading_level
+    if neurodivergence is not None:
+        child.neurodivergence = neurodivergence
+    if interests is not None:
+        child.interests = interests
+    await session.commit()
+    await session.refresh(child)
+    return child
+
+
+async def create_alert(
+    child_id: str,
+    alert_type: str,
+    session: AsyncSession,
+    *,
+    snippet: Optional[str] = None,
+    kc_id: Optional[str] = None,
+    session_id: Optional[str] = None,
+) -> AlertModel:
+    """Persist a new AlertModel row and return it.
+
+    id is uuid4; triggered_at defaults to now(UTC) via the model column default.
+    Security note (T-4-02-01): child_id FK enforces child exists; access gated at view layer.
+    """
+    model = AlertModel(
+        id=str(uuid.uuid4()),
+        child_id=child_id,
+        alert_type=alert_type,
+        snippet=snippet,
+        kc_id=kc_id,
+        session_id=session_id,
+    )
+    session.add(model)
+    await session.commit()
+    await session.refresh(model)
+    return model
+
+
+async def get_alerts_for_child(
+    child_id: str,
+    session: AsyncSession,
+    days: int = 30,
+) -> list[AlertModel]:
+    """Return alerts for child_id from the last `days` days, ordered triggered_at DESC.
+
+    Uses UTC-aware datetime comparison — never datetime.utcnow() (D-03 convention).
+    Security note (T-4-02-01): explicit child_id scoping — no cross-child exposure.
+    """
+    since = datetime.now(timezone.utc) - timedelta(days=days)
+    result = await session.execute(
+        select(AlertModel)
+        .where(AlertModel.child_id == child_id)
+        .where(AlertModel.triggered_at >= since)
+        .order_by(AlertModel.triggered_at.desc())
+    )
+    return list(result.scalars().all())
+
+
+async def get_all_mastery_for_child(
+    child_id: str,
+    session: AsyncSession,
+) -> dict[str, MasteryStateModel]:
+    """Return all MasteryState rows for child_id as {kc_id: row} dict.
+
+    Returns an empty dict if the child has no mastery rows.
+    Security note (T-4-02-04): single SELECT WHERE child_id=X uses composite PK index.
+    """
+    result = await session.execute(
+        select(MasteryStateModel).where(MasteryStateModel.child_id == child_id)
+    )
+    rows = list(result.scalars().all())
+    return {r.kc_id: r for r in rows}
+
+
+async def run_frustration_tally(
+    session_id: str,
+    child_id: str,
+    db: AsyncSession,
+) -> None:
+    """D-10: Write 'frustrated' AlertModel rows for kc_ids with > 3 hint_used=True events.
+
+    Called at end_session() time. Uses func.count() GROUP BY kc_id over events
+    in the given session where hint_used=True and kc_id IS NOT NULL.
+    One alert per kc_id that crosses the threshold.
+    """
+    result = await db.execute(
+        select(
+            InteractionEventModel.kc_id,
+            func.count(InteractionEventModel.id).label("hint_count"),
+        )
+        .where(InteractionEventModel.session_id == session_id)
+        .where(InteractionEventModel.hint_used == True)  # noqa: E712
+        .where(InteractionEventModel.kc_id.isnot(None))
+        .group_by(InteractionEventModel.kc_id)
+    )
+    for row in result.all():
+        if row.hint_count > 3:
+            await create_alert(
+                child_id,
+                "frustrated",
+                db,
+                kc_id=row.kc_id,
+                session_id=session_id,
+            )

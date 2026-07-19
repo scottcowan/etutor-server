@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.crud import get_session, get_turns_by_session_id
+from db.crud import get_session, get_turns_by_session_id, run_frustration_tally
 from db.session import get_db
 from services.knowledge_tracing import fit_fsrs_params, update_bkt_for_session
 from services.session_intelligence import extract_and_update_interests
@@ -88,6 +88,9 @@ async def end_session(
     bkt_updates = await update_bkt_for_session(session_id, db)
     await fit_fsrs_params(session_row.child_id, db)
     await extract_and_update_interests(session_id, session_row.child_id, db)
+
+    # D-10: frustration tally — write 'frustrated' alert for kc_ids with > 3 hints in session
+    await run_frustration_tally(session_id, session_row.child_id, db)
 
     return {
         "session_id": session_id,
