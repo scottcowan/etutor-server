@@ -23,7 +23,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import MasteryStateModel
-from db.crud import get_24hr_history, update_interests
+from db.crud import create_alert, get_24hr_history, update_interests
 from services.curriculum import CURRICULUM, _by_id
 
 
@@ -339,4 +339,14 @@ async def extract_and_update_interests(
     if not new_interests:
         return
 
+    # D-11: capture pre-update interests to detect newly added tags
+    from db.crud import get_child_by_id
+    child = await get_child_by_id(child_id, db)
+    pre_update_interests: set = set(child.interests or []) if child else set()
+
     await update_interests(child_id, new_interests, db)
+
+    # D-11: write 'new-interest' alert for each newly added interest tag
+    for tag in new_interests:
+        if tag not in pre_update_interests:
+            await create_alert(child_id, "new-interest", db, snippet=tag)
