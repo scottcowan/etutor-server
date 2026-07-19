@@ -9,7 +9,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from api import stt, chat, sync, sessions, dashboard
 from api.child import router as child_router
-from api.parent import router as parent_router
+from api.parent import router as parent_router, ParentAuthRequired
 from config.settings import get_settings
 from db.models import Base
 from db.seeds import seed_dev_data
@@ -43,6 +43,14 @@ app.add_middleware(
     allow_headers=["X-Child-ID", "X-Device-ID", "Content-Type"],
 )
 app.add_middleware(SessionMiddleware, secret_key=get_settings().secret_key, https_only=False)
+
+
+@app.exception_handler(ParentAuthRequired)
+async def parent_auth_required_handler(request, exc):
+    """Redirect unauthenticated /parent/* requests to the login page (D-05)."""
+    from fastapi.responses import RedirectResponse
+    return RedirectResponse(url="/parent/login", status_code=303)
+
 
 # OpenAI-compatible endpoints (device-facing)
 app.include_router(stt.router, prefix="/v1")
