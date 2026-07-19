@@ -69,6 +69,7 @@ class InteractionEventModel(Base):
     correct: Mapped[Optional[bool]] = mapped_column(Boolean, nullable=True)  # set by Phase 2 BKT
     response_ms: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)  # chat turn latency
     hint_used: Mapped[Optional[bool]] = mapped_column(Boolean, nullable=True)   # set by Phase 2
+    safety_flag: Mapped[Optional[bool]] = mapped_column(Boolean, nullable=True)  # Phase 4 safety alerts
 
 
 class MasteryStateModel(Base):
@@ -90,6 +91,25 @@ class MasteryStateModel(Base):
     card_state: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     next_review: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class AlertModel(Base):
+    """Parent alerts: frustration / sensitive-topic / new-interest (PARENT-04)."""
+    __tablename__ = "alerts"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    child_id: Mapped[str] = mapped_column(
+        String, ForeignKey("child_profiles.id"), nullable=False, index=True
+    )
+    alert_type: Mapped[str] = mapped_column(String, nullable=False)  # 'frustrated'|'sensitive'|'new-interest'
+    triggered_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
+    )
+    snippet: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    kc_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    session_id: Mapped[Optional[str]] = mapped_column(
+        String, ForeignKey("sessions.id"), nullable=True
+    )
 
 
 class ChildFSRSParamsModel(Base):
