@@ -173,7 +173,7 @@ Plans:
 
 **Wave 1**
 
-- [ ] 04-01-PLAN.md — Auth infrastructure: itsdangerous dep, SessionMiddleware, login/logout routes, AlertModel + safety_flag migration (PARENT-05)
+- [x] 04-01-PLAN.md — Auth infrastructure: itsdangerous dep, SessionMiddleware, login/logout routes, AlertModel + safety_flag migration (PARENT-05)
 
 **Wave 2** *(blocked on Wave 1)*
 
@@ -250,6 +250,6 @@ Plans:
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
 | 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
-| 4. Parent Dashboard | 0/TBD | Not started | - |
+| 4. Parent Dashboard | 1/3 | In Progress|  |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
