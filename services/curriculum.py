@@ -6679,7 +6679,7 @@ _EXPANDED_SUBJECTS: list[Topic] = [
           ["forces_and_structures"],
           ["civil engineering", "infrastructure", "dams", "tunnels", "roads", "engineering"]),
 
-    Topic("electronics_components", "Electronics — Transistors, Capacitors, and How Circuits Think",
+    Topic("electronics_advanced_components", "Electronics — Transistors, Capacitors, and How Circuits Think",
           "Engineering", [3], [8, 9], 3, 5,
           ["electrical_circuits_engineering"],
           ["electronics", "transistors", "capacitors", "semiconductors", "engineering", "university"]),
@@ -6756,7 +6756,7 @@ _EXPANDED_SUBJECTS: list[Topic] = [
           ["human_body_systems"],
           ["nutrition", "diet", "vitamins", "protein", "carbohydrates", "fat", "medicine"]),
 
-    Topic("immune_system", "The Immune System — How Your Body Fights Disease",
+    Topic("immune_system_medicine", "The Immune System — How Your Body Fights Disease",
           "Medicine", [2, 3], [6, 7, 8], 2, 4,
           ["human_body_systems"],
           ["immune system", "bacteria", "viruses", "antibodies", "vaccines", "medicine"]),
@@ -6850,7 +6850,7 @@ _EXPANDED_SUBJECTS: list[Topic] = [
           [],
           ["norms", "values", "culture", "socialisation", "social rules", "sociology"]),
 
-    Topic("family_structures", "Family Structures — How Families Are Organised and Why It Varies",
+    Topic("family_structures_sociology", "Family Structures — How Families Are Organised and Why It Varies",
           "Sociology", [2, 3], [6, 7, 8], 1, 3,
           ["norms_values_culture"],
           ["family", "nuclear family", "extended family", "divorce", "single parent", "sociology"]),
@@ -6932,7 +6932,7 @@ _EXPANDED_SUBJECTS: list[Topic] = [
           [],
           ["emotions", "feelings", "anger", "happiness", "fear", "psychology"]),
 
-    Topic("sleep_and_the_brain", "Sleep — What Happens in Your Brain When You Sleep",
+    Topic("sleep_psychology", "Sleep — What Happens in Your Brain When You Sleep",
           "Psychology", [2, 3], [5, 6, 7, 8], 1, 3,
           ["emotions_and_feelings"],
           ["sleep", "dreams", "REM", "circadian rhythm", "memory", "psychology"]),
@@ -6974,6 +6974,235 @@ _EXPANDED_SUBJECTS: list[Topic] = [
 ]
 
 CURRICULUM = CURRICULUM + _EXPANDED_SUBJECTS
+
+
+# ---------------------------------------------------------------------------
+# Making, Craft, and Practical Trades — metalwork, textiles, 3D printing,
+# glass, jewellery, electronics, and the craft traditions
+# ---------------------------------------------------------------------------
+
+_MAKING_TRADES: list[Topic] = [
+
+    # ── Textiles and Sewing (extends the 2 existing sewing topics) ──────────
+    Topic("sewing_hand_stitch_techniques", "Hand Stitching — Running, Back Stitch, Blanket, and Embroidery",
+          "Vocational", [2, 3], [4, 5, 6, 7], 1, 3,
+          ["sewing_basics"],
+          ["sewing", "hand stitch", "embroidery", "running stitch", "backstitch", "craft", "textiles"],
+          vocational=True),
+
+    Topic("sewing_machine_use", "The Sewing Machine — Threading, Tension, and Making a Straight Seam",
+          "Vocational", [2, 3], [5, 6, 7, 8], 2, 3,
+          ["sewing_basics"],
+          ["sewing machine", "seam", "thread", "tension", "fabric", "textiles", "craft"],
+          vocational=True),
+
+    Topic("pattern_cutting", "Pattern Cutting and Garment Construction — From Flat Fabric to Clothing",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["sewing_machine_use"],
+          ["pattern", "garment", "dart", "seam allowance", "cutting", "textiles", "fashion", "craft"],
+          vocational=True),
+
+    Topic("knitting_and_crochet", "Knitting and Crochet — Casting On, Stitches, and Making Fabric with Yarn",
+          "Vocational", [1, 2, 3], [3, 4, 5, 6, 7, 8], 1, 3,
+          [],
+          ["knitting", "crochet", "yarn", "needles", "hook", "craft", "textiles"],
+          vocational=True),
+
+    Topic("weaving_and_dyeing", "Weaving and Natural Dyeing — Making Cloth from Scratch",
+          "Vocational", [2, 3], [5, 6, 7, 8], 2, 3,
+          [],
+          ["weaving", "dyeing", "natural dye", "warp", "weft", "craft", "textiles", "history"],
+          vocational=True),
+
+    # ── Metalwork and Fabrication ───────────────────────────────────────────
+    Topic("metalwork_intro", "Metalwork — Properties of Metals and Safe Workshop Practices",
+          "Vocational", [3], [7, 8, 9], 1, 3,
+          ["woodwork_safety"],
+          ["metalwork", "metals", "steel", "aluminium", "copper", "workshop", "craft"],
+          vocational=True),
+
+    Topic("metalwork_cutting_shaping", "Cutting and Shaping Metal — Hacksaws, Files, Drills, and Grinders",
+          "Vocational", [3], [7, 8, 9], 2, 3,
+          ["metalwork_intro"],
+          ["metalwork", "hacksaw", "file", "drill", "angle grinder", "shaping", "craft"],
+          vocational=True),
+
+    Topic("welding_intro", "Welding — MIG, TIG, and Arc Welding for Beginners",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["metalwork_intro"],
+          ["welding", "MIG", "TIG", "arc welding", "filler metal", "fusion", "fabrication", "craft"],
+          vocational=True),
+    # MIG (Metal Inert Gas) is the most accessible for beginners.
+    # TIG (Tungsten Inert Gas) produces cleaner welds but requires more skill.
+    # Arc welding (stick welding) is the oldest and simplest electric process.
+
+    Topic("forging_and_blacksmithing", "Forging and Blacksmithing — Fire, Hammer, and Shaping Hot Metal",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["metalwork_intro"],
+          ["forging", "blacksmithing", "anvil", "hammer", "forge", "hot metal", "craft", "history"],
+          vocational=True),
+    # Blacksmithing is one of the oldest trades — iron tools shaped human history.
+    # The forge heats metal to critical temperature where it becomes plastic.
+    # Quenching in water/oil hardens steel by trapping the martensite structure.
+
+    Topic("machining_lathe_and_mill", "Machining — Using a Lathe and Milling Machine to Make Precise Parts",
+          "Vocational", [3], [8, 9], 3, 5,
+          ["metalwork_cutting_shaping"],
+          ["machining", "lathe", "milling", "CNC", "tolerances", "engineering", "craft"],
+          vocational=True),
+    # The lathe is arguably the most fundamental machine tool — it makes the
+    # round parts that enable all other precision machinery.
+
+    Topic("sheet_metal_work", "Sheet Metal Work — Folding, Riveting, and Making Enclosures",
+          "Vocational", [3], [7, 8, 9], 2, 3,
+          ["metalwork_intro"],
+          ["sheet metal", "folding", "riveting", "tin", "ductwork", "fabrication", "craft"],
+          vocational=True),
+
+    # ── Jewellery Making ────────────────────────────────────────────────────
+    Topic("jewellery_making_intro", "Jewellery Making — Wire, Beads, and Simple Findings",
+          "Vocational", [2, 3], [5, 6, 7, 8], 1, 3,
+          [],
+          ["jewellery", "wire", "beads", "findings", "earrings", "necklace", "craft"],
+          vocational=True),
+
+    Topic("silversmithing", "Silversmithing — Sawing, Soldering, and Forming Silver",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["jewellery_making_intro", "metalwork_intro"],
+          ["silversmithing", "silver", "solder", "hallmarking", "rolling mill", "jewellery", "craft"],
+          vocational=True),
+
+    Topic("resin_and_casting_jewellery", "Resin and Casting — Embedding Objects and Making Moulds",
+          "Vocational", [2, 3], [6, 7, 8], 2, 3,
+          ["jewellery_making_intro"],
+          ["resin", "casting", "mould", "jewellery", "craft", "polymer"],
+          vocational=True),
+
+    # ── Glasswork ──────────────────────────────────────────────────────────
+    Topic("glass_cutting_stained_glass", "Stained Glass — Cutting, Leading, and Soldering Glass Panels",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["woodwork_safety"],
+          ["stained glass", "glass cutting", "leading", "solder", "Tiffany", "craft", "art"],
+          vocational=True),
+
+    Topic("glass_fusing_and_kiln", "Glass Fusing — Layering and Firing Glass in a Kiln",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["glass_cutting_stained_glass"],
+          ["glass fusing", "kiln", "glass layers", "dichroic", "craft", "art"],
+          vocational=True),
+
+    Topic("glassblowing_intro", "Glassblowing — Gathering, Shaping, and Blowing Molten Glass",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["glass_cutting_stained_glass"],
+          ["glassblowing", "molten glass", "blowpipe", "gather", "marver", "craft", "art"],
+          vocational=True),
+    # Glassblowing dates to 1st century BCE Phoenicia. The glass is worked at
+    # ~1000–1100°C. The blowpipe is spun constantly to prevent sagging.
+    # Annealing (slow cooling in a lehr oven) relieves internal stress.
+
+    # ── 3D Printing and Digital Fabrication ─────────────────────────────────
+    Topic("3d_printing_intro", "3D Printing — FDM, Resin, and How Printers Build Up Objects Layer by Layer",
+          "Vocational", [2, 3], [5, 6, 7, 8, 9], 1, 3,
+          [],
+          ["3D printing", "FDM", "filament", "layer", "slicing", "prototyping", "making", "digital fabrication"],
+          vocational=True),
+
+    Topic("3d_modelling_for_printing", "3D Modelling — Designing Objects in CAD for Printing and Making",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["3d_printing_intro"],
+          ["CAD", "3D modelling", "Tinkercad", "Fusion 360", "STL", "design", "making", "digital fabrication"],
+          vocational=True),
+
+    Topic("laser_cutting_and_engraving", "Laser Cutting and Engraving — Precision Cutting in Wood, Acrylic, and Card",
+          "Vocational", [3], [7, 8, 9], 2, 3,
+          ["woodwork_design_process"],
+          ["laser cutting", "laser engraving", "vector", "acrylic", "wood", "digital fabrication", "making"],
+          vocational=True),
+
+    Topic("cnc_routing", "CNC Routing — Computer-Controlled Cutting at Scale",
+          "Vocational", [3], [8, 9], 3, 4,
+          ["machining_lathe_and_mill", "3d_modelling_for_printing"],
+          ["CNC", "routing", "G-code", "toolpaths", "digital fabrication", "making", "engineering"],
+          vocational=True),
+
+    # ── General Craft and Making ────────────────────────────────────────────
+    Topic("ceramics_and_pottery", "Ceramics and Pottery — Coiling, Throwing, Glazing, and Firing",
+          "Vocational", [1, 2, 3], [3, 4, 5, 6, 7, 8], 1, 3,
+          [],
+          ["ceramics", "pottery", "clay", "kiln", "glaze", "wheel throwing", "coiling", "craft", "art"],
+          vocational=True),
+
+    Topic("leatherwork", "Leatherwork — Cutting, Stitching, and Tooling Leather",
+          "Vocational", [3], [7, 8, 9], 2, 3,
+          ["sewing_basics"],
+          ["leatherwork", "leather", "awl", "saddle stitch", "tooling", "craft"],
+          vocational=True),
+
+    Topic("bookbinding", "Bookbinding — Folding Signatures, Sewing, and Making a Hard Cover",
+          "Vocational", [2, 3], [6, 7, 8, 9], 2, 3,
+          [],
+          ["bookbinding", "signatures", "sewing", "binding", "paper craft", "craft"],
+          vocational=True),
+
+    Topic("screen_printing", "Screen Printing — Making Stencils and Printing Onto Fabric and Paper",
+          "Vocational", [2, 3], [6, 7, 8, 9], 2, 3,
+          [],
+          ["screen printing", "silkscreen", "stencil", "ink", "textiles", "printing", "craft", "art"],
+          vocational=True),
+
+    Topic("whittling_and_wood_carving", "Whittling and Wood Carving — Shaping Wood with a Knife",
+          "Vocational", [2, 3], [5, 6, 7, 8], 1, 3,
+          ["woodwork_safety"],
+          ["whittling", "wood carving", "knife", "spoon carving", "relief carving", "craft"],
+          vocational=True),
+
+    # ── Electronics (practical, extends the vocational computing block) ──────
+    Topic("electronics_passive_components", "Passive Components — Resistors, Capacitors, and Inductors",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["electronics_breadboard"],
+          ["resistors", "capacitors", "inductors", "passive components", "electronics", "circuit"],
+          vocational=True),
+
+    Topic("electronics_transistors_practical", "Transistors in Practice — Switching, Amplifying, and Logic Gates",
+          "Vocational", [3], [8, 9], 3, 5,
+          ["electronics_passive_components"],
+          ["transistors", "logic gates", "NPN", "PNP", "amplifier", "switch", "electronics", "digital"],
+          vocational=True),
+
+    Topic("pcb_design_and_manufacture", "PCB Design — Schematic to Board to Manufactured Circuit",
+          "Vocational", [3], [8, 9], 3, 5,
+          ["electronics_soldering", "electronics_transistors_practical"],
+          ["PCB", "printed circuit board", "schematic", "KiCad", "EasyEDA", "manufacture", "electronics"],
+          vocational=True),
+
+    Topic("power_supplies_and_batteries", "Power Supplies — Voltage, Current, Batteries, and Regulation",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["electronics_circuits_basics"],
+          ["power supply", "battery", "voltage regulator", "LiPo", "mains", "electronics", "safety"],
+          vocational=True),
+
+    Topic("audio_electronics", "Audio Electronics — Amplifiers, Speakers, and Building a Guitar Pedal",
+          "Vocational", [3], [8, 9], 2, 4,
+          ["electronics_transistors_practical"],
+          ["audio", "amplifier", "speaker", "guitar pedal", "op-amp", "signal", "electronics", "music"],
+          vocational=True),
+    # Guitar pedals are a beloved entry point into audio electronics —
+    # a fuzz or overdrive circuit can be built for under £10 in components.
+
+    Topic("raspberry_pi_projects", "Raspberry Pi — A Full Linux Computer You Can Program and Embed",
+          "Vocational", [3], [7, 8, 9], 2, 4,
+          ["arduino_intro"],
+          ["Raspberry Pi", "Linux", "GPIO", "Python", "embedded", "electronics", "computing"],
+          vocational=True),
+
+    Topic("home_electrical_basics", "Home Electrical Basics — Plugs, Fuses, Sockets, and When to Call an Electrician",
+          "Vocational", [2, 3], [7, 8, 9], 1, 3,
+          ["electronics_circuits_basics"],
+          ["home electrical", "fuse", "plug", "socket", "circuit breaker", "safety", "practical", "vocational"],
+          vocational=True),
+]
+
+CURRICULUM = CURRICULUM + _MAKING_TRADES
 
 
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
