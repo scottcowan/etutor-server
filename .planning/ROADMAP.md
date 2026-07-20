@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Database Foundation** - Persistent SQLite/PostgreSQL storage replaces all in-memory stores (completed 2026-07-14)
 - [x] **Phase 2: Knowledge Tracing Backend** - BKT mastery model + FSRS scheduling per child × KC (completed 2026-07-16)
 - [x] **Phase 3: Session Intelligence** - History injection, curriculum routing, and interest graph (completed 2026-07-17)
-- [ ] **Phase 4: Parent Dashboard** - Session replay, mastery map, profile editor, and alert feed
+- [x] **Phase 4: Parent Dashboard** - Session replay, mastery map, profile editor, and alert feed (completed 2026-07-20)
 - [ ] **Phase 5: Child Interface + Device Sync** - Browser testing UI and e-ink device sync endpoints
 - [ ] **Phase 6: Safety, Performance, and Polish** - Multi-turn safety monitoring and <2s latency validation
 
@@ -181,7 +181,7 @@ Plans:
 
 **Wave 3** *(blocked on Waves 1 + 2)*
 
-- [ ] 04-03-PLAN.md — Dashboard views: /parent, /parent/sessions/{id}, /parent/children/{id}, /parent/alerts + Jinja2 templates (PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05)
+- [x] 04-03-PLAN.md — Dashboard views: /parent, /parent/sessions/{id}, /parent/children/{id}, /parent/alerts + Jinja2 templates (PARENT-01, PARENT-02, PARENT-03, PARENT-04, PARENT-05)
 
 **Key decisions / risks:**
 
@@ -250,6 +250,6 @@ Plans:
 | 1. Database Foundation | 7/7 | Complete    | 2026-07-14 |
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
 | 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
-| 4. Parent Dashboard | 2/3 | In Progress|  |
+| 4. Parent Dashboard | 3/3 | Complete   | 2026-07-20 |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
