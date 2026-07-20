@@ -54,7 +54,9 @@
 <body>
 <header>
   <h1>📚 eTutor — Parent Dashboard</h1>
-  <a href="/parent/logout" style="color:#7a9e7e;text-decoration:none;font-size:0.95rem;margin-left:auto;" onclick="this.closest('a').setAttribute('data-method','post')">Sign out</a>
+  <form method="POST" action="/parent/logout" style="margin-left:auto;display:inline;">
+    <button type="submit" style="background:none;border:none;cursor:pointer;color:#7a9e7e;font-size:0.95rem;padding:0;">Sign out</button>
+  </form>
 </header>
 <main>
   <section>

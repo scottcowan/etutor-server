@@ -167,7 +167,10 @@ async def child_profile_post(
     form = await request.form()
     name = form.get("name") or None
     age_raw = form.get("age")
-    age = int(age_raw) if age_raw else None
+    try:
+        age = int(age_raw) if age_raw else None
+    except ValueError:
+        age = None
     reading_level_raw = form.get("reading_level") or None
     # T-4-03-05: server-validate reading_level; silently ignore invalid values
     reading_level = reading_level_raw if reading_level_raw in _VALID_READING_LEVELS else None

@@ -1,5 +1,8 @@
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from functools import lru_cache
+
+_INSECURE_DEFAULTS = {"dev-secret-change-me", "change-me"}
 
 
 class Settings(BaseSettings):
@@ -7,6 +10,17 @@ class Settings(BaseSettings):
     port: int = 8000
     secret_key: str = "dev-secret-change-me"
     parent_password: str = "change-me-in-env"
+
+    @field_validator("secret_key")
+    @classmethod
+    def _secret_key_must_be_set(cls, v: str) -> str:
+        if v in _INSECURE_DEFAULTS:
+            import warnings
+            warnings.warn(
+                "SECRET_KEY is using the insecure default. Set SECRET_KEY in config/.env before deploying.",
+                stacklevel=2,
+            )
+        return v
     database_url: str = "sqlite+aiosqlite:///./data/etutor.db"
 
     stt_provider: str = "local"
