@@ -6593,6 +6593,389 @@ _OPTICS_LIGHT = [
 CURRICULUM = CURRICULUM + _OPTICS_LIGHT
 
 
+# ---------------------------------------------------------------------------
+# Expanded thin subjects — Computer Science, Engineering, Environmental
+# Science, Medicine, Linguistics, Sociology, Architecture, Psychology
+# ---------------------------------------------------------------------------
+
+_EXPANDED_SUBJECTS: list[Topic] = [
+
+    # ── Computer Science (3 → 13) ──────────────────────────────────────────
+    Topic("binary_numbers", "Binary Numbers — How Computers Count in 0s and 1s",
+          "Computer Science", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["binary", "bits", "bytes", "number systems", "computing", "programming"]),
+    # Binary is the foundation of every digital system; understanding it unlocks
+    # why computers behave as they do at the hardware level.
+
+    Topic("algorithms_intro", "Algorithms — Step-by-Step Instructions for Solving Problems",
+          "Computer Science", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["algorithms", "flowcharts", "pseudocode", "problem solving", "computing"]),
+
+    Topic("sorting_algorithms", "Sorting Algorithms — Bubble Sort, Merge Sort, and Why It Matters",
+          "Computer Science", [3], [7, 8, 9], 2, 4,
+          ["algorithms_intro", "binary_numbers"],
+          ["sorting", "algorithms", "efficiency", "bubble sort", "merge sort", "computing"]),
+
+    Topic("how_the_internet_works", "How the Internet Works — Packets, Protocols, and the Web",
+          "Computer Science", [2, 3], [6, 7, 8], 2, 4,
+          [],
+          ["internet", "packets", "TCP/IP", "DNS", "HTTP", "networking", "computing"]),
+
+    Topic("programming_concepts", "Programming Concepts — Variables, Loops, Functions, and Logic",
+          "Computer Science", [2, 3], [5, 6, 7, 8], 1, 3,
+          ["algorithms_intro"],
+          ["programming", "variables", "loops", "functions", "coding", "computing"]),
+
+    Topic("data_structures", "Data Structures — Arrays, Lists, Trees, and Graphs",
+          "Computer Science", [3], [8, 9], 3, 5,
+          ["programming_concepts", "algorithms_intro"],
+          ["data structures", "arrays", "lists", "trees", "graphs", "computing", "university"]),
+
+    Topic("cybersecurity_basics", "Cybersecurity — Encryption, Passwords, and Staying Safe Online",
+          "Computer Science", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["how_the_internet_works"],
+          ["cybersecurity", "encryption", "passwords", "hacking", "privacy", "computing"]),
+
+    Topic("databases_and_sql", "Databases — How Data Is Stored, Queried, and Managed",
+          "Computer Science", [3], [8, 9], 2, 4,
+          ["programming_concepts"],
+          ["databases", "SQL", "tables", "queries", "relational", "computing"]),
+
+    Topic("operating_systems", "Operating Systems — What Happens When You Turn a Computer On",
+          "Computer Science", [3], [8, 9], 2, 4,
+          ["binary_numbers", "programming_concepts"],
+          ["operating systems", "kernel", "processes", "memory management", "computing"]),
+
+    Topic("artificial_intelligence_concepts", "Artificial Intelligence — What AI Can and Can't Do",
+          "Computer Science", [3], [7, 8, 9], 2, 4,
+          ["algorithms_intro"],
+          ["AI", "artificial intelligence", "neural networks", "machine learning", "computing"]),
+
+    # ── Engineering (3 → 12) ───────────────────────────────────────────────
+    Topic("forces_and_structures", "Forces and Structures — Why Bridges Don't Fall Down",
+          "Engineering", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["forces", "structures", "bridges", "tension", "compression", "engineering"]),
+
+    Topic("electrical_circuits_engineering", "Electrical Circuits — From Simple Switches to Complex Systems",
+          "Engineering", [2, 3], [5, 6, 7, 8], 2, 4,
+          [],
+          ["circuits", "electricity", "voltage", "current", "resistance", "engineering", "electronics"]),
+
+    Topic("mechanical_advantage", "Mechanical Advantage — Levers, Gears, Pulleys, and Simple Machines",
+          "Engineering", [2, 3], [5, 6, 7], 1, 3,
+          ["forces_and_structures"],
+          ["levers", "gears", "pulleys", "mechanical advantage", "machines", "engineering"]),
+
+    Topic("design_process", "The Engineering Design Process — Iteration, Failure, and Prototyping",
+          "Engineering", [2, 3], [5, 6, 7, 8], 2, 3,
+          [],
+          ["design", "prototyping", "iteration", "testing", "failure", "engineering"]),
+
+    Topic("civil_engineering", "Civil Engineering — Roads, Dams, Tunnels, and the Built World",
+          "Engineering", [3], [7, 8, 9], 2, 4,
+          ["forces_and_structures"],
+          ["civil engineering", "infrastructure", "dams", "tunnels", "roads", "engineering"]),
+
+    Topic("electronics_components", "Electronics — Transistors, Capacitors, and How Circuits Think",
+          "Engineering", [3], [8, 9], 3, 5,
+          ["electrical_circuits_engineering"],
+          ["electronics", "transistors", "capacitors", "semiconductors", "engineering", "university"]),
+
+    Topic("renewable_energy_engineering", "Renewable Energy Engineering — Solar Panels, Wind Turbines, and the Grid",
+          "Engineering", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["electrical_circuits_engineering"],
+          ["renewable energy", "solar", "wind turbines", "energy", "engineering", "sustainability"]),
+
+    Topic("aerospace_engineering_intro", "Aerospace Engineering — How Aircraft and Rockets Work",
+          "Engineering", [3], [7, 8, 9], 2, 4,
+          ["forces_and_structures", "thermodynamics_engineering"],
+          ["aerospace", "aircraft", "rockets", "thrust", "lift", "drag", "engineering"]),
+
+    Topic("robotics_intro", "Robotics — Sensors, Actuators, and Making Machines Move",
+          "Engineering", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["programming_concepts", "electrical_circuits_engineering"],
+          ["robotics", "sensors", "actuators", "automation", "engineering", "computing"]),
+
+    # ── Environmental Science (2 → 11) ─────────────────────────────────────
+    Topic("ecosystems_and_food_webs", "Ecosystems and Food Webs — How Species Depend on Each Other",
+          "Environmental Science", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["ecosystems", "food webs", "predator", "prey", "biodiversity", "environment"]),
+
+    Topic("climate_change_science", "Climate Change — The Science Behind a Warming Planet",
+          "Environmental Science", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["ecosystems_and_food_webs"],
+          ["climate change", "global warming", "carbon dioxide", "greenhouse effect", "environment"]),
+
+    Topic("water_cycle_and_pollution", "Water Systems — The Water Cycle, Pollution, and Access",
+          "Environmental Science", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["water cycle", "evaporation", "water pollution", "drinking water", "environment"]),
+
+    Topic("biodiversity_and_conservation", "Biodiversity and Conservation — Protecting Species and Habitats",
+          "Environmental Science", [2, 3], [5, 6, 7, 8], 2, 4,
+          ["ecosystems_and_food_webs"],
+          ["biodiversity", "conservation", "extinction", "habitats", "endangered", "environment"]),
+
+    Topic("soil_and_agriculture", "Soil Science and Agriculture — What Makes Land Fertile or Dead",
+          "Environmental Science", [2, 3], [6, 7, 8], 2, 4,
+          ["ecosystems_and_food_webs"],
+          ["soil", "agriculture", "fertiliser", "erosion", "farming", "environment"]),
+
+    Topic("waste_and_recycling", "Waste and the Circular Economy — Reduce, Reuse, Redesign",
+          "Environmental Science", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["waste", "recycling", "circular economy", "landfill", "plastic", "environment"]),
+
+    Topic("energy_and_environment", "Energy Sources and Their Environmental Cost",
+          "Environmental Science", [3], [7, 8, 9], 2, 4,
+          ["climate_change_science"],
+          ["energy", "fossil fuels", "renewables", "carbon footprint", "environment"]),
+
+    Topic("ocean_science", "Ocean Science — Currents, Acidification, and the Deep Sea",
+          "Environmental Science", [3], [7, 8, 9], 2, 4,
+          ["ecosystems_and_food_webs", "climate_change_science"],
+          ["oceans", "ocean currents", "acidification", "marine biology", "deep sea", "environment"]),
+
+    Topic("environmental_policy", "Environmental Policy — How Governments Respond to Environmental Problems",
+          "Environmental Science", [3], [8, 9], 3, 5,
+          ["planetary_boundaries", "climate_change_science"],
+          ["environmental policy", "Paris Agreement", "regulation", "international law", "environment", "university"]),
+
+    # ── Medicine (3 → 14) ──────────────────────────────────────────────────
+    Topic("human_body_systems", "Human Body Systems — Skeletal, Muscular, Digestive, and Circulatory",
+          "Medicine", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["human body", "skeleton", "muscles", "digestion", "circulation", "medicine", "biology"]),
+
+    Topic("nutrition_and_diet", "Nutrition — What Food Does in Your Body and Why It Matters",
+          "Medicine", [2, 3], [5, 6, 7], 1, 3,
+          ["human_body_systems"],
+          ["nutrition", "diet", "vitamins", "protein", "carbohydrates", "fat", "medicine"]),
+
+    Topic("immune_system", "The Immune System — How Your Body Fights Disease",
+          "Medicine", [2, 3], [6, 7, 8], 2, 4,
+          ["human_body_systems"],
+          ["immune system", "bacteria", "viruses", "antibodies", "vaccines", "medicine"]),
+
+    Topic("mental_health_science", "The Science of Mental Health — Brain Chemistry, Stress, and Wellbeing",
+          "Medicine", [3], [7, 8, 9], 2, 4,
+          ["homeostasis"],
+          ["mental health", "neuroscience", "stress", "anxiety", "depression", "wellbeing", "medicine"]),
+
+    Topic("genetics_and_inheritance", "Genetics and Inheritance — DNA, Genes, and Why You Look Like Your Parents",
+          "Medicine", [2, 3], [6, 7, 8, 9], 2, 4,
+          ["human_body_systems"],
+          ["genetics", "DNA", "genes", "inheritance", "chromosomes", "medicine", "biology"]),
+
+    Topic("surgery_and_procedures", "Surgery — From Leeches to Laparoscopy, How Medicine Learned to Intervene",
+          "Medicine", [3], [8, 9], 2, 4,
+          ["human_body_systems"],
+          ["surgery", "anaesthesia", "sterilisation", "laparoscopy", "medicine", "history"]),
+
+    Topic("public_health_epidemiology", "Public Health and Epidemiology — How Disease Spreads and How We Stop It",
+          "Medicine", [3], [7, 8, 9], 2, 4,
+          ["immune_system"],
+          ["public health", "epidemiology", "pandemics", "vaccination", "contact tracing", "medicine"]),
+
+    Topic("first_aid_practical", "First Aid — What to Do in an Emergency",
+          "Medicine", [2, 3], [5, 6, 7, 8, 9], 1, 3,
+          [],
+          ["first aid", "CPR", "recovery position", "bleeding", "burns", "practical", "medicine"],
+          vocational=True),
+
+    Topic("medical_ethics", "Medical Ethics — Consent, Triage, and Who Decides",
+          "Medicine", [3], [8, 9], 3, 5,
+          ["clinical_reasoning"],
+          ["medical ethics", "consent", "triage", "autonomy", "beneficence", "medicine", "philosophy", "university"]),
+
+    Topic("reproductive_health", "Reproductive Health — Puberty, Fertility, Contraception, and Pregnancy",
+          "Medicine", [2, 3], [6, 7, 8], 2, 4,
+          ["human_body_systems"],
+          ["reproductive health", "puberty", "contraception", "pregnancy", "fertility", "medicine"],
+          accelerated_ok=False),  # developmental gate: age-appropriate timing matters
+
+    Topic("neuroscience_intro", "Neuroscience — How the Brain Learns, Remembers, and Feels",
+          "Medicine", [3], [8, 9], 2, 4,
+          ["homeostasis", "mental_health_science"],
+          ["neuroscience", "brain", "neurons", "learning", "memory", "medicine", "biology", "university"]),
+
+    # ── Linguistics (1 → 9) ────────────────────────────────────────────────
+    Topic("phonics_and_sounds", "Phonics and Phonology — The Sounds of Language",
+          "Linguistics", [1, 2], [1, 2, 3, 4, 5], 1, 2,
+          [],
+          ["phonics", "sounds", "letters", "reading", "phonology", "linguistics"]),
+
+    Topic("grammar_and_syntax", "Grammar and Syntax — How Sentences Are Built",
+          "Linguistics", [1, 2, 3], [2, 3, 4, 5, 6, 7], 1, 3,
+          ["phonics_and_sounds"],
+          ["grammar", "syntax", "sentences", "parts of speech", "nouns", "verbs", "linguistics"]),
+
+    Topic("semantics_and_meaning", "Semantics — How Words Carry Meaning and How It Changes",
+          "Linguistics", [3], [7, 8, 9], 2, 4,
+          ["grammar_and_syntax"],
+          ["semantics", "meaning", "connotation", "denotation", "ambiguity", "linguistics"]),
+
+    Topic("language_diversity", "Language Diversity — Why There Are 7,000 Languages and What They Share",
+          "Linguistics", [2, 3], [6, 7, 8], 2, 3,
+          ["linguistics_intro"],
+          ["language diversity", "dialects", "endangered languages", "language families", "linguistics"]),
+
+    Topic("language_acquisition", "Language Acquisition — How Children Learn to Talk",
+          "Linguistics", [3], [8, 9], 3, 5,
+          ["linguistics_intro"],
+          ["language acquisition", "children", "Chomsky", "critical period", "linguistics", "university"]),
+
+    Topic("pragmatics_and_conversation", "Pragmatics — What We Mean Beyond What We Say",
+          "Linguistics", [3], [8, 9], 2, 4,
+          ["semantics_and_meaning"],
+          ["pragmatics", "implicature", "politeness", "conversation", "context", "linguistics"]),
+
+    Topic("writing_systems", "Writing Systems — Alphabets, Syllabaries, Logograms, and Braille",
+          "Linguistics", [2, 3], [5, 6, 7, 8], 2, 3,
+          ["phonics_and_sounds"],
+          ["writing systems", "alphabet", "hieroglyphs", "Chinese characters", "Braille", "linguistics"]),
+
+    Topic("etymology_and_word_history", "Etymology — Where Words Come From and What They Tell Us",
+          "Linguistics", [2, 3], [5, 6, 7, 8], 1, 3,
+          ["grammar_and_syntax"],
+          ["etymology", "word origins", "Latin", "Greek", "roots", "prefixes", "suffixes", "linguistics"]),
+
+    # ── Sociology (2 → 10) ─────────────────────────────────────────────────
+    Topic("norms_values_culture", "Norms, Values, and Culture — The Invisible Rules We Live By",
+          "Sociology", [2, 3], [6, 7, 8], 2, 3,
+          [],
+          ["norms", "values", "culture", "socialisation", "social rules", "sociology"]),
+
+    Topic("family_structures", "Family Structures — How Families Are Organised and Why It Varies",
+          "Sociology", [2, 3], [6, 7, 8], 1, 3,
+          ["norms_values_culture"],
+          ["family", "nuclear family", "extended family", "divorce", "single parent", "sociology"]),
+
+    Topic("education_and_society", "Education and Society — Schools as Social Institutions",
+          "Sociology", [3], [7, 8, 9], 2, 4,
+          ["norms_values_culture", "sociological_imagination"],
+          ["education", "schooling", "meritocracy", "social reproduction", "sociology"]),
+
+    Topic("crime_and_deviance", "Crime and Deviance — Why People Break Rules and How Society Responds",
+          "Sociology", [3], [8, 9], 2, 4,
+          ["norms_values_culture"],
+          ["crime", "deviance", "punishment", "rehabilitation", "sociology", "criminology"]),
+
+    Topic("media_and_representation", "Media and Representation — Who Controls the Story",
+          "Sociology", [3], [7, 8, 9], 2, 4,
+          ["norms_values_culture"],
+          ["media", "representation", "stereotypes", "bias", "news", "sociology"]),
+
+    Topic("poverty_and_inequality", "Poverty and Inequality — Measuring and Explaining the Gap",
+          "Sociology", [3], [7, 8, 9], 2, 4,
+          ["stratification_and_mobility"],
+          ["poverty", "inequality", "wealth gap", "relative poverty", "sociology"]),
+
+    Topic("globalisation_and_culture", "Globalisation — How the World Became Connected and What We Lost",
+          "Sociology", [3], [8, 9], 2, 4,
+          ["norms_values_culture"],
+          ["globalisation", "culture", "McDonaldisation", "migration", "identity", "sociology"]),
+
+    Topic("religion_and_society", "Religion and Society — What Religion Does for Communities",
+          "Sociology", [3], [7, 8, 9], 2, 4,
+          ["norms_values_culture"],
+          ["religion", "secularisation", "community", "identity", "Marx", "Durkheim", "sociology"]),
+
+    # ── Architecture (2 → 10) ──────────────────────────────────────────────
+    Topic("how_buildings_stand_up", "How Buildings Stand Up — Load, Structure, and the Ground Beneath",
+          "Architecture", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["buildings", "load", "foundations", "structure", "architecture", "engineering"]),
+
+    Topic("architectural_styles_history", "Architectural Styles Through History — From Temples to Skyscrapers",
+          "Architecture", [2, 3], [6, 7, 8], 2, 3,
+          ["architectural_theory"],
+          ["architecture history", "Gothic", "Baroque", "Modernism", "styles", "architecture"]),
+
+    Topic("sustainable_architecture", "Sustainable Architecture — Designing Buildings for a Warming World",
+          "Architecture", [3], [8, 9], 2, 4,
+          ["architectural_theory", "climate_change_science"],
+          ["sustainable architecture", "passive design", "green buildings", "insulation", "architecture"]),
+
+    Topic("interior_design_principles", "Interior Design — Space, Light, Colour, and Human Comfort",
+          "Architecture", [2, 3], [6, 7, 8], 2, 3,
+          ["architectural_theory"],
+          ["interior design", "space", "light", "colour", "ergonomics", "architecture"]),
+
+    Topic("reading_buildings", "Reading Buildings — What Architecture Tells Us About Power and Society",
+          "Architecture", [3], [8, 9], 3, 4,
+          ["architectural_styles_history"],
+          ["reading buildings", "power", "symbolism", "parliament", "churches", "architecture"]),
+
+    Topic("housing_and_planning", "Housing and Planning — Why Cities Look the Way They Do",
+          "Architecture", [3], [8, 9], 2, 4,
+          ["urban_design_cities"],
+          ["housing", "planning", "zoning", "density", "social housing", "architecture"]),
+
+    Topic("bridges_and_engineering_structures", "Famous Structures — What the Great Bridges and Buildings Teach Us",
+          "Architecture", [2, 3], [6, 7, 8], 1, 3,
+          ["how_buildings_stand_up"],
+          ["bridges", "famous buildings", "Eiffel Tower", "Golden Gate", "engineering", "architecture"]),
+
+    Topic("ancient_architecture", "Ancient Architecture — Pyramids, Aqueducts, and Construction Without Machines",
+          "Architecture", [2, 3], [5, 6, 7], 1, 3,
+          [],
+          ["pyramids", "aqueducts", "Roman", "Greek", "ancient", "architecture", "history"]),
+
+    # ── Psychology (3 → 12) ────────────────────────────────────────────────
+    Topic("emotions_and_feelings", "Emotions — What Feelings Are and Where They Come From",
+          "Psychology", [1, 2], [1, 2, 3, 4, 5], 1, 2,
+          [],
+          ["emotions", "feelings", "anger", "happiness", "fear", "psychology"]),
+
+    Topic("sleep_and_the_brain", "Sleep — What Happens in Your Brain When You Sleep",
+          "Psychology", [2, 3], [5, 6, 7, 8], 1, 3,
+          ["emotions_and_feelings"],
+          ["sleep", "dreams", "REM", "circadian rhythm", "memory", "psychology"]),
+
+    Topic("motivation_and_habits", "Motivation and Habits — Why We Do What We Do",
+          "Psychology", [2, 3], [6, 7, 8], 2, 3,
+          ["cognitive_psychology"],
+          ["motivation", "habits", "reward", "dopamine", "behaviour", "psychology"]),
+
+    Topic("perception_and_illusions", "Perception and Illusions — How Your Brain Builds Reality",
+          "Psychology", [2, 3], [5, 6, 7], 1, 3,
+          ["cognitive_psychology"],
+          ["perception", "optical illusions", "senses", "brain", "reality", "psychology"]),
+
+    Topic("personality_theories", "Personality — Big Five, Myers-Briggs, and What the Evidence Shows",
+          "Psychology", [3], [8, 9], 2, 4,
+          ["social_psychology_foundations"],
+          ["personality", "Big Five", "traits", "introvert", "extrovert", "psychology", "university"]),
+
+    Topic("prejudice_and_discrimination", "Prejudice and Discrimination — What Psychology Tells Us About Bias",
+          "Psychology", [3], [7, 8, 9], 2, 4,
+          ["social_psychology_foundations"],
+          ["prejudice", "discrimination", "implicit bias", "stereotypes", "racism", "psychology"]),
+
+    Topic("abnormal_psychology_intro", "Abnormal Psychology — What Makes a Behaviour a Disorder",
+          "Psychology", [3], [8, 9], 3, 5,
+          ["mental_health_science", "cognitive_psychology"],
+          ["abnormal psychology", "disorders", "diagnosis", "DSM", "therapy", "psychology", "university"]),
+
+    Topic("positive_psychology", "Positive Psychology — Wellbeing, Flow, and What Makes Life Meaningful",
+          "Psychology", [2, 3], [7, 8, 9], 2, 3,
+          ["emotions_and_feelings"],
+          ["positive psychology", "wellbeing", "flow", "resilience", "gratitude", "psychology"]),
+
+    Topic("obedience_and_authority", "Obedience and Authority — Milgram, Zimbardo, and Why Good People Do Bad Things",
+          "Psychology", [3], [8, 9], 3, 5,
+          ["social_psychology_foundations"],
+          ["obedience", "Milgram", "Zimbardo", "authority", "conformity", "psychology", "university"]),
+]
+
+CURRICULUM = CURRICULUM + _EXPANDED_SUBJECTS
+
+
 _by_id: dict[str, Topic] = {t.id: t for t in CURRICULUM}
 
 
