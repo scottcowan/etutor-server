@@ -135,6 +135,21 @@ async def get_session(session_id: str, session: AsyncSession) -> Optional[Sessio
     return result.scalar_one_or_none()
 
 
+async def list_sessions_for_child(
+    child_id: str,
+    session: AsyncSession,
+    limit: int = 10,
+) -> list[SessionModel]:
+    """Return the most recent `limit` SessionModel rows for child_id, ordered started_at DESC."""
+    result = await session.execute(
+        select(SessionModel)
+        .where(SessionModel.child_id == child_id)
+        .order_by(SessionModel.started_at.desc())
+        .limit(limit)
+    )
+    return list(result.scalars().all())
+
+
 async def get_most_recent_ended_session(
     child_id: str,
     session: AsyncSession,
