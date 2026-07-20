@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eTutor — Session Replay</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: #f8f8f8; color: #2c2c2c; }
+    header {
+      background: white; border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem;
+    }
+    header h1 { font-size: 1.3rem; }
+    header a { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; margin-left: auto; }
+    header a:hover { text-decoration: underline; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+    h2 { font-size: 1.1rem; color: #555; margin-bottom: 1rem; }
+    .back-link { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; display: inline-block; margin-bottom: 1.5rem; }
+    .back-link:hover { text-decoration: underline; }
+    .session-card {
+      background: white; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;
+    }
+    .turn { padding: 12px 20px; border-bottom: 1px solid #f0f0f0; }
+    .turn:last-child { border-bottom: none; }
+    .turn .q { font-weight: 600; color: #2c2c2c; margin-bottom: 0.25rem; }
+    .turn .q::before { content: "Q: "; color: #888888; font-weight: 600; }
+    .turn .safety-flag { color: #721c24; font-size: 16px; margin-left: 0.5rem; }
+    .turn .a { color: #444444; font-size: 16px; }
+    .turn .a::before { content: "A: "; color: #7a9e7e; font-weight: 600; }
+    .empty { color: #aaa; font-style: italic; text-align: center; padding: 2rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📚 eTutor — Parent Dashboard</h1>
+  <a href="/parent/logout" style="color:#7a9e7e;text-decoration:none;font-size:0.95rem;margin-left:auto;">Sign out</a>
+</header>
+<main>
+  <a class="back-link" href="/parent">← Back</a>
+  <h2>Session {% if session_obj %}{{ session_obj.started_at.strftime('%d %b %Y') }}{% endif %}</h2>
+
+  <div class="session-card">
+    {% if turns %}
+      {% for turn in turns %}
+      <div class="turn">
+        <div class="q">{{ turn.question }}{% if turn.safety_flag %}<span class="safety-flag">🚩 Flagged</span>{% endif %}</div>
+        <div class="a">{{ turn.answer }}</div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="empty">No turns in this session.</div>
+    {% endif %}
+  </div>
+</main>
+</body>
+</html>

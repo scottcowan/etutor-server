@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eTutor — Alert Feed</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: #f8f8f8; color: #2c2c2c; }
+    header {
+      background: white; border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem;
+    }
+    header h1 { font-size: 1.3rem; }
+    header a { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; margin-left: auto; }
+    header a:hover { text-decoration: underline; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+    h2 { font-size: 1.1rem; color: #555; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .subtitle { font-size: 14px; color: #888; margin-bottom: 1.5rem; }
+    .back-link { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; display: inline-block; margin-bottom: 1.5rem; }
+    .back-link:hover { text-decoration: underline; }
+    .alert-row {
+      display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+      background: white; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 8px;
+    }
+    .alert-time { font-size: 14px; color: #888888; min-width: 120px; flex-shrink: 0; }
+    .alert-badge {
+      display: inline-block; padding: 4px 8px; border-radius: 12px;
+      font-size: 14px; font-weight: 600; border: 1px solid; flex-shrink: 0;
+    }
+    .badge-frustrated { background: #fff3cd; color: #856404; border-color: #ffc107; }
+    .badge-sensitive { background: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+    .badge-new-interest { background: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+    .alert-snippet {
+      font-size: 14px; color: #444; font-style: italic;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+    }
+    .empty { color: #aaa; font-style: italic; text-align: center; padding: 2rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📚 eTutor — Parent Dashboard</h1>
+  <a href="/parent/logout" style="color:#7a9e7e;text-decoration:none;font-size:0.95rem;margin-left:auto;">Sign out</a>
+</header>
+<main>
+  <a class="back-link" href="/parent">← Dashboard</a>
+  <h2>Alert Feed</h2>
+  <p class="subtitle">Showing alerts from the last 30 days.</p>
+
+  {% if alerts %}
+    {% for alert in alerts %}
+    <div class="alert-row">
+      <span class="alert-time">{{ alert.triggered_at.strftime('%d %b at %H:%M') }}</span>
+      <span class="alert-badge badge-{{ alert.alert_type }}">
+        {% if alert.alert_type == 'frustrated' %}Frustrated
+        {% elif alert.alert_type == 'sensitive' %}Sensitive topic
+        {% elif alert.alert_type == 'new-interest' %}New interest
+        {% else %}{{ alert.alert_type }}{% endif %}
+      </span>
+      {% if alert.snippet %}<span class="alert-snippet">{{ alert.snippet }}</span>{% endif %}
+    </div>
+    {% endfor %}
+  {% else %}
+  <div class="empty">No alerts in the last 30 days.</div>
+  {% endif %}
+</main>
+</body>
+</html>
