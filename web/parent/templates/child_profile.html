@@ -35,15 +35,30 @@
     }
     .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
     .checkbox-label {
-      display: flex; align-items: center; gap: 8px;
-      font-weight: 400; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 400; cursor: pointer;
+      padding: 4px 12px; border-radius: 20px;
+      border: 1px solid #d0d0d0; background: #f8f8f8;
+      transition: border-color 0.15s, background 0.15s;
     }
-    .checkbox-label input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
+    .checkbox-label:has(input:checked) {
+      border-color: #7a9e7e; background: #eef4ef; color: #4a7a4e;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 14px; height: 14px; cursor: pointer; accent-color: #7a9e7e;
+    }
     .submit-btn {
       background: #7a9e7e; color: white; border: none; border-radius: 8px;
       padding: 8px 24px; font-size: 16px; font-weight: 600; cursor: pointer;
     }
     .submit-btn:hover { background: #6b8e6f; }
+
+    .level-group { padding: 0 0 4px 0; }
+    .level-badge {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+      color: #999; padding: 2px 8px; margin: 8px 16px 4px;
+      border-bottom: 1px solid #f0f0f0; width: calc(100% - 32px);
+    }
 
     /* Accordion styles */
     details.subject-group {
@@ -139,19 +154,28 @@
         <span>{{ subject }}</span>
         <span class="topic-count">{{ topics | length }} topics</span>
       </summary>
-      <ul class="topic-list">
-        {% for topic in topics %}
-        <li class="topic-row">
-          <span class="mastery-dot"
-                style="background: {{ bucket_color[topic.bucket] }};"
-                title="{{ topic.bucket }}"></span>
-          <span class="topic-name">{{ topic.name }}</span>
-          <span class="topic-date">
-            {% if topic.last_studied %}{{ topic.last_studied.strftime('%d %b at %H:%M') }}{% else %}never{% endif %}
-          </span>
-        </li>
-        {% endfor %}
-      </ul>
+      {% set distinct_levels = topics | map(attribute='level') | list | unique | sort %}
+      {% for level in distinct_levels %}
+        {% set level_topics = topics | selectattr('level', 'equalto', level) | list %}
+        {% if level_topics | length > 0 %}
+        <div class="level-group">
+          <span class="level-badge">{{ level }}</span>
+          <ul class="topic-list">
+            {% for topic in level_topics %}
+            <li class="topic-row">
+              <span class="mastery-dot"
+                    style="background: {{ bucket_color[topic.bucket] }};"
+                    title="{{ topic.bucket }}"></span>
+              <span class="topic-name">{{ topic.name }}</span>
+              <span class="topic-date">
+                {% if topic.last_studied %}{{ topic.last_studied.strftime('%d %b') }}{% else %}—{% endif %}
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      {% endfor %}
     </details>
     {% else %}
     <p style="color:#aaa;font-style:italic;">No curriculum data available.</p>

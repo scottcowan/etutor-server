@@ -136,6 +136,17 @@ async def child_profile_get(
     mastery_by_kc = await get_all_mastery_for_child(child_id, session)
 
     # Build subjects dict grouped from CURRICULUM
+    # level_band maps bloom_entry to a university-style level number (100–400)
+    def _level_band(bloom_entry: int) -> int:
+        if bloom_entry <= 1:
+            return 100
+        elif bloom_entry <= 2:
+            return 200
+        elif bloom_entry <= 3:
+            return 300
+        else:
+            return 400
+
     subjects: dict[str, list] = {}
     for topic in CURRICULUM:
         row = mastery_by_kc.get(topic.id)
@@ -145,7 +156,12 @@ async def child_profile_get(
             "name": topic.name,
             "bucket": bucket,
             "last_studied": last_studied,
+            "level": _level_band(topic.bloom_entry),
         })
+
+    # Sort topics within each subject by level band, then name
+    for topic_list in subjects.values():
+        topic_list.sort(key=lambda t: (t["level"], t["name"]))
 
     subjects_sorted = sorted(subjects.items())
 
