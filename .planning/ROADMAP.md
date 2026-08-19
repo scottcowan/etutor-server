@@ -193,6 +193,32 @@ Plans:
 
 ---
 
+### Phase 4.1: Knowledge Corpus and MCP Server
+
+**Goal**: A manually curated, layered knowledge corpus covering all curriculum topics — with an MCP server that makes it queryable by educators via Claude Code and consumable by the device sync pipeline.
+**Depends on**: Phase 4
+**Requirements**: CORPUS-01, CORPUS-02, CORPUS-03, CORPUS-04
+**Success Criteria** (what must be TRUE):
+
+  1. An MCP server running locally exposes the corpus — an educator can ask "what source material exists for Political Systems 300-level?" and get relevant entries
+  2. At least one complete subject (e.g. Political Systems or Manipulation) has L3 wiki pages written for all its topics at appropriate level bands
+  3. The source material catalog includes all existing docs/wiki/source-material/ entries tagged to curriculum topic IDs
+  4. The device sync endpoint (SYNC-03) can draw pre-generated questions and book passage references from the corpus
+
+**Plans**: TBD
+
+**Key decisions / risks:**
+
+- Corpus is manually curated, not auto-ingested from news/feeds — no automation pipeline needed
+- L3 wiki pages are the "stable API" — written by hand or Claude-assisted from L1 source material
+- MCP server reads from the filesystem (markdown files) or SQLite — no additional service required
+- CORPUS-04 feeds Phase 5 SYNC-03 — corpus must be in place before device sync content packages can be built
+- Books from Calibre-Web (22,838 titles at 192.168.0.25:8083) are source material for L1 passages; retrieval is manual for v1
+
+**UI hint**: no
+
+---
+
 ### Phase 5: Child Interface + Device Sync
 
 **Goal**: A child can interact with the tutor via a browser (for hardware-free testing), and an e-ink device can sync its content package and POST interaction events back to the server.
@@ -243,7 +269,7 @@ Plans:
 
 ## Progress
 
-**Execution Order:** 1 → 2 → 3 → 4 → 5 → 6
+**Execution Order:** 1 → 2 → 3 → 4 → 4.1 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -251,5 +277,6 @@ Plans:
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
 | 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
 | 4. Parent Dashboard | 3/3 | Complete   | 2026-07-20 |
+| 4.1. Knowledge Corpus and MCP Server | 0/TBD | Not started | - |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |

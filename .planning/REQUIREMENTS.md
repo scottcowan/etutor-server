@@ -34,6 +34,12 @@
 - [ ] **PARENT-04**: Parent receives flags for: sensitive topic questions, frustration signals, off-plan interest spikes
 - [ ] **PARENT-05**: Parent dashboard web UI accessible at /parent
 
+### CORPUS-01: Knowledge Corpus and MCP Server
+- [ ] **CORPUS-01**: Layered topic explanations (L3 wiki pages) exist for all curriculum subjects — one page per topic with Bloom-level-appropriate explanations at 100/200/300/400 levels
+- [ ] **CORPUS-02**: Source material catalog (L0/L1) — transcripts, book passages, and experiment guides stored and tagged to curriculum topic IDs
+- [ ] **CORPUS-03**: MCP server exposes corpus for educator tooling — query by topic ID, level, or tag; browse source material
+- [ ] **CORPUS-04**: Content packages for offline device sync include pre-generated questions and book excerpts drawn from corpus (feeds SYNC-03)
+
 ### CHILD-01: Child Web Interface
 - [ ] **CHILD-01**: Browser-based child interface functional for testing without hardware (at /child)
 - [ ] **CHILD-02**: Voice input works via browser microphone (WebRTC → STT endpoint)
