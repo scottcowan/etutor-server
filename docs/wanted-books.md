@@ -3862,6 +3862,41 @@ Cycle, Cú Chulainn, Finn McCool. Tutor reference rather than child-facing.
 
 ---
 
+## Levelled Reading Schemes — Calibration Reference Only (Not for Corpus Reuse)
+
+Physical/DRM-gated UK reading schemes evaluated for the Phase 4.1 knowledge corpus.
+**None of these are licensed for programmatic reuse** — no API, no bulk content
+licence, no redistribution rights. Buying a book grants a personal/classroom reading
+licence only. Listed here as a possible one-time purchase for **manually calibrating**
+etutor's own `reading_level` tagging against the UK schools standard, not as a corpus
+content source. See `docs/wiki/source-material/edtech-research-raz-kids-raena.md` for
+the full research writeup (Raz-Kids/Learning A-Z, ReadWorks, StoryWeaver, BookDash,
+African Storybook comparison).
+
+### Cambridge Reading Adventures — Cambridge University Press / UCL Institute of Education
+*Reference for UK Book Bands calibration — not a text source.*
+
+90 books across 10 UK Book Bands (Pink A, Pink B, Red, Blue, Turquoise, White, Green,
+Voyager, and others). Sold as physical class "Band Packs" or as access-code-gated
+ebooks via Cambridge GO — no API, no bulk licence, no redistribution rights.
+
+**Verdict:** Rejected as a corpus source for the same reason as Raz-Kids/Learning A-Z
+(closed, no licensing path). Its only value is the **UK Book Bands** colour scale
+itself — a cross-publisher industry standard (also used by Oxford Reading Tree and
+Collins Big Cat), not Cambridge's IP, and freely adoptable as etutor's `reading_level`
+naming convention instead of the US-oriented Learning A-Z `aa`→`Z2` taxonomy.
+
+**If purchased:** 1–2 Band Packs (~£35–£70 each via Browns Books for Students, Peters,
+or resellers) would let a human manually verify that ReadWorks/StoryWeaver content
+tagged at a given `reading_level` actually lines up with the UK Book Bands a school
+librarian would expect at that level. One-time calibration spend, not a corpus
+acquisition — **do not treat as a purchase priority.**
+
+**Use for:** UK Book Bands naming reference only (`docs/corpus` `reading_level` field,
+Phase 4.1). Do not extract or serve any CRA text via etutor.
+
+---
+
 ## How to Use in etutor-server
 
 1. **Add to Calibre-Web** — upload EPUBs or PDFs; set metadata tags matching
