@@ -205,7 +205,22 @@ Plans:
   3. The source material catalog includes all existing docs/wiki/source-material/ entries tagged to curriculum topic IDs
   4. The device sync endpoint (SYNC-03) can draw pre-generated questions and book passage references from the corpus
 
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+**Wave 1** *(parallel pair — no shared files)*
+
+- [ ] 04.1-01-PLAN.md — Scaffold docs/corpus/ + migrate docs/wiki/source-material/ and docs/experiment-guides/ (CORPUS-02)
+- [ ] 04.1-02-PLAN.md — TDD: build_index() + search_corpus_impl() against a synthetic fixture corpus (CORPUS-03)
+
+**Wave 2** *(blocked on Wave 1 — parallel pair)*
+
+- [ ] 04.1-03-PLAN.md — TDD: 5 MCP tool functions (get_topic/list_sources/search_corpus/get_experiments/list_topics) + validate_topic_ids.py (CORPUS-03, CORPUS-04)
+- [ ] 04.1-04-PLAN.md — Pilot subject content: 21 Manipulation L3 topic pages (CORPUS-01)
+
+**Wave 3** *(blocked on Wave 2 — Plan 03)*
+
+- [ ] 04.1-05-PLAN.md — Wire FastMCP server, register .mcp.json, document CORPUS-04/Phase 5 integration point (CORPUS-03, CORPUS-04)
 
 **Key decisions / risks:**
 
@@ -213,6 +228,8 @@ Plans:
 - L3 wiki pages are the "stable API" — written by hand or Claude-assisted from L1 source material
 - MCP server reads from the filesystem (markdown files) or SQLite — no additional service required
 - CORPUS-04 feeds Phase 5 SYNC-03 — corpus must be in place before device sync content packages can be built
+- **Scope resolution:** CORPUS-01's "all curriculum subjects" is satisfied this phase via full infrastructure + one fully-populated pilot subject (Manipulation, 21 topics); the remaining ~954 topics are an explicit post-phase backlog item, not a phase failure
+- MCP registration uses `.mcp.json` at repo root (current Claude Code convention), not `.claude/settings.json`
 - Books from Calibre-Web (22,838 titles at 192.168.0.25:8083) are source material for L1 passages; retrieval is manual for v1
 
 **UI hint**: no
