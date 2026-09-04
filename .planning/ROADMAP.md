@@ -210,8 +210,8 @@ Plans:
 Plans:
 **Wave 1** *(parallel pair — no shared files)*
 
-- [ ] 04.1-01-PLAN.md — Scaffold docs/corpus/ + migrate docs/wiki/source-material/ and docs/experiment-guides/ (CORPUS-02)
-- [ ] 04.1-02-PLAN.md — TDD: build_index() + search_corpus_impl() against a synthetic fixture corpus (CORPUS-03)
+- [x] 04.1-01-PLAN.md — Scaffold docs/corpus/ + migrate docs/wiki/source-material/ and docs/experiment-guides/ (CORPUS-02)
+- [x] 04.1-02-PLAN.md — TDD: build_index() + search_corpus_impl() against a synthetic fixture corpus (CORPUS-03)
 
 **Wave 2** *(blocked on Wave 1 — parallel pair)*
 
@@ -294,6 +294,6 @@ Plans:
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
 | 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
 | 4. Parent Dashboard | 3/3 | Complete   | 2026-07-20 |
-| 4.1. Knowledge Corpus and MCP Server | 0/TBD | Not started | - |
+| 4.1. Knowledge Corpus and MCP Server | 2/5 | In Progress|  |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |

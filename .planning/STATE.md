@@ -4,8 +4,8 @@ milestone: v1.0
 milestone_name: milestone
 status: executing
 stopped_at: Phase 4.1 context gathered
-last_updated: "2026-09-03T20:16:47.572Z"
-last_activity: 2026-09-03 -- Phase 04.1 planning complete
+last_updated: "2026-09-04T13:29:47.706Z"
+last_activity: 2026-09-04 -- Phase 04.1 execution started
 progress:
   total_phases: 7
   completed_phases: 4
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-10)
 
 **Core value:** A child can follow curiosity as far as it takes them — including to university-level depth — and always have a tutor that meets them at their level and remembers everything they've studied.
-**Current focus:** Phase 5 — child interface + device sync
+**Current focus:** Phase 04.1 — knowledge-corpus-and-mcp-server
 
 ## Current Position
 
-Phase: 5
-Plan: Not started
-Status: Ready to execute
-Last activity: 2026-09-03 -- Phase 04.1 planning complete
+Phase: 04.1 (knowledge-corpus-and-mcp-server) — EXECUTING
+Plan: 1 of 5
+Status: Executing Phase 04.1
+Last activity: 2026-09-04 -- Phase 04.1 execution started
 
 Progress: [░░░░░░░░░░] 0%
 
