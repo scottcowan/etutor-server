@@ -220,7 +220,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 — Plan 03)*
 
-- [ ] 04.1-05-PLAN.md — Wire FastMCP server, register .mcp.json, document CORPUS-04/Phase 5 integration point (CORPUS-03, CORPUS-04)
+- [x] 04.1-05-PLAN.md — Wire FastMCP server, register .mcp.json, document CORPUS-04/Phase 5 integration point (CORPUS-03, CORPUS-04)
 
 **Key decisions / risks:**
 
@@ -294,6 +294,6 @@ Plans:
 | 2. Knowledge Tracing Backend | 6/6 | Complete   | 2026-07-16 |
 | 3. Session Intelligence | 4/4 | Complete   | 2026-07-17 |
 | 4. Parent Dashboard | 3/3 | Complete   | 2026-07-20 |
-| 4.1. Knowledge Corpus and MCP Server | 4/5 | In Progress|  |
+| 4.1. Knowledge Corpus and MCP Server | 5/5 | Complete   | 2026-09-04 |
 | 5. Child Interface + Device Sync | 0/TBD | Not started | - |
 | 6. Safety, Performance, and Polish | 0/TBD | Not started | - |
