@@ -1,3 +1,15 @@
+---
+title: "UK Book Bands — Structural/Methodology Research (No Content Reuse)"
+type: article
+source_url: ""
+author: "(internal research)"
+captured: 2026-08-19
+topic_ids: [reading_comprehension_ks1, reading_comprehension_ks2, phonics_phase3]
+level: 200
+prerequisite_topics: []
+curation_note: ""
+---
+
 # UK Book Bands — Structural/Methodology Research (No Content Reuse)
 
 **Researched:** 2026-08-19
