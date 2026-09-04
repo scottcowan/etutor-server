@@ -15,7 +15,7 @@
 | `wiki/sources/uk-book-bands-methodology-research.md` | article | reading_comprehension_ks1, reading_comprehension_ks2, phonics_phase3 | 200 |
 | `wiki/experiments/bernoulli-flight.md` | experiment | exp_bernoulli_flight | 200 |
 | `wiki/experiments/bread-baking-science.md` | experiment | exp_bread_baking_science | 200 |
-| `wiki/experiments/candle-science.md` | experiment | exp_candle_science | 200 |
+| `wiki/experiments/candle-science.md` | experiment | exp_candle_combustion | 200 |
 | `wiki/experiments/lemon-battery.md` | experiment | exp_lemon_battery | 200 |
 | `wiki/experiments/magnetic-field-mapping.md` | experiment | exp_magnetic_field_mapping | 200 |
 | `wiki/experiments/pool-chemistry.md` | experiment | exp_pool_chemistry | 200 |

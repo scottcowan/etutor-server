@@ -1,3 +1,13 @@
+---
+topic_ids: [exp_bernoulli_flight]
+min_age: 8
+# No chemicals, flame, or high-voltage equipment — moving air only.
+flagged_dangerous: false
+equipment: ["A4 paper", "ping pong ball (or light balloon)", "hairdryer or hand-held fan", "ruler", "drinking straw", "two empty plastic bottles (same size)", "tape"]
+safety_notes: ""
+level: 200
+---
+
 # Bernoulli Effect and Flight — Experiment Guide
 
 **Curriculum topic:** `exp_bernoulli_flight`
