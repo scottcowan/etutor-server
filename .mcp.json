@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "etutor-corpus": {
+      "command": "python",
+      "args": ["-m", "services.corpus_mcp.server"]
+    }
+  }
+}
