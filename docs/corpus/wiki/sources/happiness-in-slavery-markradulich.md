@@ -4,7 +4,7 @@ type: video_essay
 source_url: ""
 author: "@markradulich"
 captured: 2026-07-29
-topic_ids: [media_and_representation, authoritarianism_types, social_proof_manipulation, pattern_authoritarian_rise]
+topic_ids: [media_and_representation, authoritarianism_types, social_proof_manipulation, pattern_authoritarian_rise, propaganda_techniques, psyops_history, cia_covert_history, censorship_history, cult_techniques, radicalization_pipeline]
 level: 300
 prerequisite_topics: []
 curation_note: ""
