@@ -1,3 +1,14 @@
+---
+topic_ids: [exp_lemon_battery]
+min_age: 9
+# Low-voltage electrochemistry only (sub-1V per cell) — no strong acids,
+# flame, or high voltage.
+flagged_dangerous: false
+equipment: ["2-4 lemons (or limes, oranges, or potatoes)", "zinc nails or galvanised nails", "copper coins or copper wire", "multimeter", "LED", "optional alligator clip leads"]
+safety_notes: ""
+level: 200
+---
+
 # Lemon Battery — Experiment Guide
 
 **Curriculum topic:** `exp_lemon_battery`

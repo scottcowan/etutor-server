@@ -1,3 +1,14 @@
+---
+topic_ids: [exp_candle_combustion]
+min_age: 8
+# Open flame per D-06's "genuinely dangerous activities" language — hard
+# age gate, no override, even though the guide requires adult-only lighting.
+flagged_dangerous: true
+equipment: ["one or more candles", "matches or lighter (adult-only)", "glass jar or drinking glass", "plate", "water", "cardboard or coin for snuffing", "optional second jar", "damp cloth"]
+safety_notes: "Adult must light and snuff the candle; never leave a burning candle unattended; place on a plate, not directly on a table; keep a damp cloth ready to smother the flame."
+level: 200
+---
+
 # Candle Science — Experiment Guide
 
 **Curriculum topic:** `exp_candle_science`

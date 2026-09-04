@@ -1,3 +1,15 @@
+---
+title: "Edtech Research: Raz-Kids / Learning A-Z and Raena.ai"
+type: article
+source_url: ""
+author: "(internal research)"
+captured: 2026-08-19
+topic_ids: [reading_comprehension_ks1, reading_comprehension_ks2, phonics_and_sounds]
+level: 200
+prerequisite_topics: []
+curation_note: ""
+---
+
 # Edtech Research: Raz-Kids / Learning A-Z and Raena.ai
 
 **Researched:** 2026-08-19

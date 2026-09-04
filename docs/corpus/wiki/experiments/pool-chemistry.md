@@ -1,3 +1,14 @@
+---
+topic_ids: [exp_pool_chemistry]
+min_age: 11
+# Involves handling pool test reagents (chemicals) per D-06's "genuinely
+# dangerous activities" language — hard age gate, no override.
+flagged_dangerous: true
+equipment: ["pool test kit (strips or liquid reagents)", "pool water sample"]
+safety_notes: "Handle pool test reagents as directed on the kit packaging; avoid contact with skin and eyes."
+level: 200
+---
+
 # Pool Chemistry — Experiment Guide
 
 **Curriculum topic:** `exp_pool_chemistry`

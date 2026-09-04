@@ -1,3 +1,15 @@
+---
+topic_ids: [exp_bread_baking_science]
+min_age: 8
+# Involves an oven (hot surfaces) and a sharp knife, but no open flame or
+# corrosive chemicals — hazard is mitigated by required adult supervision,
+# not a hard age gate.
+flagged_dangerous: false
+equipment: ["strong white bread flour (300g)", "dried yeast (7g sachet)", "salt (1 tsp)", "warm water (~200ml)", "mixing bowl", "baking tray", "oven", "sharp knife"]
+safety_notes: "Oven use requires adult supervision; a sharp knife is used for scoring/slicing the loaf."
+level: 200
+---
+
 # Bread Baking Science — Experiment Guide
 
 **Curriculum topic:** `exp_bread_baking_science`

@@ -1,3 +1,14 @@
+---
+topic_ids: [exp_magnetic_field_mapping]
+min_age: 8
+# Passive observation with magnets and a compass — no chemicals, flame, or
+# electrical hazard.
+flagged_dangerous: false
+equipment: ["one or two strong bar magnets or horseshoe magnets", "compass", "large sheet of white paper", "pencil", "optional iron filings in a sealed plastic bag", "optional second magnet"]
+safety_notes: ""
+level: 200
+---
+
 # Magnetic Field Mapping — Experiment Guide
 
 **Curriculum topic:** `exp_magnetic_field_mapping`
