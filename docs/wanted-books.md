@@ -3917,6 +3917,8 @@ subject of study rather than background noise. Gives the tutor real voices to dr
 when explaining what a trade or profession actually involves day to day.
 *Use for:* career-exploration themes, dignity-of-labour discussions, trades and
 professions across the vocational curriculum.
+*Alternates:* *Shop Class as Soulcraft* — Matthew Crawford (Penguin, 2009); *Rivethead:
+Tales from the Assembly Line* — Ben Hamper (Warner Books, 1991)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–12
 
@@ -3926,6 +3928,8 @@ tracing craftsmanship from medieval guilds to modern software engineers. Strong 
 why hands-on mastery matters and how apprenticeship builds expertise.
 *Use for:* apprenticeship history, trades pedagogy, the relationship between skill
 and craft across vocational topics.
+*Alternates:* *Mastery* — Robert Greene (Viking, 2012); *The Nature and Art of
+Workmanship* — David Pye (Cambridge, 1968)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -3935,6 +3939,8 @@ professional mastery. A concrete, narrative case study of how apprenticeship act
 works, useful for grounding abstract "vocational education" topics in a lived example.
 *Use for:* apprenticeship structures, culinary/trades pathways, history of guild-based
 training.
+*Alternates:* *Kitchen Confidential* — Anthony Bourdain (Bloomsbury, 2000); *Blood,
+Bones and Butter* — Gabrielle Hamilton (Random House, 2011)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -3944,18 +3950,24 @@ training.
 Illustrated survey of everyday jobs — builders, bakers, firefighters, sailors — told
 through the Busytown characters. The classic entry point for "what is a job."
 *Use for:* early careers awareness, everyday-trades vocabulary.
+*Alternates:* *Busy People* series — various board-book publishers; *Whose Tools Are
+These?* — Sharon Katz Cooper (Millbrook Press, 2013)
 **Library:** Calibre-Web | **Age:** 4–7
 
 **Dream Jobs! — DK (Dorling Kindersley, 2020)**
 Illustrated reference profiling dozens of careers — what the work involves, the skills
 needed, and a typical day. Broader and more current than Scarry for the KS2 band.
 *Use for:* career-exploration topics, skills-to-jobs mapping.
+*Alternates:* *So You Want to Be...?* series (Usborne); *Amazing Jobs for Curious
+Minds* — general careers-for-kids reference (publisher TBD at acquisition time)
 **Library:** Calibre-Web | **Age:** 7–11
 
 **Do You Want to Be My Friend? / Iggy Peck, Architect — Andrea Beaty (Abrams, various)**
 Part of the "Questioneers" picture-book series celebrating hands-on making,
 engineering, and trades-adjacent problem-solving for young children.
 *Use for:* early hands-on-skills and making themes.
+*Alternates:* other "Questioneers" titles — *Rosie Revere, Engineer*, *Ada Twist,
+Scientist* — Andrea Beaty (Abrams)
 **Library:** Calibre-Web | **Age:** 5–8
 
 **Trades and Technical Careers Encyclopedia — general trades reference (publisher TBD
@@ -3963,6 +3975,8 @@ at acquisition time)**
 A single-volume survey of skilled trades (electrician, plumber, welder, mechanic) with
 illustrated explanations of what each trade does and requires.
 *Use for:* broad trades-vocabulary grounding across the 92-topic Vocational subject.
+*Alternates:* any DK "Jobs People Do" or "Careers Illustrated" style single-volume
+trades encyclopedia — several near-equivalent titles exist across publishers
 **Library:** Calibre-Web | **Age:** 9–12
 
 ---
@@ -3975,6 +3989,8 @@ The standard undergraduate comparative-politics textbook. Covers democracies,
 authoritarian regimes, electoral systems, and the mechanics of how states are
 governed, with worked comparisons across real countries.
 *Use for:* systems of government, electoral systems, comparative-state topics.
+*Alternates:* *Comparative Politics Today* — G. Bingham Powell et al. (Pearson);
+*Democracy: A Very Short Introduction* — Bernard Crick (OUP, 2002)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -3983,6 +3999,9 @@ Traces how political institutions — the state, rule of law, accountable govern
 emerged historically across civilizations. Useful for explaining *why* political
 systems look the way they do, not just what they are.
 *Use for:* history of political institutions, state formation, rule-of-law topics.
+*Alternates:* *Political Order and Political Decay* — Francis Fukuyama (companion
+volume, Farrar, Straus and Giroux, 2014); *The State* — Anthony de Jasay (Liberty
+Fund, 1985)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -3992,6 +4011,9 @@ systems look the way they do, not just what they are.
 Illustrated introduction to how governments work — democracy, monarchy, elections,
 law-making — pitched at the upper-primary/lower-secondary band.
 *Use for:* introductory how-government-works topics.
+*Alternates:* *A Child's Introduction to Government* — general children's civics
+reference (publisher TBD at acquisition time); Usborne "See Inside Politics and
+Government"
 **Library:** Calibre-Web | **Age:** 9–12
 
 **Animal Farm — George Orwell (Secker & Warburg, 1945)**
@@ -3999,6 +4021,8 @@ Allegorical novella depicting the transition from one political system (autocrac
 through revolution to another (a corrupted new autocracy). Short, teachable, and a
 natural bridge into discussing real political-system transitions.
 *Use for:* revolution and political-system-transition topics, propaganda and power.
+*Alternates:* *The Giver* — Lois Lowry (Houghton Mifflin, 1993); *The Hunger Games*
+— Suzanne Collins (Scholastic, 2008)
 **Library:** Calibre-Web | **Age:** 11–13
 
 ---
@@ -4010,6 +4034,8 @@ Developmental-psychology-grounded account of how children's brains and emotional
 regulation develop, written for adults working with children. Distinct in scope from
 the existing Psychology section, which is more cognitive/clinical than developmental.
 *Use for:* emotional-development and self-regulation themes within Growing Up topics.
+*Alternates:* *No-Drama Discipline* — Daniel J. Siegel & Tina Payne Bryson (Bantam,
+2014); *The Explosive Child* — Ross W. Greene (Harper, 1998)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 8–13 (adult-mediated, not child-facing)
 
@@ -4018,6 +4044,9 @@ Neuroscience-grounded account of adolescent brain development, risk-taking, and
 identity formation, written for a general adult audience. Grounds "growing up" topics
 in real developmental biology rather than platitudes.
 *Use for:* puberty, identity, and independence themes for the upper end of the age range.
+*Alternates:* *Brainstorm: The Power and Purpose of the Teenage Brain* — Daniel J.
+Siegel (Tarcher Perigee, 2013); *Age of Opportunity* — Laurence Steinberg (Houghton
+Mifflin Harcourt, 2014)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–13 (adult-mediated, not child-facing)
 
@@ -4027,12 +4056,16 @@ in real developmental biology rather than platitudes.
 Non-clinical, well-regarded body/puberty education title for boys covering physical
 and emotional changes.
 *Use for:* age-appropriate puberty-education topics.
+*Alternates:* *The Boy's Body Book* — Kelli Dunham (Applesauce Press, 2007); *What's
+Happening to My Body? Book for Boys* — Lynda Madaras (Newmarket Press, 2007)
 **Library:** Calibre-Web | **Age:** 9–12
 
 **The Care and Keeping of You — Valorie Schaefer (American Girl, 1998; revised 2012)**
 Companion non-clinical puberty/body-care title for girls, widely regarded as a
 sensitive, factual entry point for this subject.
 *Use for:* age-appropriate puberty-education topics.
+*Alternates:* *The Girls' Body Book* — Kelli Dunham (Applesauce Press, 2007); *What's
+Happening to My Body? Book for Girls* — Lynda Madaras (Newmarket Press, 2007)
 **Library:** Calibre-Web | **Age:** 9–12
 
 **Real Talk About Growing Up — general growing-up/independence title (publisher TBD
@@ -4040,6 +4073,9 @@ at acquisition time)**
 Non-clinical coverage of independence, responsibility, and identity formation for the
 upper-primary band, complementing the body-focused titles above.
 *Use for:* independence and identity-formation topics within Growing Up.
+*Alternates:* any well-regarded non-clinical growing-up/independence title for the
+9–12 band — this is a common category with several near-equivalent titles across
+publishers
 **Library:** Calibre-Web | **Age:** 9–12
 
 ---
@@ -4053,6 +4089,9 @@ machining, joining, and modern manufacturing processes. Deep reference for how
 industrial processes actually work, beyond the child-facing "how it's made" framing.
 *Use for:* industrial-process and manufacturing-engineering topic pages needing
 technical depth.
+*Alternates:* *Fundamentals of Modern Manufacturing* — Mikell P. Groover (Wiley;
+7th edition 2019); *DeGarmo's Materials and Processes in Manufacturing* — J.T. Black
+& Ronald A. Kohser (Wiley; 12th edition 2017)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4063,12 +4102,16 @@ technical depth.
 Short, heavily illustrated explanations of how everyday objects and foods are
 manufactured, mirroring the TV series' factory-tour format.
 *Use for:* concrete "how is X made" topics across a wide range of everyday objects.
+*Alternates:* *Ultimate Factories* companion volumes (National Geographic); *Where
+Do Things Come From?* — Anne Rooney (QEB Publishing, 2017)
 **Library:** Calibre-Web | **Age:** 8–12
 
 **Machines and How They Work — DK (Dorling Kindersley)**
 Illustrated reference explaining the mechanics behind everyday and industrial
 machines — engines, pulleys, hydraulics, assembly lines.
 *Use for:* mechanical-principles topics that underlie manufacturing processes.
+*Alternates:* *The Way Things Work Now* — David Macaulay (already listed in Science
+Reference above — double-duty companion); Usborne "How Machines Work: Zoo Break!"
 **Library:** Calibre-Web | **Age:** 8–12
 
 ---
@@ -4080,6 +4123,9 @@ The standard undergraduate aerospace-engineering textbook, covering aerodynamics
 propulsion, flight mechanics, and the history of flight. Deep reference for the
 technical side of the Aerospace subject.
 *Use for:* aerodynamics, propulsion, and flight-mechanics topic pages.
+*Alternates:* *Understanding Flight* — David F. Anderson & Scott Eberhardt
+(McGraw-Hill; 2nd edition 2009); *Aerodynamics for Engineering Students* — E.L.
+Houghton et al. (Butterworth-Heinemann; 7th edition 2016)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4088,6 +4134,8 @@ Narrative account of Wilbur and Orville Wright's invention of powered flight —
 on the experimental method, iteration through failure, and first-principles problem
 solving. Excellent Socratic-questioning material.
 *Use for:* history of flight, invention-and-iteration themes within Aerospace topics.
+*Alternates:* *First Man: The Life of Neil A. Armstrong* — James R. Hansen (Simon &
+Schuster, 2005); *Rocket Men* — Robert Kurson (Random House, 2018)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–12
 
@@ -4097,6 +4145,8 @@ solving. Excellent Socratic-questioning material.
 Illustrated survey of the history and science of flight, from balloons to space
 shuttles, pitched at the upper-primary/lower-secondary band.
 *Use for:* introductory flight-history and aircraft-types topics.
+*Alternates:* *Planes* — Steve Parker (QED Publishing); Usborne "See Inside Space
+Rockets and Other Spacecraft" for the space-flight end of the subject
 **Library:** Calibre-Web | **Age:** 8–12
 
 ---
@@ -4108,6 +4158,8 @@ shuttles, pitched at the upper-primary/lower-secondary band.
 Survey of the neuroscience and psychology of social interaction — reading social
 cues, empathy, and group dynamics — written for a general adult audience.
 *Use for:* reading-social-cues and empathy topics across Social Intelligence.
+*Alternates:* *Emotional Intelligence* — Daniel Goleman (Bantam, 1995); *Games People
+Play* — Eric Berne (Grove Press, 1964)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–13 (adult-mediated, not child-facing)
 
@@ -4117,6 +4169,8 @@ Classic account of the social-psychology principles (reciprocity, social proof,
 authority, consistency) that drive group behaviour and social norms — grounds Social
 Patterns topics in established research rather than folk psychology.
 *Use for:* group-dynamics and social-norms topics within Social Patterns.
+*Alternates:* *The Tipping Point* — Malcolm Gladwell (Little, Brown, 2000); *The
+Righteous Mind* — Jonathan Haidt (Pantheon, 2012)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–13 (adult-mediated, not child-facing)
 
@@ -4127,6 +4181,8 @@ Patterns topics in established research rather than folk psychology.
 Narrative fiction illustrating peer-group dynamics, social hierarchy, and belonging
 in a relatable middle-school setting.
 *Use for:* narrative grounding for social-dynamics and belonging topics.
+*Alternates:* *Wonder* — R.J. Palacio (Knopf, 2012); *The Cricket in Times Square*
+— George Selden (Farrar, Straus and Giroux, 1960) for a gentler belonging narrative
 **Library:** Calibre-Web | **Age:** 9–13
 
 ---
@@ -4139,6 +4195,9 @@ agriculture, and modern civilization — the "big history" approach that treats 
 time as one story with thresholds of increasing complexity.
 *Use for:* the full span of Grand Narrative topics — an origin-of-everything framing
 that connects physics, biology, and history into one thread.
+*Alternates:* *A Short History of Nearly Everything* — Bill Bryson (Broadway Books,
+2003); *Sapiens: A Brief History of Humankind* — Yuval Noah Harari (Harvill Secker,
+2014, for the human-threshold portion)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–13
 
@@ -4148,6 +4207,9 @@ The school/undergraduate-edition companion to Christian's Big History Project,
 structured around eight thresholds (Big Bang, stars, chemical elements, the Earth and
 Solar System, life, humans, agriculture, the modern revolution).
 *Use for:* threshold-by-threshold structuring of Grand Narrative topic pages.
+*Alternates:* the Big History Project's free online course materials
+(bighistoryproject.com); *Maps of Time: An Introduction to Big History* — David
+Christian (University of California Press, 2004, the original scholarly edition)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 10–13
 
@@ -4158,6 +4220,9 @@ The standard undergraduate optics textbook, covering geometric optics, wave opti
 polarization, interference, and lasers — deeper than the existing AQA Physics A-Level
 entry's optics chapter.
 *Use for:* optics and photonics topic pages needing depth beyond the A-level baseline.
+*Alternates:* *Optics: Learning by Computing* — Kasturi L. Chopra & others; *Introduction
+to Modern Optics* — Grant R. Fowles (Dover; 2nd edition 1989, a shorter alternative
+to Hecht)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4167,6 +4232,8 @@ entry's optics chapter.
 Illustrated introduction to how light behaves — reflection, refraction, colour, lenses
 — pitched at the upper-primary/lower-secondary band.
 *Use for:* introductory light-and-optics topics.
+*Alternates:* Usborne "See Inside Science: Light and Sound"; *Light: Shadows,
+Mirrors, and Rainbows* — Natalie M. Rosinsky (Picture Window Books, 2003)
 **Library:** Calibre-Web | **Age:** 8–12
 
 ---
@@ -4178,6 +4245,8 @@ edition 2019)**
 The standard undergraduate film-studies textbook — narrative structure, cinematography,
 editing, sound, and film history. The deep reference for how films are made and read.
 *Use for:* film-language and film-history topic pages.
+*Alternates:* *In the Blink of an Eye* — Walter Murch (Silman-James Press, 2001);
+*The Story of Film* — Mark Cousins (Pavilion, 2004)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4186,6 +4255,9 @@ theatre-history survey; publisher TBD at acquisition time)**
 Survey of theatre history from Greek drama through modern performance, covering the
 technical vocabulary and traditions of the performing arts.
 *Use for:* theatre-history and performing-arts-tradition topic pages.
+*Alternates:* *The Oxford Illustrated History of Theatre* — John Russell Brown (ed.,
+OUP, 1995); *Theatre Histories: An Introduction* — Gary Jay Williams et al.
+(Routledge; 3rd edition 2016)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4195,12 +4267,16 @@ technical vocabulary and traditions of the performing arts.
 Illustrated survey of film history and film-making craft — cameras, editing,
 special effects — pitched at the upper-primary/lower-secondary band.
 *Use for:* introductory film-literacy topics.
+*Alternates:* *Moviemaking for Kids* — general children's film-literacy reference
+(publisher TBD at acquisition time); Usborne "How Movies Are Made"
 **Library:** Calibre-Web | **Age:** 9–13
 
 **The Story of Theatre — general children's theatre-history reference (publisher TBD
 at acquisition time)**
 Illustrated introduction to theatre and dance traditions across history and cultures.
 *Use for:* introductory performing-arts topics.
+*Alternates:* *A Kid's Guide to the Theater* — general children's theatre-primer
+reference (publisher TBD at acquisition time); DK Eyewitness "Ballet and Dance"
 **Library:** Calibre-Web | **Age:** 8–12
 
 ---
@@ -4210,14 +4286,14 @@ Illustrated introduction to theatre and dance traditions across history and cult
 Six subjects (11 topics or fewer) get a single strong reference each rather than a
 full multi-book treatment, to keep this list proportionate to topic count.
 
-| Subject | Book | Author | Why it's a good source | Level/age |
-|---|---|---|---|---|
-| Corruption | *Corruption and Government: Causes, Consequences, and Reform* | Susan Rose-Ackerman & Bonnie Palifka (Cambridge; 2nd ed. 2016) | Standard academic survey of how and why corruption happens in government and institutions | Kavita — ages 11–12 |
-| Law | *The Rule of Law* | Tom Bingham (Allen Lane, 2010) | Short, widely-praised account by a former UK Lord Chief Justice of what the rule of law actually means in practice | Kavita — ages 11–13 |
-| Architecture | *DK Eyewitness: Architecture* | DK (Dorling Kindersley) | Illustrated survey of architectural styles, structures, and how buildings work, pitched at children | Calibre-Web — ages 8–12 |
-| Vocabulary | *Word Power Made Easy* | Norman Lewis (Anchor Books, 1949; many editions) | Classic, still-used vocabulary-building reference with structured word-root lessons | Kavita — ages 10–13 |
-| PPE (Philosophy, Politics, Economics) | *The Great Ideas: A Lexicon of Western Thought* | Mortimer J. Adler (Scribner, 1952) | Accessible survey of the core recurring ideas across philosophy, politics, and economics | Kavita — ages 11–13 |
-| PSHE | *Talking to Kids About Everything* — general PSHE-style social/health/personal-wellbeing reference (publisher TBD at acquisition time) | — | Non-clinical grounding for personal, social, health, and economic education topics | Calibre-Web — ages 8–12 |
+| Subject | Book | Author | Why it's a good source | Level/age | Alternate |
+|---|---|---|---|---|---|
+| Corruption | *Corruption and Government: Causes, Consequences, and Reform* | Susan Rose-Ackerman & Bonnie Palifka (Cambridge; 2nd ed. 2016) | Standard academic survey of how and why corruption happens in government and institutions | Kavita — ages 11–12 | *Why Nations Fail* — Daron Acemoglu & James A. Robinson (Crown, 2012) |
+| Law | *The Rule of Law* | Tom Bingham (Allen Lane, 2010) | Short, widely-praised account by a former UK Lord Chief Justice of what the rule of law actually means in practice | Kavita — ages 11–13 | *Letters to a Law Student* — Nicholas J. McBride (Pearson; 4th edition 2017) |
+| Architecture | *DK Eyewitness: Architecture* | DK (Dorling Kindersley) | Illustrated survey of architectural styles, structures, and how buildings work, pitched at children | Calibre-Web — ages 8–12 | *Iggy Peck, Architect* — Andrea Beaty (Abrams, 2007, also listed under Vocational) |
+| Vocabulary | *Word Power Made Easy* | Norman Lewis (Anchor Books, 1949; many editions) | Classic, still-used vocabulary-building reference with structured word-root lessons | Kavita — ages 10–13 | *The Elements of Style* — William Strunk Jr. & E.B. White (Macmillan, 1959) |
+| PPE (Philosophy, Politics, Economics) | *The Great Ideas: A Lexicon of Western Thought* | Mortimer J. Adler (Scribner, 1952) | Accessible survey of the core recurring ideas across philosophy, politics, and economics | Kavita — ages 11–13 | *Sophie's World* — Jostein Gaarder (Farrar, Straus and Giroux, 1991, narrative philosophy entry point) |
+| PSHE | *Talking to Kids About Everything* — general PSHE-style social/health/personal-wellbeing reference (publisher TBD at acquisition time) | — | Non-clinical grounding for personal, social, health, and economic education topics | Calibre-Web — ages 8–12 | any UK-curriculum-aligned PSHE classroom resource pack — several near-equivalent titles exist across publishers |
 
 ---
 
