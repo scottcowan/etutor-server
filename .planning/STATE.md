@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_plan
-stopped_at: Phase 04.1 complete (5/5) — ready to discuss Phase 5
-last_updated: 2026-09-04T13:56:23.446Z
-last_activity: 2026-09-04 -- Phase 04.1 execution started
+status: planning
+stopped_at: context exhaustion at 75% (2026-09-10)
+last_updated: "2026-09-10T10:36:25.477Z"
+last_activity: 2026-09-04
 progress:
   total_phases: 7
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 25
   completed_plans: 25
-  percent: 57
+  percent: 71
 ---
 
 # Project State
@@ -84,8 +84,14 @@ Recent decisions affecting current work:
 | v2 | Fine-grained interest graph (vector embeddings) | Deferred | init |
 | v2 | FSRS per-child parameter personalisation | Deferred | init |
 
+## Quick Tasks Completed
+
+| Date | Slug | Description |
+|------|------|--------------|
+| 2026-09-10 | 260910-jnn-build-out-a-reference-book-list-to-aid-i | Added "Reference Books for Corpus Authoring — Priority Subjects (Phase 4.1+)" section to docs/wanted-books.md covering Vocational, Political Systems, Growing Up, How Things Are Made, Aerospace, Social Intelligence/Patterns, Grand Narrative, Optics, Film/Performing Arts, and a smaller-gaps table (Corruption, Law, Architecture, Vocabulary, PPE, PSHE) |
+
 ## Session Continuity
 
-Last session: 2026-08-19T20:51:25.862Z
-Stopped at: Phase 4.1 context gathered
-Resume file: .planning/phases/04.1-knowledge-corpus-and-mcp-server/04.1-CONTEXT.md
+Last session: 2026-09-10T10:36:25.473Z
+Stopped at: context exhaustion at 75% (2026-09-10)
+Resume file: None
