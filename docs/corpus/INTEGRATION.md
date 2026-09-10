@@ -85,3 +85,23 @@ by reading each experiment's frontmatter.
 - Any caching/invalidation strategy for `INDEX` if corpus content changes
   after server startup (v1 builds the index once at import time, per D-14 —
   Phase 5 should decide whether a hot-reload is needed for its use case)
+
+## Design metaphor: the Primer
+
+*The Diamond Age* (Neal Stephenson) is the frame worth keeping in mind when
+deciding what belongs in the corpus and at what level. Two parallels:
+
+1. **Cataloguing before content.** Nell collects books on her journey and
+   catalogues them before they're useful to anyone — `docs/corpus/raw/index.md`
+   plays the same role. Content sourcing happens at module-build time (a
+   deliberate authoring step, e.g. via `kb-scraper`), never dynamically at
+   session runtime.
+2. **One story, many levels.** The Primer narrates the same underlying
+   material at whatever complexity the child is ready for, and escalates as
+   she grows. The H2 level-band structure (100/200/300/400) on every topic
+   page is the same idea: one topic, rendered at the abstraction level the
+   reader can currently hold — not four different topics.
+
+Not a literal design spec, just the metaphor to reach for when a level-band
+split feels arbitrary: ask what the Primer would say to a 6-year-old vs. a
+12-year-old about the same idea.

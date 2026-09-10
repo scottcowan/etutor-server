@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "etutor-corpus": {
-      "command": "python",
+      "command": "/Users/scowan/Projects/scottcowan/etutor-server/.venv/bin/python3",
       "args": ["-m", "services.corpus_mcp.server"]
     }
   }
