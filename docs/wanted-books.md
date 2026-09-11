@@ -3908,7 +3908,22 @@ document, entries split into Kavita (reference/lesson-source, no age ceiling —
 tutor mediates and quotes from these, they are never served to a child directly) and
 Calibre-Web (child-facing, age-gated) tiers.
 
+**Source confidence:** entries below are flagged `[spec-confirmed]` where a real exam
+board specification, university syllabus, or official curriculum body publishes the
+title directly (verified 2026-09-11 via direct fetch of the specification/syllabus
+page); `[bibliography-confirmed]` where the book itself is real and verifiable
+(OpenLibrary/publisher record) but its appearance on any specific syllabus is
+unconfirmed; unflagged entries are the original author-selected picks from this
+list's first pass and should be treated as good-faith recommendations, not
+syllabus citations.
+
 ### Vocational — Reference (Kavita)
+
+**Note on this subject:** UK T-Levels and apprenticeship standards (IfATE) are
+competency/skills-based — occupational duties and knowledge-skills-behaviours, not a
+literature syllabus — so no canonical book list exists to source from. No verified
+children's careers-book curriculum list was found either. The entries below are
+good-faith picks, not syllabus citations.
 
 **Working — Studs Terkel (Pantheon Books, 1974)**
 Oral history of over 100 Americans describing their jobs in their own words — from
@@ -3941,6 +3956,29 @@ works, useful for grounding abstract "vocational education" topics in a lived ex
 training.
 *Alternates:* *Kitchen Confidential* — Anthony Bourdain (Bloomsbury, 2000); *Blood,
 Bones and Butter* — Gabrielle Hamilton (Random House, 2011)
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–12
+
+**Blue Collar Cash: Love Your Work, Secure Your Future, and Find Happiness for Life
+— Ken Rusk (Bard Press, 2021)**
+A case for skilled-trades careers (construction, plumbing, welding, HVAC) as
+financially and personally rewarding paths, told through worker profiles. Useful
+counterweight to a purely academic framing of "career" topics.
+*Use for:* trades-as-career-path themes, financial and personal case for vocational
+routes.
+*Alternates:* *The Case for Working with Your Hands* — Matthew Crawford (UK title
+for *Shop Class as Soulcraft*, Viking, 2009)
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–12
+
+**Vocational Education and Training: Theory, Practice, and Policy — David Guile &
+Lorna Unwin (eds., Wiley-Blackwell, 2019)**
+Academic survey of vocational-education theory, apprenticeship models, and
+skills-policy across countries — a systematic reference for the pedagogy behind
+the 92-topic Vocational subject, complementing the narrative titles above.
+*Use for:* vocational-pedagogy and skills-training-systems topic pages.
+*Alternates:* *Understanding Vocational Education and Training* — Rob Ecclestone
+(Routledge, 2010)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4005,15 +4043,38 @@ Fund, 1985)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
+**Primary-source thinkers by ideology `[spec-confirmed]`** — AQA A-level Government
+and Politics (7152) and Pearson Edexcel Politics (9PL0) specifications don't publish
+a bibliography, but both name the core thinkers per political ideology directly:
+Locke, Mill, Rawls, Wollstonecraft (liberalism); Hobbes, Burke, Oakeshott, Nozick
+(conservatism/other traditions). Source primary-text excerpts from these thinkers
+(many out of copyright — Locke's *Two Treatises of Government*, Mill's *On Liberty*,
+Hobbes's *Leviathan*) rather than a single secondary textbook.
+*Use for:* ideology-specific political-philosophy topic pages, matching the exact
+thinker set UK exam boards use to teach each ideology.
+**Library:** Kavita — reference (primary sources, several public domain)
+**Age group:** Lesson source for ages 11–12
+
 ### Political Systems — For Children (Calibre-Web)
 
-**DK Eyewitness: Government and Politics — DK (Dorling Kindersley)**
-Illustrated introduction to how governments work — democracy, monarchy, elections,
-law-making — pitched at the upper-primary/lower-secondary band.
-*Use for:* introductory how-government-works topics.
-*Alternates:* *A Child's Introduction to Government* — general children's civics
-reference (publisher TBD at acquisition time); Usborne "See Inside Politics and
-Government"
+**Politics for Beginners — Alex Frith (Usborne, 2018) `[bibliography-confirmed]`**
+Illustrated introduction to political ideas and how they play out in practice —
+verified real, currently-in-print Usborne title.
+*Use for:* introductory political-ideas topics.
+**Library:** Calibre-Web | **Age:** 9–12
+
+**Understanding Politics & Government — Rosie Hore, Alex Frith & Louie Stowell et al.
+(Usborne, 2018) `[bibliography-confirmed]`**
+Illustrated survey of how governments and political systems actually function —
+verified real, currently-in-print Usborne title, companion to the above.
+*Use for:* how-government-works and systems-of-government topics.
+**Library:** Calibre-Web | **Age:** 9–12
+
+**How Governments Work — Timothy Cain (DK, 2006) `[bibliography-confirmed]`**
+Illustrated survey comparing different systems of government across countries —
+verified real DK title.
+*Use for:* comparative-government topics.
+*Alternates:* Usborne "See Inside Politics and Government"
 **Library:** Calibre-Web | **Age:** 9–12
 
 **Animal Farm — George Orwell (Secker & Warburg, 1945)**
@@ -4068,14 +4129,28 @@ sensitive, factual entry point for this subject.
 Happening to My Body? Book for Girls* — Lynda Madaras (Newmarket Press, 2007)
 **Library:** Calibre-Web | **Age:** 9–12
 
-**Real Talk About Growing Up — general growing-up/independence title (publisher TBD
-at acquisition time)**
-Non-clinical coverage of independence, responsibility, and identity formation for the
-upper-primary band, complementing the body-focused titles above.
-*Use for:* independence and identity-formation topics within Growing Up.
-*Alternates:* any well-regarded non-clinical growing-up/independence title for the
-9–12 band — this is a common category with several near-equivalent titles across
-publishers
+**Growing Up for Girls — Felicity Brooks & Katie Lovell (Usborne, 2013)
+`[bibliography-confirmed]`** and **Growing Up for Boys — Alex Frith & Kate Sutton
+(Usborne, 2013) `[bibliography-confirmed]`**
+Verified real, currently-in-print Usborne companion titles covering physical and
+emotional changes non-clinically for the upper-primary band.
+*Use for:* age-appropriate puberty and identity-formation topics.
+**Library:** Calibre-Web | **Age:** 9–12
+
+**It's Perfectly Normal — Robie H. Harris (Candlewick, 1994; revised through 2021)
+`[bibliography-confirmed]`**
+Widely used, comprehensive RSE (relationships and sex education) reference covering
+puberty, bodies, and relationships — one of the most cited titles in this space
+across multiple editions.
+*Use for:* comprehensive puberty and relationships topics.
+**Library:** Calibre-Web | **Age:** 10–12
+
+**Welcome to Your Period — Yumi Stynes & Dr Melissa Kang (Hardie Grant Egmont, 2019)
+`[bibliography-confirmed]`**
+Focused, non-clinical, myth-busting reference on menstruation specifically.
+*Use for:* menstruation-specific topics within Growing Up.
+*Alternates:* *Girlology* — Dr. Melisa Holmes & Dr. Trish Hutchison (Health
+Communications, 2005)
 **Library:** Calibre-Web | **Age:** 9–12
 
 ---
@@ -4097,35 +4172,57 @@ technical depth.
 
 ### How Things Are Made — For Children (Calibre-Web)
 
-**How It's Made — companion books based on the Discovery Channel series
-(various publishers)**
-Short, heavily illustrated explanations of how everyday objects and foods are
-manufactured, mirroring the TV series' factory-tour format.
-*Use for:* concrete "how is X made" topics across a wide range of everyday objects.
-*Alternates:* *Ultimate Factories* companion volumes (National Geographic); *Where
-Do Things Come From?* — Anne Rooney (QEB Publishing, 2017)
+**Note on this subject:** neither AQA nor Edexcel publishes a bibliography in its
+GCSE/A-level Design & Technology specification (confirmed by direct fetch — both
+point to their own teaching-resources pages, not a reading list). The titles below
+are real, verified books, but their appearance on any specific specification's
+reading list is unconfirmed.
+
+**The New Way Things Work — David Macaulay (Houghton Mifflin/DK, 1999)
+`[bibliography-confirmed]`**
+Updated edition of the classic illustrated mechanics reference already listed in
+Science Reference above — double-duty companion for manufacturing-process topics.
+*Use for:* concrete "how is X made" and mechanical-principles topics.
+**Library:** Calibre-Web | **Age:** 8–14
+
+**How Things Work — Martyn Bramwell & David Mostyn (Usborne, 1994)
+`[bibliography-confirmed]`**
+Illustrated survey of everyday and industrial mechanisms and manufacturing processes.
+*Use for:* mechanical-principles topics that underlie manufacturing processes.
 **Library:** Calibre-Web | **Age:** 8–12
 
-**Machines and How They Work — DK (Dorling Kindersley)**
-Illustrated reference explaining the mechanics behind everyday and industrial
-machines — engines, pulleys, hydraulics, assembly lines.
-*Use for:* mechanical-principles topics that underlie manufacturing processes.
-*Alternates:* *The Way Things Work Now* — David Macaulay (already listed in Science
-Reference above — double-duty companion); Usborne "How Machines Work: Zoo Break!"
-**Library:** Calibre-Web | **Age:** 8–12
+**Look Inside How Things Work — Rob Lloyd Jones (Usborne, 2018)
+`[bibliography-confirmed]`**
+Lift-the-flap illustrated reference on how everyday machines and processes work,
+pitched younger than the Bramwell/Mostyn title.
+*Use for:* early "how is X made" topics.
+*Alternates:* *Ultimate Factories* companion volumes (National Geographic); *Where
+Do Things Come From?* — Anne Rooney (QEB Publishing, 2017)
+**Library:** Calibre-Web | **Age:** 6–10
 
 ---
 
 ### Aerospace — Reference (Kavita)
 
-**Introduction to Flight — John D. Anderson Jr. (McGraw-Hill; 8th edition 2015)**
-The standard undergraduate aerospace-engineering textbook, covering aerodynamics,
-propulsion, flight mechanics, and the history of flight. Deep reference for the
-technical side of the Aerospace subject.
-*Use for:* aerodynamics, propulsion, and flight-mechanics topic pages.
-*Alternates:* *Understanding Flight* — David F. Anderson & Scott Eberhardt
-(McGraw-Hill; 2nd edition 2009); *Aerodynamics for Engineering Students* — E.L.
-Houghton et al. (Butterworth-Heinemann; 7th edition 2016)
+**`[spec-confirmed]`** MIT OpenCourseWare 16.100 Aerodynamics (Fall 2005) lists these
+as required/recommended texts (verified via direct fetch of the course readings page):
+
+**Fundamentals of Aerodynamics — John D. Anderson Jr. (McGraw-Hill; 3rd edition 2001)**
+Required text for MIT's undergraduate aerodynamics course. Covers aerodynamic theory
+from first principles — the technical core of the Aerospace subject.
+*Use for:* aerodynamics and flight-mechanics topic pages needing rigorous depth.
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–12
+
+**Introduction to Flight — John D. Anderson Jr. (McGraw-Hill; 5th edition 2004; 8th
+edition 2015 also in print)**
+Recommended companion text on the same MIT reading list — broader and more
+accessible than Fundamentals of Aerodynamics, covering propulsion and flight history
+alongside aerodynamics.
+*Use for:* aerodynamics, propulsion, and flight-history topic pages.
+*Alternates:* *Foundation of Aerodynamics* — Kuethe & Chow (Wiley; 5th edition 1997);
+*Aerodynamics for Engineers* — John J. Bertin (Prentice Hall; 4th edition 2001) —
+both also on the MIT 16.100 reading list
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
@@ -4174,6 +4271,19 @@ Righteous Mind* — Jonathan Haidt (Pantheon, 2012)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–13 (adult-mediated, not child-facing)
 
+**Social Psychology — David Myers & Jean Twenge (McGraw Hill; 14th edition 2022)
+`[bibliography-confirmed]`**
+The most-cited social psychology textbook on the Open Syllabus Project's rankings —
+comprehensive undergraduate coverage of group dynamics, conformity, attitudes, and
+social cognition. Not independently verified against a specific fetched syllabus
+this pass, but its citation frequency is itself well documented.
+*Use for:* group-dynamics and social-cognition topics across both Social
+Intelligence and Social Patterns.
+*Alternates:* *The Social Animal* — Elliot Aronson (Palgrave Macmillan; 10th revised
+edition, orig. 1972) — a shorter, more narrative alternative covering the same ground
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–13 (adult-mediated, not child-facing)
+
 ### Social Intelligence and Social Patterns — For Children (Calibre-Web)
 
 **Middle School: The Worst Years of My Life — James Patterson & Chris Tebbetts
@@ -4188,6 +4298,11 @@ in a relatable middle-school setting.
 ---
 
 ### Grand Narrative — Reference (Kavita)
+
+**Note on this subject:** the Big History Project's own curriculum site is web-native
+and publishes no book bibliography (confirmed by direct check) — the David Christian
+titles below are real, verified books by the field's founder, not a syllabus-sourced
+list.
 
 **Origin Story: A Big History of Everything — David Christian (Allen Lane, 2018)**
 A single connected narrative from the Big Bang through the origins of life, humans,
@@ -4215,45 +4330,119 @@ Christian (University of California Press, 2004, the original scholarly edition)
 
 ### Optics — Reference (Kavita)
 
+**`[spec-confirmed]`** AQA AS/A-level Physics (7407/7408) specification v1.3, section
+3.3.2, directly covers refraction, Snell's law, total internal reflection, fibre
+optics, interference, and diffraction (verified by direct fetch of the spec) — the
+spec itself names no textbook, but these are the textbooks commonly used alongside it:
+
+**AQA A Level Physics Year 2 Student Book — Nick England, Jeremy Pollard, Nicky
+Thomas & Carol Davenport (Hodder Education, 2015) `[bibliography-confirmed]`**
+The optics chapter of the same endorsed textbook already listed under Physics in
+the Science Reference section above — double-duty companion.
+*Use for:* optics topic pages needing an exam-board-calibrated baseline.
+*Alternates:* *Collins AQA A-level Physics Year 2 Student Book* — Pharaoh,
+Gidzewicz & Bishop (HarperCollins, 2016)
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–12
+
 **Optics — Eugene Hecht (Pearson; 5th edition 2016)**
 The standard undergraduate optics textbook, covering geometric optics, wave optics,
-polarization, interference, and lasers — deeper than the existing AQA Physics A-Level
-entry's optics chapter.
+polarization, interference, and lasers — deeper than the AQA spec's coverage, for
+topic pages that need to go beyond the A-level baseline.
 *Use for:* optics and photonics topic pages needing depth beyond the A-level baseline.
-*Alternates:* *Optics: Learning by Computing* — Kasturi L. Chopra & others; *Introduction
-to Modern Optics* — Grant R. Fowles (Dover; 2nd edition 1989, a shorter alternative
-to Hecht)
+*Alternates:* *Introduction to Modern Optics* — Grant R. Fowles (Dover; 2nd edition
+1989, a shorter alternative to Hecht)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
 ### Optics — For Children (Calibre-Web)
 
-**DK Eyewitness: Light — DK (Dorling Kindersley)**
+**DK Eyewitness: Light — David Burnie (DK, 1992) `[bibliography-confirmed]`**
 Illustrated introduction to how light behaves — reflection, refraction, colour, lenses
 — pitched at the upper-primary/lower-secondary band.
 *Use for:* introductory light-and-optics topics.
-*Alternates:* Usborne "See Inside Science: Light and Sound"; *Light: Shadows,
-Mirrors, and Rainbows* — Natalie M. Rosinsky (Picture Window Books, 2003)
+**Library:** Calibre-Web | **Age:** 8–12
+
+**Light, Sound and Electricity — Kirsteen Rogers (Usborne, 2001/2006)
+`[bibliography-confirmed]`**
+Illustrated reference bridging light with the related sound and electricity topics.
+*Use for:* introductory light-and-optics topics with cross-links to sound/electricity.
+*Alternates:* *Light: Shadows, Mirrors, and Rainbows* — Natalie M. Rosinsky (Picture
+Window Books, 2003)
 **Library:** Calibre-Web | **Age:** 8–12
 
 ---
 
-### Film and Performing Arts — Reference (Kavita)
+### Film — Reference (Kavita)
+
+**Note:** AQA does not offer an A-level Film Studies specification (confirmed —
+don't source Film Studies textbooks from AQA). Eduqas (WJEC) is the confirmed exam
+board with an endorsed textbook list.
+
+**`[spec-confirmed]`** **WJEC Eduqas Film Studies for A Level and AS — Laurie Wardle,
+Kaitlyn Cheshire, Vivienne Ramey & Jenny Stewart (Illuminate Publishing; ISBN
+978-1-911208-44-0)**
+Endorsed textbook on Eduqas's own published "endorsed titles" list for its AS/A-level
+Film Studies specification — verified by direct fetch of eduqas.co.uk.
+*Use for:* film-language, film-history, and film-analysis topic pages, calibrated to
+what UK exam-board students actually study.
+*Alternates:* *WJEC Eduqas Film Studies Revision Guide* — Jenny Stewart (Illuminate
+Publishing; ISBN 978-1-912820-35-1), also Eduqas-endorsed; *WJEC Eduqas GCSE Film
+Studies Student Book* — Newman, Fairclough, Fincham & Patrick (ISBN
+978-1-911208-02-0), the GCSE-level companion
+**Library:** Kavita — reference
+**Age group:** Lesson source for ages 11–12
 
 **Film Art: An Introduction — David Bordwell & Kristin Thompson (McGraw-Hill; 12th
-edition 2019)**
+edition 2019) `[bibliography-confirmed]`**
 The standard undergraduate film-studies textbook — narrative structure, cinematography,
-editing, sound, and film history. The deep reference for how films are made and read.
-*Use for:* film-language and film-history topic pages.
+editing, sound, and film history. Deeper and more theory-forward than the Eduqas
+textbook above; good for topic pages needing university-level depth.
+*Use for:* film-language and film-history topic pages needing depth beyond GCSE/A-level.
 *Alternates:* *In the Blink of an Eye* — Walter Murch (Silman-James Press, 2001);
 *The Story of Film* — Mark Cousins (Pavilion, 2004)
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
-**A History of Western Theatre — Christopher B. Balme & others (relevant undergraduate
-theatre-history survey; publisher TBD at acquisition time)**
+### Film — For Children (Calibre-Web)
+
+**DK Eyewitness: Film — DK (Dorling Kindersley)**
+Illustrated survey of film history and film-making craft — cameras, editing,
+special effects — pitched at the upper-primary/lower-secondary band.
+*Use for:* introductory film-literacy topics.
+*Alternates:* Usborne "How Movies Are Made"
+**Library:** Calibre-Web | **Age:** 9–13
+
+---
+
+### Performing Arts — Reference (Kavita)
+
+**`[spec-confirmed]`** AQA A-level Drama and Theatre (7262) specification prescribes
+these set texts directly (verified by direct fetch of the spec PDF) — genuine primary
+source scripts, ideal for grounding performing-arts topic pages in the actual plays
+UK students study rather than a secondary textbook:
+
+**List A (studied for critical analysis):** *Antigone* — Sophocles, trans. Robert
+Fagles (Penguin, 1984); *Much Ado About Nothing* — William Shakespeare, ed. Claire
+McEachern (Arden/Bloomsbury, 2016); *The Caucasian Chalk Circle* — Bertolt Brecht,
+ed. Eric Bentley (Penguin, 2007); *Jerusalem* — Jez Butterworth (Nick Hern Books, 2009)
+
+**List B (studied for critical analysis):** *Yerma* — Federico García Lorca (Methuen,
+2007); *The Glass Menagerie* — Tennessee Williams (Penguin, 2009); *Cloud Nine* —
+Caryl Churchill (Methuen); *Three Sisters (after Chekhov)* — Inua Ellams (Methuen)
+
+Prescribed practitioners for the practical-devising component are also confirmed:
+Antonin Artaud, Steven Berkoff, Augusto Boal, Bertolt Brecht, Peter Brook.
+*Use for:* dramatic-technique, playwriting, and theatre-tradition topic pages —
+source excerpts and practitioner techniques directly from these texts.
+**Library:** Kavita — reference (primary source scripts)
+**Age group:** Lesson source for ages 11–12 (some mature themes — tutor-mediated only)
+
+**A History of Western Theatre — Christopher B. Balme & others (relevant
+undergraduate theatre-history survey; publisher TBD at acquisition time)**
 Survey of theatre history from Greek drama through modern performance, covering the
-technical vocabulary and traditions of the performing arts.
+technical vocabulary and traditions of the performing arts — broader historical
+framing than the AQA set-text list above.
 *Use for:* theatre-history and performing-arts-tradition topic pages.
 *Alternates:* *The Oxford Illustrated History of Theatre* — John Russell Brown (ed.,
 OUP, 1995); *Theatre Histories: An Introduction* — Gary Jay Williams et al.
@@ -4261,15 +4450,7 @@ OUP, 1995); *Theatre Histories: An Introduction* — Gary Jay Williams et al.
 **Library:** Kavita — reference
 **Age group:** Lesson source for ages 11–12
 
-### Film and Performing Arts — For Children (Calibre-Web)
-
-**DK Eyewitness: Film — DK (Dorling Kindersley)**
-Illustrated survey of film history and film-making craft — cameras, editing,
-special effects — pitched at the upper-primary/lower-secondary band.
-*Use for:* introductory film-literacy topics.
-*Alternates:* *Moviemaking for Kids* — general children's film-literacy reference
-(publisher TBD at acquisition time); Usborne "How Movies Are Made"
-**Library:** Calibre-Web | **Age:** 9–13
+### Performing Arts — For Children (Calibre-Web)
 
 **The Story of Theatre — general children's theatre-history reference (publisher TBD
 at acquisition time)**
@@ -4284,16 +4465,19 @@ reference (publisher TBD at acquisition time); DK Eyewitness "Ballet and Dance"
 ### Smaller Gaps — One Book Each
 
 Six subjects (11 topics or fewer) get a single strong reference each rather than a
-full multi-book treatment, to keep this list proportionate to topic count.
+full multi-book treatment, to keep this list proportionate to topic count. Sources
+flagged `[spec-confirmed]` were verified by direct fetch of the named body's own
+published list; `[bibliography-confirmed]` means the book is real and verifiable but
+not tied to a specific syllabus.
 
 | Subject | Book | Author | Why it's a good source | Level/age | Alternate |
 |---|---|---|---|---|---|
-| Corruption | *Corruption and Government: Causes, Consequences, and Reform* | Susan Rose-Ackerman & Bonnie Palifka (Cambridge; 2nd ed. 2016) | Standard academic survey of how and why corruption happens in government and institutions | Kavita — ages 11–12 | *Why Nations Fail* — Daron Acemoglu & James A. Robinson (Crown, 2012) |
-| Law | *The Rule of Law* | Tom Bingham (Allen Lane, 2010) | Short, widely-praised account by a former UK Lord Chief Justice of what the rule of law actually means in practice | Kavita — ages 11–13 | *Letters to a Law Student* — Nicholas J. McBride (Pearson; 4th edition 2017) |
-| Architecture | *DK Eyewitness: Architecture* | DK (Dorling Kindersley) | Illustrated survey of architectural styles, structures, and how buildings work, pitched at children | Calibre-Web — ages 8–12 | *Iggy Peck, Architect* — Andrea Beaty (Abrams, 2007, also listed under Vocational) |
-| Vocabulary | *Word Power Made Easy* | Norman Lewis (Anchor Books, 1949; many editions) | Classic, still-used vocabulary-building reference with structured word-root lessons | Kavita — ages 10–13 | *The Elements of Style* — William Strunk Jr. & E.B. White (Macmillan, 1959) |
-| PPE (Philosophy, Politics, Economics) | *The Great Ideas: A Lexicon of Western Thought* | Mortimer J. Adler (Scribner, 1952) | Accessible survey of the core recurring ideas across philosophy, politics, and economics | Kavita — ages 11–13 | *Sophie's World* — Jostein Gaarder (Farrar, Straus and Giroux, 1991, narrative philosophy entry point) |
-| PSHE | *Talking to Kids About Everything* — general PSHE-style social/health/personal-wellbeing reference (publisher TBD at acquisition time) | — | Non-clinical grounding for personal, social, health, and economic education topics | Calibre-Web — ages 8–12 | any UK-curriculum-aligned PSHE classroom resource pack — several near-equivalent titles exist across publishers |
+| Corruption | *Corruption: A Very Short Introduction* `[bibliography-confirmed, used as course reading]` | Leslie Holmes (OUP, 2015) | Oxford's Very Short Introduction series entry — concise, widely cited academic survey of how and why corruption happens | Kavita — ages 11–12 | *Corruption and Government* — Susan Rose-Ackerman & Bonnie Palifka (Cambridge; 2nd ed. 2016) |
+| Law | *AQA A-level Law* `[spec-confirmed — on AQA's own approved-textbooks list for spec 7161/7162]` | Jacqueline Martin (Hodder Education) | Directly approved by AQA for its Law specification; note GCSE Law no longer exists in England, so A-level is the relevant UK benchmark | Kavita — ages 11–13 | *How the Law Works* — Gary Slapper (Penguin, 2007), a more accessible general primer |
+| Architecture | *Architecture: A Very Short Introduction* `[bibliography-confirmed]` | Andrew Ballantyne (OUP, 2002) | Oxford VSI entry giving a compact conceptual grounding in architectural ideas; no RIBA-specific reading list was found to confirm against | Kavita — ages 11–13 | *DK Eyewitness: Architecture* — DK (Dorling Kindersley), for a more illustrated, younger-pitched entry |
+| Vocabulary | *Vocabulary Ninja* `[bibliography-confirmed, widely used UK primary resource]` | Andrew Jennings (Bloomsbury, 2nd edition) | Confirmed via publisher/author site as a widely adopted UK primary-school vocabulary-building resource — more curriculum-relevant for this age band than a general adult reference | Calibre-Web — ages 7–11 | *Word Power Made Easy* — Norman Lewis (Anchor Books, 1949), a classic root-based reference for the older end of the range |
+| PPE (Philosophy, Politics, Economics) | *What Does It All Mean?* and *An Introduction to Political Philosophy* `[spec-confirmed — named directly on Oxford's own PPE "How to Prepare" page]` | Thomas Nagel (OUP, 1987); Jonathan Wolff (OUP; 3rd ed. 2015) | Directly recommended by Oxford's PPE admissions page (ppe.ox.ac.uk/how-prepare) — the philosophy and politics strands respectively; Oxford names no single economics title, recommending Krugman/Harford generally | Kavita — ages 11–13 | *What is Politics?* — Adrian Leftwich (ed., Polity, also Oxford-recommended); *Knowledge: A Very Short Introduction* — Jennifer Nagel (OUP, 2014) |
+| PSHE | *PSHE Association Programme of Study for PSHE Education (KS1–5)* `[spec-confirmed — the actual national framework document]` | PSHE Association (pshe-association.org.uk) | The standard UK national curriculum framework for PSHE — not a commercial textbook, but the authoritative source for what topics this subject actually covers | Official framework — ages 5–12 | Jigsaw PSHE — a widely used commercial classroom supplement aligned to the framework |
 
 ---
 
