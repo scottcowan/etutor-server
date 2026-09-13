@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-07-16T09:03:27.874Z"
-last_activity: 2026-07-16 -- Phase 2 planning complete
+status: planning
+stopped_at: context exhaustion at 75% (2026-09-10)
+last_updated: "2026-09-10T10:36:25.477Z"
+last_activity: 2026-09-04
 progress:
-  total_phases: 6
-  completed_phases: 1
-  total_plans: 13
-  completed_plans: 7
-  percent: 17
+  total_phases: 7
+  completed_phases: 5
+  total_plans: 25
+  completed_plans: 25
+  percent: 71
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-10)
 
 **Core value:** A child can follow curiosity as far as it takes them — including to university-level depth — and always have a tutor that meets them at their level and remembers everything they've studied.
-**Current focus:** Phase 2 — knowledge tracing backend
+**Current focus:** Phase 5 — child interface + device sync
 
 ## Current Position
 
-Phase: 2
+Phase: 5
 Plan: Not started
-Status: Ready to execute
-Last activity: 2026-07-16 -- Phase 2 planning complete
+Status: Ready to plan
+Last activity: 2026-09-04
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -36,7 +36,7 @@ Progress: [░░░░░░░░░░] 0%
 
 **Velocity:**
 
-- Total plans completed: 7
+- Total plans completed: 25
 - Average duration: -
 - Total execution time: 0 hours
 
@@ -45,6 +45,10 @@ Progress: [░░░░░░░░░░] 0%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 7 | - | - |
+| 02 | 6 | - | - |
+| 03 | 4 | - | - |
+| 04 | 3 | - | - |
+| 04.1 | 5 | - | - |
 
 **Recent Trend:**
 
@@ -80,8 +84,14 @@ Recent decisions affecting current work:
 | v2 | Fine-grained interest graph (vector embeddings) | Deferred | init |
 | v2 | FSRS per-child parameter personalisation | Deferred | init |
 
+## Quick Tasks Completed
+
+| Date | Slug | Description |
+|------|------|--------------|
+| 2026-09-10 | 260910-jnn-build-out-a-reference-book-list-to-aid-i | Added "Reference Books for Corpus Authoring — Priority Subjects (Phase 4.1+)" section to docs/wanted-books.md covering Vocational, Political Systems, Growing Up, How Things Are Made, Aerospace, Social Intelligence/Patterns, Grand Narrative, Optics, Film/Performing Arts, and a smaller-gaps table (Corruption, Law, Architecture, Vocabulary, PPE, PSHE) |
+
 ## Session Continuity
 
-Last session: 2026-07-15T11:06:22.566Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-knowledge-tracing-backend/02-CONTEXT.md
+Last session: 2026-09-10T10:36:25.473Z
+Stopped at: context exhaustion at 75% (2026-09-10)
+Resume file: None

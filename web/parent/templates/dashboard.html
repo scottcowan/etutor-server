@@ -13,79 +13,103 @@
     }
     header h1 { font-size: 1.3rem; }
     header a { color: #7a9e7e; text-decoration: none; font-size: 0.95rem; margin-left: auto; }
+    header a:hover { text-decoration: underline; }
     main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
     h2 { font-size: 1.1rem; color: #555; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .children { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    section { margin-bottom: 2.5rem; }
+    .children { display: flex; gap: 1rem; flex-wrap: wrap; }
     .child-card {
       background: white; border: 1px solid #e0e0e0; border-radius: 12px;
-      padding: 1.25rem 1.5rem; min-width: 200px; flex: 1;
+      padding: 1.25rem 1.5rem; min-width: 200px; flex: 1; text-decoration: none; color: inherit;
+      display: block;
     }
+    .child-card:hover { border-color: #7a9e7e; }
     .child-card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
     .child-card .meta { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
     .child-card .interests { font-size: 0.85rem; color: #7a9e7e; }
-    .session-list { display: flex; flex-direction: column; gap: 1rem; }
-    .session {
-      background: white; border: 1px solid #e0e0e0; border-radius: 12px;
-      overflow: hidden;
+    .alert-badge {
+      display: inline-block; padding: 4px 8px; border-radius: 12px;
+      font-size: 14px; font-weight: 600; border: 1px solid;
     }
-    .session-header {
-      padding: 0.75rem 1.25rem; background: #f5f5f5;
-      border-bottom: 1px solid #e0e0e0;
-      display: flex; justify-content: space-between; align-items: center;
+    .badge-frustrated { background: #fff3cd; color: #856404; border-color: #ffc107; }
+    .badge-sensitive { background: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+    .badge-new-interest { background: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+    .alert-row {
+      display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+      background: white; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 8px;
     }
-    .session-header .name { font-weight: 600; }
-    .session-header .time { font-size: 0.85rem; color: #888; }
-    .turn { padding: 0.75rem 1.25rem; border-bottom: 1px solid #f0f0f0; }
-    .turn:last-child { border-bottom: none; }
-    .turn .q { font-weight: 500; margin-bottom: 0.25rem; }
-    .turn .q::before { content: "Q: "; color: #888; }
-    .turn .a { color: #444; font-size: 0.95rem; }
-    .turn .a::before { content: "A: "; color: #7a9e7e; font-weight: 600; }
+    .alert-time { font-size: 14px; color: #888888; min-width: 120px; }
+    .alert-snippet { font-size: 14px; color: #444; font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 400px; }
+    .session-link {
+      display: block; background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+      padding: 12px 16px; margin-bottom: 8px; text-decoration: none; color: #2c2c2c;
+    }
+    .session-link:hover { border-color: #7a9e7e; }
+    .session-link .session-meta { font-size: 0.85rem; color: #888; }
     .empty { color: #aaa; font-style: italic; text-align: center; padding: 2rem; }
+    .view-all { font-size: 0.9rem; color: #7a9e7e; text-decoration: none; margin-left: 0.75rem; }
+    .view-all:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 <header>
   <h1>📚 eTutor — Parent Dashboard</h1>
-  <a href="/child">Child view →</a>
+  <form method="POST" action="/parent/logout" style="margin-left:auto;display:inline;">
+    <button type="submit" style="background:none;border:none;cursor:pointer;color:#7a9e7e;font-size:0.95rem;padding:0;">Sign out</button>
+  </form>
 </header>
 <main>
-  <h2>Children</h2>
-  <div class="children">
-    {% for child in children %}
-    <div class="child-card">
-      <h3>{{ child.name }}</h3>
-      <div class="meta">Age {{ child.age }} · {{ child.reading_level }}</div>
-      <div class="interests">{{ child.interests | join(", ") }}</div>
+  <section>
+    <h2>Children</h2>
+    <div class="children">
+      {% for child in children %}
+      <a class="child-card" href="/parent/children/{{ child.id }}">
+        <h3>{{ child.name }}</h3>
+        <div class="meta">Age {{ child.age }} · {{ child.reading_level }}</div>
+        <div class="interests">{{ child.interests | join(", ") }}</div>
+      </a>
+      {% else %}
+      <div class="empty">No children registered yet.</div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
+  </section>
 
-  <h2>Recent Sessions</h2>
-  <div class="session-list">
-    {% set has_sessions = false %}
-    {% for child_id, turns in sessions.items() %}
-      {% if turns %}
-        {% set has_sessions = true %}
-        {% set child = children | selectattr('id', 'equalto', child_id) | first %}
-        <div class="session">
-          <div class="session-header">
-            <span class="name">{{ child.name if child else child_id }}</span>
-            <span class="time">{{ turns[-1].timestamp[:16].replace('T',' ') }} UTC · {{ turns | length }} turns</span>
-          </div>
-          {% for turn in turns[-10:] %}
-          <div class="turn">
-            <div class="q">{{ turn.question }}</div>
-            <div class="a">{{ turn.answer }}</div>
-          </div>
-          {% endfor %}
+  <section>
+    <h2>Recent Alerts <a class="view-all" href="/parent/alerts">View all →</a></h2>
+    {% if recent_alerts %}
+      {% for alert in recent_alerts[:5] %}
+      <div class="alert-row">
+        <span class="alert-time">{{ alert.triggered_at.strftime('%d %b at %H:%M') }}</span>
+        <span class="alert-badge badge-{{ alert.alert_type }}">
+          {% if alert.alert_type == 'frustrated' %}Frustrated
+          {% elif alert.alert_type == 'sensitive' %}Sensitive topic
+          {% elif alert.alert_type == 'new-interest' %}New interest
+          {% else %}{{ alert.alert_type }}{% endif %}
+        </span>
+        {% if alert.snippet %}<span class="alert-snippet">{{ alert.snippet }}</span>{% endif %}
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="empty">No alerts in the last 30 days.</div>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Recent Sessions</h2>
+    {% if recent_sessions %}
+      {% for sess in recent_sessions %}
+      <a class="session-link" href="/parent/sessions/{{ sess.id }}">
+        <div>Session {{ sess.started_at.strftime('%d %b %Y') }}</div>
+        <div class="session-meta">
+          Started {{ sess.started_at.strftime('%H:%M') }}
+          {% if sess.ended_at %} · Ended {{ sess.ended_at.strftime('%H:%M') }}{% endif %}
         </div>
-      {% endif %}
-    {% endfor %}
-    {% if not has_sessions %}
+      </a>
+      {% endfor %}
+    {% else %}
     <div class="empty">No sessions yet. Start a conversation in the child view.</div>
     {% endif %}
-  </div>
+  </section>
 </main>
 </body>
 </html>

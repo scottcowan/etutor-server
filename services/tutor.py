@@ -1,3 +1,5 @@
+from typing import Optional
+
 from config.settings import get_settings
 
 
@@ -185,6 +187,85 @@ You are an encouraging tutor talking to a child (age 8-12).
 """,
 }
 
+MASTERY_CONTEXT_TEMPLATE = "\nFocus topics this session:\n{topic_lines}\n"
+
+HISTORY_CONTEXT_TEMPLATE = "\nRecent topics: {topic_list}\n"
+
+PREREQ_TREE_TEMPLATE = "\nPrerequisite gaps:\n{prereq_lines}\n"
+
+# Maps turn count (1-indexed) to the instruction text appended per prereq line.
+_ESCALATION_INSTRUCTIONS = {
+    1: "(Turn 1 — engage and hint: gently acknowledge the gap, offer a clue)",
+    2: "(Turn 2 — gentle probe: ask a question to check what the child knows)",
+}
+_ESCALATION_STEER = "(Turn 3+ — active steer: redirect the child to address this prerequisite first)"
+
+
+def _format_history_context(history_context: list) -> str:
+    """Format history context list into a prompt block (HIST-01)."""
+    if not history_context:
+        return ""
+    return HISTORY_CONTEXT_TEMPLATE.format(topic_list=", ".join(history_context))
+
+
+def _format_escalation_signal(prereq_tree: list, session_prereq_state: Optional[dict]) -> str:
+    """
+    D-07: For each prereq entry, look up the turn count from session_prereq_state
+    using entry["prereq_kc_id"] as the counter key (set by Plan 03
+    build_prereq_tree_context). Falls back to Turn 1 if state is absent.
+    session_prereq_state is keyed by kc_id → turn_count (int).
+    """
+    if not prereq_tree:
+        return ""
+    lines = []
+    state = session_prereq_state or {}
+    for entry in prereq_tree:
+        unlocks_str = ", ".join(entry.get("unlocks", []))
+        kc_id = entry.get("prereq_kc_id", "")
+        turn_count = state.get(kc_id, 1)
+        if turn_count >= 3:
+            escalation = _ESCALATION_STEER
+        else:
+            escalation = _ESCALATION_INSTRUCTIONS.get(turn_count, _ESCALATION_INSTRUCTIONS[1])
+        lines.append(f"- {entry['prereq_name']} → unlocks: {unlocks_str}  {escalation}")
+    if not lines:
+        return ""
+    return PREREQ_TREE_TEMPLATE.format(prereq_lines="\n".join(lines))
+
+
+def _format_prereq_tree(prereq_tree: list, session_prereq_state: Optional[dict] = None) -> str:
+    """Renders prereq tree with D-07 escalation signals embedded per line."""
+    return _format_escalation_signal(prereq_tree, session_prereq_state)
+
+
+def _format_mastery_context(mastery_context: list) -> str:
+    """
+    Format mastery context dicts into a prompt block (D-10).
+
+    Buckets:
+      fragile      → "(fragile — needs reinforcement)"
+      in_progress  → "(due for review)"
+      not_started  → "(not yet started — prerequisites met)"
+      solid        → skip (defensive filter — solid should never reach here per D-08)
+
+    Returns empty string if no lines generated after filtering.
+    """
+    lines = []
+    for item in mastery_context:
+        name = item["name"]
+        bucket = item["bucket"]
+        if bucket == "fragile":
+            lines.append(f"- {name} (fragile — needs reinforcement)")
+        elif bucket == "in_progress":
+            lines.append(f"- {name} (due for review)")
+        elif bucket == "not_started":
+            lines.append(f"- {name} (not yet started — prerequisites met)")
+        # "solid" is intentionally skipped
+    if not lines:
+        return ""
+    return MASTERY_CONTEXT_TEMPLATE.format(topic_lines="\n".join(lines))
+
+
 SYSTEM_PROMPT_TEMPLATE = """
 {age_instructions}
 
@@ -206,7 +287,13 @@ End every exchange with an open question or unresolved wonder — never with a c
 """.strip()
 
 
-async def build_system_prompt(child) -> str:
+async def build_system_prompt(
+    child,
+    mastery_context: Optional[list] = None,
+    history_context: Optional[list] = None,
+    prereq_tree: Optional[list] = None,
+    session_prereq_state: Optional[dict] = None,
+) -> str:
     settings = get_settings()
 
     if child is None:
@@ -224,7 +311,7 @@ async def build_system_prompt(child) -> str:
     nd_block = neurodivergence_instructions(nd_flags)
     nd_section = f"\n{nd_block}\n" if nd_block else ""
 
-    return SYSTEM_PROMPT_TEMPLATE.format(
+    base_prompt = SYSTEM_PROMPT_TEMPLATE.format(
         age_instructions=AGE_INSTRUCTIONS[age_key],
         name=child.name,
         age=age,
@@ -236,6 +323,11 @@ async def build_system_prompt(child) -> str:
         current_books=books,
         top_interest=top_interest,
     )
+
+    mastery_section = _format_mastery_context(mastery_context) if mastery_context else ""
+    history_section = _format_history_context(history_context) if history_context else ""
+    prereq_section = _format_prereq_tree(prereq_tree, session_prereq_state) if prereq_tree else ""
+    return base_prompt + mastery_section + history_section + prereq_section
 
 
 def route_model(child) -> str:
