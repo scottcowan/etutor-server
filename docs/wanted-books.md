@@ -7,7 +7,7 @@ and Calibre-Web library seeding. Organised by role.
 
 ## Acquired
 
-*167 titles downloaded via annas-downloader direct-queue (2026-09-12/13) and sorted into place: reference/textbook material moved to the NAS Reference share (served by Kavita), children's-fiction/comics/coding titles imported into the Calibre library. See `config/node1/annas-downloader/scripts/annas-download.py` in the homelab repo for the downloader itself.*
+*189 titles downloaded via annas-downloader direct-queue (2026-09-12 through 2026-09-14) and sorted into place: reference/textbook material moved to the NAS Reference share (served by Kavita), children's-fiction/comics/coding titles imported into the Calibre library. See `config/node1/annas-downloader/scripts/annas-download.py` in the homelab repo for the downloader itself.*
 
 | Title | Author | Location |
 |---|---|---|
@@ -37,12 +37,14 @@ and Calibre-Web library seeding. Organised by role.
 | Buddhism: A Very Short Introduction | Damien Keown | `/mnt/RS816-books/Reference/Damien Keown/Buddhism_ A Very Short Introduction -- Damien Keown -- Very Short Introductions, 1996 -- Oxford University Press -- 69d6ab1d944a69d17fe2e4cc1ca374f9 -- Anna’s Archive.pdf` |
 | Calculus | Michael Spivak | `/mnt/RS816-books/Reference/Michael Spivak/Calculus -- Michael Spivak -- 3, 0 -- 26f07fcb02c0a9db1afee3e466943749 -- Anna’s Archive.pdf` |
 | Can You Feel the Force? | Richard Hammond | `/mnt/RS816-books/Reference/Richard Hammond/Can you feel the force_ _ Big Questions About Physics -- Richard Hammond -- 2015, 2015 -- DK Children; DK Publishing Dorling Kindersley -- isbn13 9781465439048 -- ad31fead9da187c0abdc25f0782bc06c -- Anna’s Archive.pdf` |
+| Celtic Myths and Legends | T.W. Rolleston | `/mnt/RS816-books/Reference/T.W. Rolleston/Celtic Myths and Legends Series -- Rolleston, T_ W_ (Thomas William), 1857-1920 -- Myths and legends series (Bracken Books), London, 1986, -- London _ -- isbn13 9780946495849 -- 439657584b42dcc88b853afca7767eb8 -- Anna’s Archive.pdf` |
 | Charles Darwin and Evolution | Anna Claybourne | `/mnt/RS816-books/Reference/Anna Claybourne/Charles Darwin and evolution , None -- Lin, Yoming S, None -- Eureka!, 1st ed_, New York, New York State, 2012 -- New York _ PowerKids Press -- isbn13 9781448850310 -- 4c2a01941ef7242077f9fc400e0d35dc -- Anna’s Archive.pdf` |
 | Chemistry: The Central Science | Theodore L. Brown | `/mnt/RS816-books/Reference/Theodore L. Brown/Chemistry: The Central Science -- Theodore L_ Brown -- 2012-01-01 -- Pearson Learning Solutions -- isbn13 9781256120186 -- 5f702e4e64979822e4227b99d579c6ee -- Anna’s Archive.pdf` |
 | Class: A Guide Through the American Status System | Paul Fussell | `/mnt/RS816-books/Reference/Paul Fussell/Class_ A Guide Through the American Status System -- Paul Fussell -- 0 -- 7b3ceae2227676c296e7a7a63d7891d0 -- Anna’s Archive.pdf` |
 | Clinical Sports Medicine | Peter Brukner | `/mnt/RS816-books/Reference/Peter Brukner/Clinical sports medicine -- Brukner, Peter, 1952-, Khan, Karim -- 2nd ed, Sydney ; New York, ©1993 -- Sydney ; New York _ McGraw-Hill -- isbn13 9780070086074 -- f7d27993fcf5c86a9be616ddffae92fa -- Anna’s Archive.pdf` |
 | Coming of Age in Samoa | Margaret Mead | `/mnt/RS816-books/Reference/Margaret Mead/Coming of age in Samoa -- Margaret Mead -- 2024 -- e0c181c58aee2e547b17297c108124ab -- Anna’s Archive.epub` |
 | Concepts in Thermal Physics | Stephen J. Blundell | `/mnt/RS816-books/Reference/Stephen J. Blundell/Concepts in Thermal Physics -- Stephen J_ Blundell and Katherine M_ Blundell -- 2, 2009 -- Oxford University PressOxford -- isbn13 9780191574337 -- 35c112c5840f7cdc29bf6cddf9bf6b6d -- Anna’s Archive.pdf` |
+| Corruption: A Very Short Introduction | Leslie Holmes | `/mnt/RS816-books/Reference/Leslie Holmes/Corruption_ A Very Short Introduction -- Holmes, Leslie -- Very Short Introductions #1 -- 00d279f5705aaba95e473881022b84b5 -- Anna’s Archive.epub` |
 | Dan Dare: Pilot of the Future | Frank Hampson | `/mnt/RS816-books/Reference/Frank Hampson/Dan Dare : pilot of the future_ Vol 3 -- Author Unknown -- London, United Kingdom, 1981 -- Hamlyn, Littlehampton Book Services Ltd -- isbn13 9780600366287 -- fc482e120b73dfa61befc60f1b3768e5 -- Anna’s Archive.pdf` |
 | Dare to Dream: 25 Extraordinary Lives | Sandra McLeod Humphrey | Calibre Library |
 | Developmental Psychology: Childhood and Adolescence | David Shaffer | `/mnt/RS816-books/Reference/David Shaffer/Developmental psychology _ childhood and adolescence -- David R_ Shaffer and Katherine Kipp -- Cengage Learning EMEA (UK & Europe), Boston, MA, 2014 -- isbn13 9781111834524 -- 91cabcaab2f8a63f713b445fccffa948 -- Anna’s Archive.pdf` |
@@ -54,7 +56,9 @@ and Calibre-Web library seeding. Organised by role.
 | Epileptic (L'Ascension du Haut Mal) | David B. | `/mnt/RS816-books/Reference/David B./Epileptic 1 [L'Ascension du Haut Mal, 1-3] -- B_, David, 1959-, Thompson, Kim -- Paris, France, Seattle, WA, New York, NY, ©2002- -- Paris, France _ -- isbn13 9782844140852 -- 17b6efda4d43badc52086c36b4142cb6 -- Anna’s Archive.pdf` |
 | Fantastically Great Women Who Changed the World | Kate Pankhurst | `/mnt/RS816-books/Reference/Kate Pankhurst/Fantastically Great Women Who Changed The World -- Kate Pankhurst -- 2021 -- f8cd155a8f3b4eeef599c3cf79049e71 -- Anna’s Archive.pdf` |
 | Fermat's Last Theorem | Simon Singh | `/mnt/RS816-books/Reference/Simon Singh/Fermat's Last Theorem -- Simon Singh -- 1977 -- HarperCollins Publishers -- 4c3d945c63d0db02bf36acebf0e63711 -- Anna’s Archive.epub` |
+| Figgie Hobbin | Charles Causley | `/mnt/RS816-books/Reference/Charles Causley/Figgie hobbin -- Causley, Charles, 1917-, Hyman, Trina Schart, illus -- First American Edition, PS, 1973 -- New York, Walker -- isbn13 9780802761316 -- 778bedc40dfe5fca72262b9d6c42ed9c -- Anna’s Archive.pdf` |
 | First Aid for Families | DK | `/mnt/RS816-books/Reference/DK/First Aid Manual, 11e -- DK -- 11, 2021 -- Dorling Kindersley Ltd -- ce9f3a424205b6d7d5a20dfa2f63014b -- Anna’s Archive.pdf` |
+| Five Children and It | E. Nesbit | Calibre Library |
 | Flow: The Psychology of Optimal Experience | Mihaly Csikszentmihalyi | `/mnt/RS816-books/Reference/Mihaly Csikszentmihalyi/Flow - The Psychology of Optimal Experience -- Mihaly Csikszentmihalyi -- 2009 -- 80443e0e219a85c5e6efde6634b3c31b -- Anna’s Archive.epub` |
 | Footnotes in Gaza | Joe Sacco | `/mnt/RS816-books/Reference/Joe Sacco/Footnotes in Gaza -- Sacco, Joe -- 2009, 2010-01-01 -- London _ Jonathan Cape -- isbn13 9780224071093 -- 717460d6abb24f32d9aceaeeb607e8a0 -- Anna’s Archive.pdf` |
 | Foundations of Sport and Exercise Psychology | Robert Weinberg | `/mnt/RS816-books/Reference/Robert Weinberg/Foundations of Sport and Exercise Psychology -- Robert S_ Weinberg,Daniel S_ Gould -- Human Kinetics, Inc_ -- 423ae32987cbb9a9e331ffb30b095f30 -- Anna’s Archive.pdf` |
@@ -68,18 +72,21 @@ and Calibre-Web library seeding. Organised by role.
 | Hello World! Computer Programming for Kids and Other Beginners | Warren | Calibre Library |
 | Help Your Kids with Computer Science | DK | `/mnt/RS816-books/Reference/DK/Help Your Kids with Computer Science -- Dorling Kindersley -- da3fbd76a13ca857e8acba072b4d65e5 -- Anna’s Archive.pdf` |
 | Hinduism: A Very Short Introduction | Kim Knott | `/mnt/RS816-books/Reference/Kim Knott/Hinduism_ A Very Short Introduction -- Kim Knott -- 1998 -- Oxford University Press -- c7380fe5718ee38fb365bf3bb25e1552 -- Anna’s Archive.mobi` |
+| Horrible Histories: Ruthless Romans | Terry Deary | Calibre Library |
 | How Computers Work | Ron White | `/mnt/RS816-books/Reference/Ron White/How Computers Work -- Ron White, Timothy Edward Downs -- 7th edition, 2004 -- Que -- isbn13 9780789730480 -- 049b82bd9f5e0b0896248cd5b56fcaca -- Anna’s Archive.pdf` |
 | How Music Works | David Byrne | `/mnt/RS816-books/Reference/David Byrne/How Music Works -- David Byrne -- Revised & Updated, San Francisco [Calif, 2013, ©2012 -- McSweeney's Publishing -- isbn13 9780804188937 -- 00dca7541878bd10cfebe49974d3b8a1 -- Anna’s Archive.epub` |
 | How Poetry Works | Philip Davies Roberts | `/mnt/RS816-books/Reference/Philip Davies Roberts/How Poetry Works -- Philip Davies Roberts -- London, New York State, 2010 -- Penguin Books Ltd -- isbn13 9780141928104 -- e8ed8096b34e8dcb4238428e71554fe0 -- Anna’s Archive.epub` |
 | How the Internet Really Works | Article 19 | Calibre Library |
 | How to Read and Why | Harold Bloom | `/mnt/RS816-books/Reference/Harold Bloom/How To Read and Why -- Harold Bloom -- 1st, 2000 -- Touchstone Books; Scribner -- isbn13 9780684859064 -- 2fb466bc7d7ae529cd19646afb0b733e -- Anna’s Archive.pdf` |
 | Human Geography: People, Place and Culture | Harm de Blij | `/mnt/RS816-books/Reference/Harm de Blij/Human geography _ people, place, and culture -- Erin Hogan Fouberg; Alexander B Murphy; Harm J De Blij -- 10th  Edition, 2012 -- John Wiley & Sons, -- isbn13 9781118018699 -- a30a428042afa88317ad53929ffaacc3 -- Anna’s Archive.pdf` |
+| In the Beginning: Creation Myths from Around the World | Virginia Hamilton | `/mnt/RS816-books/Reference/Virginia Hamilton/In the beginning _ creation stories from around the world -- Hamilton, Virginia, 1934-2002, Moser, Barry, illustrator -- First edition, San Diego ; -- isbn13 9780152387402 -- 39e1c6309b909cda2420da7edf8969ed -- Anna’s Archive.pdf` |
 | Influence: The Psychology of Persuasion | Robert Cialdini | `/mnt/RS816-books/Reference/Robert Cialdini/Influence_ The Psychology of Persuasion -- Robert B_ Cialdini -- Revised Edition, New York, USA, New York State, 2009 -- HarperCollins -- isbn13 9780061899874 -- 2604fcf98c60fac6643a12180d1b530c -- Anna’s Archive.epub` |
 | Invitation to Sociology | Peter Berger | `/mnt/RS816-books/Reference/Peter Berger/Invitation to sociology -- Peter L_ Berger -- 1963 -- 6bf46a89f5129cbd388787c55ec6ed2b -- Anna’s Archive.pdf` |
 | Islam: A Very Short Introduction | Malise Ruthven | `/mnt/RS816-books/Reference/Malise Ruthven/Islam_ A Very Short Introduction -- Malise Ruthven -- 2012 -- OUP Oxford -- 85052c9b6b831cc5a3112344248a335b -- Anna’s Archive.pdf` |
 | It Was the War of the Trenches | Jacques Tardi | `/mnt/RS816-books/Reference/Jacques Tardi/It was the war of the trenches -- Tardi, Jacques, Thompson, Kim, 1956- translator -- Second Edition, PS, 2010 -- Seattle, WA _ Fantagraphics Books -- isbn13 9781606993538 -- cec7a33a5d7f79f1ae2c62f1310686b8 -- Anna’s Archive.pdf` |
 | Jimmy Corrigan: The Smartest Kid on Earth | Chris Ware | `/mnt/RS816-books/Reference/Chris Ware/Jimmy Corrigan _ the smartest kid on earth -- Ware, Chris, 1967- -- New York, 2015], c2000 -- New York_ Pantheon Books -- isbn13 9780224062107 -- 217c0e80478caa0d4bf487474793f605 -- Anna’s Archive.pdf` |
 | Judaism: A Very Short Introduction | Norman Solomon | `/mnt/RS816-books/Reference/Norman Solomon/Judaism_ A Very Short Introduction -- Norman Solomon -- Oxford University Press -- 426ee2f1d60b3312174cb205489e945a -- Anna’s Archive.pdf` |
+| Just So Stories | Rudyard Kipling | Calibre Library |
 | Lauren Ipsum | Carlos Bueno | `/mnt/RS816-books/Reference/Carlos Bueno/Lauren Ipsum -- Bueno, Carlos, López, Ytaelena -- Zeroth English ed, Place of publication not identified, -- North Charleston, SC : CreateSpace -- isbn13 9781461178187 -- 3b86daf011959b2087755a7b77253465 -- Anna’s Archive.pdf` |
 | Literary Theory: An Introduction | Terry Eagleton | `/mnt/RS816-books/Reference/Terry Eagleton/LITERARY THEORY An Introduction -- TERRY EAGLETON -- 1983 -- University of Minnesota Press,Minneapolis -- duxiu_ssid 40370651 -- b064d37f5573835e001e87ce6e67823d -- Anna’s Archive.pdf` |
 | Little People, Big Dreams: Marie Curie | Isabel Sánchez Vegara | `/mnt/RS816-books/Reference/Isabel Sánchez Vegara/Little People, Big Dreams_ Coco Chanel -- Ma Isabel Sánchez Vegara; Ana Albero -- Little people, big dreams, Place of publication not -- Quarto -- isbn13 9781786032348 -- 0baa185d714e7a304f607bc366fa7e42 -- Anna’s Archive.pdf` |
@@ -105,6 +112,7 @@ and Calibre-Web library seeding. Organised by role.
 | Palestine | Joe Sacco | `/mnt/RS816-books/Reference/Joe Sacco/f57d0b1c4d0e870b07155a9e691a7ce5.epub` |
 | Pax | Sara Pennypacker | `/mnt/RS816-books/Reference/Sara Pennypacker/Pax -- Sara Pennypacker -- 2016 -- HarperCollins -- 281fd23480f55c4579403a5443ab39de -- Anna’s Archive.epub` |
 | Permanent Record | Edward Snowden | `/mnt/RS816-books/Reference/Edward Snowden/Permanent Record -- Edward Snowden -- 3e4f38483ed6ff4fb57760f7504037e9 -- Anna’s Archive.pdf` |
+| Peter and the Wolf | Sergei Prokofiev | `/mnt/RS816-books/Reference/Sergei Prokofiev/Peter and the Wolf -- Sergei Prokofiev and Charles Mikolaycak -- None -- Demco Media -- isbn13 9780606014250 -- a880f41a9353bcb93e3124c908ee5076 -- Anna’s Archive.pdf` |
 | Physiology of Sport and Exercise | Jack H. Wilmore | `/mnt/RS816-books/Reference/Jack H. Wilmore/Physiology of sport and exercise -- Jack H_ Wilmore, David L_ Costill -- Champaign, IL, Illinois, 1994 -- Human Kinetics Pub -- isbn13 9780873226936 -- 4e5a5c17eddd34e24f77e39ef61c49f3 -- Anna’s Archive.pdf` |
 | Poor Economics | Abhijit Banerjee | `/mnt/RS816-books/Reference/Abhijit Banerjee/Poor Economics -- Abhijit Banerjee -- 2011 -- 59414edf8719dc17e41cdf1a0e3aa8ab -- Anna’s Archive.pdf` |
 | Principles of Anatomy and Physiology | Gerard J. Tortora | `/mnt/RS816-books/Reference/Gerard J. Tortora/Principles of Anatomy and Physiology, 15e EPUB -- Gerard J_ Tortora; Bryan H_ Derrickson -- 15, 2017 -- John Wiley & Sons, Incorporated -- isbn13 9781119320647 -- 498a69210a9f98bcaab049ad65ae8869 -- Anna’s Archive.pdf` |
@@ -119,6 +127,8 @@ and Calibre-Web library seeding. Organised by role.
 | Shakespeare's Words: A Glossary and Language Companion | David | `/mnt/RS816-books/Reference/David/Shakespeare's words _ a glossary and language companion -- David Crystal, Ben Crystal -- 2013 -- Penguin Books, Limited -- isbn13 9780141941523 -- 910cccdcfd2d17898d041e49a92a9fb9 -- Anna’s Archive.pdf` |
 | Shakespeare: The Biography | Peter Ackroyd | `/mnt/RS816-books/Reference/Peter Ackroyd/Shakespeare_ The Biography -- Peter Ackroyd -- 2005 -- 573f35257e7af5bc22e158d2e59c1217 -- Anna’s Archive.epub` |
 | Shinto: The Way Home | Thomas Kasulis | `/mnt/RS816-books/Reference/Thomas Kasulis/Shinto_ The Way Home -- Kasulis, Thomas P_ -- 216ca2bb5efa8f1004fe04b3109653d5 -- Anna’s Archive.pdf` |
+| Silly Verse for Kids | Spike Milligan | `/mnt/RS816-books/Reference/Spike Milligan/Silly Verse For Kids -- Spike Milligan -- 1959 -- f79d1aeb33a507c30111adf233a92c36 -- Anna’s Archive.pdf` |
+| Social Intelligence: The New Science of Human Relationships | Daniel Goleman | `/mnt/RS816-books/Reference/Daniel Goleman/Social Intelligence _ The New Science of Human Relationships -- Daniel Goleman -- Penguin Random House LLC, New York, 2006 -- Random House Publishing -- isbn13 9780470191538 -- a2624ba5820bad7a903a7b2c0f987ccd -- Anna’s Archive.epub` |
 | Stanislavski: An Introduction | Jean Benedetti | `/mnt/RS816-books/Reference/Jean Benedetti/Stanislavski _ an introduction -- Jean Benedetti -- Bloomsbury UK (Minor Textbooks), London, 2016 -- Methuen Drama; Bloomsbury -- isbn13 9780203998182 -- 72aa54bb96ff0181d72226a1c2ee3a34 -- Anna’s Archive.pdf` |
 | The AB Guide to Music Theory | Eric Taylor | `/mnt/RS816-books/Reference/Eric Taylor/The AB Guide to Music Theory Vol 1 -- Eric Robert Taylor; Associated Board of the Royal Schools of -- paperback _ softback, US, 1989 -- Oxford -- isbn13 9781854724465 -- e2fa5f412b6a399a7704ca6461bf9d3c -- Anna’s Archive.pdf` |
 | The Adventure of English | Melvyn Bragg | `/mnt/RS816-books/Reference/Melvyn Bragg/The Adventure of English -- Melvyn Bragg -- 2011 -- Skyhorse Publishing, Inc_ -- 070781724fc9f7b0c823f72d7d8ae799 -- Anna’s Archive.mobi` |
@@ -126,9 +136,12 @@ and Calibre-Web library seeding. Organised by role.
 | The Age of Surveillance Capitalism | Shoshana Zuboff | `/mnt/RS816-books/Reference/Shoshana Zuboff/The Age of Surveillance Capitalism -- Shoshana Zuboff -- 2019 -- PublicAffairs -- 8c299471cc7dc043802368a1e8db0b66 -- Anna’s Archive.epub` |
 | The Art of Computer Programming | Donald Knuth | `/mnt/RS816-books/Reference/Donald Knuth/The Art of Computer Programming -- Donald Knuth -- 2005 -- 08fbbe61ae0e4d1aa0ba2b251fdc90a2 -- Anna’s Archive.pdf` |
 | The Atmosphere: An Introduction to Meteorology | Frederick K. Lutgens | `/mnt/RS816-books/Reference/Frederick K. Lutgens/the atmosphere: an introduction to meteorology -- frederick k_ lutgens and edward j_ tarbuck -- Volume 5ed, 1992 -- 7b33dc3e29ffb07f4b72d4022f85f3bf -- Anna’s Archive.pdf` |
+| The Beatles: Anthology | The Beatles | `/mnt/RS816-books/Reference/The Beatles/The Beatles_ Anthology -- The Beatles -- 2000 -- 772521cef30c213ec2041705655748b4 -- Anna’s Archive.pdf` |
 | The Boy, the Mole, the Fox and the Horse | Charlie Mackesy | Calibre Library |
+| The Call of the Wild | Jack London | Calibre Library |
 | The Cambridge Encyclopedia of the English Language | David Crystal | `/mnt/RS816-books/Reference/David Crystal/The Cambridge Encyclopedia of the English Language -- David Crystal -- 3, 2018 -- Cambridge University Press (Virtual Publishing) -- isbn13 9781108423595 -- bf275dba29c7d5c3b479d16c913dfbc5 -- Anna’s Archive.pdf` |
 | The Complete Maus: A Survivor's Tale | Art Spiegelman | `/mnt/RS816-books/Reference/Art Spiegelman/The Complete Maus ( 2003) -- Art Spiegelman -- 2003 combined, 2003 -- Penguin Books -- isbn13 9780141014081 -- b8afde1b1606a537ca1cfbe0d927c8da -- Anna’s Archive.pdf` |
+| The Complete Nonsense of Edward Lear | Edward Lear | Calibre Library |
 | The Demon in the Freezer | Richard Preston | `/mnt/RS816-books/Reference/Richard Preston/The Demon In The Freezer -- Richard Preston -- 2013 -- e77ce6984dc052db0493a1ee8f577018 -- Anna’s Archive.epub` |
 | The Double Helix | James D. Watson | `/mnt/RS816-books/Reference/James D. Watson/The Double Helix -- James D_ Watson -- 32046a444a70aaf309123ab49323b631 -- Anna’s Archive.pdf` |
 | The Dream Machine | M. Mitchell Waldrop | `/mnt/RS816-books/Reference/M. Mitchell Waldrop/The Dream Machine -- M_ Mitchell Waldrop -- 1, 2018 -- Stripe Press -- 54f2fbd3c81057d3c33d42a88fee1fe5 -- Anna’s Archive.epub` |
@@ -146,6 +159,7 @@ and Calibre-Web library seeding. Organised by role.
 | The Man Who Mistook His Wife for a Hat | Oliver Sacks | `/mnt/RS816-books/Reference/Oliver Sacks/The Man Who Mistook His Wife For a Hat -- Oliver Sacks -- 2013 -- ef645561881a5c446b8c614ddc7e18d7 -- Anna’s Archive.epub` |
 | The Map That Changed the World | Simon Winchester | `/mnt/RS816-books/Reference/Simon Winchester/The Map That Changed the World -- Simon Winchester -- 2009 -- HarperCollins -- 6b346bdc673bbb0006c2deedfaf567e7 -- Anna’s Archive.epub` |
 | The Milgram Experiment | Stanley Milgram | `/mnt/RS816-books/Reference/Stanley Milgram/Das Milgram - Experiment -- Milgram, Stanley -- 2010 -- f59deb850ffe4423a85bb2cd4259bcd6 -- Anna’s Archive.pdf` |
+| The Norse Myths | Kevin Crossley-Holland | `/mnt/RS816-books/Reference/Kevin Crossley-Holland/The  Norse myths -- Crossley-Holland, Kevin -- Pantheon fairy tale & folklore library, 1st American ed, New -- New York _ Pantheon Books -- isbn13 9780394500485 -- bd468ee4ee41d369b676649ffba265f5 -- Anna’s Archive.pdf` |
 | The Number Devil: A Mathematical Adventure | Hans Magnus Enzensberger | Calibre Library |
 | The Oxford Book of English Verse | edited by Christopher Ricks | `/mnt/RS816-books/Reference/edited by Christopher Ricks/The Oxford Book of English Verse -- Christopher B_ Ricks, CHRISTOPHER RICKS -- Oxford, New York, England, 1999 -- Oxford University Press, USA -- isbn13 9780192141828 -- fba0325e7ccfa93a3f4f8148766bc12e -- Anna’s Archive.pdf` |
 | The Oxford Companion to English Literature | edited by Dinah Birch | `/mnt/RS816-books/Reference/edited by Dinah Birch/b736c797c3d4ea6b13e862b1105ef425.epub` |
@@ -158,6 +172,7 @@ and Calibre-Web library seeding. Organised by role.
 | The Prince | Niccolo Machiavelli | `/mnt/RS816-books/Reference/Niccolo Machiavelli/The Prince -- Niccolo Machiavelli -- 2015 -- Xist Publishing -- 2ccec97644d0cf6512c2b528e21ea89e -- Anna’s Archive.epub` |
 | The Princeton Companion to Mathematics | Timothy Gowers | `/mnt/RS816-books/Reference/Timothy Gowers/The Princeton Companion to Mathematics(1) -- Timothy Gowers -- Princeton univ press -- 946f4674d0d4a408dee45323f09df6ea -- Anna’s Archive.pdf` |
 | The Problems of Philosophy | Bertrand Russell | `/mnt/RS816-books/Reference/Bertrand Russell/The Problems of Philosophy -- Bertrand Russell -- 1912 -- OUP Oxford -- isbn13 9789355223104 -- f5b53fb8efc5bbf093c20bab713c92ad -- Anna’s Archive.epub` |
+| The Railway Children | E. Nesbit | Calibre Library |
 | The Republic | Plato | `/mnt/RS816-books/Reference/Plato/f3dbdcdeef968c1754a43730925cca8a.mobi` |
 | The Rest is Noise | Alex Ross | `/mnt/RS816-books/Reference/Alex Ross/The Rest Is Noise -- Alex Ross -- 2012 -- Farrar, Straus and Giroux -- dda12e6a36aa44062675c0343c348225 -- Anna’s Archive.mobi` |
 | The Richest Man in Babylon | George S. Clason | Calibre Library |
@@ -171,13 +186,20 @@ and Calibre-Web library seeding. Organised by role.
 | The Stories of English | David Crystal | `/mnt/RS816-books/Reference/David Crystal/The Stories of English -- David Crystal -- Reprint, PS, 2005 -- Overlook TP -- isbn13 9780141900704 -- 2c0da668cf5e9c00dc66043c324733c5 -- Anna’s Archive.epub` |
 | The Story of Earth: The First 4.5 Billion Years | Robert M. Hazen | `/mnt/RS816-books/Reference/Robert M. Hazen/The Story of Earth: The First 4_5 Billion Years, from -- Robert M_ Hazen -- 2012 -- Penguin Books -- 692c13341792c5eb690ed5620a943baf -- Anna’s Archive.pdf` |
 | The Story of Medicine | Anne Rooney | Calibre Library |
+| The Story of Music | Howard Goodall | `/mnt/RS816-books/Reference/Howard Goodall/The story of music -- Goodall, Howard -- First Edition, PS, 2013 -- London _ Chatto & Windus -- isbn13 9780099587170 -- 63a3131b417d3cee610a27c6d634d06c -- Anna’s Archive.pdf` |
+| The Story of the Treasure Seekers | E. Nesbit | Calibre Library |
 | The Usborne Complete Book of the Human Body | Anna Claybourne | `/mnt/RS816-books/Reference/Anna Claybourne/The Usborne Internet-Linked Complete Book of the Human Body -- Claybourne, Anna, author -- American edition, London, Tulsa, Oklahoma, 2013 -- Usborne -- isbn13 9780794515577 -- 62233db9ee66b332380a230ed032c8ae -- Anna’s Archive.pdf` |
 | The Wealth of Nations | Adam Smith | `/mnt/RS816-books/Reference/Adam Smith/The Wealth of Nations -- Adam Smith -- 1776 -- 6f4eed78eac2b5a3a4e4ab6aa9d8eb29 -- Anna’s Archive.epub` |
 | The Wild Robot | Peter Brown | Calibre Library |
+| The Wind in the Willows | Kenneth Grahame | Calibre Library (already present) |
 | The Worldly Philosophers | Robert Heilbroner | `/mnt/RS816-books/Reference/Robert Heilbroner/The Worldly Philosophers -- Robert L_ Heilbroner -- December 1987 -- Peter Smith Publisher, Incorporated -- isbn13 9780844662916 -- 8bc181d1cdf0fd9857fe0156b46c8fbf -- Anna’s Archive.pdf` |
+| Understanding Politics and Government | Alex Frith | `/mnt/RS816-books/Reference/Alex Frith/Understanding politics and government -- Alex Frith, Rosie Hore, Louie Stowell, Kellan Stover, -- Tulsa, Oklahoma, 2018 -- Usborne Publishing Ltd -- isbn13 9780794542368 -- afc9de92d6734a48826ad1da49da0396 -- Anna’s Archive.pdf` |
 | What If? Serious Scientific Answers to Absurd Hypothetical Questions | Randall Munroe | Calibre Library |
 | What's the Big Secret? Talking About Sex with Girls and Boys | Laurie Krasny Brown | `/mnt/RS816-books/Reference/Laurie Krasny Brown/What's the big secret_ _ talking about sex with girls and -- Laurie Krasny Brown and Marc Brown -- 1st ed_, Boston, Massachusetts, 1997 -- Little, -- isbn13 9780316101837 -- 30f7a20311395ac1a372c9486407568f -- Anna’s Archive.pdf` |
+| When We Were Very Young | A.A. Milne | Calibre Library (already present) |
 | Why Zebras Don't Get Ulcers | Robert M. Sapolsky | `/mnt/RS816-books/Reference/Robert M. Sapolsky/Why Zebras Don't Get Ulcers -- Robert M_ Sapolsky -- None -- Macmillan -- 1808e406d0bed2265c6a355cb2763682 -- Anna’s Archive.epub` |
+| Winnie-the-Pooh / The House at Pooh Corner | A.A. Milne | `/mnt/RS816-books/Reference/A.A. Milne/Winnie-the-pooh _ the house at pooh corner -- A_A_ Milne -- 1800 -- 5d07523f62d96b839f376b848c2d5ab4 -- Anna’s Archive.pdf` |
+| World Mythology | Roy Willis | `/mnt/RS816-books/Reference/Roy Willis/World Mythology -- Roy Willis -- 1993 -- 902d933c24171d198ba841583a5367cf -- Anna’s Archive.pdf` |
 
 ---
 
