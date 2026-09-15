@@ -7,7 +7,7 @@ and Calibre-Web library seeding. Organised by role.
 
 ## Acquired
 
-*189 titles downloaded via annas-downloader direct-queue (2026-09-12 through 2026-09-14) and sorted into place: reference/textbook material moved to the NAS Reference share (served by Kavita), children's-fiction/comics/coding titles imported into the Calibre library. See `config/node1/annas-downloader/scripts/annas-download.py` in the homelab repo for the downloader itself.*
+*191 titles acquired (189 via annas-downloader direct-queue, 2026-09-12 through 2026-09-14, plus 2 purchased copies of DK Eyewitness: Flight) and sorted into place: reference/textbook material moved to the NAS Reference share (served by Kavita), children's-fiction/comics/coding titles imported into the Calibre library. See `config/node1/annas-downloader/scripts/annas-download.py` in the homelab repo for the downloader itself.*
 
 | Title | Author | Location |
 |---|---|---|
@@ -49,6 +49,8 @@ and Calibre-Web library seeding. Organised by role.
 | Dare to Dream: 25 Extraordinary Lives | Sandra McLeod Humphrey | Calibre Library |
 | Developmental Psychology: Childhood and Adolescence | David Shaffer | `/mnt/RS816-books/Reference/David Shaffer/Developmental psychology _ childhood and adolescence -- David R_ Shaffer and Katherine Kipp -- Cengage Learning EMEA (UK & Europe), Boston, MA, 2014 -- isbn13 9781111834524 -- 91cabcaab2f8a63f713b445fccffa948 -- Anna’s Archive.pdf` |
 | Digital Design | Morris Mano | `/mnt/RS816-books/Reference/Morris Mano/Digital Design -- M_ Morris Mano -- 2nd, 1991 -- Prentice-Hall -- 3025b89a9df81ddbc0c6dc418d34d620 -- Anna’s Archive.pdf` |
+| DK Eyewitness: Flight (epub) | Andrew Nahum | Calibre Library |
+| DK Eyewitness: Flight (pdf) | Andrew Nahum | `/Users/scottcowan/repos/downloads/Flight.pdf` (local Mac, purchased — not yet moved to NAS) |
 | DK Human Body | Richard Walker | `/mnt/RS816-books/Reference/Richard Walker/3-D human body -- Walker, Richard, 1951- -- 1st American ed_, London, New York, England, 2011 -- London ; New York _ DK -- isbn13 9780756672164 -- 2df8b2a16b3758a945d87e262f3de753 -- Anna’s Archive.pdf` |
 | Earth: An Introduction to Physical Geology | Edward J. Tarbuck | `/mnt/RS816-books/Reference/Edward J. Tarbuck/The earth : an introduction to physical geology -- Edward J_ Tarbuck, Frederick K_ Lutgens -- 4th edition, January 1993 -- Macmillan ; Maxwell -- isbn13 9780024190123 -- 5daa1da5335e04568db9b60af0c36983 -- Anna’s Archive.pdf` |
 | Ecology: From Individuals to Ecosystems | Michael Begon | `/mnt/RS816-books/Reference/Michael Begon/Ecology: From Individuals to Ecosystems -- Michael Begon; Colin R_ Townsend -- 5, 2021 -- Wiley -- c9acc0ede80c08c97c65877cb42648a3 -- Anna’s Archive.pdf` |
